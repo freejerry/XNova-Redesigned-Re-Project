@@ -1,0 +1,14 @@
+LISCENCE - XNova Redesigned
+
+XNova Redesigned is an XNova Mod created by the XNovaUK developement team.
+It is based upon the origional files created by XNova and therefore is mostly under the same liscence, however with a few additions.
+
+1) XNova Redesigned is liscences under and modified GPL version 2. The origional GPL liscence can be found in GPL.txt unmodified. The modifications to the liscence are listed below. Please note that all terms of the origional GPL liscence still apply with the only exception being where the contradict the terms in this file.
+
+2) All files inside the game folder are under liscence, weather or not the file mentions that in its header or not. Any further files added to the "game" directory are also included in this liscence. If any files from the game directory are moved to another folder then those files will still be under liscence and as will any modification to them.
+
+3) If the files are requested the current holder has the right to ammend any sensative data by the use of asteriscs, *, these should be used to replace things such as passwords or encryption techniques.
+
+4) Any sercurity mods you make to this game must be made available upon request, unless the doing so would make your files insecure.
+
+5) This liscence may change at any point.

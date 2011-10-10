@@ -1,0 +1,1 @@
+[13-Aug-2009 20:43:19] PHP Warning:  fopen(../includes/battle_engines/vars.py) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in /home/evo/public_html/xnovauk/game/includes/vars.py.php on line 76

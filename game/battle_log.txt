@@ -1,0 +1,1604 @@
+Battle on 27th December 2009 a	 14:42:34:
+Battle command: python includes/battle_engines/mr_combat.py 1 1 39:8,8,8:204,50\;205,20\;206,50\;207,20\;211,20\;215,5\;213,20\;214,2 0:7,7,7:401,100\;402,100\;403,50\;404,20\;405,10\;406,10\;407,1\;408,1\;
+Serialized Results:
+
+Results:
+
+
+
+Battle drawn
+Debris field of  Metal and  Crystal
+Attacker lost  units
+Defender lost  units
+End fleets:
+
+Battle on 29th December 2009 a	 17:06:46:
+Battle command: python includes/battle_engines/mr_combat.py 1 1 47:8,8,8:204,50\;205,20\;206,50\;207,20\;211,20\;215,5\;213,20\;214,2 0:7,7,7:401,100\;402,100\;403,50\;404,20\;405,10\;406,10\;407,1\;408,1\;202,2\;
+Serialized Results:
+a:6:{s:7:"debrcry";d:120300.0;s:7:"deflost";i:3048000;s:4:"data";a:8:{i:0;a:8:{s:8:"defpower";i:0;s:8:"defblock";i:0;s:8:"attfires";i:0;s:13:"defend_fleets";s:2107:"a:1:{i:0;a:9:{i:202;a:11:{s:4:"debm";d:600.0;s:4:"hull";d:2800.0;s:4:"debc";d:600.0;s:5:"weaps";d:3.5;s:13:"shield_damage";i:0;s:4:"cost";i:4000;s:5:"count";i:2;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:7.0;}i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";i:0;s:4:"cost";i:2000;s:5:"count";i:100;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:14.0;}i:402;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:70.0;s:13:"shield_damage";i:0;s:4:"cost";i:2000;s:5:"count";i:100;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:17.5;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";i:0;s:4:"cost";i:8000;s:5:"count";i:50;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:70.0;}i:404;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:24500.0;s:4:"debc";d:0.0;s:5:"weaps";d:770.0;s:13:"shield_damage";i:0;s:4:"cost";i:37000;s:5:"count";i:20;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:140.0;}i:405;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:105.0;s:13:"shield_damage";i:0;s:4:"cost";i:8000;s:5:"count";i:10;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:350.0;}i:406;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:70000.0;s:4:"debc";d:0.0;s:5:"weaps";d:2100.0;s:13:"shield_damage";i:0;s:4:"cost";i:130000;s:5:"count";i:10;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:210.0;}i:407;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:14000.0;s:4:"debc";d:0.0;s:5:"weaps";d:0.7;s:13:"shield_damage";i:0;s:4:"cost";i:20000;s:5:"count";i:1;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:1400.0;}i:408;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:70000.0;s:4:"debc";d:0.0;s:5:"weaps";d:0.7;s:13:"shield_damage";i:0;s:4:"cost";i:100000;s:5:"count";i:1;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:7000.0;}}}";s:8:"deffires";i:0;s:8:"attpower";i:0;s:8:"attblock";i:0;s:13:"attack_fleets";s:1948:"a:1:{i:47;a:8:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";i:0;s:4:"cost";i:4000;s:5:"count";i:50;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:8.0;}i:205;a:11:{s:4:"debm";d:1800.0;s:4:"hull";d:8000.0;s:4:"debc";d:1200.0;s:5:"weaps";d:120.0;s:13:"shield_damage";i:0;s:4:"cost";i:10000;s:5:"count";i:20;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:20.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";i:0;s:4:"cost";i:29000;s:5:"count";i:50;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";i:0;s:4:"cost";i:60000;s:5:"count";i:20;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";i:0;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";i:0;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";i:0;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}i:215;a:11:{s:4:"debm";d:9000.0;s:4:"hull";d:56000.0;s:4:"debc";d:12000.0;s:5:"weaps";d:560.0;s:13:"shield_damage";i:0;s:4:"cost";i:85000;s:5:"count";i:5;s:9:"damaged_s";i:0;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:320.0;}}}";}i:1;a:8:{s:8:"defpower";d:58808.4;s:8:"defblock";d:16589.3290353;s:8:"attfires";i:187;s:13:"defend_fleets";s:1519:"a:1:{i:0;a:6:{i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";d:252.0;s:4:"cost";i:2000;s:5:"count";i:94;s:9:"damaged_s";i:18;s:9:"damaged_h";i:15;s:11:"hull_damage";d:3660.375;s:7:"shields";d:14.0;}i:402;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:70.0;s:13:"shield_damage";d:175.0;s:4:"cost";i:2000;s:5:"count";i:91;s:9:"damaged_s";i:10;s:9:"damaged_h";i:11;s:11:"hull_damage";d:2225.0;s:7:"shields";d:17.5;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";d:982.596740741;s:4:"cost";i:8000;s:5:"count";i:46;s:9:"damaged_s";i:16;s:9:"damaged_h";i:12;s:11:"hull_damage";d:8530.6974321;s:7:"shields";d:70.0;}i:404;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:24500.0;s:4:"debc";d:0.0;s:5:"weaps";d:770.0;s:13:"shield_damage";d:1687.354;s:4:"cost";i:37000;s:5:"count";i:20;s:9:"damaged_s";i:14;s:9:"damaged_h";i:11;s:11:"hull_damage";d:6872.646;s:7:"shields";d:140.0;}i:405;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:105.0;s:13:"shield_damage";d:2327.07071438;s:4:"cost";i:8000;s:5:"count";i:8;s:9:"damaged_s";i:7;s:9:"damaged_h";i:6;s:11:"hull_damage";d:6907.49238538;s:7:"shields";d:350.0;}i:406;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:70000.0;s:4:"debc";d:0.0;s:5:"weaps";d:2100.0;s:13:"shield_damage";d:1319.80758017;s:4:"cost";i:130000;s:5:"count";i:9;s:9:"damaged_s";i:7;s:9:"damaged_h";i:5;s:11:"hull_damage";d:6615.2244898;s:7:"shields";d:210.0;}}}";s:8:"deffires";i:294;s:8:"attpower";d:407200.0;s:8:"attblock";d:21281.2737984;s:13:"attack_fleets";s:2111:"a:1:{i:47;a:8:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:184.0;s:4:"cost";i:4000;s:5:"count";i:47;s:9:"damaged_s";i:23;s:9:"damaged_h";i:23;s:11:"hull_damage";d:4946.03819444;s:7:"shields";d:8.0;}i:205;a:11:{s:4:"debm";d:1800.0;s:4:"hull";d:8000.0;s:4:"debc";d:1200.0;s:5:"weaps";d:120.0;s:13:"shield_damage";d:240.0;s:4:"cost";i:10000;s:5:"count";i:16;s:9:"damaged_s";i:12;s:9:"damaged_h";i:11;s:11:"hull_damage";d:5970.1207883;s:7:"shields";d:20.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:744.27567867;s:4:"cost";i:29000;s:5:"count";i:49;s:9:"damaged_s";i:19;s:9:"damaged_h";i:21;s:11:"hull_damage";d:2658.86590863;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:2400.8072092;s:4:"cost";i:60000;s:5:"count";i:20;s:9:"damaged_s";i:18;s:9:"damaged_h";i:12;s:11:"hull_damage";d:2198.1927908;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:3230.70710059;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:14;s:9:"damaged_h";i:4;s:11:"hull_damage";d:3615.29289941;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:4422.64444444;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:19;s:9:"damaged_h";i:5;s:11:"hull_damage";d:5063.05555556;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:8337.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}i:215;a:11:{s:4:"debm";d:9000.0;s:4:"hull";d:56000.0;s:4:"debc";d:12000.0;s:5:"weaps";d:560.0;s:13:"shield_damage";d:1257.13936548;s:4:"cost";i:85000;s:5:"count";i:4;s:9:"damaged_s";i:4;s:9:"damaged_h";i:4;s:11:"hull_damage";d:5656.06063452;s:7:"shields";d:320.0;}}}";}i:2;a:8:{s:8:"defpower";d:54824.0;s:8:"defblock";d:3434.16482163;s:8:"attfires";i:178;s:13:"defend_fleets";s:1287:"a:1:{i:0;a:5:{i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";d:308.0;s:4:"cost";i:2000;s:5:"count";i:77;s:9:"damaged_s";i:22;s:9:"damaged_h";i:20;s:11:"hull_damage";d:4868.10467961;s:7:"shields";d:14.0;}i:402;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:70.0;s:13:"shield_damage";d:280.0;s:4:"cost";i:2000;s:5:"count";i:79;s:9:"damaged_s";i:16;s:9:"damaged_h";i:22;s:11:"hull_damage";d:4073.94565217;s:7:"shields";d:17.5;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";d:1317.79974004;s:4:"cost";i:8000;s:5:"count";i:38;s:9:"damaged_s";i:21;s:9:"damaged_h";i:17;s:11:"hull_damage";d:14358.3566787;s:7:"shields";d:70.0;}i:404;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:24500.0;s:4:"debc";d:0.0;s:5:"weaps";d:770.0;s:13:"shield_damage";d:2161.0788034;s:4:"cost";i:37000;s:5:"count";i:17;s:9:"damaged_s";i:16;s:9:"damaged_h";i:16;s:11:"hull_damage";d:15357.6633866;s:7:"shields";d:140.0;}i:406;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:70000.0;s:4:"debc";d:0.0;s:5:"weaps";d:2100.0;s:13:"shield_damage";d:1673.11531347;s:4:"cost";i:130000;s:5:"count";i:8;s:9:"damaged_s";i:8;s:9:"damaged_h";i:8;s:11:"hull_damage";d:21700.2465265;s:7:"shields";d:210.0;}}}";s:8:"deffires";i:268;s:8:"attpower";d:405720.0;s:8:"attblock";d:13611.5385642;s:13:"attack_fleets";s:2116:"a:1:{i:47;a:8:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:224.0;s:4:"cost";i:4000;s:5:"count";i:40;s:9:"damaged_s";i:28;s:9:"damaged_h";i:28;s:11:"hull_damage";d:7422.57596475;s:7:"shields";d:8.0;}i:205;a:11:{s:4:"debm";d:1800.0;s:4:"hull";d:8000.0;s:4:"debc";d:1200.0;s:5:"weaps";d:120.0;s:13:"shield_damage";d:240.0;s:4:"cost";i:10000;s:5:"count";i:13;s:9:"damaged_s";i:12;s:9:"damaged_h";i:13;s:11:"hull_damage";d:7472.17249184;s:7:"shields";d:20.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:1472.40059028;s:4:"cost";i:29000;s:5:"count";i:49;s:9:"damaged_s";i:37;s:9:"damaged_h";i:37;s:11:"hull_damage";d:9651.74099703;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:3076.91027222;s:4:"cost";i:60000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:20;s:11:"hull_damage";d:9068.08972778;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:6089.24037656;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:10;s:11:"hull_damage";d:5677.75962344;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:6340.56116653;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:8;s:11:"hull_damage";d:7310.13883347;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:15589.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}i:215;a:11:{s:4:"debm";d:9000.0;s:4:"hull";d:56000.0;s:4:"debc";d:12000.0;s:5:"weaps";d:560.0;s:13:"shield_damage";d:959.999956984;s:4:"cost";i:85000;s:5:"count";i:3;s:9:"damaged_s";i:3;s:9:"damaged_h";i:3;s:11:"hull_damage";d:11476.900043;s:7:"shields";d:320.0;}}}";}i:3;a:8:{s:8:"defpower";d:46382.0;s:8:"defblock";d:1690.82137201;s:8:"attfires";i:167;s:13:"defend_fleets";s:1287:"a:1:{i:0;a:5:{i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";d:420.0;s:4:"cost";i:2000;s:5:"count";i:67;s:9:"damaged_s";i:30;s:9:"damaged_h";i:27;s:11:"hull_damage";d:7008.3085435;s:7:"shields";d:14.0;}i:402;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:70.0;s:13:"shield_damage";d:472.5;s:4:"cost";i:2000;s:5:"count";i:65;s:9:"damaged_s";i:27;s:9:"damaged_h";i:31;s:11:"hull_damage";d:10785.8560294;s:7:"shields";d:17.5;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";d:1687.04345147;s:4:"cost";i:8000;s:5:"count";i:32;s:9:"damaged_s";i:26;s:9:"damaged_h";i:23;s:11:"hull_damage";d:22031.1753726;s:7:"shields";d:70.0;}i:404;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:24500.0;s:4:"debc";d:0.0;s:5:"weaps";d:770.0;s:13:"shield_damage";d:2086.31463654;s:4:"cost";i:37000;s:5:"count";i:15;s:9:"damaged_s";i:15;s:9:"damaged_h";i:15;s:11:"hull_damage";d:33007.0520556;s:7:"shields";d:140.0;}i:406;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:70000.0;s:4:"debc";d:0.0;s:5:"weaps";d:2100.0;s:13:"shield_damage";d:1049.95714092;s:4:"cost";i:130000;s:5:"count";i:5;s:9:"damaged_s";i:5;s:9:"damaged_h";i:5;s:11:"hull_damage";d:23460.0606757;s:7:"shields";d:210.0;}}}";s:8:"deffires";i:219;s:8:"attpower";d:404520.0;s:8:"attblock";d:7469.69458369;s:13:"attack_fleets";s:1853:"a:1:{i:47;a:7:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:256.0;s:4:"cost";i:4000;s:5:"count";i:37;s:9:"damaged_s";i:32;s:9:"damaged_h";i:32;s:11:"hull_damage";d:16398.129311;s:7:"shields";d:8.0;}i:205;a:11:{s:4:"debm";d:1800.0;s:4:"hull";d:8000.0;s:4:"debc";d:1200.0;s:5:"weaps";d:120.0;s:13:"shield_damage";d:200.0;s:4:"cost";i:10000;s:5:"count";i:10;s:9:"damaged_s";i:10;s:9:"damaged_h";i:10;s:11:"hull_damage";d:13637.8133387;s:7:"shields";d:20.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:1595.71733462;s:4:"cost";i:29000;s:5:"count";i:49;s:9:"damaged_s";i:40;s:9:"damaged_h";i:38;s:11:"hull_damage";d:15786.4242527;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:3016.64760943;s:4:"cost";i:60000;s:5:"count";i:19;s:9:"damaged_s";i:19;s:9:"damaged_h";i:19;s:11:"hull_damage";d:16216.9023906;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:7354.74668074;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:17;s:11:"hull_damage";d:6715.25331926;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:7464.69532147;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:17;s:11:"hull_damage";d:9350.00467853;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:20370.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}}}";}i:4;a:8:{s:8:"defpower";d:35952.0;s:8:"defblock";d:766.968869852;s:8:"attfires";i:157;s:13:"defend_fleets";s:1285:"a:1:{i:0;a:5:{i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";d:462.0;s:4:"cost";i:2000;s:5:"count";i:57;s:9:"damaged_s";i:33;s:9:"damaged_h";i:29;s:11:"hull_damage";d:7159.584064;s:7:"shields";d:14.0;}i:402;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:70.0;s:13:"shield_damage";d:402.5;s:4:"cost";i:2000;s:5:"count";i:44;s:9:"damaged_s";i:23;s:9:"damaged_h";i:27;s:11:"hull_damage";d:11032.8191385;s:7:"shields";d:17.5;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";d:1331.83387607;s:4:"cost";i:8000;s:5:"count";i:23;s:9:"damaged_s";i:20;s:9:"damaged_h";i:18;s:11:"hull_damage";d:20578.7826924;s:7:"shields";d:70.0;}i:404;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:24500.0;s:4:"debc";d:0.0;s:5:"weaps";d:770.0;s:13:"shield_damage";d:1538.95023575;s:4:"cost";i:37000;s:5:"count";i:11;s:9:"damaged_s";i:11;s:9:"damaged_h";i:11;s:11:"hull_damage";d:37810.6029209;s:7:"shields";d:140.0;}i:406;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:70000.0;s:4:"debc";d:0.0;s:5:"weaps";d:2100.0;s:13:"shield_damage";d:629.999986961;s:4:"cost";i:130000;s:5:"count";i:3;s:9:"damaged_s";i:3;s:9:"damaged_h";i:3;s:11:"hull_damage";d:26028.010703;s:7:"shields";d:210.0;}}}";s:8:"deffires";i:184;s:8:"attpower";d:401560.0;s:8:"attblock";d:8884.42816869;s:13:"attack_fleets";s:1850:"a:1:{i:47;a:7:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:232.0;s:4:"cost";i:4000;s:5:"count";i:32;s:9:"damaged_s";i:29;s:9:"damaged_h";i:30;s:11:"hull_damage";d:15800.7232947;s:7:"shields";d:8.0;}i:205;a:11:{s:4:"debm";d:1800.0;s:4:"hull";d:8000.0;s:4:"debc";d:1200.0;s:5:"weaps";d:120.0;s:13:"shield_damage";d:100.0;s:4:"cost";i:10000;s:5:"count";i:5;s:9:"damaged_s";i:5;s:9:"damaged_h";i:5;s:11:"hull_damage";d:12848.2400027;s:7:"shields";d:20.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:1597.23277688;s:4:"cost";i:29000;s:5:"count";i:47;s:9:"damaged_s";i:40;s:9:"damaged_h";i:38;s:11:"hull_damage";d:16223.194813;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:2874.58425669;s:4:"cost";i:60000;s:5:"count";i:18;s:9:"damaged_s";i:18;s:9:"damaged_h";i:18;s:11:"hull_damage";d:20828.0420591;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:7868.42844387;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:20;s:11:"hull_damage";d:9834.57155613;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:7865.98963752;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:19;s:11:"hull_damage";d:13113.7103625;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:28224.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}}}";}i:5;a:8:{s:8:"defpower";d:25067.0;s:8:"defblock";d:491.287549247;s:8:"attfires";i:144;s:13:"defend_fleets";s:767:"a:1:{i:0;a:3:{i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";d:350.0;s:4:"cost";i:2000;s:5:"count";i:39;s:9:"damaged_s";i:25;s:9:"damaged_h";i:27;s:11:"hull_damage";d:8174.623143;s:7:"shields";d:14.0;}i:402;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:70.0;s:13:"shield_damage";d:262.5;s:4:"cost";i:2000;s:5:"count";i:26;s:9:"damaged_s";i:15;s:9:"damaged_h";i:20;s:11:"hull_damage";d:9394.05151436;s:7:"shields";d:17.5;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";d:947.071648029;s:4:"cost";i:8000;s:5:"count";i:15;s:9:"damaged_s";i:14;s:9:"damaged_h";i:13;s:11:"hull_damage";d:17241.8080724;s:7:"shields";d:70.0;}}}";s:8:"deffires";i:138;s:8:"attpower";d:399320.0;s:8:"attblock";d:3217.1467377;s:13:"attack_fleets";s:1598:"a:1:{i:47;a:6:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:216.0;s:4:"cost";i:4000;s:5:"count";i:28;s:9:"damaged_s";i:27;s:9:"damaged_h";i:28;s:11:"hull_damage";d:15666.9473654;s:7:"shields";d:8.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:1678.21956579;s:4:"cost";i:29000;s:5:"count";i:46;s:9:"damaged_s";i:42;s:9:"damaged_h";i:39;s:11:"hull_damage";d:16979.3451631;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:2558.61219485;s:4:"cost";i:60000;s:5:"count";i:16;s:9:"damaged_s";i:16;s:9:"damaged_h";i:16;s:11:"hull_damage";d:24913.7419159;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:7961.58254969;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:20;s:11:"hull_damage";d:13297.4174503;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:7943.96754232;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:19;s:11:"hull_damage";d:17872.7324577;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:31129.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}}}";}i:6;a:8:{s:8:"defpower";d:6629.0;s:8:"defblock";d:477.198768868;s:8:"attfires";i:132;s:13:"defend_fleets";s:514:"a:1:{i:0;a:2:{i:401;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:1400.0;s:4:"debc";d:0.0;s:5:"weaps";d:56.0;s:13:"shield_damage";d:84.0;s:4:"cost";i:2000;s:5:"count";i:7;s:9:"damaged_s";i:6;s:9:"damaged_h";i:7;s:11:"hull_damage";d:3123.35508834;s:7:"shields";d:14.0;}i:403;a:11:{s:4:"debm";d:0.0;s:4:"hull";d:5600.0;s:4:"debc";d:0.0;s:5:"weaps";d:175.0;s:13:"shield_damage";d:139.770416897;s:4:"cost";i:8000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:2;s:11:"hull_damage";d:5679.32687006;s:7:"shields";d:70.0;}}}";s:8:"deffires";i:80;s:8:"attpower";d:396640.0;s:8:"attblock";d:1771.26626909;s:13:"attack_fleets";s:1598:"a:1:{i:47;a:6:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:160.0;s:4:"cost";i:4000;s:5:"count";i:21;s:9:"damaged_s";i:20;s:9:"damaged_h";i:21;s:11:"hull_damage";d:12569.7570897;s:7:"shields";d:8.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:1718.52673771;s:4:"cost";i:29000;s:5:"count";i:46;s:9:"damaged_s";i:43;s:9:"damaged_h";i:41;s:11:"hull_damage";d:17471.0379912;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:2559.43775401;s:4:"cost";i:60000;s:5:"count";i:16;s:9:"damaged_s";i:16;s:9:"damaged_h";i:16;s:11:"hull_damage";d:25885.9163568;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:7976.99805339;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:20;s:11:"hull_damage";d:14241.0019466;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:7964.68557662;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:19;s:11:"hull_damage";d:18636.0144234;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:32823.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}}}";}i:7;a:8:{s:8:"defpower";d:742.0;s:8:"defblock";d:14.2295831025;s:8:"attfires";i:22;s:13:"defend_fleets";s:6:"a:0:{}";s:8:"deffires";i:9;s:8:"attpower";d:1160.0;s:8:"attblock";d:297.985220787;s:13:"attack_fleets";s:1598:"a:1:{i:47;a:6:{i:204;a:11:{s:4:"debm";d:900.0;s:4:"hull";d:3200.0;s:4:"debc";d:300.0;s:5:"weaps";d:40.0;s:13:"shield_damage";d:168.0;s:4:"cost";i:4000;s:5:"count";i:21;s:9:"damaged_s";i:21;s:9:"damaged_h";i:21;s:11:"hull_damage";d:12673.7570897;s:7:"shields";d:8.0;}i:206;a:11:{s:4:"debm";d:6000.0;s:4:"hull";d:21600.0;s:4:"debc";d:2100.0;s:5:"weaps";d:320.0;s:13:"shield_damage";d:1718.56099963;s:4:"cost";i:29000;s:5:"count";i:46;s:9:"damaged_s";i:43;s:9:"damaged_h";i:41;s:11:"hull_damage";d:17527.0037292;s:7:"shields";d:40.0;}i:207;a:11:{s:4:"debm";d:13500.0;s:4:"hull";d:48000.0;s:4:"debc";d:4500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:2559.47289439;s:4:"cost";i:60000;s:5:"count";i:16;s:9:"damaged_s";i:16;s:9:"damaged_h";i:16;s:11:"hull_damage";d:26060.8812164;s:7:"shields";d:160.0;}i:211;a:11:{s:4:"debm";d:15000.0;s:4:"hull";d:60000.0;s:4:"debc";d:7500.0;s:5:"weaps";d:800.0;s:13:"shield_damage";d:7978.14815072;s:4:"cost";i:90000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:20;s:11:"hull_damage";d:14295.8518493;s:7:"shields";d:400.0;}i:213;a:11:{s:4:"debm";d:18000.0;s:4:"hull";d:88000.0;s:4:"debc";d:15000.0;s:5:"weaps";d:1600.0;s:13:"shield_damage";d:7966.45129779;s:4:"cost";i:125000;s:5:"count";i:20;s:9:"damaged_s";i:20;s:9:"damaged_h";i:19;s:11:"hull_damage";d:18690.2487022;s:7:"shields";d:400.0;}i:214;a:11:{s:4:"debm";d:1500000.0;s:4:"hull";d:7200000.0;s:4:"debc";d:1200000.0;s:5:"weaps";d:160000.0;s:13:"shield_damage";d:33110.7;s:4:"cost";i:10000000;s:5:"count";i:2;s:9:"damaged_s";i:2;s:9:"damaged_h";i:0;s:11:"hull_damage";i:0;s:7:"shields";d:40000.0;}}}";}}s:3:"won";s:1:"a";s:7:"debrmet";d:186300.0;s:7:"attlost";i:1097000;}
+
+Results:
+Array
+(
+    [debrcry] => 120300
+    [deflost] => 3048000
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [defpower] => 0
+                    [defblock] => 0
+                    [attfires] => 0
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [202] => Array
+                                        (
+                                            [debm] => 600
+                                            [hull] => 2800
+                                            [debc] => 600
+                                            [weaps] => 3.5
+                                            [shield_damage] => 0
+                                            [cost] => 4000
+                                            [count] => 2
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 7
+                                        )
+
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 0
+                                            [cost] => 2000
+                                            [count] => 100
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 14
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 70
+                                            [shield_damage] => 0
+                                            [cost] => 2000
+                                            [count] => 100
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 17.5
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 0
+                                            [cost] => 8000
+                                            [count] => 50
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 70
+                                        )
+
+                                    [404] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 24500
+                                            [debc] => 0
+                                            [weaps] => 770
+                                            [shield_damage] => 0
+                                            [cost] => 37000
+                                            [count] => 20
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 140
+                                        )
+
+                                    [405] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 105
+                                            [shield_damage] => 0
+                                            [cost] => 8000
+                                            [count] => 10
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 350
+                                        )
+
+                                    [406] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 70000
+                                            [debc] => 0
+                                            [weaps] => 2100
+                                            [shield_damage] => 0
+                                            [cost] => 130000
+                                            [count] => 10
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 210
+                                        )
+
+                                    [407] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 14000
+                                            [debc] => 0
+                                            [weaps] => 0.7
+                                            [shield_damage] => 0
+                                            [cost] => 20000
+                                            [count] => 1
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 1400
+                                        )
+
+                                    [408] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 70000
+                                            [debc] => 0
+                                            [weaps] => 0.7
+                                            [shield_damage] => 0
+                                            [cost] => 100000
+                                            [count] => 1
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 7000
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 0
+                    [attpower] => 0
+                    [attblock] => 0
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 0
+                                            [cost] => 4000
+                                            [count] => 50
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 8
+                                        )
+
+                                    [205] => Array
+                                        (
+                                            [debm] => 1800
+                                            [hull] => 8000
+                                            [debc] => 1200
+                                            [weaps] => 120
+                                            [shield_damage] => 0
+                                            [cost] => 10000
+                                            [count] => 20
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 20
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 0
+                                            [cost] => 29000
+                                            [count] => 50
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 0
+                                            [cost] => 60000
+                                            [count] => 20
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 0
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 0
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 0
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                    [215] => Array
+                                        (
+                                            [debm] => 9000
+                                            [hull] => 56000
+                                            [debc] => 12000
+                                            [weaps] => 560
+                                            [shield_damage] => 0
+                                            [cost] => 85000
+                                            [count] => 5
+                                            [damaged_s] => 0
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 320
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [defpower] => 58808.4
+                    [defblock] => 16589.3290353
+                    [attfires] => 187
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 252
+                                            [cost] => 2000
+                                            [count] => 94
+                                            [damaged_s] => 18
+                                            [damaged_h] => 15
+                                            [hull_damage] => 3660.375
+                                            [shields] => 14
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 70
+                                            [shield_damage] => 175
+                                            [cost] => 2000
+                                            [count] => 91
+                                            [damaged_s] => 10
+                                            [damaged_h] => 11
+                                            [hull_damage] => 2225
+                                            [shields] => 17.5
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 982.596740741
+                                            [cost] => 8000
+                                            [count] => 46
+                                            [damaged_s] => 16
+                                            [damaged_h] => 12
+                                            [hull_damage] => 8530.6974321
+                                            [shields] => 70
+                                        )
+
+                                    [404] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 24500
+                                            [debc] => 0
+                                            [weaps] => 770
+                                            [shield_damage] => 1687.354
+                                            [cost] => 37000
+                                            [count] => 20
+                                            [damaged_s] => 14
+                                            [damaged_h] => 11
+                                            [hull_damage] => 6872.646
+                                            [shields] => 140
+                                        )
+
+                                    [405] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 105
+                                            [shield_damage] => 2327.07071438
+                                            [cost] => 8000
+                                            [count] => 8
+                                            [damaged_s] => 7
+                                            [damaged_h] => 6
+                                            [hull_damage] => 6907.49238538
+                                            [shields] => 350
+                                        )
+
+                                    [406] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 70000
+                                            [debc] => 0
+                                            [weaps] => 2100
+                                            [shield_damage] => 1319.80758017
+                                            [cost] => 130000
+                                            [count] => 9
+                                            [damaged_s] => 7
+                                            [damaged_h] => 5
+                                            [hull_damage] => 6615.2244898
+                                            [shields] => 210
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 294
+                    [attpower] => 407200
+                    [attblock] => 21281.2737984
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 184
+                                            [cost] => 4000
+                                            [count] => 47
+                                            [damaged_s] => 23
+                                            [damaged_h] => 23
+                                            [hull_damage] => 4946.03819444
+                                            [shields] => 8
+                                        )
+
+                                    [205] => Array
+                                        (
+                                            [debm] => 1800
+                                            [hull] => 8000
+                                            [debc] => 1200
+                                            [weaps] => 120
+                                            [shield_damage] => 240
+                                            [cost] => 10000
+                                            [count] => 16
+                                            [damaged_s] => 12
+                                            [damaged_h] => 11
+                                            [hull_damage] => 5970.1207883
+                                            [shields] => 20
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 744.27567867
+                                            [cost] => 29000
+                                            [count] => 49
+                                            [damaged_s] => 19
+                                            [damaged_h] => 21
+                                            [hull_damage] => 2658.86590863
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 2400.8072092
+                                            [cost] => 60000
+                                            [count] => 20
+                                            [damaged_s] => 18
+                                            [damaged_h] => 12
+                                            [hull_damage] => 2198.1927908
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 3230.70710059
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 14
+                                            [damaged_h] => 4
+                                            [hull_damage] => 3615.29289941
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 4422.64444444
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 19
+                                            [damaged_h] => 5
+                                            [hull_damage] => 5063.05555556
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 8337.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                    [215] => Array
+                                        (
+                                            [debm] => 9000
+                                            [hull] => 56000
+                                            [debc] => 12000
+                                            [weaps] => 560
+                                            [shield_damage] => 1257.13936548
+                                            [cost] => 85000
+                                            [count] => 4
+                                            [damaged_s] => 4
+                                            [damaged_h] => 4
+                                            [hull_damage] => 5656.06063452
+                                            [shields] => 320
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [defpower] => 54824
+                    [defblock] => 3434.16482163
+                    [attfires] => 178
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 308
+                                            [cost] => 2000
+                                            [count] => 77
+                                            [damaged_s] => 22
+                                            [damaged_h] => 20
+                                            [hull_damage] => 4868.10467961
+                                            [shields] => 14
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 70
+                                            [shield_damage] => 280
+                                            [cost] => 2000
+                                            [count] => 79
+                                            [damaged_s] => 16
+                                            [damaged_h] => 22
+                                            [hull_damage] => 4073.94565217
+                                            [shields] => 17.5
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 1317.79974004
+                                            [cost] => 8000
+                                            [count] => 38
+                                            [damaged_s] => 21
+                                            [damaged_h] => 17
+                                            [hull_damage] => 14358.3566787
+                                            [shields] => 70
+                                        )
+
+                                    [404] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 24500
+                                            [debc] => 0
+                                            [weaps] => 770
+                                            [shield_damage] => 2161.0788034
+                                            [cost] => 37000
+                                            [count] => 17
+                                            [damaged_s] => 16
+                                            [damaged_h] => 16
+                                            [hull_damage] => 15357.6633866
+                                            [shields] => 140
+                                        )
+
+                                    [406] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 70000
+                                            [debc] => 0
+                                            [weaps] => 2100
+                                            [shield_damage] => 1673.11531347
+                                            [cost] => 130000
+                                            [count] => 8
+                                            [damaged_s] => 8
+                                            [damaged_h] => 8
+                                            [hull_damage] => 21700.2465265
+                                            [shields] => 210
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 268
+                    [attpower] => 405720
+                    [attblock] => 13611.5385642
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 224
+                                            [cost] => 4000
+                                            [count] => 40
+                                            [damaged_s] => 28
+                                            [damaged_h] => 28
+                                            [hull_damage] => 7422.57596475
+                                            [shields] => 8
+                                        )
+
+                                    [205] => Array
+                                        (
+                                            [debm] => 1800
+                                            [hull] => 8000
+                                            [debc] => 1200
+                                            [weaps] => 120
+                                            [shield_damage] => 240
+                                            [cost] => 10000
+                                            [count] => 13
+                                            [damaged_s] => 12
+                                            [damaged_h] => 13
+                                            [hull_damage] => 7472.17249184
+                                            [shields] => 20
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 1472.40059028
+                                            [cost] => 29000
+                                            [count] => 49
+                                            [damaged_s] => 37
+                                            [damaged_h] => 37
+                                            [hull_damage] => 9651.74099703
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 3076.91027222
+                                            [cost] => 60000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 20
+                                            [hull_damage] => 9068.08972778
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 6089.24037656
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 10
+                                            [hull_damage] => 5677.75962344
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 6340.56116653
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 8
+                                            [hull_damage] => 7310.13883347
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 15589.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                    [215] => Array
+                                        (
+                                            [debm] => 9000
+                                            [hull] => 56000
+                                            [debc] => 12000
+                                            [weaps] => 560
+                                            [shield_damage] => 959.999956984
+                                            [cost] => 85000
+                                            [count] => 3
+                                            [damaged_s] => 3
+                                            [damaged_h] => 3
+                                            [hull_damage] => 11476.900043
+                                            [shields] => 320
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [defpower] => 46382
+                    [defblock] => 1690.82137201
+                    [attfires] => 167
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 420
+                                            [cost] => 2000
+                                            [count] => 67
+                                            [damaged_s] => 30
+                                            [damaged_h] => 27
+                                            [hull_damage] => 7008.3085435
+                                            [shields] => 14
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 70
+                                            [shield_damage] => 472.5
+                                            [cost] => 2000
+                                            [count] => 65
+                                            [damaged_s] => 27
+                                            [damaged_h] => 31
+                                            [hull_damage] => 10785.8560294
+                                            [shields] => 17.5
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 1687.04345147
+                                            [cost] => 8000
+                                            [count] => 32
+                                            [damaged_s] => 26
+                                            [damaged_h] => 23
+                                            [hull_damage] => 22031.1753726
+                                            [shields] => 70
+                                        )
+
+                                    [404] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 24500
+                                            [debc] => 0
+                                            [weaps] => 770
+                                            [shield_damage] => 2086.31463654
+                                            [cost] => 37000
+                                            [count] => 15
+                                            [damaged_s] => 15
+                                            [damaged_h] => 15
+                                            [hull_damage] => 33007.0520556
+                                            [shields] => 140
+                                        )
+
+                                    [406] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 70000
+                                            [debc] => 0
+                                            [weaps] => 2100
+                                            [shield_damage] => 1049.95714092
+                                            [cost] => 130000
+                                            [count] => 5
+                                            [damaged_s] => 5
+                                            [damaged_h] => 5
+                                            [hull_damage] => 23460.0606757
+                                            [shields] => 210
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 219
+                    [attpower] => 404520
+                    [attblock] => 7469.69458369
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 256
+                                            [cost] => 4000
+                                            [count] => 37
+                                            [damaged_s] => 32
+                                            [damaged_h] => 32
+                                            [hull_damage] => 16398.129311
+                                            [shields] => 8
+                                        )
+
+                                    [205] => Array
+                                        (
+                                            [debm] => 1800
+                                            [hull] => 8000
+                                            [debc] => 1200
+                                            [weaps] => 120
+                                            [shield_damage] => 200
+                                            [cost] => 10000
+                                            [count] => 10
+                                            [damaged_s] => 10
+                                            [damaged_h] => 10
+                                            [hull_damage] => 13637.8133387
+                                            [shields] => 20
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 1595.71733462
+                                            [cost] => 29000
+                                            [count] => 49
+                                            [damaged_s] => 40
+                                            [damaged_h] => 38
+                                            [hull_damage] => 15786.4242527
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 3016.64760943
+                                            [cost] => 60000
+                                            [count] => 19
+                                            [damaged_s] => 19
+                                            [damaged_h] => 19
+                                            [hull_damage] => 16216.9023906
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 7354.74668074
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 17
+                                            [hull_damage] => 6715.25331926
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 7464.69532147
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 17
+                                            [hull_damage] => 9350.00467853
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 20370.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [defpower] => 35952
+                    [defblock] => 766.968869852
+                    [attfires] => 157
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 462
+                                            [cost] => 2000
+                                            [count] => 57
+                                            [damaged_s] => 33
+                                            [damaged_h] => 29
+                                            [hull_damage] => 7159.584064
+                                            [shields] => 14
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 70
+                                            [shield_damage] => 402.5
+                                            [cost] => 2000
+                                            [count] => 44
+                                            [damaged_s] => 23
+                                            [damaged_h] => 27
+                                            [hull_damage] => 11032.8191385
+                                            [shields] => 17.5
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 1331.83387607
+                                            [cost] => 8000
+                                            [count] => 23
+                                            [damaged_s] => 20
+                                            [damaged_h] => 18
+                                            [hull_damage] => 20578.7826924
+                                            [shields] => 70
+                                        )
+
+                                    [404] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 24500
+                                            [debc] => 0
+                                            [weaps] => 770
+                                            [shield_damage] => 1538.95023575
+                                            [cost] => 37000
+                                            [count] => 11
+                                            [damaged_s] => 11
+                                            [damaged_h] => 11
+                                            [hull_damage] => 37810.6029209
+                                            [shields] => 140
+                                        )
+
+                                    [406] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 70000
+                                            [debc] => 0
+                                            [weaps] => 2100
+                                            [shield_damage] => 629.999986961
+                                            [cost] => 130000
+                                            [count] => 3
+                                            [damaged_s] => 3
+                                            [damaged_h] => 3
+                                            [hull_damage] => 26028.010703
+                                            [shields] => 210
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 184
+                    [attpower] => 401560
+                    [attblock] => 8884.42816869
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 232
+                                            [cost] => 4000
+                                            [count] => 32
+                                            [damaged_s] => 29
+                                            [damaged_h] => 30
+                                            [hull_damage] => 15800.7232947
+                                            [shields] => 8
+                                        )
+
+                                    [205] => Array
+                                        (
+                                            [debm] => 1800
+                                            [hull] => 8000
+                                            [debc] => 1200
+                                            [weaps] => 120
+                                            [shield_damage] => 100
+                                            [cost] => 10000
+                                            [count] => 5
+                                            [damaged_s] => 5
+                                            [damaged_h] => 5
+                                            [hull_damage] => 12848.2400027
+                                            [shields] => 20
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 1597.23277688
+                                            [cost] => 29000
+                                            [count] => 47
+                                            [damaged_s] => 40
+                                            [damaged_h] => 38
+                                            [hull_damage] => 16223.194813
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 2874.58425669
+                                            [cost] => 60000
+                                            [count] => 18
+                                            [damaged_s] => 18
+                                            [damaged_h] => 18
+                                            [hull_damage] => 20828.0420591
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 7868.42844387
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 20
+                                            [hull_damage] => 9834.57155613
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 7865.98963752
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 19
+                                            [hull_damage] => 13113.7103625
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 28224.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [defpower] => 25067
+                    [defblock] => 491.287549247
+                    [attfires] => 144
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 350
+                                            [cost] => 2000
+                                            [count] => 39
+                                            [damaged_s] => 25
+                                            [damaged_h] => 27
+                                            [hull_damage] => 8174.623143
+                                            [shields] => 14
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 70
+                                            [shield_damage] => 262.5
+                                            [cost] => 2000
+                                            [count] => 26
+                                            [damaged_s] => 15
+                                            [damaged_h] => 20
+                                            [hull_damage] => 9394.05151436
+                                            [shields] => 17.5
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 947.071648029
+                                            [cost] => 8000
+                                            [count] => 15
+                                            [damaged_s] => 14
+                                            [damaged_h] => 13
+                                            [hull_damage] => 17241.8080724
+                                            [shields] => 70
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 138
+                    [attpower] => 399320
+                    [attblock] => 3217.1467377
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 216
+                                            [cost] => 4000
+                                            [count] => 28
+                                            [damaged_s] => 27
+                                            [damaged_h] => 28
+                                            [hull_damage] => 15666.9473654
+                                            [shields] => 8
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 1678.21956579
+                                            [cost] => 29000
+                                            [count] => 46
+                                            [damaged_s] => 42
+                                            [damaged_h] => 39
+                                            [hull_damage] => 16979.3451631
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 2558.61219485
+                                            [cost] => 60000
+                                            [count] => 16
+                                            [damaged_s] => 16
+                                            [damaged_h] => 16
+                                            [hull_damage] => 24913.7419159
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 7961.58254969
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 20
+                                            [hull_damage] => 13297.4174503
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 7943.96754232
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 19
+                                            [hull_damage] => 17872.7324577
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 31129.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [defpower] => 6629
+                    [defblock] => 477.198768868
+                    [attfires] => 132
+                    [defend_fleets] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [401] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 1400
+                                            [debc] => 0
+                                            [weaps] => 56
+                                            [shield_damage] => 84
+                                            [cost] => 2000
+                                            [count] => 7
+                                            [damaged_s] => 6
+                                            [damaged_h] => 7
+                                            [hull_damage] => 3123.35508834
+                                            [shields] => 14
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [debm] => 0
+                                            [hull] => 5600
+                                            [debc] => 0
+                                            [weaps] => 175
+                                            [shield_damage] => 139.770416897
+                                            [cost] => 8000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 2
+                                            [hull_damage] => 5679.32687006
+                                            [shields] => 70
+                                        )
+
+                                )
+
+                        )
+
+                    [deffires] => 80
+                    [attpower] => 396640
+                    [attblock] => 1771.26626909
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 160
+                                            [cost] => 4000
+                                            [count] => 21
+                                            [damaged_s] => 20
+                                            [damaged_h] => 21
+                                            [hull_damage] => 12569.7570897
+                                            [shields] => 8
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 1718.52673771
+                                            [cost] => 29000
+                                            [count] => 46
+                                            [damaged_s] => 43
+                                            [damaged_h] => 41
+                                            [hull_damage] => 17471.0379912
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 2559.43775401
+                                            [cost] => 60000
+                                            [count] => 16
+                                            [damaged_s] => 16
+                                            [damaged_h] => 16
+                                            [hull_damage] => 25885.9163568
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 7976.99805339
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 20
+                                            [hull_damage] => 14241.0019466
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 7964.68557662
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 19
+                                            [hull_damage] => 18636.0144234
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 32823.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [7] => Array
+                (
+                    [defpower] => 742
+                    [defblock] => 14.2295831025
+                    [attfires] => 22
+                    [defend_fleets] => Array
+                        (
+                        )
+
+                    [deffires] => 9
+                    [attpower] => 1160
+                    [attblock] => 297.985220787
+                    [attack_fleets] => Array
+                        (
+                            [47] => Array
+                                (
+                                    [204] => Array
+                                        (
+                                            [debm] => 900
+                                            [hull] => 3200
+                                            [debc] => 300
+                                            [weaps] => 40
+                                            [shield_damage] => 168
+                                            [cost] => 4000
+                                            [count] => 21
+                                            [damaged_s] => 21
+                                            [damaged_h] => 21
+                                            [hull_damage] => 12673.7570897
+                                            [shields] => 8
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [debm] => 6000
+                                            [hull] => 21600
+                                            [debc] => 2100
+                                            [weaps] => 320
+                                            [shield_damage] => 1718.56099963
+                                            [cost] => 29000
+                                            [count] => 46
+                                            [damaged_s] => 43
+                                            [damaged_h] => 41
+                                            [hull_damage] => 17527.0037292
+                                            [shields] => 40
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [debm] => 13500
+                                            [hull] => 48000
+                                            [debc] => 4500
+                                            [weaps] => 800
+                                            [shield_damage] => 2559.47289439
+                                            [cost] => 60000
+                                            [count] => 16
+                                            [damaged_s] => 16
+                                            [damaged_h] => 16
+                                            [hull_damage] => 26060.8812164
+                                            [shields] => 160
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [debm] => 15000
+                                            [hull] => 60000
+                                            [debc] => 7500
+                                            [weaps] => 800
+                                            [shield_damage] => 7978.14815072
+                                            [cost] => 90000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 20
+                                            [hull_damage] => 14295.8518493
+                                            [shields] => 400
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [debm] => 18000
+                                            [hull] => 88000
+                                            [debc] => 15000
+                                            [weaps] => 1600
+                                            [shield_damage] => 7966.45129779
+                                            [cost] => 125000
+                                            [count] => 20
+                                            [damaged_s] => 20
+                                            [damaged_h] => 19
+                                            [hull_damage] => 18690.2487022
+                                            [shields] => 400
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [debm] => 1500000
+                                            [hull] => 7200000
+                                            [debc] => 1200000
+                                            [weaps] => 160000
+                                            [shield_damage] => 33110.7
+                                            [cost] => 10000000
+                                            [count] => 2
+                                            [damaged_s] => 2
+                                            [damaged_h] => 0
+                                            [hull_damage] => 0
+                                            [shields] => 40000
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [won] => a
+    [debrmet] => 186300
+    [attlost] => 1097000
+)
+
+
+

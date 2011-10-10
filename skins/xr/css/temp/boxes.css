@@ -1,0 +1,302 @@
+/* =Contentbox gross */
+div.content-box-xl {
+	margin:0px auto;
+	width:670px;
+	overflow:hidden;	
+}
+
+div.content-box-xl .header {
+	background:url(../img/navigation/Uebersicht/box_2_kopf.gif) no-repeat;
+	height:34px;
+}
+
+div.content-box-xl .content {
+	background:url(../img/navigation/Uebersicht/box_2_mitte.gif) repeat-y;
+}
+
+div.content-box-xl .content p{
+	padding:5px 20px;
+}
+
+div.content-box-xl .footer {
+	background:url(../img/navigation/Uebersicht/box_2_fuss.gif) no-repeat;
+	height:50px;
+}
+
+
+/* =Contentbox klein */
+.content-box-s {
+	margin:0px 0px 5px 0px;
+	width:222px;
+	float:left;
+	overflow:hidden;
+}
+
+.content-box-s .header {
+	background:url(../img/navigation/box_1_kopf.gif) no-repeat;
+	height:32px;
+	font-size:11px;
+	text-transform:uppercase;
+}
+
+.content-box-s .content {
+	background:url(../img/navigation/box_1_mitte.gif) repeat-y;
+	padding:0px 15px;
+}
+
+.content-box-s  p{	padding:5px 20px;}
+
+.content-box-s .footer {
+	background:url(../img/navigation/box_1_fuss.gif) no-repeat;
+	height:21px;
+}
+
+div.content-box-s .header h3 {
+	color:#767f88;
+	font-size:11px;
+	font-weight:700;
+	padding-top:11px;
+	width:222px;
+	text-align:center;
+}
+
+/********************************************************
+************* =VERSORGUNG ********************************
+********************************************************/
+
+#buttonz {
+	width:670px;
+	height:220px;
+  	background-image:url(../img/navigation/box_h220.gif);
+  	background-repeat:no-repeat;
+  	font-size: 12px;
+  	font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+  	color:#ffffff;  
+  	text-align:center;
+	margin:0px auto;
+}
+
+#buttonz h3 {
+	font-size:12px; 
+	font-weight:normal; 
+}
+
+#station #buttonz {
+  	background-image:url(../img/navigation/box_h150.gif);
+	height:150px;
+}
+
+#buttonz h2,
+#movement h3 a,
+#statistics h3 {
+	color:#576472; 
+	font: 700 12px Verdana, Arial, Helvetica, sans-serif; 
+	padding-top:9px; 
+	text-align:center;		
+}
+
+
+#buttonz ul#building { 
+	width:640px;
+	height:100px;
+	margin:5px auto 0px 17px;	
+	position:relative;
+}
+
+#station #buttonz ul#building { 
+	margin-top:10px;
+}
+
+#buttonz ul#building li {
+	width:100px;
+	height:100px;
+	background-repeat:no-repeat;
+	top:0px;
+	position:absolute;
+	list-style-type:none;	
+}
+
+#buttonz ul#building li a.detail_button:link,
+#buttonz ul#building li a.detail_button:visited {
+	display:block;
+	height:100px;
+	width:100px;
+	background:url(../img/navigation/ecke_neu_100.gif) no-repeat;	
+	color:#ff9600;
+	text-decoration:none;	
+}
+#buttonz ul#building li a.detail_button:hover, 
+/*#buttonz ul#building li a:focus,*/
+#buttonz ul#building li a.active
+{
+	background:url(../img/navigation/ecke_neu_100_mo.gif) no-repeat;
+	color:#ff9600;	
+	text-decoration:none;	
+}
+#buttonz ul#building li a:active {
+	display:block;
+	height:100px;
+	width:100px;
+	background:url(../img/navigation/ecke_neu_100.gif) no-repeat;	
+	color:#ff9600;	
+	text-decoration:none;	
+}
+
+/**************Construction*************************/
+/**************Gebäude*************************/
+#buttonz ul#building li div.construction a:link,
+#buttonz ul#building li div.construction a:visited,
+#buttonz ul#building li div.construction a:active {
+	display:block;
+	height:100px;
+	width:100px;
+	background:url(../img/navigation/ecke_neu_100b.gif) no-repeat;	
+	color:#ff9600;
+	text-decoration:none;
+}
+#buttonz ul#building li div.construction a:hover, 
+/*#buttonz ul#building li div.construction a:focus,*/
+#buttonz ul#building li div.construction a.active
+{
+	background:url(../img/navigation/ecke_neu_100b_mo.gif) no-repeat;
+	color:#ff9600;	
+	text-decoration:none;	
+}
+
+/**************Lager*************************/
+
+#buttonz ul#storage li div.construction a:link,
+#buttonz ul#storage li div.construction a:visited,
+#buttonz ul#storage li div.construction a:active {
+	display:block;
+	height:80px;
+	width:80px;
+	background:url(../img/navigation/ecke_neu_80b.gif) no-repeat;	
+	color:#ff9600;
+	text-decoration:none;
+}
+#buttonz ul#storage li div.construction a:hover, 
+/*#buttonz ul#storage li div.construction a:focus,*/
+#buttonz ul#storage li div.construction a.active
+{
+	background:url(../img/navigation/ecke_neu_80b_mo.gif) no-repeat;
+	color:#ff9600;	
+	text-decoration:none;	
+}
+
+/**************************************/
+
+
+#buttonz ul#building li#button1 {
+	left:0px;
+}
+
+#buttonz ul#building li#button2 {
+	left:107px;
+}
+
+#buttonz ul#building li#button3 {
+	left:214px;
+}
+#buttonz ul#building li#button4 {
+	left:321px;
+}
+#buttonz ul#building li#button5 {
+	left:428px;
+}
+#buttonz ul#building li#button6 {
+	left:535px;
+}
+#buttonz ul#building li#button7 {
+	left:642px;
+}
+#buttonz ul#building li#button8 {
+	left:749px;
+}
+
+
+/******************************************************
+*********** =Baubare Gebäude / ON     *****************
+*******************************************************/
+
+#buttonz ul#building li.on div.buildingimg,
+#buttonz ul#building li div.buildingimg div.construction div.pusher  {
+	background: url(../img/navigation/buildings-on.jpg) no-repeat;
+}
+
+
+
+#station #buttonz ul#building li.on div.buildingimg {
+	background: url(../img/navigation/station-on.jpg) no-repeat;
+}
+#station #buttonz ul#building li.off div.buildingimg {
+	background: url(../img/navigation/station-off.jpg) no-repeat;
+}
+#station #buttonz ul#building li.disabled div.buildingimg {
+	background: url(../img/navigation/station-disabled.jpg) no-repeat;
+}
+
+/*****************************************************
+*********** =Zu teure Gebäude / DISABLED  ************
+*******************************************************/
+
+#buttonz ul#building li.disabled div.buildingimg {
+	background: url(../img/navigation/buildings-disabled.jpg) no-repeat;
+}
+/*****************************************************
+*********** =Nicht erforschte Gebäude / OFF  ***********
+*******************************************************/
+
+#buttonz ul#building li.off div.buildingimg {
+	background: url(../img/navigation/buildings-off.jpg) no-repeat;
+}
+
+/**********************************
+*********** =Gebäude    ***********
+	1. on
+	2. off
+	3. disabled
+	4. schiebung :-)
+***********************************/
+
+#buttonz ul#building li.on div.supply1 div.buildingimg,
+#buttonz ul#building li.off div.supply1 div.buildingimg,
+#buttonz ul#building li.disabled div.supply1 div.buildingimg,
+#buttonz ul#building li div.supply1 div.buildingimg div.construction div.pusher {
+	background-position: -1000px 0px;
+}
+#buttonz ul#building li.on div.supply2 div.buildingimg,
+#buttonz ul#building li.off div.supply2 div.buildingimg,
+#buttonz ul#building li.disabled div.supply2 div.buildingimg,
+#buttonz ul#building li div.supply2 div.buildingimg div.construction div.pusher {
+	background-position: -1300px 0px;
+}
+
+#buttonz ul#building li.on div.supply3 div.buildingimg,
+#buttonz ul#building li.off div.supply3 div.buildingimg,
+#buttonz ul#building li.disabled div.supply3 div.buildingimg,
+#buttonz ul#building li div.supply3 div.buildingimg div.construction div.pusher {
+	background-position: -1200px 0px;
+}
+
+
+#buttonz ul#building li.on div.supply4 div.buildingimg,
+#buttonz ul#building li.off div.supply4 div.buildingimg,
+#buttonz ul#building li.disabled div.supply4 div.buildingimg,
+#buttonz ul#building li div.supply4 div.buildingimg div.construction div.pusher {
+	background-position: -1100px 0px;
+}
+
+#buttonz ul#building li.on div.supply12 div.buildingimg,
+#buttonz ul#building li.off div.supply12 div.buildingimg,
+#buttonz ul#building li.disabled div.supply12 div.buildingimg,
+#buttonz ul#building li div.supply12 div.buildingimg div.construction div.pusher {
+	background-position: -900px 0px;
+}
+
+#buttonz ul#building li.on div.supply212 div.buildingimg,
+#buttonz ul#building li.off div.supply212 div.buildingimg,
+#buttonz ul#building li.disabled div.supply212 div.buildingimg,
+#buttonz ul#building li div.supply212 div.buildingimg div.construction div.pusher {
+	background-position: -1700px 0px;
+}

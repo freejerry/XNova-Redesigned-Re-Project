@@ -1,0 +1,66 @@
+
+
+body
+{
+	color						: #FFFFFF;
+	margin-top					: 0px;
+	margin-left					: 0px;
+	margin-right				: 0px;
+	background-color			: #000000;
+	background-image			: url(images/background2.jpg);
+	background-attachment		: fixed;
+	background-repeat			: no-repeat;
+	background-position			: top center;
+	scrollbar-arrow-color		: #FFFFFF;
+	scrollbar-base-color		: #344566;
+	scrollbar-track-color		: #344566;
+	scrollbar-face-color		: #344566;
+	scrollbar-highlight-color	: #344566;
+	scrollbar-3dlight-color		: #465673;
+	scrollbar-darkshadow-color	: #344566;
+	scrollbar-shadow-color		: #465673;
+	font-size					: 12px;
+	font-family					: Tahoma,sans-serif;
+}
+
+td
+{
+	font-size					: 12px;
+	font-family					: Tahoma,sans-serif;
+}
+
+div.box
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.box .header
+{
+	background-image			: url(images/top.gif);
+	background-repeat			: no-repeat;
+	width						: 670px;
+	height						: 25px;
+	font-size					: 16px;
+	padding-top					: 5px;
+	overflow					: none;
+	max-height					: 30px;
+}
+.box .main
+{
+	background-image			: url(images/mid.gif);
+	background-repeat			: repeat-y;
+	width						: 670px;
+}
+.box .main span.content
+{
+	padding						: 25px;
+	text-align:					: left;
+}
+.box .footer
+{
+	background-image			: url(images/bot.gif);
+	background-repeat			: no-repeat;
+	width						: 670px;
+	height						: 15px;
+}

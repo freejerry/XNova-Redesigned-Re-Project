@@ -1,0 +1,115 @@
+<html> 
+<head> 
+	<title>XNova Redeisgned Install</title> 
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<meta http-equiv="content-type" content="text/html" />
+	
+	<script type="text/javascript">
+		//object detection to return the correct object depending upon broswer type. Used by the getAXHA(); function.
+		function getNewHttpObject() {
+			 var objType = false;
+			 try {
+				  objType = new ActiveXObject('Msxml2.XMLHTTP');
+			 } catch(e) {
+				  try {
+						objType = new ActiveXObject('Microsoft.XMLHTTP');
+				  } catch(e) {
+						objType = new XMLHttpRequest();
+				  }
+			 }
+			 return objType;
+		}
+
+		//Function used to update page content with new xhtml fragments by using a javascript object, the dom, and http.
+		function getAXAH(url,elementContainer,dofunction){
+			if (typeof dofunction == "undefined") { dofunction = false; }
+
+			var theHttpRequest = getNewHttpObject();
+			theHttpRequest.onreadystatechange = function() {processAXAH(elementContainer,dofunction);};
+			theHttpRequest.open("GET", url);
+			theHttpRequest.send(false);
+
+				function processAXAH(elementContainer,dofunction){
+					if (theHttpRequest.readyState == 4) {
+						if (theHttpRequest.status == 200) {
+							document.getElementById(elementContainer).innerHTML = theHttpRequest.responseText;
+							if(dofunction){ setTimeout(dofunction,0); }
+						} else {
+							document.getElementById(elementContainer).innerHTML="<p><span class='redtxt'>Error!<\/span> HTTP request return the following status message:&nbsp;" + theHttpRequest.statusText +"<\/p>";
+						}
+					}
+				}
+		}
+		
+		//Test connection
+		function test_import(){
+			document.getElementById('testbutton').value = 'Setting values...';
+			
+			url = './install.php?page=paysys_setup&public='+document.details.publickey.value+'&private='+document.details.privatekey.value;
+			
+			getAXAH(url,'ajaxdata','test_result()');
+		}
+		
+		//Test result of last function
+		function test_result(){
+			l = document.getElementById('ajaxdata').innerHTML
+			//alert(l)
+			
+			if(l == '0'){
+				alert('API key set.');
+				window.location.replace('./install.php?page=5');
+			}else if(l == '1'){
+				alert('Cannot open SETUP.PHP. Please check that this file exists.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else if(l == '2'){
+				alert('Cannot write to SETUP.PHP. Please CHMOD this file to 777.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else{
+				alert('Unexpected value was returned: '+l);
+				document.getElementById('testbutton').value = '>> Next';
+			}
+		}
+	</script>
+	
+</head> 
+ 
+<body> 
+<center>
+
+	<img src="./images/xnovaproject.png" /><br />
+	<img src="./install/stage4.png" /><br /><br />
+	
+	<div class="box">
+		<div class="header">Installation</div>
+		<div class="main">
+			<span class="content">
+				<span style="display:none;" id="ajaxdata"></span>
+				If you wish to use the UGamela Pay system, please enter your API keys here.<br />
+				If you do not wish to use it, please just leave these fields blank.<br />
+				If you decide to use it later, you can edit the keys in SETUP.PHP.<br />
+				<a href="http://pay.ugamelaplay.net/system/api.php?lang=en" target="blank_">Register for a key</a><br />
+				<form name="details">
+					<table>
+						<tr>
+							<td>Public API key:</td>
+							<td><input type="text" name="publickey" value="" /></td>
+						</tr>
+				
+						<tr>
+							<td>Private API key:</td>
+							<td><input type="text" name="privatekey" value="" /></td>
+						</tr>
+					</table>
+				</form>
+				Press next to set the API key.<br /><br />
+				
+				<input type="button" id="testbutton" onClick="test_import()" value=">> Next" />
+			</span>
+		</div>
+		<div class="footer" />
+	</div>
+	
+</center>	 
+</body> 
+</html> 

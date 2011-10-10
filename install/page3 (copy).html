@@ -1,0 +1,124 @@
+<html> 
+<head> 
+	<title>XNova Redeisgned Install</title> 
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<meta http-equiv="content-type" content="text/html" />
+	
+	<script type="text/javascript">
+		//object detection to return the correct object depending upon broswer type. Used by the getAXHA(); function.
+		function getNewHttpObject() {
+			 var objType = false;
+			 try {
+				  objType = new ActiveXObject('Msxml2.XMLHTTP');
+			 } catch(e) {
+				  try {
+						objType = new ActiveXObject('Microsoft.XMLHTTP');
+				  } catch(e) {
+						objType = new XMLHttpRequest();
+				  }
+			 }
+			 return objType;
+		}
+
+		//Function used to update page content with new xhtml fragments by using a javascript object, the dom, and http.
+		function getAXAH(url,elementContainer,dofunction){
+			if (typeof dofunction == "undefined") { dofunction = false; }
+
+			var theHttpRequest = getNewHttpObject();
+			theHttpRequest.onreadystatechange = function() {processAXAH(elementContainer,dofunction);};
+			theHttpRequest.open("GET", url);
+			theHttpRequest.send(false);
+
+				function processAXAH(elementContainer,dofunction){
+					if (theHttpRequest.readyState == 4) {
+						if (theHttpRequest.status == 200) {
+							document.getElementById(elementContainer).innerHTML = theHttpRequest.responseText;
+							if(dofunction){ setTimeout(dofunction,0); }
+						} else {
+							document.getElementById(elementContainer).innerHTML="<p><span class='redtxt'>Error!<\/span> HTTP request return the following status message:&nbsp;" + theHttpRequest.statusText +"<\/p>";
+						}
+					}
+				}
+		}
+		
+		//Test connection
+		function test_import(){
+			document.getElementById('testbutton').value = 'Importing...';
+			
+			url = './install.php?page=importdatabase&prefix='+document.details.prefix.value+'&cookies='+document.details.cookies.value;
+			
+			getAXAH(url,'ajaxdata','test_result()');
+		}
+		
+		//Test result of last function
+		function test_result(){
+			l = document.getElementById('ajaxdata').innerHTML
+			//alert(l)
+			
+			if(l == '0'){
+				alert('Database has been imported.');
+				window.location.replace('./install.php?page=4');
+			}else if(l == '1'){
+				alert('Cannot connect to database.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else if(l == '2'){
+				alert('Cannot connect to table.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else if(l == '3'){
+				alert('Cannot write to config1.php. Please CHMOD this file to 777.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else if(l == '4'){
+				alert('SQL Import file is corrupt, please visit http://xnovauk.com/ and download a new database.sql.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else if(l == '5'){
+				alert('Error in SQL Import, please visit http://xnovauk.com/ and download a new database.sql.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else if(l == '6'){
+				alert('Cannot write to the \'status\' file. Please CHMOD this to 777.');
+				document.getElementById('testbutton').value = '>> Next';
+			}else{
+				alert('Unexpected value was returned.');
+				document.getElementById('testbutton').value = '>> Next';
+			}
+		}
+	</script>
+	
+</head> 
+ 
+<body> 
+<center>
+
+	<img src="./images/xnovaproject.png" /><br />
+	<img src="./install/stage3.png" /><br /><br />
+	
+	<div class="box">
+		<div class="header">Installation</div>
+		<div class="main">
+			<span class="content">
+				<span style="display:none;" id="ajaxdata"></span>
+				You need to import the XNova Redesigned Database.<br />
+				<form name="details">
+					<table>
+						<tr>
+							<td>Table prefix:</td>
+							<td><input type="text" name="prefix" value="uni1_" /></td>
+						</tr>
+				
+						<tr>
+							<td>Cookie name: <a onclick="document.details.cookies.value = 'XR'+ (100 - -Math.floor(Math.random()*900)); return false;" href="#">[random]</a></td>
+							<td><input type="text" name="cookies" value="XR123" /></td>
+						</tr>
+					</table>
+				</form>
+				Press next to test import the database.<br /><br />
+				
+				<input type="button" id="testbutton" onClick="test_import()" value=">> Next" />
+			</span>
+		</div>
+		<div class="footer" />
+	</div>
+	
+</center>	 
+</body> 
+</html> 

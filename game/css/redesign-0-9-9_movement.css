@@ -1,0 +1,120 @@
+@charset "utf-8";#movement
+#planet{background-repeat:no-repeat;background-image:url(../img/header/movement/movement_header.jpg);height:250px;margin:0px
+auto;position:relative;width:654px;margin-bottom:3px}#movement .c-left,
+#movement .c-right{height:39px;width:28px;position:absolute;top:214px}#movement
+.fromto{margin:0px}#movement
+.fromto{width:669px}#movement .fromto
+.closed{height:28px;background:url(../img/navigation/movement-bg-open1.gif) no-repeat}#movement .fromto
+.opened{height:28px;background:url(../img/navigation/movement-bg-open0.gif) no-repeat}#movement .fromto
+.info{background:url(../img/navigation/fleet-bg-repeat-y.jpg) repeat-y 5px 0px;padding-bottom:0px}#movement .fromto .infoalldiv .info
+table{width:638px;margin:0px
+auto 0px auto}#movement .fromto .infoalldiv .info .origin,
+#movement .fromto .infoalldiv .info
+.dest{color:#a26d00;font-weight:700;font-size:11px}#movement .fromto .infoalldiv .info .origin,
+#movement .fromto .infoalldiv .info .start-coord{text-align:left}#movement .fromto .infoalldiv .info .dest,
+#movement .fromto .infoalldiv .info .end-coord{text-align:right}#movement .fromto .infoalldiv .info
+.arrival{text-align:center;border:1px
+solid #212930;font-size:14px}#movement .fromto .infoalldiv .info .arrival p
+span.small{font-size:11px}#movement .fromto .infoalldiv .info .arrival
+.time{font-weight:bold}#movement .fromto .infoalldiv .info div.distance img.startplanet,
+#movement .fromto .infoalldiv .info div.distance
+img.endplanet{float:left;margin-top:22px}#movement .fromto .infoalldiv .info div.distance
+img.startplanet{margin-left:23px}#movement .fromto .infoalldiv .info div.distance
+img.endplanet{margin-left:0px}#movement .fromto .infoalldiv .info div.distance
+div.route{display:inline;float:left;margin-left:4px;margin-right:4px;margin-top:37px;width:500px}#movement .fromto .infoalldiv .info .start-coord,
+#movement .fromto .infoalldiv .info .end-coord{color:#686868;font-size:11px}#movement .fromto .info-end{background:url(../img/navigation/fleetinfo-end.gif) no-repeat 2px 0px;height:15px;overflow:visible}#movement .fromto
+.distance{overflow:hidden;background:url(../img/navigation/fleet-distance-bg.jpg) no-repeat 0px 12px;height:80px}#movement h3
+a{text-decoration:none}#movement .fromto .opened a:link,
+#movement .fromto .opened a:visited,
+#movement .fromto .opened a:hover,
+#movement .fromto .opened a:active,
+#movement .fromto .opened a:focus,
+#movement .fromto .closed a:link,
+#movement .fromto .closed a:visited,
+#movement .fromto .closed a:hover,
+#movement .fromto .closed a:active,
+#movement .fromto .closed a:focus{font-size:11px;color:#848484;overflow:hidden;white-space:nowrap}#movement .fromto .opened a:hover,
+#movement .fromto .closed a:hover{color:#d7dcdf}#movement .fromto .opened a,
+#movement .fromto .closed
+a{display:block;text-align:center;padding-top:0px}#movement .fromto .opened a span,
+#movement .fromto .closed a
+span{display:block;padding:9px
+0px 0px 45px;text-align:left}a#recall:link,a#recall:visited,a#recall:hover,a#recall:active{width:16px;height:16px;background:url(../img/icons/recall.gif) no-repeat}a#federation:link,a#federation:visited,a#federation:hover,a#federation:active{width:16px;height:16px;background:url(../img/icons/allianceattack.gif) no-repeat}a#recall span,
+a#federation
+span{display:block;padding-top:10px}#movement #inhalt .fromto a
+span.attention{display:inline;color:#4f4f4f;padding:0px}#info{color:#fff;text-decoration:none}#movement #cargo, #movement
+#ships{float:left;display:inline;margin:0px
+0px 0px 0px}#movement
+#ships{margin-left:6px;display:inline}#movement #cargo,
+#movement
+#ships{width:316px;font-size:11px;float:left;display:inline}#movement #cargo div.head,
+#movement #ships
+div.head{padding-right:5px;background:url(../img/navigation/fleetinfo-top-bg-316.gif) no-repeat;height:15px;text-align:center}#movement #cargo div.footer,
+#movement #ships
+div.footer{height:6px;background:url(../img/navigation/fleetinfo-bottom-bg-316.gif) no-repeat}#movement #cargo .head span,
+#movement #ships .head
+span{padding:0px
+20px;font-size:11px;color:#848484;background-color:#0D1014}#movement #ships
+.shiptypes{background:url(../img/navigation/fleetinfo-middle-bg-316.gif) repeat-y;min-height:80px}#movement #cargo
+#costs{width:100%;color:#686868;background:url(../img/navigation/fleetinfo-middle-bg-316.gif) repeat-y;margin:0px;padding:10px
+0px}#movement #cargo #costs #resources
+li{width:80px}#movement #cargo #costs
+div{}#movement #cargo #costs
+ul#resources{padding:10px
+0px 0px 40px}#movement #ships ul
+li{float:left;list-style-type:none;list-style-image:none;list-style-position:outside;width:73px;height:28px;padding:2px
+3px 2px 1px;overflow:hidden;text-align:right}#movement #ships
+ul{margin-left:5px;padding:5px
+0px}#movement #ships ul li:hover{background-color:#1B1D1F}#movement #sftcontainer
+table#fleetTemplates{width:500px}#movement
+#sftcontainer{padding:8px
+0px 10px 0px}#movement #sftcontainer h3,
+#station #jumpgate h3,
+#station-moon #jumpgate h3,
+#fleet1 #sftcontainer
+h3{font-size:12px;color:#848484;font-weight:700;text-align:center;width:622px;padding:0;margin:0}#movement #sftcontainer
+input.button{background-color:#848484;color:#0E1012}#movement #sftcontainer
+select{width:175px}#movement div.fleet
+span{float:left}#movement
+.closed{background:url(../img/navigation/network-open-close2.gif) no-repeat 0px 0px}#movement .closed:hover{background:url(../img/navigation/network-open-close2.gif) no-repeat 0px -28px}#movement
+.open{background:url(../img/navigation/network-open-close2.gif) no-repeat 0px -56px}#movement .open:hover{background:url(../img/navigation/network-open-close2.gif) no-repeat 0px -84px}#movement
+.info{margin:5px
+0px 0px 7px}#movement .info
+img{border:0px
+none}#movement .info .countdown,
+#movement .info
+.mission{font-weight:700}#movement .info
+.mission{cursor:help}#movement .info .isolator,
+#movement .info .seperator,
+#movement .info .seperator2,
+#movement .info
+.direction{padding:0px
+3px}#movement .info
+.action{float:right;margin-right:15px}#movement .info .action
+a{display:inline}#movement
+div.fleet{font-size:11px;margin:0px;overflow:hidden;padding:0;height:28px;cursor:pointer}#movement
+.friendly{color:#4af74d}#movement
+.neutral{color:#fcce00}#movement
+.hostile{color:#d43635}#movement table.fleetinfo td,
+#movement table.fleetinfo
+th{text-align:left}#movement table.fleetinfo
+th{font-weight:700;color:#848484}#movement table.fleetinfo
+td.value{padding-left:5px;text-align:right}#movement
+div.fleetinfo{background:#10181F;border-left:1px solid #000;border-right:1px solid #000;border-bottom:1px solid #000;font-size:11px;margin:0px
+0px 2px 6px;width:653px}#movement div.fleetinfo
+.wrapper{background:#0B1014 url(../img/layout/sternen_strecke.jpg) 0px no-repeat;height:42px;margin:0px
+auto;position:relative}#movement div.fleetinfo .wrapper .origin,
+#movement div.fleetinfo .wrapper
+.destination{height:30px;top:5px;width:30px}#movement
+.fixed{position:absolute}#movement div.fleetinfo .wrapper
+.origin{left:30px}#movement div.fleetinfo .wrapper
+.destination{left:594px}#movement
+.route{height:16px;left:62px;top:14px;width:530px}div#changefleetname{margin:0px
+auto;padding-left:10px;width:629px}div#changefleetname
+.wrap{background:#13181D;border:1px
+solid #000;margin-bottom:5px;padding:5px}.buttonWrap{float:left;margin:0px;padding:5px
+0px;text-align:center;width:267px}.wrap
+.col{float:left;padding:10px
+0px 10px}.wrap
+.wrapInner{float:left;width:175px}#sftcontainer
+#h3{float:left;padding-bottom:15px}input.fix{height:18px;line-height:18px;width:150px}input.fix:focus{background-color:#1a2632;color:#848484}

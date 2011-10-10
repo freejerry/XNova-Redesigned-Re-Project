@@ -1,0 +1,89 @@
+div.mr-bigbox{
+	margin:0px
+	auto;
+	width:670px;
+	overflow:hidden
+}
+
+div.mr-bigbox
+.header{
+	background:url(../img/boxes/ltop.gif) no-repeat;
+	height:34px
+}
+
+div.mr-bigbox
+.content{
+	background:url(../img/boxes/lmit.gif) repeat-y;
+	border-left:20px;
+}
+
+div.mr-bigbox .content
+p{
+	padding:5px
+	20px;
+	border-left:20px;
+}
+
+div.mr-bigbox .content
+table{
+	padding:5px
+	20px;
+	border-left:20px;
+}
+
+div.mr-bigbox
+.footer{
+	background:url(../img/boxes/lbot.gif) no-repeat;
+	height:50px
+}
+
+div.mr-bigbox .header
+h3{
+	color:#767f88;
+	font-size:11px;
+	font-weight:700;
+	padding-top:11px;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+#planet_ren_del{
+	display:none;
+}
+/*
+#links #menu a.menubutton:hover,
+#links #menu a.menubutton:active{
+	background:url(../img/navigation/hauptnavi_a.gif) no-repeat
+}
+
+#links #menu a.menubutton:focus{
+	background:url(../img/navigation/hauptnavi_a.gif) no-repeat
+}
+
+#links #menu
+td.menubutton_table{
+	background:url(../img/navigation/hauptnavi_b.gif) no-repeat;
+	height:29px;
+	width:135px
+}
+*/
+
+a span.mrtooltip {
+	display: none;
+} 
+a:hover span.mrtooltip {
+	position: absolute;
+	/*position: relative;*/
+	overflow: visible;
+	top: 5px;
+	left: 30px;
+	color:#ffffff;
+	padding:5px;
+	font-size:8pt;
+	display: block;
+	background: #1B1D1F;
+	border: 1px solid #313131;
+	width: 150px;
+	height: auto;
+	z-index: 1000;
+} 
