@@ -2,8 +2,11 @@
 $lang['Changelog']   = 'Changelog';
 $lang['Version']     = 'Version';
 $lang['Description'] = 'Description';
-$lang['version_no']  = '1 &beta;14 dev';
+$lang['version_no']  = '0.01';
 $lang['changelog']   = array(
+
+'0.01' => '- Project start.
+- Base on Xnova Redesigned V.1 &beta;15. (freejerry)',
 
 '1 &beta;15' => '- Fixed bugs in install. (Anthony)
 - Protected install script so that it can\'t be re-run after install. (Anthony)
