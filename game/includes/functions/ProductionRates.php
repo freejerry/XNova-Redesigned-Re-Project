@@ -66,9 +66,9 @@ function ProductionRates ($CurrentUser,$CurrentPlanet,$basic=false) {
 		}
 		
 		//2 Check storage
-		$Caps['metal_max']	 = BASE_STORAGE_SIZE + ((BASE_STORAGE_SIZE / 2) * floor(pow(1.6,$CurrentPlanet[$resource[22]])));
-		$Caps['crystal_max']   = BASE_STORAGE_SIZE + ((BASE_STORAGE_SIZE / 2) * floor(pow(1.6,$CurrentPlanet[$resource[23]])));
-		$Caps['deuterium_max'] = BASE_STORAGE_SIZE + ((BASE_STORAGE_SIZE / 2) * floor(pow(1.6,$CurrentPlanet[$resource[24]])));
+		$Caps['metal_max'] = (BASE_STORAGE_SIZE / 2) * floor(2.5*pow( M_E,(20 * $CurrentPlanet[$resource[22]]) / 33));
+		$Caps['crystal_max'] = (BASE_STORAGE_SIZE / 2) * floor(2.5*pow( M_E,(20 * $CurrentPlanet[$resource[23]]) / 33));
+		$Caps['deuterium_max'] = (BASE_STORAGE_SIZE / 2) * floor(2.5*pow( M_E,(20 * $CurrentPlanet[$resource[24]]) / 33));
 		foreach ($resources as $res){
 			if($CurrentPlanet[$res] >= ($Caps[$res.'_max'] * MAX_OVERFLOW)){
 				//$Caps[$res.'_perhour'] = 0;
