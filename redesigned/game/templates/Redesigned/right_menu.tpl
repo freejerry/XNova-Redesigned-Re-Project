@@ -1,2 +1,0 @@
-<!-- RIGHTMENU -->
-<!-- END RIGHTMENU -->

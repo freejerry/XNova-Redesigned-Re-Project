@@ -1,1 +1,0 @@
-<span name="mrcountdown" class="{time}"></span>

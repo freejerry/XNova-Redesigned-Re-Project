@@ -1,5 +1,0 @@
-!!--Skin Configuration--!!
-//Line 3 gives a link to the header cache, (it must be line 3) ({skin}} is the skin path this is being acces by, so this file is {{skin}}/config.txt
-{{skin}}/img/header/
-//Skin name, this is the name that the skin will be known by on the options page. (It must be line 5)
-XNova

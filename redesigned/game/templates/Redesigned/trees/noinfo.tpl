@@ -1,1 +1,0 @@
-<div id="wrapper"><div class="advice">No requirements available</div></div>
