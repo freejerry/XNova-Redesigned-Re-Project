@@ -1,4 +1,4 @@
-	<div id="buttonz" style="background-image:url({{skin}}/img/navigation/box_h220.gif); height: 220px;">
+	<div id="buttonz">
 		<h2>Facility buildings</h2>	
 		<ul id="stationbuilding" style="margin-top:0px;">
 			<li id="button0" class="{state_14}" style="padding-top: 10px;">
@@ -100,22 +100,6 @@
 			</li>
 
 			<li id="button6" class="{state_44}" style="padding-top: 10px;">
-				<div class="station44">
-					<div class="buildingimg">
-					{canbuild_44}
-{countdown_44}
-						<!--<a class="detail_button tips" id="details44" href="./?page=station&id=44">-->
-						<a href="#" onclick="getAXAH('./?page=station&id=44&axah_section=1','item_info');" id="details44" class="detail_button tips" title="{name_44}<br>{mes_44}">
-							<span class="ecke">
-								<span class="level"><span class="textlabel">{name_44} </span>{count_44}</span>
-							</span>
-							<!--<span class="mrtooltip">{name_44}<br>{mes_44}</span>-->			
-						</a> 
-					</div>
-				</div> 
-			</li>
-
-			<li id="button7" class="{state_44}" style="padding-top: 10px;">
 				<div class="station44">
 					<div class="buildingimg">
 					{canbuild_44}

@@ -132,21 +132,6 @@
 					</div>
 				</div> 
 				</li>
-
-				<li id="button9" class="{state_214}">
-				<div class="military214">
-					<div class="buildingimg">
-						<!--<a href="./?page=shipyard&id=214" id="details214" class="detail_button tips">-->
-						<a href="#" onclick="getAXAH('./?page=shipyard&id=214&axah_section=1','item_info');" id="details214" class="detail_button tips" title="{name_214} ({count_214})<br />{mes_214}">
-							<span class="ecke">
-								<span class="level"><span class="textlabel">{name_214}</span>{count_214}</span>
-
-							</span>
-							<!--<span class="mrtooltip">{name_214} ({count_214})<br />{mes_214}</span>-->	   
-						</a> 
-					</div>
-				</div> 
-				</li>
 			</ul>
 
 		</div>
