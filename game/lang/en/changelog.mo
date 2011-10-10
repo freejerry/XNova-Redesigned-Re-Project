@@ -2,8 +2,13 @@
 $lang['Changelog']   = 'Changelog';
 $lang['Version']     = 'Version';
 $lang['Description'] = 'Description';
-$lang['version_no']  = '0.01';
+$lang['version_no']  = '0.02';
 $lang['changelog']   = array(
+
+'0.02' => '- Fix storage formula.
+- Fix build link error in building pages. (freejerry)'
+- Fix icon of resource not foundin facilities page. (freejerry)
+- Remove extra button in facilities and shipyard page. (freejerry),
 
 '0.01' => '- Project start.
 - Base on Xnova Redesigned V.1 &beta;15. (freejerry)',
