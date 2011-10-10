@@ -1,0 +1,54 @@
+@charset "utf-8";#TTWrapper{width:250px;font-size:11px;font-stretch:normal;font-weight:100;font-variant:normal}#TTWrapper
+div.TTInner{width:250px}#TTWrapper div.TTInner ul,
+#TTWrapper div.TTInner
+li{font-size-adjust:none;font-size:11px;padding:0;margin:0;list-style-type:none;list-style-image:none;list-style-position:outside;text-align:left;display:list-item}#TTWrapper div.TTInner
+table{width:100%}#TTWrapper div.TTInner table table
+td{font-size:11px;color:#848484}#TTWrapper div.TTInner table.properties
+th{background-color:transparent;color:#848484}#TTWrapper div.TTInner
+li{height:13px}#TTWrapper div.TTInner h4,
+#TTWrapper div.TTInner table
+th{font-size:11px;font-weight:700;text-align:left;padding:0px
+0px 0px 8px;margin:0px;background:transparent url(../img/tooltip/ttheader.gif) no-repeat 0px;height:27px}#TTWrapper div.TTInner
+h4{padding:5px
+0px 0px 8px;height:22px}#TTWrapper div.TTInner span.body,
+#TTWrapper div.TTInner
+span.footer{display:block}#TTWrapper div.TTInner table
+tr.body{background:transparent url(../img/tooltip/ttbody.gif) repeat-y 0px;position:relative}#TTWrapper div.TTInner tr.body
+td{background:none}#TTWrapper div.TTInner tr.body td
+li{padding:2px
+5px 2px 8px}#TTWrapper div.TTInner tr.body
+td.actions{padding:0px
+5px}#TTWrapper div.TTInner table tr.footer,
+#TTWrapper div.TTInner
+span.footer{background:transparent url(../img/tooltip/ttfooter.gif) no-repeat 0px;position:relative}#TTWrapper div.TTInner table tr.footer
+td{height:11px;line-height:11px;background:none}#TTWrapper div.TTInner th,
+#TTWrapper div.TTInner
+td{line-height:normal}#TTWrapper div.TTInner th span.spacing,
+#TTWrapper div.TTInner td
+span.spacing{display:block;padding-top:5px}#TTWrapper a:link,
+#TTWrapper a:visited,
+#TTWrapper a:hover,
+#TTWrapper a:active{color:#848484;text-decoration:none;display:block;cursor:pointer;padding:2px
+3px;width:99%}#TTWrapper a:hover{text-decoration:underline;color:#f1f1f1;background-color:#333;width:99%}div.TTInner span#pos-planet,
+div.TTInner span#pos-moon,
+div.TTInner span#pos-debris,
+div.TTInner
+span#moonsize{display:block;text-align:center;font-size:10px}div.TTInner span#pos-planet,
+div.TTInner span#pos-moon{margin-bottom:0px}div.TTInner
+span#moonsize{margin-top:5px}#TTWrapper
+h4{}#techtree #TTWrapper,
+#networkm
+#TTWrapper{height:auto;padding:0px
+0px;background-color:#15191F;border:1px
+solid #4D4545}#TTWrapper div.techHeadline,
+#TTWrapper
+div.techDescription{text-align:left}#TTWrapper
+div.techHeadline{font-weight:700;padding:7px
+3px;background-color:#232933}#TTWrapper
+div.techDescription{padding:5px
+3px 7px 3px}.tooltip_plain{display:none}#tooltipPlain{border:1px
+solid #444;display:none;position:absolute;left: -1000px;top:500px;z-index:2000;text-align:left}#tooltipPlain a:link,
+#tooltipPlain a:visited,
+#tooltipPlain a:hover,
+#tooltipPlain a:active{color:#fff;text-decoration:none}#tooltipBodyPlain{background-color:#1b1d1f;color:#fff;padding:5px
+10px 5px 10px;font-size:11px}

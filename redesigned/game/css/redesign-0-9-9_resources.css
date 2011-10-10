@@ -1,0 +1,64 @@
+#resources #inhalt #planet #slots,
+#station #inhalt #planet #slots,
+#station-moon #inhalt #planet
+#slots{height:25px;width:231px;background:url(../img/navigation/movements-bg.gif) no-repeat;float:right;font-size:11px;margin:238px
+3px 0px 0px;text-align:center;padding:4px
+0px 0px}#resources #inhalt #planet #slots,
+#station #inhalt #planet #slots,
+#station-moon #inhalt #planet
+#slots{color:#848484}#resources #inhalt #planet #slots a:link,
+#resources #inhalt #planet #slots a:visited,
+#resources #inhalt #planet #slots a:active,
+#station #inhalt #planet #slots a:link,
+#station #inhalt #planet #slots a:visited,
+#station #inhalt #planet #slots a:active,
+#station #inhalt #planet #slots2 a:link,
+#station #inhalt #planet #slots2 a:visited,
+#station #inhalt #planet #slots2 a:active,
+#station-moon #inhalt #planet #slots a:link,
+#station-moon #inhalt #planet #slots a:visited,
+#station-moon #inhalt #planet #slots a:active,
+#station-moon #inhalt #planet #slots2 a:link,
+#station-moon #inhalt #planet #slots2 a:visited,
+#station-moon #inhalt #planet #slots2 a:active{color:#848484;text-decoration:none}#resources #inhalt #planet #slots a:hover,
+#station #inhalt #planet #slots a:hover,
+#station #inhalt #planet #slots2 a:hover,
+#station-moon #inhalt #planet #slots a:hover,
+#station-moon #inhalt #planet #slots2 a:hover{color:#A4A4A4;text-decoration:underline}#resources
+#RessLayer{width:669px;height:375px;background:transparent url(../img/navigation/box_h375.gif) no-repeat;color:#848484;font-size:11px;line-height:14px}#resources #RessLayer
+h3{padding:0px;float:left;width:630px;font-weight:700;color:#969696;font-size:12px;text-align:center}#resources #RessLayer h3
+span{display:block;margin:6px
+0px 0px}#resources #RessLayer
+table{width:600px;margin:10px
+auto 0px auto;border-collapse:collapse;clear:both}#resources #RessLayer
+td#factor{font-weight:700;text-align:center;line-height:27px;height:16px;vertical-align:middle;color:#d3d3d3;padding:15px
+0px 15px 0px}#resources td#factor
+.secondcol{display:block;float:none;margin:0px}#resources #RessLayer td#factor
+span.factorkey{float:left;display:inline}#resources #RessLayer td#factor
+span.factorbutton{float:right;margin-left:13px;display:inline}#resources #RessLayer
+td.textRight{text-align:right}#resources #RessLayer
+td.label{text-align:left;padding-left:5px}#resources #RessLayer tr.alt
+td{background-color:#13181d}#resources #RessLayer td,
+#resources #RessLayer
+th{text-align:right;background-color:transparent;height:20px}#resources #RessLayer td
+em{font-style:normal;font-weight:700}#resources #RessLayer
+th{font-weight:700;padding-bottom:0px;vertical-align:middle}#resources #RessLayer tr.summary
+td{border-top:1px dotted #848484}#resources #RessLayer
+select{background-color:#000;border:1px
+solid #848484;color:#848484;font-size:10px;line-height:12px;width:46px}#resources #RessLayer
+input.new{border:1px
+solid #848484;color:#848484;background-color:#333;font-size:10px;padding:0px
+3px;margin:3px
+0px}#resources #RessLayer
+td.left2{padding-left:2px}#resources #RessLayer
+a.close{margin:7px
+13px 0px 0px;display:inline;float:right}#resources #RessLayer a:link,
+#resources #RessLayer a:visited,
+#resources #RessLayer a:hover,
+#resources #RessLayer a:active{color:#848484;text-decoration:none}#resources #RessLayer a:hover{color:#a4a4a4;text-decoration:underline}#resources div.detail_screen div#description
+p{float:left;width:624px}#resources div#detail22.detail_screen div#description p,
+#resources div#detail23.detail_screen div#description p,
+#resources div#detail24.detail_screen div#description
+p{width:455px}table.demolishinfo{width:100%}table.demolishinfo
+td.res{text-align:right;padding-right:5px}table.demolishinfo
+td.value{text-align:right;padding-right:15px}

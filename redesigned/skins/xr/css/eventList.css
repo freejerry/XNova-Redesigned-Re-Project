@@ -1,0 +1,199 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#eventListWrap {
+	margin:0px auto;
+	width: 700px;
+}
+
+#eventList { 
+	background-color: #ff0;
+	margin:0px auto;
+	width:700px;
+}
+
+#eventHeader {
+	background: transparent url(../img/layout/eventList-header.gif) no-repeat;
+	height: 29px;
+	padding:0px 20px;	
+	position:relative;
+	text-align:center;
+}
+
+#eventHeader h4 {
+	color:#6F9FC8;
+	font-size:11px;
+	margin:0px;
+	padding:9px 0px 0px;
+}
+
+#eventContent {
+	background: transparent url(../img/layout/eventList-body.gif) 5px 0px  repeat-y;
+}
+
+#eventFooter {
+	background: transparent url(../img/layout/eventList-footer.gif) 2px 0px no-repeat;
+	height: 17px;
+}
+
+.eventFleet,
+.partnerInfo {
+	background:#0d1014;
+	margin:0px auto;
+	width:654px;
+	height:50px;
+	position:relative;
+}
+
+.eventFleet ul { 
+	display:inline;
+	margin:0px; 
+	padding:0px;	
+}
+
+.eventFleet li,
+.partnerInfo li {
+	display:block;
+	overflow:hidden;
+	position:absolute;
+	left:220px;
+}
+
+.eventFleet .countDown,
+.eventFleet .arrivalTime,
+.partnerInfo .countDown,
+.partnerInfo .arrivalTime{	left:18px;}
+
+.eventFleet .descFleet,
+.eventFleet .missionFleet,
+.partnerInfo .descFleet,
+.partnerInfo .missionFleet {	left: 142px;}
+
+.eventFleet .originFleet,
+.eventFleet .coordsOrigin,
+.partnerInfo .originFleet,
+.partnerInfo .coordsOrigin {	left: 303px;}
+
+.eventFleet .detailsFleet,
+.partnerInfo .detailsFleet {
+	left: 366px;
+	text-align:right;
+	top:25px;
+	width:100px;
+}
+
+.eventFleet .destFleet,
+.eventFleet .destCoords,
+.partnerInfo .destFleet,
+.partnerInfo .destCoords {	/* left: 542px; left: 535px; */ left:526px;}
+
+.eventFleet .originFleet,
+.eventFleet .destFleet,
+.partnerInfo .originFleet,
+.partnerInfo .destFleet {	text-transform:capitalize;}
+
+.eventFleet .descFleet,
+.eventFleet .countDown,
+.eventFleet .originFleet,
+.eventFleet .destFleet,
+.eventFleet .sendProbe,
+.partnerInfo .descFleet,
+.partnerInfo .countDown,
+.partnerInfo .originFleet,
+.partnerInfo .destFleet,
+.partnerInfo .sendProbe {	top: 10px;}
+
+.eventFleet .arrivalTime,
+.eventFleet .missionFleet,
+.eventFleet .coordsOrigin,
+.eventFleet .destCoords,
+.eventFleet .sendMail,
+.partnerInfo .arrivalTime,
+.partnerInfo .missionFleet,
+.partnerInfo .coordsOrigin,
+.partnerInfo .destCoords,
+.partnerInfo .sendMail {	top: 25px;}
+
+
+.eventFleet .sendProbe,
+.eventFleet .toggleAlliance,
+.partnerInfo .sendProbe,
+.partnerInfo .toggleAlliance  { left:632px; top:8px}
+
+.eventFleet .sendMail,
+.partnerInfo .sendMail {left: 632px;  top:27px; } 
+
+.eventFleet .descFleet,
+.eventFleet .originFleet,
+.partnerInfo .descFleet,
+.partnerInfo .originFleet {
+	color:#7c8e9a;
+	font-weight:700;
+	text-align:left;
+	width:215px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.eventFleet .destFleet,
+.partnerInfo .destFleet {
+	color:#7c8e9a;
+	font-weight:700;
+	text-align:left;
+	width:130px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.eventFleet .detailsFleet,
+.partnerInfo .detailsFleet {
+	color:#9c0;
+	font-weight:700;
+}
+
+.eventFleet .allianceAttack .detailsFleet {	
+	left: 346px;
+	overflow: visible;
+}
+
+.eventFleet .allianceAttack .detailsFleet img { position:absolute;}
+.eventFleet .allianceAttack .detailsFleet .iconFleet1 { right: -38px; top: 0px;}
+.eventFleet .allianceAttack .detailsFleet .iconFleet2 { right: -20px; top: -9px;}
+.eventFleet .allianceAttack .detailsFleet .iconFleet3 { right: -20px; top: 9px;}
+
+#eventContent .detailsFleet img {	vertical-align: middle;}
+
+#eventContent .odd,
+#eventContent .part-even{ background-color: #13181d;}
+
+#eventHeader a.close_details {
+	right: 13px;
+	position:absolute;
+	top:6px;
+}
+#eventHeader a.close_details:link,
+#eventHeader a.close_details:visited,
+#eventHeader a.close_details:hover,
+#eventHeader a.close_details:active {
+	background: transparent url(../img/layout/detail-spriteset.gif) no-repeat scroll -207px 0px;
+}
+
+#eventHeader a.close_details:hover {
+	background: transparent url(../img/layout/detail-spriteset.gif) no-repeat scroll -207px -17px;
+}
+
+.eventFleet .missionFleet img,
+.partnerInfo .missionFleet img {
+	padding: 3px 5px 0px 0px;
+	vertical-align:middle;
+}
+
+.eventFleet a.toggleInfos {
+	cursor: pointer;
+	left: 632px;
+	line-height:normal;
+	position:absolute;
+	top: 8px;
+}
+
+.partnerInfo .countDown { width: 74px;}

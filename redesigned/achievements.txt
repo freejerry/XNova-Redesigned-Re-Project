@@ -1,0 +1,87 @@
+Level 1:
+Born Eagle: Create the first building.
+Economist: Maintain a production factor of 100% for 48 hours.
+Welcomed: Join an alliance with over 10 members.
+Friendship: Send a buddylist to another player.
+Explore: View another solar system in galaxy mode.
+
+
+Level 2:
+Levelup 1: Sucessfully complete all level 1 achievements.
+First Strike: Attack another planet for the first time.
+Iron Curtain: Successfully defend one of your attacked planets.
+Gross Bug!: Report a confirmed bug using the ticket system.
+Dark Matters: Spend Dark Matter on an officer.
+An Expanding Empire: Colinize another planet.
+Intellegence: Find out another players fleet with espionage probes.
+
+
+Level 3:
+Levelup 2: Sucessfully complete all level 2 achievements.
+Pioneer: Run 25 expeditions.
+Team Player: Help sucessfully defend a friendly planet from attack.
+Headmaster: Be the leader of an alliance with at least 5 other members, for over 1 week.
+Attack of Minor Destruction: Send a fleet of at least 100 ships to end up destroying only 1 ship. The attack must be successful.
+Family: Have at least 3 planets in the same system.
+Self-sufficient: Reach level 10 in Solar Plant, Metal Mine and Crystal Mine on a colony without sending any resources to that colony.
+
+
+Level 4:
+Levelup 3: Sucessfully complete all level 3 achievements.
+Armada: Have at least 1000 ships at once.
+Mad Scientist: Spend a total of 7 days researching.
+Bombs Away: Launch 50 intergalactic missiles to another planet at once.
+Fortress: Have at least 500 defense structures on one of your planets.
+Go Green: Recycle at least 500k in one sweep.
+Galactic Empire: Be the leader of an alliance with at least 20 members for 3 weeks.
+
+
+Level 5:
+Levelup 4: Sucessfully complete all level 4 achievements.
+Dark Council: Have all officers hired at the same time.
+Minor: Have all mines, solar planet and deuterium synthesiser to a combined level of over 100 on a single colony.
+Raider: Steal 10kk from others players
+Ninja: Arrive to defend a planet within 3 seconds of the attacking fleet
+
+
+Level 6:
+Levelup 5: Sucessfully complete all level 5 achievements.
+Survivor: Win or Draw against a fleet including a Deathstar.
+Lunar Landing: Create a lunar base.
+Tesla's Dream: Reach Solar Planet level 30 on a single planet.
+
+
+Level 7:
+Levelup 6: Sucessfully complete all level 6 achievements.
+Tombstone: Build your first Deathstar.
+Paranoid: Have 50 anti-ballistic missiles in the missile silo on a single planet.
+Orbital Chaos: Have 500 solar satellites on a single planets.
+Death-defier: Sucessfully destroy an attacking Deathstar.
+
+
+Level 8:
+Levelup 7: Sucessfully complete all level 7 achievements.
+Speed Attack: Steal over 10k of resources from a planet, just using probes.
+Deathstar sacrifice: Loose a Deathstar in a battle but still win. (In an ACS attack, all ACS members will receive this)
+
+
+Level 9:
+Levelup 8: Sucessfully complete all level 8 achievements.
+Parallel Computing: Using research networks attain a linked lab level of over 100.
+Surpruse: Find a mystery ship on an expedition.
+
+
+Level 10:
+Levelup 9: Sucessfully complete all level 9 achievements.
+Own the skies: Colinize an entire solar system.
+Regular: With the exception of Graviton Technology, get all researches to the same level.
+Exceeds Expectations: Research Graviton Technology to level 2.
+Solar Plant Graviton: Produce 300k or more energy from purely Solar Plants.
+
+
+
+
+
+
+
+

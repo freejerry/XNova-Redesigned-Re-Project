@@ -1,0 +1,92 @@
+/*	Default stylesheet for the Carpe Slider
+	By Tom Hermansson Snickars              
+	2008-04-21 version 2.0 Beta
+	Copyright CARPE Design                     
+	carpe.ambiprospect.com
+*/
+*.carpe-slider-panel {
+	background-color: #aaa;
+	box-sizing: content-box;
+	color: #333;
+	margin: 0;
+	display: block;
+	line-height: 0px;
+	height: 12px;
+	font-size: 0px;
+	text-align: left;
+	float: none;
+	border: 2px solid;
+	border-color: #ddd #999 #999 #ddd;
+	position: relative;
+	top: 0px;
+	overflow: hidden;
+	opacity: 1;
+	cursor: default;
+}
+*.carpe-slider-panel:hover {
+	background-color: #bbb;
+}
+*.carpe-slider-panel:focus {
+	background-color: #bbb;
+}
+*.orientation-horizontal {
+	width: 120px;
+	padding: 4px 3px 4px 4px;
+}
+*.orientation-vertical {
+	padding: 4px 5px 5px 5px;
+	width: 12px;
+	height: 110px;
+}
+/* The Slider Slit */
+*.carpe-slider-slit {
+	background-color: #333;
+	position: relative;
+	line-height: 0px;
+	border: 1px solid;
+	border-color: #999 #ddd #ddd #999;
+	font-size: 0;
+	cursor: default;
+}
+*.carpe-slider-panel:focus *.carpe-slider-slit {
+	background-color: #35e; /* Blue color of slit in focused slider. */
+}
+*.orientation-horizontal *.carpe-slider-slit {
+	height: 2px;
+	margin: 4px 2px 2px 2px;
+	top: -12px;
+}
+*.orientation-vertical *.carpe-slider-slit {
+	width: 2px;
+	margin: 2px 4px 4px 4px;
+	top: -20px;
+}
+/* The Slider Knob */
+*.carpe-slider-knob {
+	background-color: #666;
+	position: relative;
+	z-index: 2;
+	line-height: 0px;
+	font-size: 0px;
+	border: 2px solid;
+	border-color: #999 #333 #333 #999;
+}
+*.carpe-slider-knob:hover {
+	background-color: #777;
+}
+*.orientation-horizontal *.carpe-slider-knob {
+	width: 16px;
+	margin: 0;
+	height: 8px;
+	cursor: e-resize;
+}
+*.orientation-vertical *.carpe-slider-knob {
+	width: 8px;
+	margin: 1px 0 0 0;
+	height: 16px;
+	cursor: n-resize;
+}
+/*.focus {
+	background-color: #36e;
+}*/
+

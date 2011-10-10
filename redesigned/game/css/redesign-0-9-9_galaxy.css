@@ -1,0 +1,102 @@
+@charset "utf-8";#galaxy #message-wrapper{display:none}#galaxy
+#inhalt{margin-top:-44px}#galaxytable{width:654px}#galaxyscroll,#solarscroll{float:left;text-align:center;height:50px}#galaxy
+table.legende{width:150px;margin:0px
+auto}#galaxy table.legende
+td{padding:2px
+6px;font-size:10px;text-align:left}#galaxy table.legende
+td.abbreviation{text-align:center}#galaxyscroll span,
+#solarscroll
+span{display:block;text-align:center}#solarscroll
+div{text-align:center;margin:0px
+auto;width:80px}#galaxyscroll{width:85px}#expeditionbutton,#showbutton{height:24px;display:inline}#extendedgalaxy{width:200px;padding-top:2px;display:inline;text-align:right}#extendedgalaxy
+a{color:#7c7c7c;text-decoration:none}#expeditionbutton span,
+#showbutton
+span{float:left}#expeditionbutton .bleft,
+#expeditionbutton .bright,
+#expeditionbutton .text,
+#showbutton .bleft,
+#showbutton .bright,
+#showbutton
+.text{height:24px;line-height:24px}#expeditionbutton .bleft,
+#showbutton
+.bleft{width:2px;background:transparent url(../img/galaxy/exp-bleft.gif) no-repeat 0px}#expeditionbutton .bright,
+#showbutton
+.bright{width:14px;background:transparent url(../img/galaxy/exp-bright-arrow.gif) no-repeat 0px}#expeditionbutton .text,
+#showbutton
+.text{padding:0px
+10px;background:transparent url(../img/galaxy/exp-bg.gif) repeat-x -1px 0px}#expeditionbutton a:link,
+#expeditionbutton a:visited,
+#expeditionbutton a:hover,
+#expeditionbutton a:active,
+#showbutton a:link,
+#showbutton a:visited,
+#showbutton a:hover,
+#showbutton a:active{color:#fff;text-decoration:none;display:block;cursor:pointer}#expeditionbutton a:hover,
+#extendedgalaxy a:hover,
+#showbutton a:hover{color:#9C0}#galaxyscroll a,
+#solarscroll
+a{float:left;height:24px;width:25px}#galaxyscroll input,
+#solarscroll
+input{background:#000 none repeat scroll 0px 0px;border:0pt none;color:#fff;padding:0px;width:30px;height:20px;line-height:normal;text-align:center;font-size:12px;font-size-adjust:none;font-stretch:normal;font-variant:normal;font-weight:700;padding:4px
+0px 0px 0px;float:left}#solarscroll{width:150px;height:50px}#galaxyheadbg{width:654px;height:64px;background:transparent url(../img/galaxy/kopf1-bg.gif) no-repeat;position:relative}#galaxyheadbg td,
+#galaxyheadbg th,
+#galaxyheadbg2 td,
+#galaxyheadbg2
+th{background:none}#galaxy tr#galaxyheadbg
+td{padding:5px
+0px 0px 7px;color:#fff}#galaxy #galaxytable
+td.emptyspace{height:31px}#galaxyheadbg2{width:654px;height:25px;background:transparent url(../img/galaxy/kopf2-bg.gif) no-repeat;position:relative}#galaxy
+#galaxytable{margin:0px
+auto;color:#7c7c7c;overflow:hidden}#galaxy #galaxytable td.planetname a:link,
+#galaxy #galaxytable td.planetname a:visited,
+#galaxy #galaxytable td.planetname a:hover,
+#galaxy #galaxytable td.planetname a:active,
+#galaxy #galaxytable td.planetname1 a:link,
+#galaxy #galaxytable td.planetname1 a:visited,
+#galaxy #galaxytable td.planetname1 a:hover,
+#galaxy #galaxytable td.planetname1 a:active{color:#1A1313}#galaxy #galaxytable td.planetname a:hover,
+#galaxy #galaxytable td.planetname1 a:hover{color:#9c0}#galaxy table th,
+#galaxy table
+td{text-align:center;padding:0px
+0px;font-size:12px}#galaxy table
+th{font-weight:700}#galaxy #galaxytable
+tr.row{background:transparent url(../img/galaxy/row-bg.gif) no-repeat;position:relative}#galaxy #galaxytable tr.row
+td{vertical-align:middle;font-size:11px;height:30px;overflow:hidden}#galaxy #galaxytable tr.row td.microplanet:hover,
+#galaxy #galaxytable tr.row td.microplanet1:hover,
+#galaxy #galaxytable tr.row td.moon img:hover,
+#galaxy #galaxytable tr.row td.debris img:hover,
+#galaxy #galaxytable tr.row td.playername:hover,
+#galaxy #galaxytable tr.row td.allytag span.allytagwrapper:hover{color:#5cd;cursor:pointer}#galaxy #galaxytable tr.row td
+span.status{font-size:10px}#galaxy #galaxytable
+td.toppad{padding-top:3px}#galaxy #galaxytable
+td{background:none;vertical-align:top}#galaxy #galaxytable
+tr.none{background:none;position:relative}#galaxy
+span.activity{display:block;background-image:url(../img/galaxy/activity.gif);height:12px;width:12px}#galaxy #galaxytable
+td.spacer01{width:6px}#galaxy #galaxytable
+td.position{width:24px;text-align:right;padding:0px
+6px 0px 0px}#galaxy #galaxytable td.microplanet,
+#galaxy #galaxytable
+td.microplanet1{width:38px;padding:0px
+0px 0px 0px;text-align:left;color:#5cd}#galaxy #galaxytable td.microplanet1:hover{cursor:auto}#galaxy #galaxytable tr.row td.planetname,
+#galaxy #galaxytable tr.row
+td.planetname1{width:161px;vertical-align:middle}#galaxy #galaxytable td.planetname1:hover{cursor:auto}#galaxy #galaxytable
+td.moon{width:34px;text-align:center}#galaxy #galaxytable
+td.spacer02{width:14px}#galaxy #galaxytable
+td.debris{width:34px}#galaxy #galaxytable
+td.playername{width:151px;padding-top:2px}#galaxy #galaxytable
+td.spacer03{width:5px}#galaxy #galaxytable tr.row
+td.allytag{width:101px;padding-top:2px;vertical-align:middle}#galaxy #galaxytable
+td.spacer04{width:4px}#galaxy #galaxytable
+td.action{text-align:left;width:72px;padding:0px;margin:0px;white-space:nowrap;vertical-align:top}#galaxy #galaxytable td.action
+a{padding:0px;margin:0px
+2px 0px 0px;float:left;width:16px;height:16px;display:inline}#galaxy #galaxytable td.action
+img{padding:0px;margin:0px;border:none 0px}#galaxy #galaxytable
+td.end{width:4px}#galaxy #galaxytable
+tr.footer{background:transparent url(../img/galaxy/footer-bg.gif);position:relative}#galaxy #galaxytable tr.footer
+td{height:28px;color:#ccd3cf;font-size:11px}#galaxy #galaxytable tr.footer
+span{padding:0px
+10px}#galaxy #galaxytable tr.footer span#probes:hover,
+#galaxy #galaxytable tr.footer span#recycler:hover,
+#galaxy #galaxytable tr.footer span#rockets:hover,
+#galaxy #galaxytable tr.footer span#slots:hover{color:#5cd;cursor:help}#galaxy #galaxytable tr.footer span
+span{padding:0px}#extendedgalaxy,#expeditionbutton,#showbutton{position:absolute}#showbutton{top:25px;left:206px}#expeditionbutton{top:25px;left:307px}#extendedgalaxy{top:0px;left:402px}

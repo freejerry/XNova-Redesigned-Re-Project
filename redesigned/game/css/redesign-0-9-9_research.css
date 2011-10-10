@@ -1,0 +1,138 @@
+@charset "utf-8";#research
+#planet{background-repeat:no-repeat;height:250px;margin:0px
+auto;position:relative;width:654px;margin-bottom:3px}#research .c-left,
+#research .c-right{height:39px;width:28px;position:absolute;top:214px}#research #buttonz
+ul#building{width:648px;height:80px;margin:10px
+auto 0px 12px;position:relative}#research #buttonz
+ul#building{margin-top:10px}#research #buttonz ul#building li.on div.buildingimg,
+#research #buttonz ul#building li
+div.pusher{background:url(../img/navigation/research-on.jpg) no-repeat}#research #buttonz ul#building li.off
+div.buildingimg{background:url(../img/navigation/research-off.jpg) no-repeat;width:80px;height:80px}#research #buttonz ul#building li.disabled
+div.buildingimg{background:url(../img/navigation/research-disabled.jpg) no-repeat}#research #buttonz ul#building
+li{width:80px;height:80px;background-repeat:no-repeat;top:0px;position:absolute;list-style-type:none}#research #buttonz ul#building li a:link,
+#research #buttonz ul#building li a:visited{display:block;height:80px;width:80px;background:url(../img/navigation/ecke_neu_80.gif) no-repeat;color:#ff9600;text-decoration:none}#research #buttonz ul#building li a:hover,#research #buttonz ul#building li
+a.active{background:url(../img/navigation/ecke_neu_80_mo.gif) no-repeat;color:#ff9600;text-decoration:none}#research #buttonz ul#building li a:active{display:block;height:80px;width:80px;background:url(../img/navigation/ecke_neu_80.gif) no-repeat;color:#ff9600;text-decoration:none}#research #buttonz ul#building li div.construction a:link,
+#research #buttonz ul#building li div.construction a:visited{display:block;height:80px;width:80px;background:url(../img/navigation/ecke_neu_80b.gif) no-repeat;color:#ff9600;text-decoration:none}#research #buttonz ul#building li div.construction a:hover,#research #buttonz ul#building li div.construction
+a.active{background:url(../img/navigation/ecke_neu_80b_mo.gif) no-repeat;color:#ff9600;text-decoration:none}#research #buttonz ul#building li div.construction a:active{display:block;height:80px;width:80px;background:url(../img/navigation/ecke_neu_80b.gif) no-repeat;color:#ff9600;text-decoration:none}#research #buttonz ul#building
+li#button1{left:0px}#research ul#building
+span.ecke{width:40px;position:absolute;height:16px}#research ul#building
+span.ecke{top:64px;left:38px}#research ul
+span.level{color:#ff9600;font-size:11px}#research #buttonz ul#building li#button1,
+#research #buttonz ul#building
+li#button9{left:0px}#research #buttonz ul#building li#button2,
+#research #buttonz ul#building
+li#button10{left:81px}#research #buttonz ul#building li#button3,
+#research #buttonz ul#building
+li#button11{left:162px}#research #buttonz ul#building li#button4,
+#research #buttonz ul#building
+li#button12{left:243px}#research #buttonz ul#building li#button5,
+#research #buttonz ul#building
+li#button13{left:324px}#research #buttonz ul#building li#button6,
+#research #buttonz ul#building
+li#button14{left:405px}#research #buttonz ul#building li#button7,
+#research #buttonz ul#building
+li#button15{left:486px}#research #buttonz ul#building li#button8,
+#research #buttonz ul#building
+li#button16{left:567px}#research #buttonz ul#building li#button9,
+#research #buttonz ul#building li#button10,
+#research #buttonz ul#building li#button11,
+#research #buttonz ul#building li#button12,
+#research #buttonz ul#building li#button13,
+#research #buttonz ul#building li#button14,
+#research #buttonz ul#building li#button15,
+#research #buttonz ul#building
+li#button16{top:89px}#research #buttonz ul#building li div.research109 div#b_research106,
+#research #buttonz ul#building li div.research109 div#b_research108,
+#research #buttonz ul#building li div.research109 div#b_research109,
+#research #buttonz ul#building li div.research109 div#b_research110,
+#research #buttonz ul#building li div.research109 div#b_research111,
+#research #buttonz ul#building li div.research109 div#b_research113,
+#research #buttonz ul#building li div.research109 div#b_research114,
+#research #buttonz ul#building li div.research109 div#b_research115,
+#research #buttonz ul#building li div.research109 div#b_research117,
+#research #buttonz ul#building li div.research109 div#b_research118,
+#research #buttonz ul#building li div.research109 div#b_research120,
+#research #buttonz ul#building li div.research109 div#b_research121,
+#research #buttonz ul#building li div.research109 div#b_research122,
+#research #buttonz ul#building li div.research109 div#b_research123,
+#research #buttonz ul#building li div.research109 div#b_research124,
+#research #buttonz ul#building li div.research109
+div#b_research199{width:80px;background-image:url(../img/navigation/research-on.jpg);background-repeat:no-repeat;position:absolute}#research #buttonz ul#building li.on div.research106 div.buildingimg,
+#research #buttonz ul#building li.off div.research106 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research106 div.buildingimg,
+#research #buttonz ul#building li div.research106 div.buildingimg
+div.pusher{background-position:0px 0px}#research #buttonz ul#building li.on div.research108 div.buildingimg,
+#research #buttonz ul#building li.off div.research108 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research108 div.buildingimg,
+#research #buttonz ul#building li div.research108 div.buildingimg
+div.pusher{background-position: -80px 0px}#research #buttonz ul#building li.on div.research109 div.buildingimg,
+#research #buttonz ul#building li.off div.research109 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research109 div.buildingimg,
+#research #buttonz ul#building li div.research109 div.buildingimg
+div.pusher{background-position: -160px 0px}#research #buttonz ul#building li.on div.research110 div.buildingimg,
+#research #buttonz ul#building li.off div.research110 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research110 div.buildingimg,
+#research #buttonz ul#building li div.research108 div.buildingimg
+div.pusher{background-position: -240px 0px}#research #buttonz ul#building li.on div.research111 div.buildingimg,
+#research #buttonz ul#building li.off div.research111 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research111 div.buildingimg,
+#research #buttonz ul#building li div.research111 div.buildingimg
+div.pusher{background-position: -320px 0px}#research #buttonz ul#building li.on div.research113 div.buildingimg,
+#research #buttonz ul#building li.off div.research113 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research113 div.buildingimg,
+#research #buttonz ul#building li div.research113 div.buildingimg
+div.pusher{background-position: -400px 0px}#research #buttonz ul#building li.on div.research114 div.buildingimg,
+#research #buttonz ul#building li.off div.research114 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research114 div.buildingimg,
+#research #buttonz ul#building li div.research114 div.buildingimg
+div.pusher{background-position: -480px 0px}#research #buttonz ul#building li.on div.research115 div.buildingimg,
+#research #buttonz ul#building li.off div.research115 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research115 div.buildingimg,
+#research #buttonz ul#building li div.research115 div.buildingimg
+div.pusher{background-position: -560px 0px}#research #buttonz ul#building li.on div.research117 div.buildingimg,
+#research #buttonz ul#building li.off div.research117 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research117 div.buildingimg,
+#research #buttonz ul#building li div.research117 div.buildingimg
+div.pusher{background-position: -640px 0px}#research #buttonz ul#building li.on div.research118 div.buildingimg,
+#research #buttonz ul#building li.off div.research118 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research118 div.buildingimg,
+#research #buttonz ul#building li div.research118 div.buildingimg
+div.pusher{background-position: -720px 0px}#research #buttonz ul#building li.on div.research120 div.buildingimg,
+#research #buttonz ul#building li.off div.research120 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research120 div.buildingimg,
+#research #buttonz ul#building li div.research120 div.buildingimg
+div.pusher{background-position: -800px 0px}#research #buttonz ul#building li.on div.research121 div.buildingimg,
+#research #buttonz ul#building li.off div.research121 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research121 div.buildingimg,
+#research #buttonz ul#building li div.research121 div.buildingimg
+div.pusher{background-position: -880px 0px}#research #buttonz ul#building li.on div.research122 div.buildingimg,
+#research #buttonz ul#building li.off div.research122 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research122 div.buildingimg,
+#research #buttonz ul#building li div.research122 div.buildingimg
+div.pusher{background-position: -960px 0px}#research #buttonz ul#building li.on div.research123 div.buildingimg,
+#research #buttonz ul#building li.off div.research123 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research123 div.buildingimg,
+#research #buttonz ul#building li div.research123 div.buildingimg
+div.pusher{background-position: -1040px 0px}#research #buttonz ul#building li.on div.research124 div.buildingimg,
+#research #buttonz ul#building li.off div.research124 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research124 div.buildingimg,
+#research #buttonz ul#building li div.research124 div.buildingimg
+div.pusher{background-position: -1200px 0px}#research #buttonz ul#building li.on div.research199 div.buildingimg,
+#research #buttonz ul#building li.off div.research199 div.buildingimg,
+#research #buttonz ul#building li.disabled div.research199 div.buildingimg,
+#research #buttonz ul#building li div.research199 div.buildingimg
+div.pusher{background-position: -1120px 0px}#research #buttonz ul#building li
+.case{width:80px;height:80px}#research
+div.detail_screen{background-repeat:no-repeat;height:250px;background-image:url(../img/navigation/detail-bg250.gif);z-index:10}#research div#action
+ul{list-style:none;padding-top:15px;line-height:20px}#research .detail_screen #action li.techtree,
+#research .detail_screen #action
+li.demolish{top:20px}#research
+div#description{width:640px;height:45px;margin:5px
+0px 0px 5px}#research div#description
+.textlabel{height:1px;left:-9999px;overflow:hidden;position:absolute;width:1px}#research div#description
+p{padding:0
+8px;margin:0px;color:#576472;font-size:11px;width:630px;overflow:hidden;height:41px;float:left}#research div#description p
+a.help{display:block;float:left;height:18px;width:18px;margin:3px
+3px 0px 0px}#research div#description p a.help:link,
+#research div#description p a.help:visited{background:url(../img/navigation/frage_a.gif) no-repeat}#research div#description p a.help:hover{background:url(../img/navigation/frage_b.gif) no-repeat}#research div#description p a.help:active,
+#research div#description p a.help:focus{background:url(../img/navigation/frage_a.gif) no-repeat}

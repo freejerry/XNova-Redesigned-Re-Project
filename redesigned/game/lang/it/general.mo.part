@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * general.mo
+ * Created by MadnessRed, for XNova Redesigned
+ * 07/02/2009
+ */
+
+
+//<Resources>
+$lang['Metal']			= 'Metallo';
+$lang['Crystal']		= 'Cristallo';
+$lang['Deuterium']		= 'Deuterio';
+$lang['Matter']		= 'Materia scura';
+$lang['Energy']		= 'Energia';
+//</Resources>
+
+//<Common Strings>
+//$strings['en']['Available']		= 'Available';
+//</Common Strings>
+
+//<Dates>
+$lang['daymonth']		= 'm/d';
+
+/*
+$strings['en']['Mon']			= 'Mon';
+$strings['en']['Tue']			= 'Tue';
+$strings['en']['Wed']			= 'Wed';
+$strings['en']['Thu']			= 'Thu';
+$strings['en']['Fri']			= 'Fri';
+$strings['en']['Sat']			= 'Sat';
+$strings['en']['Sun']			= 'Sun';
+
+$strings['en']['Jan']			= 'Jan';
+$strings['en']['Feb']			= 'Feb';
+$strings['en']['Mar']			= 'Mar';
+$strings['en']['Apr']			= 'Apr';
+$strings['en']['May']			= 'May';
+$strings['en']['Jun']			= 'Jun';
+$strings['en']['Jul']			= 'Jul';
+$strings['en']['Aug']			= 'Aug';
+$strings['en']['Sep']			= 'Sep';
+$strings['en']['Oct']			= 'Oct';
+$strings['en']['Nov']			= 'Nov';
+$strings['en']['Dec']			= 'Dec';
+*/
+//</Dates>
+
+//<Header>
+//$strings['en']['expiresin']		= 'Expires in';
+//</Header>
+
+//<Gerneral>
+$lang['days']			= 'tag';
+$lang['hours']			= 'stunden';
+//</General>
+
+?>

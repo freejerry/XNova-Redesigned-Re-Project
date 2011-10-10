@@ -1,0 +1,92 @@
+<script type='text/javascript' src='scripts/axah.js'></script>
+
+<html>
+<body style="text-align:center;" text="White">
+	<div style="margin-left:auto;margin-right:auto;">
+		<form action="./reg.php" method="post" style="margin-left:20px;margin-right:20px;" name="reg" id="reg">
+			<table align="center" border="0" cellspacing="2" cellpadding="0" style="width:425px;">
+				<tr>
+					<td width="275">Universe</td>
+					<td>
+						<select name="s" style="width:150px;" id="s">
+							<option value="1">Universe 1</option>
+						</select>
+					</td>
+					<td width="25"><span id="unicheck"><image src="./check/ok.gif" /></span></td>
+				</tr>
+				<tr>
+					<td>Username </td>
+					<td>
+						<!--<input name="character" type="text" name="character" id="playername" style="width:150px;" onblur="getAXAH('usercheck','check.php?check=user&username='+getElementById('playername').value+'&s='+getElementById('s').value);" />-->
+						<input name="character" type="text" name="character" id="playername" style="width:150px;" onblur="getAXAH('check.php?check=user&username='+getElementById('playername').value+'&s='+getElementById('s').value,'usercheck');" maxlength="100" />
+					</td>
+					<td><span id="usercheck"><image src="./check/no.gif" width="16" height="14" /></span></td>
+				</tr>
+				<tr>
+					<td>Password </td>
+					<td>
+						<input name="passwrd" id="passwrd" maxlength="40" type="password" style="width:150px;" onblur="getAXAH('check.php?check=pass&password='+getElementById('passwrd').value+'&s='+getElementById('s').value,'passcheck');" />
+					</td>
+					<td><span id="passcheck"><image src="./check/no.gif" width="16" height="14" /></span></td>
+				</tr>
+				<tr>
+					<td>E-mail </td>
+					<td>
+						<input name="email" id="email" type="text" style="width:150px;" onblur="getAXAH('check.php?check=email&email='+getElementById('email').value+'&s='+getElementById('s').value,'emailcheck');" maxlength="100" />
+					</td>
+					<td><span id="emailcheck"><image src="./check/no.gif" width="16" height="14" /></span></td>
+				</tr>
+
+				<tr>
+					<td>Referal</td>
+					<td>
+						<input name="ref_name" id="refer" size="20" maxlength="20" type="text" style="width:150px;" onblur="getAXAH('check.php?check=refer&refer='+getElementById('refer').value+'&s='+getElementById('s').value,'refercheck');" />
+					</td>
+					<td><span id="refercheck"><image src="./check/err.gif" width="16" height="14" /></span></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><hr /></td>
+				</tr>
+
+				<tr>
+					<td colspan="3">Secret Question</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input name="sec_qu" id="secqu" maxlength="1000" type="text"  style="width:425px;" onblur="getAXAH('check.php?check=quans&string='+getElementById('secqu').value+'&s='+getElementById('s').value,'qucheck');" />
+					</td>
+					<td><span id="qucheck"><image src="./check/err.gif" width="16" height="14" /></span></td>
+				</tr>
+
+				<tr>
+					<td colspan="3">Secret Answer</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input name="sec_ans" id="secans" size="30" maxlength="1000" type="text" style="width:425px;" onblur="getAXAH('check.php?check=quans&string='+getElementById('secans').value+'&s='+getElementById('s').value,'anscheck');" />
+					</td>
+					<td><span id="anscheck"><image src="./check/err.gif" width="16" height="14" /></span></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><hr /></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input name="rgt" id="rgt" type="checkbox" onclick="getAXAH('check.php?check=tos&tos='+getElementById('rgt').checked+'&s='+getElementById('s').value,'toscheck'); if(document.getElementById('rgt').checked){ document.getElementById('signup').disabled = false; }else{ document.getElementById('signup').disabled = true; }" />
+						I accept the <a href="#" rel="ibox&target=tos.html&width=700">TOS</a>
+					</td>
+					<td><span id="toscheck"><image src="./check/no.gif" width="16" height="14" /></span></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<center><input name="submit" type="submit" disabled="true" id="signup" value="Signup"/></center>
+					</td>
+				</tr>
+		    </table>
+		</form>
+	</div>
+</body>
+</html>

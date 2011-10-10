@@ -1,0 +1,227 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body#login {
+  	background:#000000 url(../img/background/background2.jpg) no-repeat;	
+	color: #848484;
+  	font-size: 11px;
+  	font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+	line-height: 1;
+	padding:0px 0 0;
+	margin:0px 0 0;	
+}
+
+/*
+         Toolbox CSS
+	 Chris Coyier
+	 http://css-tricks.com
+*/
+/*
+	LAYOUT TOOLS
+*/
+.floatLeft 			{ float: left; }
+.floatRight			{ float: right; }
+.clear				{ clear: both; }
+.layoutCenter			{ margin: 0 auto; }
+.textCenter			{ text-align: center; }
+.textRight			{ text-align: right; }
+.textLeft			{ text-align: left; }
+.textBeefy          { font-weight: 700; }
+.textGrow			{ text-transform:uppercase; }
+/*
+	PRINT TOOLS
+*/
+.page-break 			{ page-break-before: always; }
+/*
+	TYPOGRAPHIC TOOLS
+*/
+.error				{ border: 1px solid #fb4343; padding: 3px; color: #fb4343; }
+.warning			{ border: 1px solid #d4ac0a; padding: 3px; color: #d4ac0a; }
+.success			{ border: 1px solid #149b0d; padding: 3px; color: #149b0d; }
+.callOut			{ font-size: 125%; font-weight: bold; }
+.strikeOut			{ text-decoration: line-through; }
+.underline			{ text-decoration: underline; }
+.resetTypeStyle			{ font-weight: normal; font-style: normal; font-size: 100%;
+					  text-decoration: none; background-color: tranaparent; word-spacing: normal;
+					  letter-spacing: 0px; text-transform: none; text-indent: 0px; }
+/*
+	STYLING EXTRAS
+*/
+.transpBlack			{ background: url(images/transpBlack.png); }
+/*
+	DISPLAY VALUES
+*/
+.hide				{ display: none; }
+.show				{ display: block; }
+.invisible			{ visibility: hidden; }
+
+/*-------------------------------------------------------------*/
+
+h1 {
+
+}
+
+label {
+	display:block;
+	margin:5px 0px 2px;
+	font-size:11px;
+}	
+
+h1 span { position:absolute; left: -9999px;}
+
+p {
+	padding:0px 5px 0px 9px;
+	font-weight:100;
+}
+
+table {
+	border-right:1px solid #13131D;
+	border-bottom:1px solid #10030D;
+	border-collapse:collapse;
+	margin-top:15px;
+	
+}
+
+table th {
+	font-weight:700;
+	background-color:#252D36;
+
+}
+
+th,td {
+	border:1px solid #171A1D;
+	font-size:11px;
+	padding: 5px 10px;
+	vertical-align:middle;
+}
+
+td {	background-color:#0D1014;	}
+
+td.paginator {
+	padding:15px 10px;
+}
+
+
+tr.alt td {	background-color:#13181D;	}
+
+tbody tr:hover td,
+tbody tr.alt:hover td { background-color:#212121; }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color:#918682;
+}
+
+a:hover {
+	color:#d3fcd5;
+}
+
+#login #loginwrapper {
+	position:absolute;
+	padding:2px;
+	width:354px;
+	height:180px;
+	left:349px;
+	top:242px;
+	border:1px solid #848484;
+	background-color:#1A1611;
+	-moz-border-radius:4px;
+}
+
+#login #loginwrapper .input {
+	background: #43384D;
+	color: #DF9FC8;
+	border: 1px solid #202733;
+	width:175px;
+	height:15px;
+	font-size:11px;
+	font-weight:700;
+	padding-left:1px;
+}
+
+#login #loginwrapper .input:focus{	background-color:#4E415A;}
+
+#login #loginwrapper .wrap-inner {
+	padding:5px 0 10px 7px;
+	width:185px;
+	float:left;
+}
+
+#login #loginwrapper h2 {
+	font-weight:700; 
+	margin:0; 
+	padding:0;
+	margin:0 0 25px;
+}
+
+#login #loginwrapper input.start,
+#login #loginwrapper input.start {
+	padding:3px 6px; 
+	margin:10px 0px 0px 0px; 
+	cursor:pointer; 
+	background-color:#1A2733; 
+	color:#848484; 
+	border:1px solid #434353;
+	display:block;
+	font-size:11px;
+	font-weight:700;
+	cursor:pointer;
+	text-transform:uppercase;
+}
+
+
+#login #loginwrapper input.start:hover,
+#login #loginwrapper input.start:hover { 
+	background-color:#3A5753; 
+	color:#c1c1c1; 
+	cursor:pointer;
+}
+
+#login #loginwrapper #advice {
+	font-size:11px;
+	float:left;
+	width:160px;
+}
+
+#login #loginwrapper #advice p{
+	padding:53px 0px 5px;
+}
+
+
+#login #loginwrapper #advice a,
+#login #loginwrapper #advice a:link{ color:#6F9FC8;}
+#login #loginwrapper #advice a:hover { color:#9c0;}
+
+#login #error {
+	padding:20px 0px;
+	position:absolute;
+	width:354px;
+	left:349px;
+	top:100px;
+	border:1px solid #848484;
+	background-color:#1A1611;
+	-moz-border-radius:4px;
+}
+
+#login .alarm {
+	background:url(../img/layout/attention.gif) no-repeat;
+}	
+
+.buttonSave {
+	background:transparent url(../img/layout/formular_buttons.gif) no-repeat 0px -54px;
+	border: 0px none;
+	color:#0D1014;
+	cursor:pointer;
+	font-weight:700;
+	font-size:11px;
+	height:27px;
+	text-align:center;
+	width:88px;
+}
+
+.buttonSave:hover {	background:transparent url(../img/layout/formular_buttons.gif) no-repeat 0px -81px;}
+
+#login .buttonSave { margin-top:10px; }

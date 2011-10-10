@@ -1,0 +1,34 @@
+/* Officers */
+#premium ul#building li#button1 div.buildingimg { background: url(../img/premium/600.jpg) no-repeat; }
+#premium ul#building li#button2 div.buildingimg { background: url(../img/premium/601.jpg) no-repeat; }
+#premium ul#building li#button3 div.buildingimg { background: url(../img/premium/602.jpg) no-repeat; }
+#premium ul#building li#button4 div.buildingimg { background: url(../img/premium/603.jpg) no-repeat; }
+#premium ul#building li#button5 div.buildingimg { background: url(../img/premium/604.jpg) no-repeat; }
+#premium ul#building li#button6 div.buildingimg { background: url(../img/premium/605.jpg) no-repeat; }
+/* officers big */
+#premium div#detail1 div#pic { background: url(../img/premium/x600.jpg) no-repeat; }
+#premium div#detail2 div#pic { background: url(../img/premium/x601.jpg) no-repeat; }
+#premium div#detail3 div#pic { background: url(../img/premium/x602.jpg) no-repeat; }
+#premium div#detail4 div#pic { background: url(../img/premium/x603.jpg) no-repeat; }
+#premium div#detail5 div#pic { background: url(../img/premium/x604.jpg) no-repeat; }
+#premium div#detail6 div#pic { background: url(../img/premium/x605.jpg) no-repeat; }
+
+/* officers header */
+#premium div#planet,
+#ticket div#planet {
+	background:url(../img/header/offizierskasino_header.jpg) no-repeat;
+	height:250px;
+}
+
+/* Storage Icons */
+#detail22 #description .display,
+#detail23 #description .display,
+#detail24 #description .display {
+	float:right;
+	width:130px;
+	color:#848484;
+	margin-top:10px;
+	font-size:11px;
+	cursor:pointer;
+	display:inline; /*IE6 fix */
+}
