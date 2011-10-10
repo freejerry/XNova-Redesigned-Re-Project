@@ -28,21 +28,21 @@
 						<ul id="resources">
 							<li class="metal tips">
 								<a>
-									<img src="{skin}/img/layout/ressourcen_metall.gif"><br>
+									<img src="{{skin}}/img/layout/ressourcen_metall.gif"><br>
 									<span class="{missing_resource_m}">{sh_cost_m}</span>
 									<span class="mrtooltip">{cost_m} Metal</span>
 								</a>
 							</li>
 							<li class="metal tips">
 								<a>
-									<img src="{skin}/img/layout/ressourcen_kristal.gif"><br>
+									<img src="{{skin}}/img/layout/ressourcen_kristal.gif"><br>
 									<span class="{missing_resource_c}">{sh_cost_c}</span>
 									<span class="mrtooltip">{cost_c} Crystal</span>
 								</a>
 							</li>
 							<li class="metal tips">
 								<a>
-									<img src="{skin}/img/layout/ressourcen_deuterium.gif"><br>
+									<img src="{{skin}}/img/layout/ressourcen_deuterium.gif"><br>
 									<span class="{missing_resource_d}">{sh_cost_d}</span>
 									<span class="mrtooltip">{cost_d} Deuterium</span>
 								</a>
