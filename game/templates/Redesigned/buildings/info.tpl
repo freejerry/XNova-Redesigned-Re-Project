@@ -49,7 +49,7 @@
 							</li>
 						</ul>
 		
-						<a class="{buildit_class}" href="#" onclick="loadpage('{build_link}',document.title,document.body.id)">
+						<a class="{buildit_class}" href="#" onclick="{build_link}">
 							<span class="textlabel">{build_text}</span>
 						</a>
 		

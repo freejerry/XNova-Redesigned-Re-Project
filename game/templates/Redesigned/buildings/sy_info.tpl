@@ -44,7 +44,7 @@
 						<!--<a class="{buildit_class}" href="{build_link}">
 							<span class="textlabel">{build_text}</span>
 						</a>-->
-						<a class="{buildit_class}" href="#" onclick="loadpage('{build_link}'+document.getElementById('curr{id}').value,document.title,document.body.id)">
+						<a class="{buildit_class}" href="#" onclick="{build_link}">
 							<span class="textlabel">{build_text}</span>
 						</a>
 						<br class="all"/>
