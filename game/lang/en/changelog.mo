@@ -2,13 +2,23 @@
 $lang['Changelog']   = 'Changelog';
 $lang['Version']     = 'Version';
 $lang['Description'] = 'Description';
-$lang['version_no']  = '0.02';
+$lang['version_no']  = '0.04';
 $lang['changelog']   = array(
 
-'0.02' => '- Fix storage formula.
-- Fix build link error in building pages. (freejerry)'
-- Fix icon of resource not foundin facilities page. (freejerry)
-- Remove extra button in facilities and shipyard page. (freejerry),
+'0.04' => '- Fixd time format to W-D-M-Y H:m:s. (freejerry)
+- Fixd facilities page for moon header image lose. (freejerry)
+- Fixd resource production bug. (freejerry)',
+
+'0.03' => '- Fixd bug of \'tear down\' button. (freejerry)
+- Fixd overview page header image lose when switch between plant and moon. (freejerry)
+- Fixd build link error in building pages. (freejerry)
+- Fixd build link error in building pages. (freejerry)
+- Fixd improve botton in research page. (freejerry)',
+
+'0.02' => '- Fix storage formula. (freejerry)
+- Fixd header image in building pages. (freejerry)
+- Fixd icon of resource not found in facilities page. (freejerry)
+- Removed extra button in facilities and shipyard page. (freejerry)',
 
 '0.01' => '- Project start.
 - Base on Xnova Redesigned V.1 &beta;15. (freejerry)',
