@@ -9,7 +9,9 @@
 
 
 //Create a new class based off mysqli
-class database extends mysqli{
+class database {
+
+  var $conn_handler;
 	
 	//Count number of queries
 	public $num_queries = 0;
@@ -17,11 +19,12 @@ class database extends mysqli{
 	//ON creation
 	public function __construct($dbsettings){
 		//Connect
-		parent::__construct($dbsettings['server'], $dbsettings['user'], $dbsettings['pass'], $dbsettings['name']);
+		$this->conn_handler=mysql_connect($dbsettings['server'], $dbsettings['user'], $dbsettings['pass']);
+    mysql_select_db($dbsettings['name'],$this->conn_handler);
 		
 		//Error?
-		if (mysqli_connect_error()) {
-            die('Connect Error  (' .mysqli_connect_errno() . ') ' . mysqli_connect_error());
+		if (mysql_error()) {
+            die('Connect Error  (' .mysql_errno() . ') ' . mysql_error());
         }
         
         //Store db settings
@@ -32,7 +35,7 @@ class database extends mysqli{
 	public function doquery($query, $table, $fetch = false){		
 		
 		//Get the table
-		$table = parent::real_escape_string($table);
+		$table = mysql_real_escape_string($table);
 		
 		//Parse the query
 		$query = str_replace("{{table}}", "`".$this->dbsettings["prefix"].$table."`", $query);
@@ -40,13 +43,13 @@ class database extends mysqli{
 		$query = str_replace("{{prefix}}", $this->dbsettings["prefix"], $query);
 		
 		//And then run it
-		if ($result = parent::query($query)) {
+		if ($result = mysql_query($query)) {
 			//This is another query
 			$this->num_queries ++;
 			
 			//Should we fetch the data?
 			if($fetch){
-				return $result->fetch_assoc();
+				return $this->FetchAssoc($result);
 			}else{
 				return $result;
 			}
@@ -63,6 +66,24 @@ class database extends mysqli{
 		}
 	}
 	
+  public function FetchAssoc($results) {
+	 //Check if the result is a valid resource
+	 if(!is_resource($results))
+		// Return false, declaring an error
+		return false;
+	 else {
+		// Retrieve the result as an array
+		$array = mysql_fetch_assoc($results);
+		// Return the cleaned array
+		return $array;
+	 }
+  }
+
+  public function real_escape_string($string)
+  {
+    return mysql_real_escape_string($string);
+  }
+  
 	//Validation function
 	public function idstring($id,$decimal=false){  //MadnessRed function
 		if($decimal){$d = '.'; }else{$d = ''; }
@@ -71,7 +92,7 @@ class database extends mysqli{
 	
 	//Some useful database functions
 	public function id_from_username($uname){
-		$result = $this->doquery("SELECT `id` FROM {{table}} WHERE `username` = '".parent::real_escape_string($uname)."' LIMIT 1 ;", 'users', true);
+		$result = $this->doquery("SELECT `id` FROM {{table}} WHERE `username` = '".mysql_real_escape_string($uname)."' LIMIT 1 ;", 'users', true);
 		$id = @intval($result['id']);
 		return $id;
 	}
@@ -84,7 +105,7 @@ class database extends mysqli{
 	
 	//Close connection
 	public function __destruct(){
-		parent::close();
+		mysql_close($this->conn_handler);
 	}
 }
 
@@ -103,7 +124,7 @@ if(@!$skip_config){
 	//Get the game config
 	$result = $sql->doquery("SELECT * FROM {{table}} WHERE 1",'config');
 	$game_config = array();
-	while($row = $result->fetch_assoc()){
+	while($row = $sql->FetchAssoc($result)){
 		$game_config[$row['config_name']] = $row['config_value'];
 	}
 }
