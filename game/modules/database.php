@@ -3,12 +3,13 @@
 /**
  * database.php
  *
- * @version 1.1
+ * @version 1.11
  * @copyright 2010 by MadnessRed for XNova Redesigned
+ * @copyright 2012 by Geodar for GitHub 
  */
 
 
-//Create a new class based off mysqli
+//Create a new class based off mysql
 class database {
 
   var $conn_handler;
@@ -131,7 +132,8 @@ if(@!$skip_config){
 
 
 /**
- * 1.0 - Basic class created MadnessRed
- * 1.1 - Added better construct and the idstring function.
+ * 1.0  - Basic class created MadnessRed
+ * 1.1  - Added better construct and the idstring function.
+ * 1.11 - Using MySQL insead of MySQLi
  */
 ?>
