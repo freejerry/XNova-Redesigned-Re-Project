@@ -45,7 +45,7 @@ class user{
 		
 		//Parse into an array
 		$ids = array();
-		while($row = $planets->fetch_assoc())
+		while($row = $sql->FetchAssoc($planets))
 			$ids[] = $row['id'];
 		
 		//Return
