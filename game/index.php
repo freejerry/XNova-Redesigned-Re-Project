@@ -24,13 +24,14 @@ define('USER_NAME',$userclass->username);
 PlanetResourceUpdate($userclass->uarray,$planetrow,time());
 
 //Skin config?
+/*
 $skin_config = file(GAME_SKIN."/config.txt");
 if(substr($skin_config[0], 0, 26) == '!!--Skin Configuration--!!'){
 	define('HEADER_CACHE',str_replace("{{skin}}",GAME_SKIN,$skin_config[2]));
 }
-else{
-	define('HEADER_CACHE',GAME_SKIN.'/headerCache/');
-}
+else{*/
+	define('HEADER_CACHE',GAME_SKIN.'/headerCache/'); //not working skin config -> missing file
+//}
 
 if($_GET['iframe'] == '1'){
 	include_once('iframe.php');

@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 if(!defined('ROOT_PATH')){ @define('ROOT_PATH',$xnova_root_path); $info = debug_backtrace(); trigger_error("Error, ROOT_PATH is not defined in ".$info[0]['file']); unset($info); }
 $xnova_root_path = ROOT_PATH;
 
-//A bit of comfig
+//A bit of config
 @set_magic_quotes_runtime(0);
 $phpEx = "php"; //This is dangerous and will be fased out asap.
 
