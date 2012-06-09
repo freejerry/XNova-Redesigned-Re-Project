@@ -8,7 +8,7 @@
  */
 
 getLang('login');
-setcookie($game_config['COOKIE_NAME'], "", time()-100000, "/", "", 0);
+setcookie($game_config['COOKIE_NAME'], NULL, 0);
 info( "<blink>".$lang['see_you']."</blink>", $lang['session_closed'], LOGINURL);
 session_destroy();
 
