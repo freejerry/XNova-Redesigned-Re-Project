@@ -92,7 +92,7 @@ function changeAction(type) {
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
-		<!--Remember Me? <input name="rememberme" type="checkbox">--><input name="submit" value="Login" type="submit"> 
+		Remember Me? <input name="rememberme" type="checkbox"><input name="submit" value="Login" type="submit"> 
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
