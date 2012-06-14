@@ -60,13 +60,13 @@
 				alert('Database settings are fine.');
 				window.location.replace('./install.php?page=3');
 			}else if(l == '1'){
-				alert('Cannot connect to database.');
+				alert('Cannot connect to the database.');
 				document.getElementById('testbutton').value = '>> Next';
 			}else if(l == '3'){
 				alert('Specified table does not exist and could not be created.');
 				document.getElementById('testbutton').value = '>> Next';
 			}else if(l == '2'){
-				alert('Cannot write to config1.php. Please CHMOD this file to 777.');
+				alert('Cannot write to config1.php. Please set CHMOD of this file to 777.');
 				document.getElementById('testbutton').value = '>> Next';
 			}else{
 				alert('Unexpected value was returned.');

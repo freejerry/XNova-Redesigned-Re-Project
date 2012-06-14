@@ -2,8 +2,16 @@
 $lang['Changelog']   = 'Changelog';
 $lang['Version']     = 'Version';
 $lang['Description'] = 'Description';
-$lang['version_no']  = '0.04';
+$lang['version_no']  = '0.06';
 $lang['changelog']   = array(
+
+'0.06' => '- Renew source file. (freejerry)',
+
+'0.05' => '- Basic files for Czech included. (Geodar)
+- Fixd install page mistakes in English. (Geodar)
+- Use MySQL instead of MySQLi. (Geodar)
+- Fixd 1 error in new MySQL interface. (Geodar)
+- Fixd 1 error with skin config. (Geodar)',
 
 '0.04' => '- Fixd time format to W-D-M-Y H:m:s. (freejerry)
 - Fixd facilities page for moon header image lose. (freejerry)
