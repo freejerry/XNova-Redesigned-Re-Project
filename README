@@ -1,13 +1,17 @@
 The Open Source Browsergame  base on "XNova Redesigned"
 
+You can always submit bugs or creat pull requests on our github.
 
 Install by following steps:
 
-1.Upload and unzip the source to your hosting.
+1.Upload and unzip the source to your server.
 
-2.Open http://your_host.domin/
+2.Creat a MySQL database on your server.
 
-3.Following installation guide to install.
+3.Open http://your_host.domin/source_folder
 
-4.Sign up one account in game after installation.
-Important:The password must be same as your mysql password.
+4.Following installation guide to install.
+
+5.Sign up one account in game after installation.
+
+The first account will be an admin.
