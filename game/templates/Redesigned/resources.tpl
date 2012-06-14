@@ -1,9 +1,9 @@
 <div id="ResourceLayer" style="{hideres}">
 	<div id="RessLayer">
-		<a class="close_details" href="#" onclick="ReverseDisplay('planet');ReverseDisplay('ResourceLayer');"></a>
-		<h3><span><!--Resource settings on planet "Homeworld"-->{Production_of_resources_in_the_planet}</span></h3>
+		<a class="close_details" href="./?page=resources" onclick="ReverseDisplay('planet');ReverseDisplay('ResourceLayer');"></a>
+		<h3><span>{Production_of_resources_in_the_planet}</span></h3>
 
-		<form method="POST" action="./?page=resources&mode=resources">
+		<form method="POST" action="./?page=resources&mode=resources&submit_resource=1">
 
 		<table cellpadding="0" cellspacing="0" style="margin-top:15px;">
 			<tr>

@@ -5,7 +5,7 @@
 <div id="siteFooter">
 	<div class="content">
 		<div class="fleft textLeft">
-			<a href="./?page=changelog" class="tips" style="position:relative;">BETA<span class="mrtooltip" style="top:-20px;">Patch notes</span></a>
+			<a href="#" onclick="mrbox('./?page=changelog',800)" class="tips" style="position:relative;">BETA<span class="mrtooltip" style="top:-20px;">Patch notes</span></a>
 			&copy; 2010 <a class="homeLink" href="http://www.xnovauk.com/" target="_blank">XNova UK</a>
 		</div>
 		<div class="fright textRight">
@@ -142,45 +142,51 @@ var metal = 0; var crystal = 0; var deut= 0; var seconds = 0; var metared = 0; v
 function update_resources(seconds){	//MadnessRed function
 	
 	//Resources
-	var metal = parseFloat(document.getElementById('ajax_metal').value);
-	var crystal = parseFloat(document.getElementById('ajax_crystal').value);
-	var deut = parseFloat(document.getElementById('ajax_deuterium').value);
+	metal = parseFloat(document.getElementById('ajax_metal').value);
+	crystal = parseFloat(document.getElementById('ajax_crystal').value);
+	deut = parseFloat(document.getElementById('ajax_deuterium').value);
+	
 	//Energy
-	/*energy_max = parseFloat(document.getElementById('ajax_energy_max').value);
-	energy_used = parseFloat(document.getElementById('ajax_energy_used').value);
-	energy_left = parseFloat((energy_max * 1.0) + (energy_used * 1.0));*/
+	energy_max = document.getElementById('ajax_energy_max').value;
+	energy_used = document.getElementById('ajax_energy_used').value;
+	energy_left = (energy_max * 1.0) + (energy_used * 1.0);
 	
 	//Storage
-	var metal_max = parseFloat(document.getElementById('ajax_metal_max').value);
-	var crystal_max = parseFloat(document.getElementById('ajax_crystal_max').value);
-	var deuterium_max = parseFloat(document.getElementById('ajax_deuterium_max').value);
+	metal_max = parseFloat(document.getElementById('ajax_metal_max').value);
+	crystal_max = parseFloat(document.getElementById('ajax_crystal_max').value);
+	deuterium_max = parseFloat(document.getElementById('ajax_deuterium_max').value);
 	
 	//Matter
-	//matter = document.getElementById('ajax_matter').value;
+	matter = document.getElementById('ajax_matter').value;
 	
 	//By default we are not in the red
-	var metared = 0;
-	var crysred = 0;
-	var deutred = 0;
-	/*engyred = 0;
-	engygreen = 0;*/
+	metared = 0;
+	crysred = 0;
+	deutred = 0;
+	engyred = 0;
+	engygreen = 0;
 	
 	//See if we are in the red though
 	if(metal >= metal_max){ metared = 1; }
 	if(crystal >= crystal_max){ crysred = 1; }
 	if(deut >= deuterium_max){ deutred = 1; }
+	if(energy_left <= 0){ engyred = 1; }else{ engygreen = 2; }
 
 
 	document.getElementById('pretty_metal').innerHTML = pretty_number(Math.round(metal));
 	document.getElementById('pretty_crystal').innerHTML = pretty_number(Math.round(crystal));
 	document.getElementById('pretty_deut').innerHTML = pretty_number(Math.round(deut));
-	//document.getElementById('pretty_matter').innerHTML = pretty_number(Math.round(matter));
+	document.getElementById('pretty_matter').innerHTML = pretty_number(Math.round(matter));
 
 	document.getElementById('resources_metal').innerHTML = colour_number(KMnumber(Math.round(metal)),metared);
 	document.getElementById('resources_crystal').innerHTML = colour_number(KMnumber(Math.round(crystal)),crysred);
 	document.getElementById('resources_deuterium').innerHTML = colour_number(KMnumber(Math.round(deut)),deutred);
-	//document.getElementById('resources_matter').innerHTML = KMnumber(Math.round(matter));
+	document.getElementById('resources_matter').innerHTML = KMnumber(Math.round(matter));
 	
+	document.getElementById('resources_energy').innerHTML = colour_number(KMnumber(Math.round(energy_left)),engyred);
+	document.getElementById('resources_energy_detil').innerHTML = colour_number(KMnumber(Math.round(energy_left)),engyred);
+	document.getElementById('pretty_energy').innerHTML = colour_number(KMnumber(Math.round(energy_max)));	
+	document.getElementById('pretty_energy_used').innerHTML = colour_number(KMnumber(Math.round(energy_used)));	
 
 	window.setTimeout('update_resources();',2000);
 }
@@ -204,7 +210,7 @@ ajax('./?page=ajax','ajax_data',5000,'manage_ajax()');
 ajax('./?page=im','chatbox',3000,'chatbox_update()');
 
 //resources and time
-//update_resources();
+update_resources();
 </script>
 
 <script type='text/javascript' src='./scripts/trader.js'></script>

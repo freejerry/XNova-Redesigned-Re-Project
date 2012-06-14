@@ -19,7 +19,7 @@ define('ADMIN_NAME'			, "XNova Redesigned Team");
 
 //How do we get to the files from the domain, eg if your game was at "www.examlpe.com/xnova/" you would simply enter "xnova/" here.
 //(note for the install script to work, this next line MUST BE 22)
-define('PATH_TO_FILES'		, "redesigned/");
+define('PATH_TO_FILES'		, "XR3/");
 
 //GameURL, the url of the game. Probably best to leave this.
 define('BASEURL'			, "http://".$_SERVER['HTTP_HOST']."/".PATH_TO_FILES);

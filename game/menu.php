@@ -41,7 +41,7 @@ function ShowLeftMenu($cpage = 'x') {
 			<span class="menu_icon">
 		  		<img src="{{skin}}/img/navigation/navi_ikon_empire_{let_empire}.gif" height="29" width="38" />
 			</span>
-			<a class="menubutton" onclick="loadpage(\'./?page=empire\',\'{Empire}\',\'empire\');" href="#" title="{Empire}">
+			<a class="menubutton" href="./?page=empire" title="{Empire}">
 				<span class="textlabel">{Empire}</span>
 			</a>
 		</li>';

@@ -6,7 +6,7 @@
  * @version 1.0
  * @copyright 2008 by ?????? for XNova
  */
-
+header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);

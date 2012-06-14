@@ -100,7 +100,7 @@
         		<a 	href="index.php?page=networkm&session=415ef0c90c0f" 
                 	class="tips" 
                     title="|0 new message(s)">
-                    <img src="img/layout/pixel.gif" height="13" width="25"/>
+                    <img src="{{skin}}img/layout/pixel.gif" height="13" width="25"/>
                 </a>
         	</div>
 			<div id="messages_collapsed" style="position:relative;">
@@ -111,7 +111,7 @@
                 	onClick="mySlider.open();" 
                     class="tips" 
                     title="|Attack!">
-	                    <img src="img/layout/pixel.gif" height="13" width="25"/>
+	                    <img src="{{skin}}img/layout/pixel.gif" height="13" width="25"/>
                 </a>
 	        </div>
 	        <br class="clearfloat" />

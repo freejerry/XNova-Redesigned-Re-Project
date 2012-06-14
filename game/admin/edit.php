@@ -132,7 +132,7 @@ Enter {identifier}:
 			$query = substr_replace($query,'',-2)." WHERE `id` = '".idstring($_GET['id'])."' LIMIT 1 ;";
 			doquery($query,mysql_real_escape_string($_POST['table']));
 		}
-		info("User Edited","Success",'./?page=admin&link=edit','<<');
+		info("User Edited","Success",'./?page=admin');
 
 		break;
 	default:

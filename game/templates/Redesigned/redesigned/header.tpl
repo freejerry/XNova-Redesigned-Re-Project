@@ -38,7 +38,7 @@
 				<span class="value">
 					<font id="resources_metal">{kmetal}</font>
 				</span>
-				<span class="mrtooltip">Metal: <span id="pretty_metal">{metal}</span></span>
+				<span class="mrtooltip"><div align="center">Metal</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_metal">{metal}</span><br />Storage capacity:{metal_max}</span>
 			</a>
 		</li>
 		<li class="crystal tips">
@@ -47,7 +47,7 @@
 				<span class="value">
 					<font id="resources_crystal">{kcrystal}</font>
 				</span>
-				<span class="mrtooltip">Crystal: <span id="pretty_crystal">{crystal}</span></span>
+				<span class="mrtooltip"><div align="center">Crystal</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_crystal">{crystal}</span><br />Storage capacity:{crystal_max}</span>
 			</a>
 		</li>
 		<li class="deuterium tips">
@@ -56,7 +56,7 @@
 				<span class="value">
 					<font id="resources_deuterium">{kdeut}</font>
 			   	</span>
-				<span class="mrtooltip">Deuterium: <span id="pretty_deut">{deut}</span></span>
+				<span class="mrtooltip"><div align="center">Deuterium</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_deut">{deut}</span><br />Storage capacity:{deut_max}</span>
 			</a>
 		</li>
 		<li class="energy tips">
@@ -65,16 +65,16 @@
 				<span class="value">
 					<font id="resources_energy"{energy_red}>{energy}</font>
 				</span>
-				<span class="mrtooltip">Energy: {energy}<br /><font id="pretty_energy"{energy_green}>({energy_used}/{energy_max})</font></span>
+				<span class="mrtooltip"><div align="center">Energy</div><hr size="3" align="center" width="100%" color="#FFF">Available:<font id="resources_energy_detil" {energy_green}>{energy}</font><br />Production:<font id="pretty_energy" color="green">{energy_max}</font><br />Consumption:<font id="pretty_energy_used" color="red">{energy_used}</font></span>
 			</a>
 		</li>
 		<li	class="darkmatter tips">
-			<a onclick="loadpage('./?page=premium','{Officers}','premium'); return false;" href="./?page=premium">
+			<a href="./?page=premium">
 				<img src="{skin}/img/navigation/ressourcen_DM.gif" />
 				<span class="value">
 					<span id="resources_matter">{matter}</span>
 				</span>
-				<span class="mrtooltip">Dark Matter: <span id="pretty_matter">{matter}</span></span>
+				<span class="mrtooltip"><div align="center">Dark Matter(Click to buy)</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_matter">{matter}</span></span>
 			</a>
 		</li>
 	</ul>
@@ -108,7 +108,7 @@
 	<div id="message-wrapper">
 		<div id="message_alert_box" style="visibility: {showmail};">
 			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();">
-				<img src="../img/layout/pixel.gif" height="13" width="25">
+				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25">
 			</a>
 		</div>
 		<div id="fleetajax">

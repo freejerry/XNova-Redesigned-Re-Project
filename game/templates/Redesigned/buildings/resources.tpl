@@ -11,7 +11,7 @@
 	</div>
 	<h2>{Resources} - {planetname}</h2>
         <div id="slot01" class="slot">
-            <a class="thickbox" href="#" onclick="ReverseDisplay('planet');ReverseDisplay('ResourceLayer');">{ResourceSettings}</a>
+            <a class="thickbox" href="?page=resources&mode=resources">{ResourceSettings}</a>
          </div>
 </div>		<div class="c-left" style="{hidenorm}"></div>
 <div class="c-right" style="{hidenorm}"></div>

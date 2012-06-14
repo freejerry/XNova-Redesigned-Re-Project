@@ -328,7 +328,7 @@ function displayDate(time) {
   this_day_e[1]  = "Mon";
   this_day_e[2]  = "Tue";
   this_day_e[3]  = "Wed";
-  this_day_e[4]  = "Jueves";
+  this_day_e[4]  = "Thu";
   this_day_e[5]  = "Fri";
   this_day_e[6]  = "Sun";
 
@@ -339,5 +339,5 @@ function displayDate(time) {
   var dia = today.getDay();
     if (year < 1000) {
        year += 1900; }
-  return( today.getHours() +":"+ today.getMinutes() + ":" + today.getSeconds() + " " + this_day_e[dia] + " " + day + " " + this_month[month] + " " + year);
+  return(year + " " + this_month[month] + " " + day + " " + this_day_e[dia] + " " + today.getHours() +":"+ today.getMinutes() + ":" + today.getSeconds());
 }

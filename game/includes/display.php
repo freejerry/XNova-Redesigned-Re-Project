@@ -185,6 +185,9 @@ function NewHeader($bodyid) {
 	$parse['kmetal'] = KMnumber($planetrow['metal'] * 1);
 	$parse['kcrystal'] = KMnumber($planetrow['crystal'] * 1);
 	$parse['kdeut'] = KMnumber($planetrow['deuterium'] * 1);
+	$parse['metal_max'] = pretty_number($planetrow['metal_max'] * 1);
+	$parse['crystal_max'] = pretty_number($planetrow['crystal_max'] * 1);
+	$parse['deut_max'] = pretty_number($planetrow['deuterium_max'] * 1);
 
 	$parse['energy'] = KMnumber($planetrow['energy_used'] + $planetrow['energy_max']);
 	$parse['energy_green'] = " color=\"green\"";

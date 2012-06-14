@@ -13,13 +13,13 @@
 		<div id="row">
         <div class="buttons leftCol">
             <a id="player" class="{class_1}" onclick="loadpage('./?page=statistics&who=player&sort={sort}&axah=1','{Statistics}','statistics');" href="#">
-                <img src="img/layout/pixel.gif" width="54" height="54">
+                <img src="{{skin}}img/layout/pixel.gif" width="54" height="54">
                 <span class="mrtooltip">{Show} {player} {highscores}</span>
 
                 <span class="marker"></span>
             </a>
             <a id="alliance" class="{class_2}" onclick="loadpage('./?page=statistics&who=ally&sort={sort}&axah=1','{Statistics}','statistics');" href="#">
-                <img src="img/layout/pixel.gif" width="54" height="54">
+                <img src="{{skin}}img/layout/pixel.gif" width="54" height="54">
                 <span class="mrtooltip">{Show} {alliance} {highscores}</span>
                 <span class="marker"></span>
             </a>
@@ -27,18 +27,18 @@
         <div class="buttons rightCol">
 
             <a id="points" class="{class_3}" onclick="loadpage('./?page=statistics&&sort=total&who={who}&axah=1','{Statistics}','statistics');" href="#">
-                <img src="img/layout/pixel.gif" width="54" height="54">
+                <img src="{{skin}}img/layout/pixel.gif" width="54" height="54">
                 <span class="mrtooltip">{Show} {score}</span>
                 <span class="marker"></span>
             </a>
             <a id="fleet" class="{class_4}" onclick="loadpage('./?page=statistics&sort=fleet&who={who}&axah=1','{Statistics}','statistics');" href="#">
-                <img src="img/layout/pixel.gif" width="54" height="54">
+                <img src="{{skin}}img/layout/pixel.gif" width="54" height="54">
                 <span class="mrtooltip">{Show} {fleets}</span>
 
                 <span class="marker"></span>                
             </a>
             <a id="research" class="{class_5}" onclick="loadpage('./?page=statistics&sort=research&who={who}&axah=1','{Statistics}','statistics');" href="#">
-                <img src="img/layout/pixel.gif" width="54" height="54">
+                <img src="{{skin}}img/layout/pixel.gif" width="54" height="54">
                 <span class="mrtooltip">{Show} {research}</span>
                 <span class="marker"></span>                    
             </a>

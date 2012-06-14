@@ -65,9 +65,9 @@
 									<span class="label">Techtree</span>
 								</a>
 							</li>
-							<li class="demolish" title="{title}" {display_destroy}>
-								<a class="tips" href="{td_url}">
-									<span class="pic"></span>
+							<li class="demolish" title="{title_msg}" {display_destroy}>
+								<a class="tips" href="#" onclick="{td_url}">
+									<span class="{demolish}"></span>
 									<span class="label">{title}</span>
 								</a>
 							</li>
