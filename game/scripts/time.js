@@ -23,7 +23,7 @@ DinaDate = "" + jour0 + jour + "/" +  mois0 + mois + "/" + annee0 + annee;
 total = DinaDate
 DinaHeure = heure0 + heure + ":" + min0 + min + ":" + sec0 + sec;
 total = DinaHeure
-total = "Nous sommes le " + DinaDate + " et il est " + DinaHeure + ".";
+total = "Today is " + DinaDate + " | Current Time: " + DinaHeure + ".";
 
 document.getElementById("dateheure").innerHTML = total;
 
