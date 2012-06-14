@@ -8,10 +8,14 @@ Install by following steps:
 
 2.Creat a MySQL database on your server.
 
-3.Open http://your_host.domin/source_folder with browser.
+3.Open "http://your_host.domin/source_folder" with browser.
 
 4.Following installation guide to install.
 
 5.Sign up one account in game after installation.
 
 The first account will be an admin.
+
+You will need upload skin file to the game folder.
+
+You can download it from "https://github.com/freejerry/XNova-Redesigned-Re-Project/downloads".
