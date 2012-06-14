@@ -67,9 +67,9 @@ function ShowPlanetList($axah = false,$debug = false) {
 		$planetlist = str_replace('{size}',$size,$planetlist);
 				
 		if($axah){			
-			$return = "\t<div id=\"".$mode."\">\n\t\t<div id=\"".$name."\">\n\n\t\t\t<div id=\"countColonies\">\n\t\t\t\t<p class=\"textCenter tips\" title=\"|\">\n\t\t\t\t\t<span>".$c."/".eval($formulas['max_planets'])."</span> Planets\n\t\t\t\t</p>\n\t\t\t</div>".$planetlist."\n\n\t\t</div>\n\t</div>\n";
+			$return = "\t<div id=\"".$mode."\">\n\t\t<div id=\"".$name."\">\n\n\t\t\t<div id=\"countColonies\">\n\t\t\t\t<p class=\"textCenter tips\" title=\"Planets\">\n\t\t\t\t\t<span>".$c."/".eval($formulas['max_planets'])."</span> Planets\n\t\t\t\t</p>\n\t\t\t</div>".$planetlist."\n\n\t\t</div>\n\t</div>\n";
 		}else{
-			$return = "<!-- RIGHTMENU -->\n<div id=\"rechts\">\n\n\t<div id=\"".$mode."\">\n\t\t<div id=\"".$name."\">\n\n\t\t\t<div id=\"countColonies\">\n\t\t\t\t<p class=\"textCenter tips\" title=\"|\">\n\t\t\t\t\t<span>".$c."/".eval($formulas['max_planets'])."</span> Planets\n\t\t\t\t</p>\n\t\t\t</div>".$planetlist."\n\n\t\t</div>\n\t</div>\n</div>\n<!-- END RIGHTMENU -->\n";
+			$return = "<!-- RIGHTMENU -->\n<div id=\"rechts\">\n\n\t<div id=\"".$mode."\">\n\t\t<div id=\"".$name."\">\n\n\t\t\t<div id=\"countColonies\">\n\t\t\t\t<p class=\"textCenter tips\" title=\"Planets\">\n\t\t\t\t\t<span>".$c."/".eval($formulas['max_planets'])."</span> Planets\n\t\t\t\t</p>\n\t\t\t</div>".$planetlist."\n\n\t\t</div>\n\t</div>\n</div>\n<!-- END RIGHTMENU -->\n";
 		}
 
 	} else {

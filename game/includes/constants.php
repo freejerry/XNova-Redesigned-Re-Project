@@ -51,7 +51,7 @@ if ( defined('INSIDE') ) {
 	define('BASE_STORAGE_SIZE'			, 10000);
 	define('BUILD_METAL'				, 500);
 	define('BUILD_CRISTAL'				, 500);
-	define('BUILD_DEUTERIUM'			, 500);
+	define('BUILD_DEUTERIUM'			, 0);
 
 	define('DARK_MATTER_FACTOR'       , 1);
 	

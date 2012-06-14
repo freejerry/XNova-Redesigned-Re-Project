@@ -11,7 +11,7 @@
 $Template = '
 		<div id="message_alert_box" style="visibility: {showmail};">
 			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();">
-				<img src="../img/layout/pixel.gif" height="13" width="25">
+				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25">
 			</a>
 		</div>
 		<div id="fleetajax"> 

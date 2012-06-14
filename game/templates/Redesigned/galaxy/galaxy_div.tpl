@@ -76,32 +76,10 @@ document.onkeydown=function(e){
 	</tr>
 	<tr class="footer">
 		<td colspan="13">
-
-			<span id="colonized" style="float:left;">0 Planets colonized</span>
-			<span id="legend" style="float:right; padding:6px 6px 0px">
-				<a href="#" onmouseover="Tip('<div id=\'TTWrapper\'>\n\t\t<div id=\'tooltipBody\' class=\'tooltipBody\'>\t\n\t\t\t<span class=\'tooltip_sticky\'>\n\t\t\t\t<div class=\'TTInner\' id=\'TTAlly\'>\n\t\t\t\t\t<table cellpadding=\'0\' cellspacing=\'0\' class=\'legende\' width=\'100\'>\n\t\t\t\t\t<tr><th colspan=\'2\'><span class=\'spacing\'>Legend</span></th></tr>\n\t\t\t\t\t<tr class=\'body\'><td class=\'description\'>Stronger Player</td><td><span class=\'abbreviation status_abbr_strong\'>s</span></td></tr>\n\t\t\t\t\t<tr class=\'body\'><td class=\'description\'>Weaker Player (newbie)</td><td><span class=\'abbreviation status_abbr_noob\'>n</span></td></tr>\n\t\t\t\t\t<tr class=\'body\'><td class=\'description\'>Vacation Mode</td><td><span class=\'abbreviation status_abbr_vacation\'>v</span></td></tr>\n\t\t\t\t\t<tr class=\'body\'><td class=\'description\'>Banned</td><td><span class=\'abbreviation status_abbr_banned\'>b</span></td></tr>\n\t\t\t\t\t<tr class=\'body\'><td class=\'description\'>7 days inactive</td><td><span class=\'abbreviation status_abbr_inactive\'>i</td>\n\t\t\t\t\t<tr class=\'body\'><td class=\'description\'>28 days inactive</td><td><span class=\'abbreviation status_abbr_longinactive\'>I</span></td></tr>\n\t\t\t\t\t<tr class=\'footer\' style=\'background:url({{skin}}/img/tooltip/ttfooter.gif) no-repeat top center;height:11px;width:250px !important;\'><td></span></td></tr>\n\t\t\t\t\t</table>\t\t\n\t\t\t\t</div>\n\t\t\t</span>\n\t\t</div>\n\t</div>\n</div>',BGCOLOR,'',FONTCOLOR,'#FFFFFF',BORDERWIDTH,0,FOLLOWMOUSE,false,STICKY,true,DURATION,5000)" onmouseout="UnTip()">
+			<span id="colonized" style="float:left;" class="tips" title="Planets colonized">0 Planets colonized</span>
+			<span id="legend" style="float:right; padding:6px 6px -5px">
+				<a onmouseover="Tip('<div id=\'TTWrapper\'><div id=\'tooltipBody\' class=\'tooltipBody\'><span class=\'tooltip_sticky\'><div class=\'TTInner\' id=\'TTAlly\'><table cellpadding=\'0\' cellspacing=\'0\' class=\'legende\' width=\'100\'><tr><th colspan=\'2\'><span class=\'spacing\'>Legend</span></th></tr><tr class=\'body\'><td class=\'description\'>Stronger Player</td><td><span class=\'abbreviation status_abbr_strong\'>s</span></td></tr><tr class=\'body\'><td class=\'description\'>Weaker Player (newbie)</td><td><span class=\'abbreviation status_abbr_noob\'>n</span></td></tr><tr class=\'body\'><td class=\'description\'>Vacation Mode</td><td><span class=\'abbreviation status_abbr_vacation\'>v</span></td></tr><tr class=\'body\'><td class=\'description\'>Banned</td><td><span class=\'abbreviation status_abbr_banned\'>b</span></td></tr><tr class=\'body\'><td class=\'description\'>7 days inactive</td><td><span class=\'abbreviation status_abbr_inactive\'>i</td><tr class=\'body\'><td class=\'description\'>28 days inactive</td><td><span class=\'abbreviation status_abbr_longinactive\'>I</span></td></tr><tr class=\'footer\' style=\'background:url({{skin}}/img/tooltip/ttfooter.gif) no-repeat top center;height:11px;width:250px !important;\'><td colspan=\'2\'></td></tr></table></div></span></div></div>',BGCOLOR,'',FONTCOLOR,'#FFFFFF',BORDERWIDTH,0,FOLLOWMOUSE,false,STICKY,true,DURATION,5000)" onmouseout="UnTip()">
 					<img src="{{skin}}/img/icons/info.gif" />
-					<!--<span class="mrtooltip" style="background-color:transparent;border:0px;top:400px;left:525px;padding:0px;">
-						<div id="TTWrapper">
-								<div id="tooltipBody" class="tooltipBody">
-									<span class='tooltip_sticky'>
-										<div class="TTInner" id="TTAlly">
-											<table cellpadding="0" cellspacing="0" class="legende" width="100">
-											<tr><th colspan="2"><span class="spacing">Legend</span></th></tr>
-											<tr class="body"><td class="description">Stronger Player</td><td><span class="abbreviation status_abbr_strong">s</span></td></tr>
-											<tr class="body"><td class="description">Weaker Player (newbie)</td><td><span class="abbreviation status_abbr_noob">n</span></td></tr>
-											<tr class="body"><td class="description">Vacation Mode</td><td><span class="abbreviation status_abbr_vacation">v</span></td></tr>
-											<tr class="body"><td class="description">Banned</td><td><span class="abbreviation status_abbr_banned">b</span></td></tr>
-											<tr class="body"><td class="description">7 days inactive</td><td><span class="abbreviation status_abbr_inactive">i</td>
-											<tr class="body"><td class="description">28 days inactive</td><td><span class="abbreviation status_abbr_longinactive">I</span></td></tr>
-											<tr class="footer" style="background:url('{{skin}}/img/tooltip/ttfooter.gif') no-repeat top center;height:11px;width:250px !important;"><td></span></td></tr>
-											</table>
-										</div>
-									</span>
-								</div>
-							</div>
-						</div>
-					</span>-->
 			   </a>
 			</span>
 			<br class="clearfloat" />
@@ -110,21 +88,20 @@ document.onkeydown=function(e){
 	<tr class="footer">
 		<td colspan="13">
 
-			<span id="probes" class="tips" title="|Espionage probes: 0">
+			<span id="probes" class="tips" title="Espionage probes: 0">
 				<span id="probeValue">{res210}</span> Spy probes
 			</span>
-			<span id="recycler" class="tips" title="|Available recyclers: 0">
+			<span id="recycler" class="tips" title="Available recyclers: 0">
 				<span id="recyclerValue">{res209}</span> Recycler
 			</span>
-			<span id="rockets" class="tips" title="|Available interplanetary missiles: 0">
+			<span id="rockets" class="tips" title="Available interplanetary missiles: 0">
 				<span id="missileValue">{res503}</span> Interplanetary missiles
 			</span>
 
-			<span id="slots" class="tips" title="|Fleet slots in use: 0 of 1">
+			<span id="slots" class="tips" title="Fleet slots in use: 0 of 1">
 				<span id="slotValue">{curfleets}</span>/1 used slots
 			</span>
 		</td>
 	</tr>
-<!--	<tr><td colspan="9"><img src="css/iepngfix/opacity.png" /></td></tr>-->
 	</table>
 </div><!-- END CONTENT AREA -->

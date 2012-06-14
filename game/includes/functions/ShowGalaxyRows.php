@@ -125,7 +125,7 @@ function ShowGalaxyRows ($Galaxy, $System) {
 		$parse['micro_planet_img'] = "img/planets/micro/".$pt['type']."_".$pt['subtype']."_1.gif";
 		
 		//Player Stuff		
-		$parse['avatar_small'] = '<img src='.GetAvatar($GalaxyRowPlayer['email'],50).' alt=Player&nbsp;avatar border=0 />';
+		//$parse['avatar_small'] = '<img src='.GetAvatar($GalaxyRowPlayer['email'],50).' alt=Player&nbsp;avatar border=0 />';
 
 		//Visualizzo il Rank del Player :
 		$Rank = doquery("SELECT * FROM {{table}} WHERE `stat_type` = '1' AND `stat_code` = '1' AND `id_owner` = '". $GalaxyRowPlayer['id'] ."';", 'statpoints');
@@ -178,7 +178,7 @@ function ShowGalaxyRows ($Galaxy, $System) {
 		}
 				
 		//Actions
-		$mes = '<a class="tips thickbox" onclick="mrbox(\'./?page=write&to={id}&iframe=1&iheight=800\',800)" style="position:relative;">
+		$mes = '<a class="tips thickbox" href="javascript:void(0)" onclick="mrbox(\'./?page=write&to={id}&iframe=1&iheight=800\',800)" style="position:relative;">
 			<img src="{{skin}}/img/icons/mail.gif" width="16" height="16" title="Write Message" />
 		</a>';
 		

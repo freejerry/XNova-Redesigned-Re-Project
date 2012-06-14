@@ -26,6 +26,7 @@ function BuildingPage($a=0,$b=0){
 	}
 
 	//Right, lets see what he has an generate him an image.
+	//resource
 	$imgnum = '';
 	if($planetrow[$resource[1]] > 0){
 		$imgnum .= "_1";
@@ -38,6 +39,39 @@ function BuildingPage($a=0,$b=0){
 	}
 	if($planetrow[$resource[4]] > 0){
 		$imgnum .= "_4";
+	}
+	if($planetrow[$resource[12]] > 0){
+		$imgnum .= "_12";
+		if($planetrow[$resource[212]] > 0){
+			$imgnum .= "_212";
+		}
+	}
+	//buildings
+	if($planetrow['planet_type'] == 3){	//if the plane is a moon
+	$imgnum1 = '';
+	if($planetrow[$resource[41]] > 0){
+		$imgnum1 .= "_41";
+	}
+	if($planetrow[$resource[42]] > 0){
+		$imgnum1 .= "_42";
+	}
+	if($planetrow[$resource[43]] > 0){
+		$imgnum1 .= "_43";
+	}
+	}else{	//the planet is't a moon
+	$imgnum1 = '';
+	if($planetrow[$resource[14]] > 0){
+		$imgnum1 .= "_14";
+	}
+	if($planetrow[$resource[21]] > 0){
+		$imgnum1 .= "_21";
+	}
+	if($planetrow[$resource[31]] > 0){
+		$imgnum1 .= "_31";
+	}
+	if($planetrow[$resource[34]] > 0){
+		$imgnum1 .= "_34";
+	}
 	}
 	
 	// Boucle d'interpretation des eventuelles commandes
@@ -198,16 +232,14 @@ function BuildingPage($a=0,$b=0){
 		$parse['BuildList']				= "";
 	}
 
-	$de_planettype = PlanetType($planetrow['image']);
+	$type_array = PlanetType($planetrow['image']);
+	$de_planettype = $planetrow['image'];
 	$parse['type'] = $de_planettype['type'];
 	if($_GET['page'] == 'station'){
-		$parse['bg'] = HEADER_CACHE."station/".$parse['type'].".png";
+		if($planetrow['planet_type'] == 3) $parse['bg'] = HEADER_CACHE."station/".$parse['type'].'_'.$type_array['subtype'].$imgnum1.".png";
+		else $parse['bg'] = HEADER_CACHE."station/".$parse['type'].$imgnum1.".png";
 	}elseif($_GET['page'] == 'resources'){
-		if(url_exists(HEADER_CACHE."resources/".$parse['type'].$imgnum.".png")){
 			$parse['bg'] = HEADER_CACHE."resources/".$parse['type'].$imgnum.".png";
-		}else{
-			$parse['bg'] = HEADER_CACHE."resources/default.png";
-		}
 	}else{
 		die("Hacking attempt");
 	}
@@ -228,6 +260,7 @@ function BuildingPage($a=0,$b=0){
 		if(in_array($Element, $Allowed[$planetrow['planet_type']])) {
 			//Something else
 			$HaveRessources				= IsElementBuyable ($user, $planetrow, $Element, true, false);
+			$HaveRessourcesForDestroy	= IsElementBuyable ($user, $planetrow, $Element, true, true);
 			$parse['i']						= $Element;
 			$parse['dpath']				= $dpath;
 			$BuildingLevel				 = $planetrow[$resource[$Element]];
@@ -323,7 +356,14 @@ function BuildingPage($a=0,$b=0){
 			if($planetrow[$resource[$Element]] < 1){
 				$infopg['display_destroy'] = "style=\"display:none;\"";
 			}
-			$infopg['td_url'] = "./?page=".$_GET['page']."&cmd=destroy&id=".$Element."&building=".$Element;
+			if($HaveRessourcesForDestroy == true){
+				$infopg['demolish'] = "pic";
+				$infopg['title_msg'] = "Tear down";
+			}else{
+				$infopg['demolish'] = "disabled";
+				$infopg['title_msg'] = "Not enough resource!";
+			}
+			$infopg['td_url'] = "loadpage('./?page=".$_GET['page']."&cmd=destroy&id=".$Element."&building=".$Element."',document.title,document.body.id);";
 			$infopg['title'] = "Tear down";
 
 			$infopg['level1'] = $infopg['level'] + 1;
@@ -369,9 +409,10 @@ function BuildingPage($a=0,$b=0){
 	$parse['planet_field_current']	= $planetrow["field_current"];
 	$parse['planet_field_max']		= $planetrow['field_max'] + ($planetrow[$resource[33]] * 5);
 	$parse['field_libre']			= $parse['planet_field_max'] - $planetrow['field_current'];
-
-	$parse['buttonz']				= $BuildingPage;
-	$parse['BuildingsList']			= $BuildingPage;
+	if($_GET['mode'] != 'resources'){
+		$parse['buttonz']				= $BuildingPage;
+		$parse['BuildingsList']			= $BuildingPage;
+	}
 
 	if($_GET['page'] == 'station'){
 		$page = parsetemplate(gettemplate('buildings/station'), $parse);

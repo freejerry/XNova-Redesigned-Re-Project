@@ -185,6 +185,7 @@
 						</div>
 					</div>
 				</li>
+				<div class="extra_background"></div>
 				<br class="clearfloat" />
 			</ul>
 		</div>

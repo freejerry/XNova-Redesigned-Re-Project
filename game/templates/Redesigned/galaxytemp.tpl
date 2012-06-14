@@ -4,7 +4,7 @@
 <div id="rocketWrapper" style="display:none">
 	    <div id="rocketattack">
         <a class="close_details" onclick="tb_remove(); return false;" href="#">
-    			<img src="img/layout/pixel.gif" width="16" height="16"/>
+    			<img src="{{skin}}img/layout/pixel.gif" width="16" height="16"/>
 
         </a>
         <form method="post" name="rocketattack" action="./?page=galaxy&fireRocket=1">

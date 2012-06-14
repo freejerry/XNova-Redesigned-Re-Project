@@ -1,7 +1,7 @@
 <!-- CONTENT AREA -->
 
 <div id="inhalt">
-	<div id="planet" style="background-image:url({{skin}}/img/header/shipyard/schiffswerft_header.jpg)">
+	<div id="planet" style="background-image:url({{skin}}img/header/shipyard/schiffswerft_header.jpg)">
 		<div id="item_info">
 		{info}
 		</div>
