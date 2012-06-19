@@ -6,6 +6,8 @@
  * @version 1.0
  * @copyright 2008 by ?????? for XNova
  */
+session_start(); 
+ 
 header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
@@ -31,6 +33,10 @@ $pw_encrypted = false;
 //If we are using get to login, not recomended as password will show up in history
 if($_GET['GET_LOGIN']){	$_POST = $_GET; $pw_encrypted = true; }
 
+if($_COOKIE[$game_config['COOKIE_NAME']])
+{
+  header("Location: ".AddUniToString($redirect));
+}
 
 if ($_POST) {
 
