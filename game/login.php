@@ -33,7 +33,8 @@ $pw_encrypted = false;
 //If we are using get to login, not recomended as password will show up in history
 if($_GET['GET_LOGIN']){	$_POST = $_GET; $pw_encrypted = true; }
 
-if($_COOKIE[$game_config['COOKIE_NAME']])
+@include('config'.UNIVERSE.'.php');
+if(!empty($_COOKIE["$game_config['COOKIE_NAME']"]))
 {
   header("Location: ".AddUniToString($redirect));
 }
