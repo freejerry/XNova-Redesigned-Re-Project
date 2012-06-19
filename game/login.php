@@ -34,7 +34,7 @@ $pw_encrypted = false;
 if($_GET['GET_LOGIN']){	$_POST = $_GET; $pw_encrypted = true; }
 
 @include('config'.UNIVERSE.'.php');
-if(!empty($_COOKIE["$game_config['COOKIE_NAME']"]))
+if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 {
   header("Location: ".AddUniToString($redirect));
 }
