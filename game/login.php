@@ -36,7 +36,18 @@ if($_GET['GET_LOGIN']){	$_POST = $_GET; $pw_encrypted = true; }
 @include('config'.UNIVERSE.'.php');
 if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 {
-  header("Location: ".AddUniToString($redirect));
+  $cookie_tmp = explode('/%/',$_COOKIE[$game_config['COOKIE_NAME']]);
+  if($cookie_tmp[3]=='1')
+  {
+    $UserValidate = doquery("SELECT id,username,password FROM {{table}} WHERE id='$cookie_tmp[0]' and username='$cookie_tmp[1]'", 'users', true);
+    if(is_resource($UserValidate))
+    {
+      if(sha($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
+      {
+        header("Location: ".AddUniToString($redirect));
+      }  
+    }
+  }
 }
 
 if ($_POST) {

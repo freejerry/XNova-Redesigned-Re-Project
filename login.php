@@ -41,11 +41,9 @@ if(strlen($last_user) > 10){
 	$last_user = substr($last_user,0,8).'...';
 }
 
-$redirect = '/game/';
-@include('game/config1.php');
 if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 {
-  header("Location: ".AddUniToString($redirect));
+  header("Location: game/login.php");
 }
 
 ?>
