@@ -57,6 +57,7 @@ if($_GET['iframe'] == '1'){
 
 		case 'logout':
 			// --------------------------------------------------------------------------------------------------
+      setcookie($game_config['COOKIE_NAME'], NULL, 0);
 			ExpireCookie();
 			header("Location: ". LOGINURL);
 			die();

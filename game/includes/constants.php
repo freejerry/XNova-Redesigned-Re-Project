@@ -19,7 +19,7 @@ if ( defined('INSIDE') ) {
 	define('TEMPLATE_NAME'				, 'Redesigned');
 	define('DEFAULT_LANG'				, 'en');
 	
-	define('XNOVAUKLINK'				, 'http://xnovaredesigned.com/');
+	define('XNOVAUKLINK'				, 'https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/master/');
 
 
 
