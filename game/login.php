@@ -6,6 +6,8 @@
  * @version 1.0
  * @copyright 2008 by ?????? for XNova
  */
+session_start(); 
+ 
 header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
@@ -31,6 +33,22 @@ $pw_encrypted = false;
 //If we are using get to login, not recomended as password will show up in history
 if($_GET['GET_LOGIN']){	$_POST = $_GET; $pw_encrypted = true; }
 
+@include('config'.UNIVERSE.'.php');
+if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
+{
+  $cookie_tmp = explode('/%/',$_COOKIE[$game_config['COOKIE_NAME']]);
+  if($cookie_tmp[3]=='1')
+  {
+    $UserValidate = doquery("SELECT id,username,password FROM {{table}} WHERE id='$cookie_tmp[0]' and username='$cookie_tmp[1]'", 'users', true);
+    if(is_resource($UserValidate))
+    {
+      if(sha($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
+      {
+        header("Location: ".AddUniToString($redirect));
+      }  
+    }
+  }
+}
 
 if ($_POST) {
 
@@ -48,7 +66,7 @@ if ($_POST) {
 
 			@include('config'.UNIVERSE.'.php');
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
-			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "/", "", 0);
+			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "../", "", 0);
 
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));

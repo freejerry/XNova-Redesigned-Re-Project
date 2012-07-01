@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('INSIDE' , true);
 define('INSTALL' , false);
 define('ROOT_PATH' , './game/');
@@ -39,6 +40,12 @@ foreach($unis as $u){
 if(strlen($last_user) > 10){
 	$last_user = substr($last_user,0,8).'...';
 }
+
+if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
+{
+  header("Location: game/login.php");
+}
+
 ?>
 <html> 
 <head> 

@@ -8,24 +8,24 @@ $lang['changelog']   = array(
 '0.06' => '- Renew source file. (freejerry)',
 
 '0.05' => '- Basic files for Czech included. (Geodar)
-- Fixd install page mistakes in English. (Geodar)
+- Fixed install page mistakes in English. (Geodar)
 - Use MySQL instead of MySQLi. (Geodar)
-- Fixd 1 error in new MySQL interface. (Geodar)
-- Fixd 1 error with skin config. (Geodar)',
+- Fixed 1 error in new MySQL interface. (Geodar)
+- Fixed 1 error with skin config. (Geodar)',
 
-'0.04' => '- Fixd time format to W-D-M-Y H:m:s. (freejerry)
-- Fixd facilities page for moon header image lose. (freejerry)
-- Fixd resource production bug. (freejerry)',
+'0.04' => '- Fixed time format to W-D-M-Y H:m:s. (freejerry)
+- Fixed facilities page for moon header image lose. (freejerry)
+- Fixed resource production bug. (freejerry)',
 
-'0.03' => '- Fixd bug of \'tear down\' button. (freejerry)
-- Fixd overview page header image lose when switch between plant and moon. (freejerry)
-- Fixd build link error in building pages. (freejerry)
-- Fixd build link error in building pages. (freejerry)
-- Fixd improve botton in research page. (freejerry)',
+'0.03' => '- Fixed bug of \'tear down\' button. (freejerry)
+- Fixed overview page header image lose when switch between plant and moon. (freejerry)
+- Fixed build link error in building pages. (freejerry)
+- Fixed build link error in building pages. (freejerry)
+- Fixed improve botton in research page. (freejerry)',
 
 '0.02' => '- Fix storage formula. (freejerry)
-- Fixd header image in building pages. (freejerry)
-- Fixd icon of resource not found in facilities page. (freejerry)
+- Fixed header image in building pages. (freejerry)
+- Fixed icon of resource not found in facilities page. (freejerry)
 - Removed extra button in facilities and shipyard page. (freejerry)',
 
 '0.01' => '- Project start.
