@@ -22,7 +22,7 @@ $parse['mf']				= $mf;
 $parse['adm_ov_data_yourv']	= colourRed(VERSION);
 $info = @file(XNOVAUKLINK."info.php");
 $parse['adm_ov_here']		= $info[0];
-$parse['xnovalink']			= XNOVAUKLINK;
+$parse['xnovalink']			= XNOVAUKLINK+"game/lang/en/changelog.mo";
 
 $LastMin = doquery("SELECT * FROM {{table}} WHERE `onlinetime` >= '". (time() - 60) ."' ORDER BY `". $TypeSort ."` ASC;", 'users');
 
