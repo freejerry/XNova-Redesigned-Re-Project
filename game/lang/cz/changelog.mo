@@ -5,7 +5,8 @@ $lang['Description'] = 'Description';
 $lang['version_no']  = '0.06';
 $lang['changelog']   = array(
 
-'0.06' => '- Renew source file. (freejerry)',
+'0.06' => '- Renew source file. (freejerry)'
+- Basic implementation of Cookie and Auto-Update systems (Geodar),
 
 '0.05' => '- Basic files for Czech included. (Geodar)
 - Fixed install page mistakes in English. (Geodar)
