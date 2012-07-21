@@ -7,8 +7,7 @@
  * @copyright 2008 by ??????? for XNova
  */
 
-// This is purely for the sake of the admin panel, do not, change it, instead change the version in cahngelog.mo
-define('VERSION','beta16');       // Current XNova Redesigned version
+include("../version.php");
 ini_set('display_errors','1');
 ini_set('display_startup_errors','1');
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
