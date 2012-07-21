@@ -52,15 +52,15 @@ function DoUpdateCommands($update_array,$base_url)
     if(strtolower($command)=="updatefile")
     {
       $openfile = @file($base_url.$par, FILE_SKIP_EMPTY_LINES);
-      echo "Updating file ".$base_url.$par;
+      echo "Updating file ".$base_url.$par."<br>";
       if(is_writable($par))
       {
         file_put_contents($par,$openfile);
-        echo "<font color=lime>Updated</font>";
+        echo "<font color=lime>Updated</font><br>";
       }
       else
       {
-        echo "<font color=red>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font>";
+        echo "<font color=red>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
       } 
     }
     /*else if(strlower($command)="updatesql")
@@ -87,7 +87,7 @@ if($update_info[0] != ('Version='.VERSION))
       include("game/config1.php");
       if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
-        echo "<font color=yellow>Update Started</font>";
+        echo "<font color=yellow>Update Started</font><br>";
         $update=ExtractVersionUpdate($update_info,VERSION);
         DoUpdateCommands($update,$base_url);
         echo "<font color=yellow>Update Ended</font>";
