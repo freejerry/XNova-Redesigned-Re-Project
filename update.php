@@ -52,7 +52,7 @@ function DoUpdateCommands($update_array,$base_url)
     if(strtolower($command)=="updatefile")
     {
       $openfile = @file($base_url.$par, FILE_SKIP_EMPTY_LINES);
-      echo "Updating file ".$base_url.$par."<br>";
+      echo "Updating file ".$par."<br>";
       if(is_writable($par))
       {
         file_put_contents($par,$openfile);
