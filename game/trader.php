@@ -167,9 +167,9 @@ function ModuleMarchand ( $CurrentUser, &$CurrentPlanet ) {
 					$parse['resb'] = 'metal';
 					$parse['resc'] = 'crystal';
 	
-					$parse['tradec'] = $trade['d'];
+					$parse['tradec'] = $trade['c'];
 					$parse['tradeb'] = $trade['m'];
-					$parse['tradea'] = $trade['c'];
+					$parse['tradea'] = $trade['d'];
 					
 					break;
 			}
