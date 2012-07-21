@@ -1,3 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="login/styles.css" type="text/css">
+  <title></title>
+  </head>
+  <body link="white" alink="white" vlink="white" bgcolor="black">
+    <center>
+    <font color=red size=5><b>XNova Updater</b></font><br><br>
 <?php
 /*
 
@@ -44,11 +55,11 @@ function DoUpdateCommands($update_array,$base_url)
       if(is_writable($par))
       {
         file_put_contents($par,$openfile);
-        echo "Updated";
+        echo "<font color=lime>Updated</font>";
       }
       else
       {
-        echo "Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNOVA files are set to 777!"
+        echo "<font color=red>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font>";
       } 
     }
     /*else if(strlower($command)="updatesql")
@@ -60,36 +71,54 @@ function DoUpdateCommands($update_array,$base_url)
   }      
 }
 
-if($_GET['i']==1)
+$base_url='https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/stable/';
+$update_info=@file($base_url.'updateinfo.php', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+if($update_info[0] != ('Version='.VERSION))
 {
-  if(file_exists('./status'))
+  if($_GET['i']==1)
   {
-    include("game/config1.php");
-    if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
+    echo "<font size=3>";
+    $status_file=file('./status');
+    if($status_file[0]=='INSTALLED')
     {
-      $base_url = 'https://raw.github.com/XNovaRedesignedReProject/XNova_Redesigned_Re_Project/stable/';
-      $update_info = @file($base_url.'updateinfo.php', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-      $update=ExtractVersionUpdate($update_info,VERSION);
-      DoUpdateCommands($update,$base_url);
+      include("game/config1.php");
+      if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
+      {
+        echo "<font color=yellow>Update Started</font>";
+        $update=ExtractVersionUpdate($update_info,VERSION);
+        DoUpdateCommands($update,$base_url);
+        echo "<font color=yellow>Update Ended</font>";
+      }
+      else
+      {
+        echo "<font color=red>Passwords for XNova database doesn't match!</font>";
+      }
     }
     else
     {
-      echo "Passwords for XNOVA database doesn't match!";
+      echo "<font color=red>You need to Install XNova first!</font>";
     }
+    echo "</font>";
   }
   else
   {
-    echo "You need to Install XNOVA first!";
+?>
+    <form method='post' action='?i=1'>
+    <font color=white>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font>
+    <input type='text' name='mysql_pass' size='24'>
+    <input type='submit' value='Update'>
+    </form>
+<?php
   }
 }
 else
 {
 ?>
-<center>
-<font color=red size=5><b>XNova Updater</b></font><br><br>
-<form method='post' action='?i=1'>
-
-</center>
+    <font color=white><b>Your XNova Version is Up To Date!</b></font>
 <?php
 }
 ?>
+    </center>
+  </body>
+</html>
