@@ -19,8 +19,7 @@ if ( defined('INSIDE') ) {
 	define('TEMPLATE_NAME'				, 'Redesigned');
 	define('DEFAULT_LANG'				, 'en');
 	
-	define('XNOVAUKLINK'				, 'https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/master/');
-
+	define('XNOVAUKLINK'				, 'https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/stable/');
 
 
 	// Definition du monde connu !
