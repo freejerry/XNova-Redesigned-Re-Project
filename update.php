@@ -56,7 +56,7 @@ function DoUpdateCommands($update_array,$base_url)
       if(is_writable($par))
       {
         file_put_contents($par,$openfile);
-        echo "<font color=lime>Updated</font><br>";
+        echo "<font color=lime>Updated!</font><br>";
       }
       else
       {
