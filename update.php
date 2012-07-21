@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+  <title>XNova Updater</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="login/styles.css" type="text/css">
@@ -82,6 +83,7 @@ if($update_info[0] != ('Version='.VERSION))
     $status_file=file('./status');
     if($status_file[0]=='INSTALLED')
     {
+      define("INSIDE",true);
       include("game/config1.php");
       if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {

@@ -24,7 +24,7 @@ $info = @file(XNOVAUKLINK."info.php");
 if(VERSION != $info[0])
 {
   $parse['adm_ov_here']   = $info[0]." (Click to Update)";
-  $parse['xnovalink']     = ROOT_PATH."update.php?i=1&mysql_pass=".$dbsettings['pass'];
+  $parse['xnovalink']     = "../update.php?i=1&mysql_pass=".$dbsettings['pass'];
 }
 else
 {
