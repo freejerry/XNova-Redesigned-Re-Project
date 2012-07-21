@@ -83,6 +83,7 @@ if($update_info[0] != ('Version='.VERSION))
     $status_file=file('./status');
     if($status_file[0]=='INSTALLED')
     {
+      define("INSIDE",true);
       include("game/config1.php");
       if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
