@@ -21,8 +21,16 @@ $parse['dpath']				= $dpath;
 $parse['mf']				= $mf;
 $parse['adm_ov_data_yourv']	= colourRed(VERSION);
 $info = @file(XNOVAUKLINK."info.php");
-$parse['adm_ov_here']		= $info[0];
-$parse['xnovalink']			= XNOVAUKLINK."game/lang/en/changelog.mo";
+if(VERSION != $info[0])
+{
+  $parse['adm_ov_here']   = $info[0]." (Click to Update)";
+  $parse['xnovalink']     = ROOT_PATH."update.php?i=1&mysql_pass=".$dbsettings['pass'];
+}
+else
+{
+  $parse['adm_ov_here']   = $info[0]." (Up to Date)";
+  $parse['xnovalink']     = "#";
+}
 
 $LastMin = doquery("SELECT * FROM {{table}} WHERE `onlinetime` >= '". (time() - 60) ."' ORDER BY `". $TypeSort ."` ASC;", 'users');
 
