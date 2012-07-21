@@ -79,7 +79,7 @@ if($update_info[0] != ('Version='.VERSION))
 {
   if($_GET['i']==1)
   {
-    echo "<font size=3>";
+    echo "<font size=3 color=white>";
     $status_file=file('./status');
     if($status_file[0]=='INSTALLED')
     {
