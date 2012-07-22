@@ -20,8 +20,8 @@ $parse						= $lang;
 $parse['dpath']				= $dpath;
 $parse['mf']				= $mf;
 $parse['adm_ov_data_yourv']	= colourRed(VERSION);
-$info = @file(XNOVAUKLINK."info.php");
-if(VERSION != $info[0])
+$info = @file(XNOVAUKLINK."updateinfo.php");
+if(("Version=".VERSION) != $info[0])
 {
   $parse['adm_ov_here']   = $info[0]." (Click to Update)";
   $parse['xnovalink']     = "../update.php?i=1&mysql_pass=".$dbsettings['pass'];

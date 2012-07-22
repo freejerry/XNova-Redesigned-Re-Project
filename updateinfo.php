@@ -1,4 +1,15 @@
-Version=beta17.1
+Version=beta16.2
+BackupFile=game/config1.php
+UpdateFile=game/config1.php
+RenewFile=game/config1.php
+UpdateFile=game/includes/pages/BuildingPage.php
+UpdateFile=game/includes/pages/ResearchPage.php
+UpdateFile=game/includes/pages/ShipyardPage.php
+UpdateFile=game/index.php
+UpdateFile=game/lang/cz/research.mo
+UpdateFile=game/lang/en/research.mo
+UpdateFile=game/templates/Redesigned/buildings/sy_info.tpl
+UpdateFile=game/trader.php
 UpdateFile=version.php
 UpdateFile=info.php
 Version=beta16

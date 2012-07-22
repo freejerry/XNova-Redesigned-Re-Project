@@ -1,3 +1,12 @@
+<?php
+/*
+
+  Auto Update System by Geodar
+  
+  Update only from stable branch from Github
+
+*/
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -11,14 +20,6 @@
     <center>
     <font color=red size=5><b>XNova Updater</b></font><br><br>
 <?php
-/*
-
-  Auto Update System by Geodar
-  
-  Update only from stable branch from Github
-
-*/
-
 include("version.php");
 function ExtractVersionUpdate($info_file,$version)
 {
@@ -48,7 +49,8 @@ function DoUpdateCommands($update_array,$base_url)
   {
     $commandpar = explode('=',$update_array[$i]);
     $command = $commandpar[0];
-    $par = $commandpar[1];
+    if(count($commandpar)>1)
+      $par = $commandpar[1];
     if(strtolower($command)=="updatefile")
     {
       $openfile = @file($base_url.$par, FILE_SKIP_EMPTY_LINES);
@@ -62,6 +64,48 @@ function DoUpdateCommands($update_array,$base_url)
       {
         echo "<font color=red>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
       } 
+    }
+    else if(strtolower($command)=="backupfile")
+    {
+      if(file_exists($par))
+      {
+        if(is_writable($par.".backup"))
+        {
+          if(copy($par,$par.".backup"))
+          {
+            echo "<font color=lime>Backup file for ".$par." created!</font><br>";
+          }
+          else
+          {
+            echo "<font color=red>Cannot backup file '".$par."'! Copy failed!</font><br>";
+          }          
+        }
+        else
+        {
+          echo "<font color=red>Cannot backup file '".$par."'! File '".$par.".backup' is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
+        }
+      }
+    }
+    else if(strtolower($command)=="renewfile")
+    {
+      if(file_exists($par.".backup"))
+      {
+        if(is_writable($par))
+        {
+          if(copy($par.".backup",$par))
+          {
+            echo "<font color=lime>File ".$par." was renewed!</font><br>";
+          }
+          else
+          {
+            echo "<font color=red>Cannot renew file '".$par."'! Copy failed!</font><br>";
+          }          
+        }
+        else
+        {
+          echo "<font color=red>Cannot renew file '".$par."'! File '".$par."' is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
+        }
+      }
     }
     /*else if(strlower($command)="updatesql")
     {
