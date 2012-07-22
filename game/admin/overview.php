@@ -20,15 +20,16 @@ $parse						= $lang;
 $parse['dpath']				= $dpath;
 $parse['mf']				= $mf;
 $parse['adm_ov_data_yourv']	= colourRed(VERSION);
-$info = @file(XNOVAUKLINK."updateinfo.php");
+$info = @file(XNOVAUKLINK."updateinfo.php", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$version_tmp = explode("Version=",$info[0]);
 if(("Version=".VERSION) != $info[0])
 {
-  $parse['adm_ov_here']   = $info[0]." (Click to Update)";
+  $parse['adm_ov_here']   = $version_tmp[0]." (Click to Update)";
   $parse['xnovalink']     = "../update.php?i=1&mysql_pass=".$dbsettings['pass'];
 }
 else
 {
-  $parse['adm_ov_here']   = $info[0]." (Up to Date)";
+  $parse['adm_ov_here']   = $version_tmp[0]." (Up to Date)";
   $parse['xnovalink']     = "#";
 }
 

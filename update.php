@@ -151,8 +151,8 @@ if($update_info[0] != ('Version='.VERSION))
   {
 ?>
     <form method='post' action='?i=1'>
-    <font color=white>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font>
-    <input type='text' name='mysql_pass' size='24'>
+    <font color=white>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
+    <input type='text' name='mysql_pass' size='24'><br>
     <input type='submit' value='Update'>
     </form>
 <?php
