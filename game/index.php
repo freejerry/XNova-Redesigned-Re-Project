@@ -24,14 +24,14 @@ define('USER_NAME',$userclass->username);
 PlanetResourceUpdate($userclass->uarray,$planetrow,time());
 
 //Skin config?
-/*
+
 $skin_config = file(GAME_SKIN."/config.txt");
 if(substr($skin_config[0], 0, 26) == '!!--Skin Configuration--!!'){
 	define('HEADER_CACHE',str_replace("{{skin}}",GAME_SKIN,$skin_config[2]));
 }
-else{*/
+else{
 	define('HEADER_CACHE',GAME_SKIN.'/headerCache/'); //not working skin config -> missing file
-//}
+}
 
 if($_GET['iframe'] == '1'){
 	include_once('iframe.php');
@@ -141,7 +141,7 @@ if($_GET['iframe'] == '1'){
 			$pageid = "research";
 			includeLang('buildings');
 			getLang('research');
-			include(ROOT_PATH . 'includes/pages/ResearchPage.php');
+			include('includes/pages/ResearchPage.php');
 			UpdatePlanetBatimentQueueList ( $planetrow, $userclass->uarray );
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			ResearchPage ( $planetrow, $userclass->uarray, $IsWorking['OnWork'], $IsWorking['WorkOn'] );
