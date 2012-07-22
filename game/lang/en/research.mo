@@ -10,7 +10,7 @@
 //<Click texts>
 $lang['Improve']			= 'Improve';
 $lang['InResearch']			= 'Lab in use';
-//$lang['NotAccessible']		= 'Not Accessible';
+$lang['NotAccessible']		= 'Not Accessible';
 
 
 ?>
