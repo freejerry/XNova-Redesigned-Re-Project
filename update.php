@@ -45,6 +45,7 @@ function DoUpdateCommands($update_array,$base_url)
 {
   $i=0;
   $complete=false;
+  @include("game/db/mysql.php");
   while ($i<count($update_array))
   {
     $commandpar = explode('=',$update_array[$i]);
@@ -63,6 +64,18 @@ function DoUpdateCommands($update_array,$base_url)
       else
       {
         echo "<font color=red>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
+      } 
+    }
+    else if(strtolower($command)=="deletefile")
+    {
+      echo "Deleting file ".$par."<br>";
+      if(unlink($par))
+      {
+        echo "<font color=lime>Deleted!</font><br>";
+      }
+      else
+      {
+        echo "<font color=red>Cannot delete file '".$par."'!</font><br>";
       } 
     }
     else if(strtolower($command)=="backupfile")
@@ -107,11 +120,17 @@ function DoUpdateCommands($update_array,$base_url)
         }
       }
     }
-    /*else if(strlower($command)="updatesql")
+    else if(strlower($command)="updatesql")
     {
-      $openfile = @file($base_url.$par);
-       
-    }*/
+      $openfile = @file($base_url."sqlupdates/".$par);
+      $p=0;
+      while ($p<count($openfile))
+      {
+        //doquery($openfile[$p], $openfile[$p+1]);
+        echo "doquery(\""$openfile[$p]."\",\"".$openfile[$p+1]."\");<br>";  //debug     
+        $p+=2;
+      } 
+    }
     $i+=1;  
   }      
 }
