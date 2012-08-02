@@ -12,7 +12,6 @@ $basedlang = array(
   'cz' => DEFAULT_LANG,
 	
 	'us' => 'en',
-  'cs' => 'cz',
 );
 
 ?>
