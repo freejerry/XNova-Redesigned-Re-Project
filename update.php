@@ -127,7 +127,7 @@ function DoUpdateCommands($update_array,$base_url)
       while ($p<count($openfile))
       {
         //doquery($openfile[$p], $openfile[$p+1]);
-        echo "doquery(\""$openfile[$p]."\",\"".$openfile[$p+1]."\");<br>";  //debug     
+        echo "doquery(\"".$openfile[$p]."\",\"".$openfile[$p+1]."\");<br>";  //debug     
         $p+=2;
       } 
     }
