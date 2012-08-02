@@ -45,6 +45,8 @@ function DoUpdateCommands($update_array,$base_url)
 {
   $i=0;
   $complete=false;
+  define("ROOT_PATH","game/");
+  define("UNIVERSE","1");
   @include("game/db/mysql.php");
   while ($i<count($update_array))
   {
