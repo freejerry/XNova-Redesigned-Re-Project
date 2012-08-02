@@ -124,13 +124,13 @@ function DoUpdateCommands($update_array,$base_url)
     {
       $openfile = @file($base_url."sqlupdates/".$par);
       $p=0;
-      echo $base_url."sqlupdates/".$par."<br>";
+      echo "Executing SQL file '".$par."'!<br>";
       while ($p<count($openfile))
       {
-        //doquery($openfile[$p], $openfile[$p+1]);        
-        echo "doquery(\"".$openfile[$p]."\",\"".$openfile[$p+1]."\");<br>";  //debug     
+        doquery($openfile[$p], $openfile[$p+1]);            
         $p+=2;
-      } 
+      }
+      echo "<font color=lime>SQL file '".$par."' Executed!</font><br>"; 
     }
     $i+=1;  
   }      
