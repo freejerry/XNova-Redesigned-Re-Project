@@ -1,3 +1,6 @@
+Version=beta16.4
+UpdateSQL=users_01_02_07_2012.sql
+UpdateFile=version.php
 Version=beta16.3
 UpdateSQL=users_00_02_07_2012.sql
 UpdateFile=version.php
