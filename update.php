@@ -120,7 +120,7 @@ function DoUpdateCommands($update_array,$base_url)
         }
       }
     }
-    else if(strlower($command)="updatesql")
+    else if(strlower($command)=="updatesql")
     {
       $openfile = @file($base_url."sqlupdates/".$par);
       $p=0;

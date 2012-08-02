@@ -1,5 +1,6 @@
 Version=beta16.3
 UpdateSQL=users_00_02_07_2012.sql
+UpdateFile=version.php
 Version=beta16.2
 BackupFile=game/config1.php
 UpdateFile=game/config1.php
