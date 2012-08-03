@@ -6,17 +6,17 @@
  */
 
 //Title
-$lang['title']				= "Alliance";
-$lang['ainfo']				= "Alliance Informacion";
+$lang['title']				= "Aliance";
+$lang['ainfo']				= "Informace o Alianci";
 
 //Tabs
-$lang['create_ally']		= 'Create alliance';
-$lang['search_ally']		= 'Search for alliance';
-$lang['apply']				= 'Apply';
-$lang['application']		= 'Application';
+$lang['create_ally']		= 'Vytvořit alianci';
+$lang['search_ally']		= 'Hledat alianci';
+$lang['apply']				= 'Zapsat se';
+$lang['application']		= 'Požadavek na připojení';
 
 //Apply
-$lang['Write_application']	= 'Write application';
+$lang['Write_application']	= 'Napsat požadavek na připojení';
 $lang['Requesttext']		= 'Request text';
 $lang['YourApp']			= 'Your application at ';
 
