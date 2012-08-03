@@ -8,7 +8,7 @@
  */
 
 if($user['authlevel'] < 1){
-	info($lang['sys_noalloaw'],$lang['sys_noaccess'],'./?page=overview','./?page=overview');
+	message($lang['sys_noalloaw'],$lang['sys_noaccess'],'./?page=overview','3');
 }
 
 getLang('admin');
