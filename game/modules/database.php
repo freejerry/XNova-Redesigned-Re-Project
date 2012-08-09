@@ -104,7 +104,7 @@ class database {
 		return $result['username'];
 	}
   
-  public function $insert_id()
+  public function insert_id()
   {
     return mysql_insert_id();
   }

@@ -26,7 +26,9 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 
 			$InQueue = 0;
 			$QueueSize = 0;
-			foreach(explode(";",$CurrentPlanet['b_hangar_id']) as $temp){
+      if(count(explode(";",$CurrentPlanet['b_hangar_id'])>0)
+      {
+			 foreach(explode(";",$CurrentPlanet['b_hangar_id']) as $temp){
 				if(strlen($temp) > 0){
 					$q = explode(",",$temp);
 					$QueueSize += $q[1];
@@ -34,7 +36,8 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 						$InQueue += $q[1];
 					}
 				}
-			}
+			 }
+      }
 			
 			//If there is a maximum allowed
 			if($pricelist[$Element]['max'] > 0){
