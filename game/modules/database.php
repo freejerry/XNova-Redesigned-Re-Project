@@ -103,6 +103,11 @@ class database {
 		$result = $this->doquery("SELECT `username` FROM {{table}} WHERE `id` = '".$this->idstring($id)."' LIMIT 1 ;", 'users', true);
 		return $result['username'];
 	}
+  
+  public function $insert_id()
+  {
+    return mysql_insert_id();
+  }
 	
 	//Close connection
 	public function __destruct(){

@@ -11,7 +11,7 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 //    echo $query."<br />";
 	require(ROOT_PATH.'config'.UNIVERSE.'.php');
 
-	$info =debug_backtrace();
+	$info=debug_backtrace();
 	$callingfile = $info[0]['file']; $callingline = $info[0]['line'];
 	
 	$table = mysql_escape_string($tbl);
