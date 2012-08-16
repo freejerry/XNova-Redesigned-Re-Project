@@ -26,7 +26,7 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 
 			$InQueue = 0;
 			$QueueSize = 0;
-      if(count(explode(";",$CurrentPlanet['b_hangar_id'])>0)
+      if(count(explode(";",$CurrentPlanet['b_hangar_id'])>0))
       {
 			 foreach(explode(";",$CurrentPlanet['b_hangar_id']) as $temp){
 				if(strlen($temp) > 0){
