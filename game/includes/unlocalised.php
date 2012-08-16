@@ -229,7 +229,7 @@ function includeLang ($filename, $en = 'false', $ext = '.mo') {
 	if($filename == 'changelog'){
 		echo nl2br(print_r(debug_backtrace(),true));
 	}
-	@include ($xnova_root_path . "lang/". $SelLanguage ."/". $filename.$ext);
+	@include ($xnova_root_path . "language/". $SelLanguage ."/". $filename.$ext);
 }
 
 function getLang ($filename, $uselang = 'user', $default = false, $ext = '.mo') {
