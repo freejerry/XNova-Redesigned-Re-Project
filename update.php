@@ -129,8 +129,11 @@ function DoUpdateCommands($update_array,$base_url)
       echo "Executing SQL file '".$par."'!<br>";
       while ($p<count($openfile))
       {
-        doquery($openfile[$p], $openfile[$p+1]);            
-        $p+=2;
+        if(!($openfile[$p][0]=='/' and $openfile[$p][1]=='/'))
+        {
+          doquery($openfile[$p], $openfile[$p+1]);            
+          $p+=2;
+        }
       }
       echo "<font color=lime>SQL file '".$par."' Executed!</font><br>"; 
     }
