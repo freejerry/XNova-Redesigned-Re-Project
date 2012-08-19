@@ -134,6 +134,8 @@ function DoUpdateCommands($update_array,$base_url)
           doquery($openfile[$p], $openfile[$p+1]);            
           $p+=2;
         }
+        else
+          $p+=1;
       }
       echo "<font color=lime>SQL file '".$par."' Executed!</font><br>"; 
     }
