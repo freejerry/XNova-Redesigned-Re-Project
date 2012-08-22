@@ -30,7 +30,7 @@ if($update_info[0] != ('Version='.VERSION))
 {
   if($_GET['i']==1)
   {
-    echo "<font size=3 color=white>";
+    echo "<font size='3' color='white'>";
     $status_file=file('./status');
     if($status_file[0]=='INSTALLED')
     {
@@ -38,19 +38,19 @@ if($update_info[0] != ('Version='.VERSION))
       include("game/config1.php");
       if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
-        echo "<font color=yellow>Update Started</font><br>";
+        echo "<font color='yellow'>Update Started</font><br>";
         $update=ExtractVersionUpdate($update_info,VERSION);
         DoUpdateCommands($update,$base_url);
-        echo "<font color=yellow>Update Ended</font>";
+        echo "<font color='yellow'>Update Ended</font>";
       }
       else
       {
-        echo "<font color=red>Passwords for XNova database doesn't match!</font>";
+        echo "<font color='red'>Passwords for XNova database doesn't match!</font>";
       }
     }
     else
     {
-      echo "<font color=red>You need to Install XNova first!</font>";
+      echo "<font color='red'>You need to Install XNova first!</font>";
     }
     echo "</font>";
   }
@@ -58,7 +58,7 @@ if($update_info[0] != ('Version='.VERSION))
   {
 ?>
     <form method='post' action='?i=1'>
-    <font color=white>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
+    <font color='white'>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
     <input type='text' name='mysql_pass' size='24'><br>
     <input type='submit' value='Update'>
     </form>
@@ -68,7 +68,7 @@ if($update_info[0] != ('Version='.VERSION))
 else
 {
 ?>
-    <font color=white><b>Your XNova Version is Up To Date!</b></font>
+    <font color='white'><b>Your XNova Version is Up To Date!</b></font>
 <?php
 }
 ?>
