@@ -21,122 +21,7 @@
     <font color=red size=5><b>XNova Updater</b></font><br><br>
 <?php
 include("version.php");
-function ExtractVersionUpdate($info_file,$version)
-{
-  $result = array();
-  $i=0;
-  $complete=false;
-  while (($i<count($info_file)) and !($complete))
-  {
-    if($info_file[$i] != "Version=".$version)
-    {
-      $result[$i]=$info_file[$i];
-    }
-    else
-    {
-      $complete=true;
-    }
-    $i+=1;  
-  }
-  return $result;    
-}
-
-function DoUpdateCommands($update_array,$base_url)
-{
-  $i=0;
-  $complete=false;
-  define("ROOT_PATH","game/");
-  define("UNIVERSE","1");
-  @include("game/db/mysql.php");
-  while ($i<count($update_array))
-  {
-    $commandpar = explode('=',$update_array[$i]);
-    $command = $commandpar[0];
-    if(count($commandpar)>1)
-      $par = $commandpar[1];
-    if(strtolower($command)=="updatefile")
-    {
-      $openfile = @file($base_url.$par, FILE_SKIP_EMPTY_LINES);
-      echo "Updating file ".$par."<br>";
-      if(is_writable($par))
-      {
-        file_put_contents($par,$openfile);
-        echo "<font color=lime>Updated!</font><br>";
-      }
-      else
-      {
-        echo "<font color=red>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
-      } 
-    }
-    else if(strtolower($command)=="deletefile")
-    {
-      echo "Deleting file ".$par."<br>";
-      if(unlink($par))
-      {
-        echo "<font color=lime>Deleted!</font><br>";
-      }
-      else
-      {
-        echo "<font color=red>Cannot delete file '".$par."'!</font><br>";
-      } 
-    }
-    else if(strtolower($command)=="backupfile")
-    {
-      if(file_exists($par))
-      {
-        if(is_writable($par.".backup"))
-        {
-          if(copy($par,$par.".backup"))
-          {
-            echo "<font color=lime>Backup file for ".$par." created!</font><br>";
-          }
-          else
-          {
-            echo "<font color=red>Cannot backup file '".$par."'! Copy failed!</font><br>";
-          }          
-        }
-        else
-        {
-          echo "<font color=red>Cannot backup file '".$par."'! File '".$par.".backup' is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
-        }
-      }
-    }
-    else if(strtolower($command)=="renewfile")
-    {
-      if(file_exists($par.".backup"))
-      {
-        if(is_writable($par))
-        {
-          if(copy($par.".backup",$par))
-          {
-            echo "<font color=lime>File ".$par." was renewed!</font><br>";
-          }
-          else
-          {
-            echo "<font color=red>Cannot renew file '".$par."'! Copy failed!</font><br>";
-          }          
-        }
-        else
-        {
-          echo "<font color=red>Cannot renew file '".$par."'! File '".$par."' is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
-        }
-      }
-    }
-    else if(strtolower($command)=="updatesql")
-    {
-      $openfile = @file($base_url."sqlupdates/".$par);
-      $p=0;
-      echo "Executing SQL file '".$par."'!<br>";
-      while ($p<count($openfile))
-      {
-        doquery($openfile[$p], $openfile[$p+1]);            
-        $p+=2;
-      }
-      echo "<font color=lime>SQL file '".$par."' Executed!</font><br>"; 
-    }
-    $i+=1;  
-  }      
-}
+include("update_functions.php");
 
 $base_url='https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/stable/';
 $update_info=@file($base_url.'updateinfo.php', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -145,7 +30,7 @@ if($update_info[0] != ('Version='.VERSION))
 {
   if($_GET['i']==1)
   {
-    echo "<font size=3 color=white>";
+    echo "<font size='3' color='white'>";
     $status_file=file('./status');
     if($status_file[0]=='INSTALLED')
     {
@@ -153,27 +38,23 @@ if($update_info[0] != ('Version='.VERSION))
       include("game/config1.php");
       if($_GET['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
-        echo "<font color=yellow>Update Started</font><br>";
+        echo "<font color='yellow'>Update Started</font><br>";
         $update=ExtractVersionUpdate($update_info,VERSION);
         DoUpdateCommands($update,$base_url);
-        echo "<font color=yellow>Update Ended</font>";
+        echo "<font color='yellow'>Update Ended</font>";
       }
       else
-      {
-        echo "<font color=red>Passwords for XNova database doesn't match!</font>";
-      }
+        echo "<font color='red'>Passwords for XNova database doesn't match!</font>";
     }
     else
-    {
-      echo "<font color=red>You need to Install XNova first!</font>";
-    }
+      echo "<font color='red'>You need to Install XNova first!</font>";
     echo "</font>";
   }
   else
   {
 ?>
     <form method='post' action='?i=1'>
-    <font color=white>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
+    <font color='white'>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
     <input type='text' name='mysql_pass' size='24'><br>
     <input type='submit' value='Update'>
     </form>
@@ -181,11 +62,7 @@ if($update_info[0] != ('Version='.VERSION))
   }
 }
 else
-{
-?>
-    <font color=white><b>Your XNova Version is Up To Date!</b></font>
-<?php
-}
+  echo "<font color='white'><b>Your XNova Version is Up To Date!</b></font>";
 ?>
     </center>
   </body>
