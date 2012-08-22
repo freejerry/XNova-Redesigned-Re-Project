@@ -44,14 +44,10 @@ if($update_info[0] != ('Version='.VERSION))
         echo "<font color='yellow'>Update Ended</font>";
       }
       else
-      {
         echo "<font color='red'>Passwords for XNova database doesn't match!</font>";
-      }
     }
     else
-    {
       echo "<font color='red'>You need to Install XNova first!</font>";
-    }
     echo "</font>";
   }
   else
@@ -66,11 +62,7 @@ if($update_info[0] != ('Version='.VERSION))
   }
 }
 else
-{
-?>
-    <font color='white'><b>Your XNova Version is Up To Date!</b></font>
-<?php
-}
+  echo "<font color='white'><b>Your XNova Version is Up To Date!</b></font>";
 ?>
     </center>
   </body>
