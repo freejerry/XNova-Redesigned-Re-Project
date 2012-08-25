@@ -90,14 +90,14 @@ function mrbox_close(title){
 var last_page="";
 //Simple laod page function
 function loadpage(url,title,pageid,func){
-  if((last_page != url) or func)
+  if((last_page != url))
   {
     document.title = "Loading";
     document.getElementById('cur_page').value = url;
     last_page=url;
-    link = url+'&axah=true';
-    getAXAH(link,'axah',title,pageid,true,func);
   }
+  link = url+'&axah=true';
+  getAXAH(link,'axah',title,pageid,true,func);
 }
 
 //And finaly the bit we've been waiting for, the ajax.
