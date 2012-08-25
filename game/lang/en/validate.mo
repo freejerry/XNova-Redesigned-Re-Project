@@ -8,7 +8,6 @@
 //Title
 $lang['title']				= "Validate";
 
-
 //<Code responces>
 $lang['acc_validated']		= "Account validated";
 $lang['bad_code']			= "Incorrect validation code. Please request a new one by clicking on the !";

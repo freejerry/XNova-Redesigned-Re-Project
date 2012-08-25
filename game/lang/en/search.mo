@@ -6,7 +6,6 @@
  * 21/07/2009
  */
 
-
 //<Title>
 $lang['title']				= 'Search Universe';
 
@@ -36,5 +35,4 @@ $lang['no_alliances']			= 'No alliances found';
 //<Intructions>
 $lang['enter_term']			= 'Enter player, planet or alliance name';
 $lang['no_term']			= 'No search term entered';
-
 ?>

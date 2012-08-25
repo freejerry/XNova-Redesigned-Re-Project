@@ -1,11 +1,11 @@
 <?php
-// Edited by Anthony for release - 30/06/08 (c)MadnessRed 2008
-// Edits
-// * Translations
-// * Request for vacation mode changed.
-// End of Edit information
-
-
+/*
+    Edited by Anthony for release - 30/06/08 (c)MadnessRed 2008
+    Edits
+    * Translations
+    * Request for vacation mode changed.
+    End of Edit information
+*/
 
 // Messages
 $lang['changue_pass'] = "Change Password";
@@ -91,5 +91,4 @@ $lang['exit_vacations'] = "Return from Vacation Mode";
 $lang['Vaccation_mode'] = "Vacation mode has been turned on. Vacation until at least: ";
 $lang['You_cant_exit_vmode'] = "You cant exit from V-mode until expire your minimal time";
 $lang['Error'] = "Error";
-
 ?>

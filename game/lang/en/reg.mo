@@ -1,11 +1,10 @@
 <?php
-// Edited by Anthony for release - 30/06/08 (c)MadnessRed 2008
-// Edits
-// * Translations
-// End of Edit information
-
-
 /*
+    Edited by Anthony for release - 30/06/08 (c)MadnessRed 2008
+    Edits
+    * Translations
+    End of Edit information
+
 #############################################################################
 #  Filename: reg.mo
 #  Create date: Wednesday, April 02, 2008	 15:13:08
@@ -47,12 +46,9 @@ $lang['You_pass']			= 'Your password:';
 $lang['need_to_validate']	= 'To make full use of your account you need to validate your email. Your validation link is below.';
 $lang['have_fun']			= 'We hope that you will enjoy playing this game.';
 
-
 // Welcome PM
 $lang['WelcomePM']			= "Hi, Welcome to {game}. We hope you have fun playing this game. If you have any questions please check the FAQ, if you cannot find an answer there then you will find plenty of friendly people on the forum who will help you. As a general tip we would recomend you start by building up your mines. Start with metal mines and Crystal mines as well as a Solar Plant. Good Luck.";
 $lang['Welcome']			= "Welcome";
-
-
 
 // Send
 //$lang['mail_welcome']		= 'Thank you for signing up for our game {gameurl}\nYour password is: {password}\n\nGood luck!\n{gameurl}';

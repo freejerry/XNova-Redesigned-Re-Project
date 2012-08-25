@@ -4,7 +4,6 @@
  * Creted by MadnessRed, for XNova Redesigned 
  * 11/03/2009
  */
-
 //Title
 $lang['title']				= "Alliance";
 $lang['ainfo']				= "Alliance Informacion";
@@ -84,6 +83,4 @@ $lang[""]		= '';
 $lang[""]		= '';
 $lang[""]		= '';
 $lang[""]		= '';
-
-
 ?>

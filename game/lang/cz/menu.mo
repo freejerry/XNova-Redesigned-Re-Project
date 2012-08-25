@@ -1,50 +1,46 @@
 <?php
-
 /**
  * menu.mo
  * Created by MadnessRed, for XNova Redesigned 
  * 07/02/2009
  */
 
-
 //<Main menu links>
-$lang['Overview']		= 'Přehled';
-$lang['Empire']			= 'Přehled říše';
-$lang['Resources']		= 'Suroviny';
-$lang['Facilities']		= 'Zařízení';
-$lang['Trader']			= 'Obchodník';
-$lang['Research']		= 'Výzkum';
-$lang['Shipyard']		= 'Loděnice';
-$lang['Defence']		= 'Obrana';
-$lang['Fleet']			= 'Letka';
-$lang['FleetManage']	= 'Pohyby letek';
-$lang['Galaxy']			= 'Galaxie';
-$lang['Network']		= 'Síť';
-$lang['RecOfficers']	= 'Naverbovat Důstojníky';
-$lang['Errors']			= 'Ticket Systém';
+$lang['Overview']		= 'Overview';
+$lang['Empire']			= 'Empire';
+$lang['Resources']		= 'Resources';
+$lang['Facilities']		= 'Facilities';
+$lang['Trader']			= 'Merchant';
+$lang['Research']		= 'Research';
+$lang['Shipyard']		= 'Shipyard';
+$lang['Defence']		= 'Defence';
+$lang['Fleet']			= 'Fleet';
+$lang['FleetManage']	= 'Fleet Movements';
+$lang['Galaxy']			= 'Galaxy';
+$lang['Network']		= 'Network';
+$lang['RecOfficers']	= 'Recruit Officers';
+$lang['Errors']			= 'Ticket System';
 //</Main menu links>
 
 //<Top menu links>
-$lang['Buddys']			= 'Přátelé';
-$lang['Notes']			= 'Poznámky';
-$lang['Options']		= 'Nastavení';
-$lang['Highscore']		= 'Score';
-$lang['Search']			= 'Hledat';
-$lang['Help']			= 'Pomoc';
-$lang['Board']			= 'Fórum';
-$lang['Rules']			= 'Pravidla';
+$lang['Buddys']			= 'Buddies';
+$lang['Notes']			= 'Notes';
+$lang['Options']		= 'Options';
+$lang['Highscore']		= 'Highscore';
+$lang['Search']			= 'Search';
+$lang['Help']			= 'Help';
+$lang['Board']			= 'Board';
+$lang['Rules']			= 'Rules';
 $lang['Imprint']		= 'Imprint';
 $lang['Admin']			= 'Admin Center';
-$lang['Logout']			= 'Odhlásit se';
+$lang['Logout']			= 'Log Out';
 //</Top menu links>
 
 //<Page titles>
-$lang['Messages']		= 'Zprávy';
-$lang['Alliance']		= 'Aliance';
-$lang['Statistics']		= 'Statistiky';
-$lang['Officers']		= 'Důstojníci';
-$lang['Achievements']	= 'Úspěchy';
+$lang['Messages']		= 'Messages';
+$lang['Alliance']		= 'Alliance';
+$lang['Statistics']		= 'Statistics';
+$lang['Officers']		= 'Officers';
+$lang['Achievements']	= 'Achievements';
 //</Page titles>
-
-
 ?>

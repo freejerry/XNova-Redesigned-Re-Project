@@ -1,5 +1,4 @@
 <?php
-
 // Title
 $lang['Overview']				 = 'Overview';
 
@@ -56,7 +55,6 @@ $lang['ov_pts_fleet']			 = 'Fleet';
 $lang['ov_pts_reche']			 = 'Research';
 $lang['ov_pts_total']			 = 'Total';
 
-
 // Colony
 $lang['colony_abandon']			 = 'Abandon colony';
 $lang['ov_rena_dele']			 = 'Using this menu you can change planet names or completely abandon a colony.';
@@ -75,7 +73,6 @@ $lang['password']				 = 'Password';
 $lang['new_pl_name']			 = 'New planet name';
 $lang['confirm_planet_delete']	 = 'Please confirm deletion of planet';
 $lang['confirmed_with_password'] = 'by putting in your password';
-
 
 // Rename planet
 $lang['deletemessage_ok']		 = 'The colony was abandoned';
@@ -117,5 +114,4 @@ $lang['ov_back_moon']			 = " to moon ";
 $lang['ov_une_hostile']			 = "One ";
 $lang['ov_hostile']				 = " hostile ";
 $lang['ov_message']				 = "Write message";
-
 ?>

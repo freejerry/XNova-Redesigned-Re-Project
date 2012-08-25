@@ -1,26 +1,23 @@
 <?php
-
 /**
  * login.mo
  * Created by MadnessRed, for XNova Redesigned
  * 03/04/2009
  */
 
-
 //<Login error page>
-$lang['Login']			= "Přihlášení";
+$lang['Login']			= "Login";
 
-$lang['Universe']		= "Vesmír";
-$lang['Username']		= "Uživatelské jméno";
-$lang['Password']		= "Heslo";
+$lang['Universe']		= "Universe";
+$lang['Username']		= "Username";
+$lang['Password']		= "Password";
 $lang['Something']		= "Username or Password may be";
 
-$lang['NewReg']			= "Pokud si chcete zaregistrovat nový účet, jen klikněte na následující odkaz:";
+$lang['NewReg']			= "If you would like to register a new account just click on the following link:";
 //</Login error page>
 
 //<Logout>
-$lang['see_you']		= 'Odhlášení proběhlo úspěšně.';
-$lang['session_closed']	= "Spojení uzavřeno.";
+$lang['see_you']		= 'Logout successful.';
+$lang['session_closed']	= "Session closed.";
 //</Logout>
-
 ?>

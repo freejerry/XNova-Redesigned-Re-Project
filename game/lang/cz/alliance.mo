@@ -4,19 +4,18 @@
  * Creted by MadnessRed, for XNova Redesigned 
  * 11/03/2009
  */
-
 //Title
-$lang['title']				= "Aliance";
-$lang['ainfo']				= "Informace o Alianci";
+$lang['title']				= "Alliance";
+$lang['ainfo']				= "Alliance Informacion";
 
 //Tabs
-$lang['create_ally']		= 'Vytvořit alianci';
-$lang['search_ally']		= 'Hledat alianci';
-$lang['apply']				= 'Zapsat se';
-$lang['application']		= 'Požadavek na připojení';
+$lang['create_ally']		= 'Create alliance';
+$lang['search_ally']		= 'Search for alliance';
+$lang['apply']				= 'Apply';
+$lang['application']		= 'Application';
 
 //Apply
-$lang['Write_application']	= 'Napsat požadavek na připojení';
+$lang['Write_application']	= 'Write application';
 $lang['Requesttext']		= 'Request text';
 $lang['YourApp']			= 'Your application at ';
 
@@ -84,6 +83,4 @@ $lang[""]		= '';
 $lang[""]		= '';
 $lang[""]		= '';
 $lang[""]		= '';
-
-
 ?>

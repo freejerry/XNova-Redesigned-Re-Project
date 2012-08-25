@@ -1,5 +1,4 @@
 <?php
-
 $lang['phl_tbl_title'] = "Scan the moon";
 $lang['phl_tbl_moves'] = "Current fleet movements";
 $lang['phl_no_deuter'] = "You do not have enought Deuterium !";
@@ -31,5 +30,4 @@ $lang['ov_back_moon']        = " to the moon ";
 $lang['ov_une_hostile']      = "A hostile ";
 $lang['ov_hostile']          = " from ";
 $lang['ov_message']          = "Write a message";
-
 ?>
