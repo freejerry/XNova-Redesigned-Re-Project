@@ -11,39 +11,39 @@
     <script type="text/javascript">iBox.setPath('./');</script>
 
 	<!-- XNova Skins - CSS's --><!--
-	<link rel='stylesheet' type='text/css' href='{skin}/css/boxes.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/info.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/menu.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/buildings.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/forms.css' media='screen' />-->
+	<link rel='stylesheet' type='text/css' href='{skin}css/boxes.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/info.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/menu.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/buildings.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/forms.css' media='screen' />-->
 
 	<!-- OGame Skins - CSS's -->
-	<link rel='stylesheet' type='text/css' href='{skin}/css/01style.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/research.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/fleet.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/shipyard.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/defense.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/station.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/movement.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/empire.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/statistics.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/network.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/resources.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/trader.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/galaxy.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/changelog.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/tooltip.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/toolbox.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/thickbox.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/techtree.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/jquery.cluetip.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/tutorial.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}/css/eventList.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/01style.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/research.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/fleet.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/shipyard.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/defense.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/station.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/movement.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/empire.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/statistics.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/network.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/resources.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/trader.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/galaxy.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/changelog.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/tooltip.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/toolbox.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/thickbox.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/techtree.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/jquery.cluetip.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/tutorial.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/eventList.css' media='screen' />
 
-	<link rel='stylesheet' type='text/css' href='{skin}/css/styles.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/styles.css' media='screen' />
 
 	<!--[if lt IE 7]>
-	<link href="{skin}/css/iefixes.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="{skin}css/iefixes.css" rel="stylesheet" type="text/css" media="screen">
 	<![endif]-->
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 

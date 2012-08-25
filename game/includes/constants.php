@@ -12,7 +12,7 @@
 
 if ( defined('INSIDE') ) {
 	//These are from common.php what are constants doing there?
-	define('DEFAULT_SKIN'				, '../skins/xr');
+	define('DEFAULT_SKIN'				, '../skins/xr/');
 	//define('DEFAULT_SKIN'				, BASEURL.'skins/xr/');
 	//define('DEFAULT_SKIN'				, 'http://uni42.ogame.org/game/');
 	define('TEMPLATE_DIR'				, 'templates/');
