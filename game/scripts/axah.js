@@ -24,7 +24,7 @@ function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
 	}
 
   if(last_axah == url)
-    url = url.replace('&axah_section=1','');
+    url = url.replace(/&axah_section=1/g,'');
   else
     last_axah = url;
 	//document.getElementById(elementContainer).innerHTML = '<blink class="redtxt">Loading...<\/blink>';
