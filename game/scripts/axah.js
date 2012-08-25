@@ -87,12 +87,17 @@ function mrbox_close(title){
 	document.getElementById('mrbox_content').innerHTML = '';
 }
 
+var last_page="";
 //Simple laod page function
 function loadpage(url,title,pageid,func){
-	document.title = "Loading";
-	document.getElementById('cur_page').value = url;
-	link = url+'&axah=true';
-	getAXAH(link,'axah',title,pageid,true,func);
+  if((last_page != url) or func)
+  {
+    document.title = "Loading";
+    document.getElementById('cur_page').value = url;
+    last_page=url;
+    link = url+'&axah=true';
+    getAXAH(link,'axah',title,pageid,true,func);
+  }
 }
 
 //And finaly the bit we've been waiting for, the ajax.
