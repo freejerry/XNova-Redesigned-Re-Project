@@ -13,6 +13,7 @@ function getNewHttpObject() {
 	 return objType;
 }
 
+var last_axah='';
 //Function used to update page content with new xhtml fragments by using a javascript object, the dom, and http.
 function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
 	if (typeof extra == "undefined") {
@@ -22,6 +23,11 @@ function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
 		dofunction = false;
 	}
 
+  if(last_axah != url)
+  {
+    url = url+'&axah_section=1';
+    last_axah = url;
+  }
 	//document.getElementById(elementContainer).innerHTML = '<blink class="redtxt">Loading...<\/blink>';
 	var theHttpRequest = getNewHttpObject();
 	theHttpRequest.onreadystatechange = function() {processAXAH(elementContainer,title,pageid,extra,dofunction);};
