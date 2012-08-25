@@ -35,8 +35,8 @@
 	<link rel='stylesheet' type='text/css' href='{skin}css/tooltip.css' media='screen' />
 	<link rel='stylesheet' type='text/css' href='{skin}css/toolbox.css' media='screen' />
 	<link rel='stylesheet' type='text/css' href='{skin}css/thickbox.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}css/techtree.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{skin}css/jquery.cluetip.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/temp/techtree.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{skin}css/temp/jquery.cluetip.css' media='screen' />
 	<link rel='stylesheet' type='text/css' href='{skin}css/tutorial.css' media='screen' />
 	<link rel='stylesheet' type='text/css' href='{skin}css/eventList.css' media='screen' />
 
