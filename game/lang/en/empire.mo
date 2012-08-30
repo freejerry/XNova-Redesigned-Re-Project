@@ -5,6 +5,7 @@
  * 17/03/2009
  */
 
+//<Titles>
 $lang['resources']		= 'Resources';
 $lang['supply']			= 'Resources';
 $lang['station']		= 'Facilities';

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * search.mo
  * Created by MadnessRed, for XNova Redesigned

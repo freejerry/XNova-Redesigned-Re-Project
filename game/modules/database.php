@@ -1,5 +1,4 @@
 <?php
-
 /**
  * database.php
  *
@@ -7,7 +6,6 @@
  * @copyright 2010 by MadnessRed for XNova Redesigned
  * @copyright 2012 by Geodar for GitHub 
  */
-
 
 //Create a new class based off mysql
 class database {
@@ -139,6 +137,6 @@ if(@!$skip_config){
 /**
  * 1.0  - Basic class created MadnessRed
  * 1.1  - Added better construct and the idstring function.
- * 1.11 - Using MySQL insead of MySQLi
+ * 1.11 - Using MySQL insead of MySQLi (Geodar)
  */
 ?>

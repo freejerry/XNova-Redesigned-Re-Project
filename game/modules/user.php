@@ -1,12 +1,10 @@
 <?php
-
 /**
  * user.php
  *
  * @version 1.0
  * @copyright 2010 by MadnessRed for XNova Redesigned
  */
- 
 
 //Create a new user class
 class user{

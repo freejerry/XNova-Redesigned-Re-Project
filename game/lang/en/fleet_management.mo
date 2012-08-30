@@ -5,7 +5,7 @@
  * 23/12/2009
  */
 
-//<Gerneral>
+//<General>
 $lang['fleet_control']	= 'Fleet Control';
 //</General>
 

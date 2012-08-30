@@ -1,6 +1,6 @@
 <?php
 /**
- * alliance.mo
+ * validate.mo
  * Creted by MadnessRed, for XNova Redesigned 
  * 11/03/2009
  */

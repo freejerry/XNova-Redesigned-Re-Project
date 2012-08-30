@@ -1,12 +1,10 @@
 <?php
-
 /**
  * game.php
  *
  * @version 1.0
  * @copyright 2010 by MadnessRed for XNova Redesigned
  */
-
 
 //Create a new class based off mysqli
 class game{
