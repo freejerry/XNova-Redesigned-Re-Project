@@ -25,7 +25,7 @@ $version_tmp = explode("=",$info[0]);
 if(VERSION != $version_tmp[1])
 {
   $parse['adm_ov_here']   = $version_tmp[1]." (Click to Update)";
-  $parse['xnovalink']     = "../update.php?i=1&mysql_pass=".$dbsettings['pass'];
+  $parse['xnovalink']     = "../update.php";
 }
 else
 {

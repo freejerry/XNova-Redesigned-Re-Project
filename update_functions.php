@@ -1,12 +1,8 @@
 <?php
 /*
-
-  Auto Update System Functions by Geodar
-  
-  Update only from stable branch from Github
-  
+  Auto Update System Functions by Geodar 
+  Update only from stable branch from Github  
   This file is updateable
-
 */
 
 function ExtractVersionUpdate($info_file,$version)
@@ -28,7 +24,6 @@ function ExtractVersionUpdate($info_file,$version)
   }
   return $result;    
 }
-
 function DoUpdateCommands($update_array,$base_url)
 {
   $i=0;
@@ -122,7 +117,7 @@ function DoUpdateCommands($update_array,$base_url)
         }
         $p+=1;
       }
-      echo "<font color='lime'>SQL file '".$par."' Executed!</font><br>"; 
+      echo "<font color='lime'>SQL file '".$par."' executed!</font><br>"; 
     }
     $i+=1;  
   }      

@@ -1,10 +1,7 @@
 <?php
 /*
-
-  Auto Update System by Geodar
-  
+  Auto Update System by Geodar  
   Update only from stable branch from Github
-
 */
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -47,7 +44,7 @@ if($update_info[0] != ('Version='.VERSION))
         echo "<font color='red'>Passwords for XNova database doesn't match!</font>";
     }
     else
-      echo "<font color='red'>You need to Install XNova first!</font>";
+      echo "<font color='red'>You need to install XNova first!</font>";
     echo "</font>";
   }
   else
@@ -62,7 +59,7 @@ if($update_info[0] != ('Version='.VERSION))
   }
 }
 else
-  echo "<font color='white'><b>Your XNova Version is Up To Date!</b></font>";
+  echo "<font color='white'><b>Your XNova version is up to date!</b></font>";
 ?>
     </center>
   </body>
