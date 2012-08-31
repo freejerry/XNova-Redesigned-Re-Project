@@ -11,14 +11,12 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="login/styles.css" type="text/css">
-  <title></title>
   </head>
   <body link="white" alink="white" vlink="white" bgcolor="black">
     <center>
     <font color=red size=5><b>XNova SQL Updater</b></font><br><br>
 <?php
 include("version.php");
-include("update_functions.php");
 
 if($_POST['i'])
 {
@@ -39,7 +37,7 @@ if($_POST['i'])
           echo "Executing SQL file '".$_POST['sqlfile']."'!<br>";
           while ($p<count($openfile))
           {
-            if(!(($openfile[$p][0]=='/') and !($openfile[$p][1]=='/')))
+            if(!(($openfile[$p][0]=='/') and ($openfile[$p][1]=='/')))
             {
               doquery($openfile[$p], $openfile[$p+1]);            
               $p+=1;

@@ -2,7 +2,6 @@
 /*
   Auto Update System by Geodar  
   Update every change from stable branch from GitHub
-  Update SQL changes from sqlupdates/ folder
 */
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -12,7 +11,6 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="login/styles.css" type="text/css">
-  <title></title>
   </head>
   <body link="white" alink="white" vlink="white" bgcolor="black">
     <center>
