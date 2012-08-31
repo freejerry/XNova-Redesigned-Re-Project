@@ -1,7 +1,7 @@
 <?php
 /*
-  Auto Update System Functions by Geodar 
-  Update only from stable branch from Github  
+  Auto Update System Functions by Geodar
+  Update every change from stable branch from GitHub
   This file is updateable
 */
 
@@ -24,7 +24,7 @@ function ExtractVersionUpdate($info_file,$version)
   }
   return $result;    
 }
-function DoUpdateCommands($update_array,$base_url)
+function DoAllUpdateCommands($update_array,$base_url)
 {
   $i=0;
   $complete=false;
@@ -110,7 +110,7 @@ function DoUpdateCommands($update_array,$base_url)
       echo "Executing SQL file '".$par."'!<br>";
       while ($p<count($openfile))
       {
-        if(!($openfile[$p][0]=='/' and $openfile[$p][1]=='/'))
+        if(!(($openfile[$p][0]=='/') and !($openfile[$p][1]=='/')))
         {
           doquery($openfile[$p], $openfile[$p+1]);            
           $p+=1;
