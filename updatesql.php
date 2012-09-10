@@ -17,7 +17,6 @@
     <font color=red size=5><b>XNova SQL Updater</b></font><br><br>
 <?php
 include("version.php");
-
 if($_POST['i'])
 {
   if($_POST['i']==1)
@@ -65,7 +64,17 @@ else
     <input type='text' name='mysql_pass' size='24'><br>
     <select name='sqlfile'>
     <?php
-    //todo
+    if($dirhandler = opendir('sqlupdates/'))
+    {
+      while (false !== ($item = readdir($dirhandler)))
+      {
+        if ($item != "." && $item != ".." && $item != "index.html")
+        {
+          echo "<option value='$item'>$item</option>";
+        }
+      }
+      closedir($dirhandler);
+    }
     ?>
     </select><br>
     <input type='submit' value='Run SQL'>
