@@ -6,7 +6,11 @@ $lang['version_no']  = '0.06';
 $lang['changelog']   = array(
 
 '0.06' => '- Renew source file. (freejerry)
-- Basic implementation of Cookie and Auto-Update systems (Geodar)',
+- Basic implementation of Cookie and Auto-Update systems (Geodar)
+- Update Stable System and Update SQL system (Geodar)
+- Some Code Clean Up and updated some systems (Geodar)
+- ToolTips will now move, when you mouseover them and move within object (Geodar)
+- Removing some uninitialized Javascript functions (Geodar)',
 
 '0.05' => '- Basic files for Czech included. (Geodar)
 - Fixed install page mistakes in English. (Geodar)
