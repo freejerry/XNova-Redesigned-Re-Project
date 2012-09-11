@@ -30,21 +30,18 @@
 								<a onmouseover="mrtooltip('{cost_m} Metal');" onmouseout="UnTip();">
 									<img src="{{skin}}/img/layout/ressourcen_metall.gif"><br>
 									<span class="{missing_resource_m}">{sh_cost_m}</span>
-									<span>{cost_m} Metal</span>
 								</a>
 							</li>
 							<li class="metal tips">
 								<a onmouseover="mrtooltip('{cost_c} Crystal');" onmouseout="UnTip();">
 									<img src="{{skin}}/img/layout/ressourcen_kristal.gif"><br>
 									<span class="{missing_resource_c}">{sh_cost_c}</span>
-									<span>{cost_c} Crystal</span>
 								</a>
 							</li>
 							<li class="metal tips">
 								<a onmouseover="mrtooltip('{cost_d} Deuterium');" onmouseout="UnTip();">
 									<img src="{{skin}}/img/layout/ressourcen_deuterium.gif"><br>
 									<span class="{missing_resource_d}">{sh_cost_d}</span>
-									<span>{cost_d} Deuterium</span>
 								</a>
 							</li>
 						</ul>
