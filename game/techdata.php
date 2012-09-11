@@ -130,7 +130,7 @@ case 'tree':
 			$req_txt = $clevel.'/'.$req;
 		}
 		//Add the item to the subtree
-		$get_req = "\t\t\t\t".'myTree.add('.$n.','.$from.',"<a style=\'color:'.$colour.'\' onmouseover=\'mr_tooltip(\"<font color='.$colour.'>'.$req_txt.' - '.$lang['tech'][$id].'</font>\");\' onmouseout=\'UnTip();\'><img src=\''.$dpath.'/img/small/small_'.$id.'.jpg\' style=\'border:1px solid '.$colour.';\' /></a>",46,'.$h.');'."";
+		$get_req = "\t\t\t\t".'myTree.add('.$n.','.$from.',"<a style=\'color:'.$colour.'\' onmouseover=\'mrtooltip(\"<font color='.$colour.'>'.$req_txt.' - '.$lang['tech'][$id].'</font>\");\' onmouseout=\'UnTip();\'><img src=\''.$dpath.'/img/small/small_'.$id.'.jpg\' style=\'border:1px solid '.$colour.';\' /></a>",46,'.$h.');'."";
 		//Note this element then move onto the next.
 		$from = $n; $n++;
 		//If there are requirements.
@@ -147,7 +147,6 @@ case 'tree':
 	<html>
 	<head>
 		<title></title>
-		<script type=\"text/javascript\" src=\"./scripts/wz_tooltip.js\"></script>
     <script type=\"text/javascript\" src=\"./scripts/ECOTree.js\"></script>
 		<link type=\"text/css\" rel=\"stylesheet\" href=\"./css/ECOTree.css\" />
 		<link type=\"text/css\" rel=\"stylesheet\" href=\"./css/madnessred.css\" />
@@ -183,6 +182,7 @@ case 'tree':
 		</script>
 	</head>
 	<body onload=\"CreateTree();\" style=\"height:".($divheightajusts[$Element] + 50)."px;overflow:none;\">
+  <script type=\"text/javascript\" src=\"./scripts/wz_tooltip.js\"></script>
 	<div style=\"background-image:url('".$dpath."/img/layout/wrap-header.gif');width:667px;height:34px;\"></div>
 	<div style=\"background-image:url('".$dpath."/img/layout/wrap-body.gif');width:667px;\"><br />
 		<a class=\"closeTB\" onclick=\"window.parent.mrbox_close();\" style='position:absolute;top:10px;right:10px;color:white;'>X</a> 
