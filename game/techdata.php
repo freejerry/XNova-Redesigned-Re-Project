@@ -130,7 +130,7 @@ case 'tree':
 			$req_txt = $clevel.'/'.$req;
 		}
 		//Add the item to the subtree
-		$get_req = "\t\t\t\t".'myTree.add('.$n.','.$from.',"<a><img src=\''.$dpath.'/img/small/small_'.$id.'.jpg\' style=\'border:1px solid '.$colour.';\' /><span style=\'color:'.$colour.'\' onmouseover=\'mr_tooltip("'.$req_txt.' - '.$lang['tech'][$id].'");\' onmouseout=\'UnTip();\'></span></a>",46,'.$h.');'."";
+		$get_req = "\t\t\t\t".'myTree.add('.$n.','.$from.',"<a><img src=\''.$dpath.'/img/small/small_'.$id.'.jpg\' style=\'border:1px solid '.$colour.';\' /><span style=\'color:'.$colour.'\' onmouseover=\'mr_tooltip(\''.$req_txt.' - '.$lang['tech'][$id].\'');\' onmouseout=\'UnTip();\'></span></a>",46,'.$h.');'."";
 		//Note this element then move onto the next.
 		$from = $n; $n++;
 		//If there are requirements.
