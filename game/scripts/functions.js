@@ -22,7 +22,6 @@ function openLink(value) {
 	}
 }
 
-
 function checkCookie() {
     var uni = document.loginForm.universe.value;
     getUniFromCookie(uni);
@@ -37,7 +36,6 @@ function setCookie() {
     date.setTime(date.getTime()+(365*24*60*60*1000));
     cookie_setzen(uni, str, date);
 }
-
 
 function getCookie(name) {
    var i=0;  //Suchposition im Cookie
@@ -58,7 +56,6 @@ function getCookie(name) {
    return "";
 }
 
-
 function cookie_setzen() {
   var anzParameter = cookie_setzen.arguments.length;
   var parameter = cookie_setzen.arguments;
@@ -78,7 +75,6 @@ function cookie_setzen() {
   var domain = (anzParameter >= 4) ? parameter[3] : null;
   // 5. Pfad
   var path = (anzParameter >= 5) ? parameter[4] : null;
-
   if (path != null) {
     path = escape(path); // Sonderzeichen umwandeln
   }
@@ -120,8 +116,6 @@ function cookie_lesen(name) {
 function getUniFromCookie(uni) {
     var str = cookie_lesen(uni);
     str = unescape(str);
-    
-    
     if(str.length > 0) {
         var trennzeichenPos = str.search(',');
         var user = str.substring(0, trennzeichenPos);
@@ -134,5 +128,4 @@ function getUniFromCookie(uni) {
         document.loginForm.login.value = "";
         document.loginForm.pass.value = "";
     }
-    
 }

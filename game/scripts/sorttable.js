@@ -17,7 +17,6 @@
 
  
 var stIsIE = /*@cc_on!@*/false;
-
 sorttable = {
   init: function() {
     // quit if this function has already been called
@@ -26,19 +25,14 @@ sorttable = {
     arguments.callee.done = true;
     // kill the timer
     if (_timer) clearInterval(_timer);
-    
     if (!document.createElement || !document.getElementsByTagName) return;
-    
     sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
-    
     forEach(document.getElementsByTagName('table'), function(table) {
       if (table.className.search(/\bsortable\b/) != -1) {
         sorttable.makeSortable(table);
       }
     });
-    
   },
-  
   makeSortable: function(table) {
     if (table.getElementsByTagName('thead').length == 0) {
       // table doesn't have a tHead. Since it should have, create one and
@@ -90,7 +84,6 @@ sorttable = {
 	      headrow[i].sorttable_columnindex = i;
 	      headrow[i].sorttable_tbody = table.tBodies[0];
 	      dean_addEvent(headrow[i],"click", function(e) {
-
           if (this.className.search(/\bsorttable_sorted\b/) != -1) {
             // if we're already sorted by this column, just 
             // reverse the table, which is quicker
@@ -117,7 +110,6 @@ sorttable = {
             this.appendChild(sortfwdind);
             return;
           }
-          
           // remove sorttable_sorted classes
           theadrow = this.parentNode;
           forEach(theadrow.childNodes, function(cell) {
@@ -130,13 +122,11 @@ sorttable = {
           if (sortfwdind) { sortfwdind.parentNode.removeChild(sortfwdind); }
           sortrevind = document.getElementById('sorttable_sortrevind');
           if (sortrevind) { sortrevind.parentNode.removeChild(sortrevind); }
-          
           this.className += ' sorttable_sorted';
           sortfwdind = document.createElement('span');
           sortfwdind.id = "sorttable_sortfwdind";
           sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
           this.appendChild(sortfwdind);
-
 	        // build an array to sort. This is a Schwartzian transform thing,
 	        // i.e., we "decorate" each row with the actual sort key,
 	        // sort based on the sort keys, and then put the rows back in order
@@ -151,18 +141,15 @@ sorttable = {
 	        //sorttable.shaker_sort(row_array, this.sorttable_sortfunction);
 	        /* and comment out this one */
 	        row_array.sort(this.sorttable_sortfunction);
-	        
 	        tb = this.sorttable_tbody;
 	        for (var j=0; j<row_array.length; j++) {
 	          tb.appendChild(row_array[j][1]);
 	        }
-	        
 	        delete row_array;
 	      });
 	    }
     }
   },
-  
   guessType: function(table, column) {
     // guess the type of a column based on its first non-blank row
     sortfn = sorttable.sort_alpha;
@@ -195,17 +182,14 @@ sorttable = {
     }
     return sortfn;
   },
-  
   getInnerText: function(node) {
     // gets the text we want to use for sorting for a cell.
     // strips leading and trailing whitespace.
     // this is *not* a generic getInnerText function; it's special to sorttable.
     // for example, you can override the cell text with a customkey attribute.
     // it also gets .value for <input> fields.
-    
     hasInputs = (typeof node.getElementsByTagName == 'function') &&
                  node.getElementsByTagName('input').length;
-    
     if (node.getAttribute("sorttable_customkey") != null) {
       return node.getAttribute("sorttable_customkey");
     }
@@ -240,7 +224,6 @@ sorttable = {
       }
     }
   },
-  
   reverse: function(tbody) {
     // reverse the rows in a tbody
     newrows = [];
@@ -252,7 +235,6 @@ sorttable = {
     }
     delete newrows;
   },
-  
   /* sort functions
      each sort function takes two parameters, a and b
      you are comparing a[0] and b[0] */
@@ -298,7 +280,6 @@ sorttable = {
     if (dt1<dt2) return -1;
     return 1;
   },
-  
   shaker_sort: function(list, comp_func) {
     // A stable sort function to allow multi-level sorting of data
     // see: http://en.wikipedia.org/wiki/Cocktail_sort
@@ -306,7 +287,6 @@ sorttable = {
     var b = 0;
     var t = list.length - 1;
     var swap = true;
-
     while(swap) {
         swap = false;
         for(var i = b; i < t; ++i) {
@@ -316,9 +296,7 @@ sorttable = {
             }
         } // for
         t--;
-
         if (!swap) break;
-
         for(var i = t; i > b; --i) {
             if ( comp_func(list[i], list[i-1]) < 0 ) {
                 var q = list[i]; list[i] = list[i-1]; list[i-1] = q;
@@ -326,22 +304,18 @@ sorttable = {
             }
         } // for
         b++;
-
     } // while(swap)
   }  
 }
-
 /* ******************************************************************
    Supporting functions: bundled here to avoid depending on a library
    ****************************************************************** */
-
 // Dean Edwards/Matthias Miller/John Resig
-
 /* for Mozilla/Opera9 */
 if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", sorttable.init, false);
+    return;
 }
-
 /* for Internet Explorer */
 /*@cc_on @*/
 /*@if (@_win32)
@@ -353,7 +327,6 @@ if (document.addEventListener) {
         }
     };
 /*@end @*/
-
 /* for Safari */
 if (/WebKit/i.test(navigator.userAgent)) { // sniff
     var _timer = setInterval(function() {
@@ -362,15 +335,11 @@ if (/WebKit/i.test(navigator.userAgent)) { // sniff
         }
     }, 10);
 }
-
 /* for other browsers */
 window.onload = sorttable.init;
-
 // written by Dean Edwards, 2005
 // with input from Tino Zijdel, Matthias Miller, Diego Perini
-
 // http://dean.edwards.name/weblog/2005/10/add-event/
-
 function dean_addEvent(element, type, handler) {
 	if (element.addEventListener) {
 		element.addEventListener(type, handler, false);
@@ -396,7 +365,6 @@ function dean_addEvent(element, type, handler) {
 };
 // a counter used to create unique IDs
 dean_addEvent.guid = 1;
-
 function removeEvent(element, type, handler) {
 	if (element.removeEventListener) {
 		element.removeEventListener(type, handler, false);
@@ -452,7 +420,6 @@ if (!Array.forEach) { // mozilla already supports this
 		}
 	};
 }
-
 // generic enumeration
 Function.prototype.forEach = function(object, block, context) {
 	for (var key in object) {
@@ -461,7 +428,6 @@ Function.prototype.forEach = function(object, block, context) {
 		}
 	}
 };
-
 // character enumeration
 String.forEach = function(string, block, context) {
 	Array.forEach(string.split(""), function(chr, index) {
@@ -490,4 +456,3 @@ var forEach = function(object, block, context) {
 		resolve.forEach(object, block, context);
 	}
 };
-

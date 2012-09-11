@@ -22,12 +22,10 @@ function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
 	if (typeof dofunction == "undefined") {
 		dofunction = false;
 	}
-
   if(last_axah == url)
     url = url.replace(/&axah_section=1/g,'');
   else
     last_axah = url;
-	//document.getElementById(elementContainer).innerHTML = '<blink class="redtxt">Loading...<\/blink>';
 	var theHttpRequest = getNewHttpObject();
 	theHttpRequest.onreadystatechange = function() {processAXAH(elementContainer,title,pageid,extra,dofunction);};
 	theHttpRequest.open("GET", url);
@@ -49,18 +47,16 @@ function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
 					document.getElementById(elementContainer).innerHTML="<p><span class='redtxt'>Error!<\/span> HTTP request return the following status message:&nbsp;" + theHttpRequest.statusText +"<\/p>";
 				}
 			}
+      return;
 		}
-
+  return;
 }
-
 
 //Some things that should be run when a page is started
 function run(page){
 	switch(page){
 		case "fleet2":
-			
 			break;
-		
 	}
 }
 
@@ -72,7 +68,6 @@ function mrbox(url,width,margintop,title,method){
 	}
 	document.title = "Loading";
 	document.getElementById('mrbox').style.display = 'block';
-
 	if (typeof width != "undefined") {
 		document.getElementById('mrbox_content').style.width = width+'px';
 	}
@@ -85,11 +80,13 @@ function mrbox(url,width,margintop,title,method){
 	}else{
 		getAXAH(url,'mrbox_content',title,document.body.id,true);
 	}
+  return;
 }
 function mrbox_close(title){
 	if (typeof title != "undefined") { document.title = title; }
 	document.getElementById('mrbox').style.display = 'none';
 	document.getElementById('mrbox_content').innerHTML = '';
+  return;
 }
 
 var last_page='';
@@ -105,6 +102,7 @@ function loadpage(url,title,pageid,func){
   }
   else
     getAXAH(link,'axah',title,pageid,false,func);
+  return;
 }
 
 //And finaly the bit we've been waiting for, the ajax.
@@ -150,7 +148,6 @@ function form2get(formid) {
 				//We need to get the value of the selected item
 				str += "&" + elem[i].name + "=" + elem[i].value;
 			}
-			
 		}
 	}
 	return str;
@@ -159,6 +156,7 @@ function form2get(formid) {
 //Sombit a form using form2get and loadpage
 function submitform(formid,title,pageid,func){
 	loadpage(form2get(formid),title,pageid,func);
+  return;
 }
 
 //Make an alery box
@@ -176,12 +174,12 @@ function mr_alert(text,title,link){
 	document.getElementById('errorBoxNotifyHead').innerHTML = title;
 	document.getElementById('errorBoxNotifyContent').innerHTML = text;
 	document.getElementById('notifyTB').style.display = 'block';
+  return;
 }
 
 //Question box
 function mr_qu(text,title,link1,link2,href){
 	if (typeof title == "undefined") { title = "Alert"; }
-	
 	if (typeof link1 == "undefined") {
 		link1 = "document.getElementById('decisionTB').style.display = 'none';";
 	}else{
@@ -192,7 +190,6 @@ function mr_qu(text,title,link1,link2,href){
 	}else{
 		link2 = "document.getElementById('decisionTB').style.display = 'none'; loadpage("+link2+");";
 	}
-	
 	document.getElementById('decisionTB_button1').href = '#';
 	document.getElementById('decisionTB_button1').onclick = function(){ eval(link1); };
 	document.getElementById('decisionTB_button2').href = '#';
@@ -200,18 +197,18 @@ function mr_qu(text,title,link1,link2,href){
 	document.getElementById('errorBoxDecisionHead').innerHTML = title;
 	document.getElementById('errorBoxDecisionContent').innerHTML = text;
 	document.getElementById('decisionTB').style.display = 'block';
+  return;
 }
 
 //Question box
 function mr_qu_link(text,title,link1){
 	if (typeof title == "undefined") { title = "Alert"; }
-	
 	link2 = "document.getElementById('decisionTB').style.display = 'none';";
-	
 	document.getElementById('decisionTB_button1').href = link1;
 	document.getElementById('decisionTB_button2').href = '#';
 	document.getElementById('decisionTB_button2').onclick = function(){ eval(link2); };
 	document.getElementById('errorBoxDecisionHead').innerHTML = title;
 	document.getElementById('errorBoxDecisionContent').innerHTML = text;
 	document.getElementById('decisionTB').style.display = 'block';
+  return;
 }

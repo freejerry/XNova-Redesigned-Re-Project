@@ -1,22 +1,17 @@
 /*
 tip_balloon.js  v. 1.81
-
 The latest version is available at
 http://www.walterzorn.com
 or http://www.devira.com
 or http://www.walterzorn.de
-
 Initial author: Walter Zorn
 Last modified: 2.2.2009
-
 Extension for the tooltip library wz_tooltip.js.
 Implements balloon tooltips.
 */
-
 // Make sure that the core file wz_tooltip.js is included first
 if(typeof config == "undefined")
 	alert("Error:\nThe core tooltip script file 'wz_tooltip.js' must be included first, before the plugin files!");
-
 // Here we define new global configuration variable(s) (as members of the
 // predefined "config." class).
 // From each of these config variables, wz_tooltip.js will automatically derive
@@ -25,7 +20,6 @@ if(typeof config == "undefined")
 // name(s) translated to uppercase,
 // e.g. from config. Balloon a command BALLOON will automatically be
 // created.
-
 //===================  GLOBAL TOOLTIP CONFIGURATION  =========================//
 config. Balloon				= false	// true or false - set to true if you want this to be the default behaviour
 config. BalloonImgPath		= "../scripts/tip_balloon/" // Path to images (border, corners, stem), in quotes. Path must be relative to your HTML file.
@@ -36,14 +30,10 @@ config. BalloonStemHeight	= 19	// Integer
 config. BalloonStemOffset	= -7	// Integer - horizontal offset of left stem edge from mouse (recommended: -stemwidth/2 to center the stem above the mouse)
 config. BalloonImgExt		= "gif";// File name extension of default balloon images, e.g. "gif" or "png"
 //=======  END OF TOOLTIP CONFIG, DO NOT CHANGE ANYTHING BELOW  ==============//
-
-
 // Create a new tt_Extension object (make sure that the name of that object,
 // here balloon, is unique amongst the extensions available for wz_tooltips.js):
 var balloon = new tt_Extension();
-
 // Implement extension eventhandlers on which our extension should react
-
 balloon.OnLoadConfig = function()
 {
 	if(tt_aV[BALLOON])
@@ -70,9 +60,7 @@ balloon.OnCreateContentString = function()
 {
 	if(!tt_aV[BALLOON])
 		return false;
-		
 	var aImg, sImgZ, sCssCrn, sVaT, sVaB, sCss0;
-
 	// Cache balloon images in advance:
 	// Either use the pre-cached default images...
 	if(tt_aV[BALLOONIMGPATH] == config.BalloonImgPath)
@@ -85,7 +73,6 @@ balloon.OnCreateContentString = function()
 	sVaT = 'vertical-align:top;" valign="top"';
 	sVaB = 'vertical-align:bottom;" valign="bottom"';
 	sImgZ = '" style="' + sCss0 + '" />';
-	
 	tt_sContent = '<table border="0" cellpadding="0" cellspacing="0" style="width:auto;padding:0;margin:0;left:0;top:0;"><tr>'
 		// Left-top corner
 		+ '<td' + sCssCrn + sVaB + '>'
@@ -173,7 +160,6 @@ balloon.OnMoveAfter = function()
 			balloon.aStem[iStem].style.display = "inline";
 			balloon.iStem = iStem;
 		}
-		
 		balloon.aStem[iStem].style.left = Balloon_CalcStemX() + "px";
 		return true;
 	}
@@ -190,7 +176,6 @@ function Balloon_CacheImgs(sPath, sExt)
 	n = asImg.length,
 	aImg = new Array(n),
 	img;
-
 	while(n)
 	{--n;
 		img = aImg[n] = new Image();
@@ -200,12 +185,13 @@ function Balloon_CacheImgs(sPath, sExt)
 }
 function Balloon_MaxW(bdy)
 {
-	if (bdy)
+	if(bdy)
 	{
 		var iAdd = tt_bBoxOld ? (balloon.padding << 1) : 0, w = tt_GetDivW(bdy);
 		if (w > -balloon.width + iAdd)
 			bdy.style.width = (-balloon.width + iAdd) + "px";
 	}
+  return;
 }
 // This mechanism pre-caches the default images specified by
 // congif.BalloonImgPath, so, whenever a balloon tip using these default images

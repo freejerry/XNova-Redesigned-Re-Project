@@ -2,7 +2,6 @@
 /* ©2005 Gregory Wild-Smith */
 /* www.twilightuniverse.com */
 /* Software licenced under a modified X11 licence, see documentation or authors website for more details */
-
 function sack(file){
 	this.AjaxFailedAlert = "Your browser does not support the enhanced functionality of this website, and therefore you will have an experience that differs from the intended one.\n";
 	this.requestFile = file;
@@ -10,12 +9,10 @@ function sack(file){
 	this.URLString = "";
 	this.encodeURIString = true;
 	this.execute = false;
-
 	this.onLoading = function() { };
 	this.onLoaded = function() { };
 	this.onInteractive = function() { };
 	this.onCompletion = function() { };
-
 	this.createAJAX = function() {
 		try {
 			this.xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
@@ -32,7 +29,6 @@ function sack(file){
 			this.failed = true; 
 		}
 	};
-	
 	this.setVar = function(name, value){
 		if (this.URLString.length < 3){
 			this.URLString = name + "=" + value;
@@ -40,12 +36,10 @@ function sack(file){
 			this.URLString += "&" + name + "=" + value;
 		}
 	}
-	
 	this.encVar = function(name, value){
 		var varString = encodeURIComponent(name) + "=" + encodeURIComponent(value);
 	return varString;
 	}
-	
 	this.encodeURLString = function(string){
 		varArray = string.split('&');
 		for (i = 0; i < varArray.length; i++){
@@ -57,11 +51,9 @@ function sack(file){
 		}
 	return varArray.join('&');
 	}
-	
 	this.runResponse = function(){
 		eval(this.response);
 	}
-	
 	this.runAJAX = function(urlstring){
 		this.responseStatus = new Array(2);
 		if(this.failed && this.AjaxFailedAlert){ 
@@ -93,7 +85,6 @@ function sack(file){
 						this.xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded')  
 					} catch (e) {}
 				}
-
 				this.xmlhttp.send(this.URLString);
 				this.xmlhttp.onreadystatechange = function() {
 					switch (self.xmlhttp.readyState){

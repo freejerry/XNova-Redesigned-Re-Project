@@ -1,8 +1,8 @@
 var ajax = new sack();
-
 function showInfo(id) {
 	printMessage(id, 'infotext');
 	document.getElementById('statustext').innerHTML = "";
+  return;
 }
 
 function wait() {
@@ -25,6 +25,7 @@ function checkUsername() {
 		checkUsername.lastcheck = "103";
 		return "103";
 	}
+  return;
 }
 
 
@@ -49,32 +50,31 @@ function checkEmail() {
 		checkEmail.lastcheck = "104";
 		return "104";
 	}
+  return;
 }
 
 function remoteCheckUsername() {
 	var username = document.forms[0].elements[0].value;
 	ajax.requestFile = "check_registration.php";
-
 	// turn on its execute flag
-    ajax.runResponse = whenResponse;
-    ajax.execute = true;
-
-    ajax.setVar("action", "check_username");
-    ajax.setVar("username", username);
-    ajax.runAJAX();
+  ajax.runResponse = whenResponse;
+  ajax.execute = true;
+  ajax.setVar("action", "check_username");
+  ajax.setVar("username", username);
+  ajax.runAJAX();
+  return;
 }
 
 function remoteCheckEmail() {
 	var email = document.forms[0].elements[1].value;
 	ajax.requestFile = "check_registration.php";
-
 	// turn on its execute flag
-    ajax.runResponse = whenResponse;
-    ajax.execute = true;
-
-    ajax.setVar("action", "check_email");
-    ajax.setVar("email", email);
-    ajax.runAJAX();
+  ajax.runResponse = whenResponse;
+  ajax.execute = true;
+  ajax.setVar("action", "check_email");
+  ajax.setVar("email", email);
+  ajax.runAJAX();
+  return;
 }
 
 function checkAGB() {
@@ -91,40 +91,45 @@ function checkData() {
 		&& checkEmail.lastcheck == "0"
 		&& !checkAGB()) {
 		document.forms[0].elements[4].disabled = false;
-		
-	} else {
-		document.forms[0].elements[4].disabled = true;
-			//document.write(document.forms[0].elements[3].value);
 	}
-	
+  else
+		document.forms[0].elements[4].disabled = true;
+  return;
 }
 
 function pollUsername() {
 	pollUsername.interval = setInterval("printMessage(checkUsername())", 1000);
 	clearInterval(pollEmail.interval);
+  return;
 }
 
 function stopPollingUsername() {
 	clearInterval(pollUsername.interval);
+  return;
 }
 
 function pollEmail() {
 	pollEmail.interval = setInterval("printMessage(checkEmail())", 1000);
 	clearInterval(pollUsername.interval);
+  return;
 }
 
 function stopPollingEmail() {
 	clearInterval(pollEmail.interval);
+  return;
 }
 
 
 function whenLoading(){
+  return;
 }
       
 function whenLoaded(){
+  return;
 }
       
 function whenInteractive(){
+  return;
 }
 
 function whenResponse(){
@@ -135,7 +140,7 @@ function whenResponse(){
 			break;
 		case "2": // check email
 			checkEmail.lastcheck = retVals[1];
-			//checkEmail();
 			break;
 	}
+  return;
 }

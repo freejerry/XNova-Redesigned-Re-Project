@@ -30,4 +30,5 @@ function t() {
 		bxx.title = bxx.title - 1;
 	}
 	window.setTimeout("t();", 999);
+  return;
 }

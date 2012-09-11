@@ -1,17 +1,14 @@
 function setOpacity(obj, opacity) {
   opacity = (opacity == 100)?99.999:opacity;
-  
   // IE/Win
   obj.style.filter = "alpha(opacity:"+opacity+")";
-  
   // Safari<1.2, Konqueror
   obj.style.KHTMLOpacity = opacity/100;
-  
-  // Older Mozilla and Firefox
+  // Older Firefox
   obj.style.MozOpacity = opacity/100;
-  
-  // Safari 1.2, newer Firefox and Mozilla, CSS3
+  // Safari 1.2, newer Firefox, Chrome and Maxthon, CSS3
   obj.style.opacity = opacity/100;
+  return;
 }
 
 function fadeIn(obj,opacity) {
@@ -22,6 +19,7 @@ function fadeIn(obj,opacity) {
       window.setTimeout("fadeIn('"+obj+"',"+opacity+")", 50);
     }
   }
+  return;
 }
 
 function fadeOut(obj,opacity,hide) {
@@ -34,4 +32,5 @@ function fadeOut(obj,opacity,hide) {
     	document.getElementById(obj).style.display = 'none';
     }
   }
+  return;
 }
