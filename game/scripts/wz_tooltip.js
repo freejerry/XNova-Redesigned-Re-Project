@@ -1299,22 +1299,22 @@ function tt_ExtCallFncs(arg, sFnc)
 }
 
 function mr_tooltip(text){
-  Tip(text,FOLLOWMOUSE,false,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,150,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false,FONTFACE,'Tahoma, Arial, Helvetica, sans-serif',FONTSIZE,'8pt');
+  Tip(text,FOLLOWMOUSE,true,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,150,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false,FONTFACE,'Tahoma, Arial, Helvetica, sans-serif',FONTSIZE,'8pt');
 }
 
 function tooltip(text){
-  Tip(text,FOLLOWMOUSE,false,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,-150,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false,FONTFACE,'Tahoma, Arial, Helvetica, sans-serif',FONTSIZE,'8pt');
+  Tip(text,FOLLOWMOUSE,true,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,-150,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false,FONTFACE,'Tahoma, Arial, Helvetica, sans-serif',FONTSIZE,'8pt');
 }
 
 function mr_large_tooltip(text){
-  Tip(text,FOLLOWMOUSE,false,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false);
+  Tip(text,FOLLOWMOUSE,true,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false);
 }
 
 function mrtooltip(text,title){
   if (typeof title == "undefined") {
     mr_tooltip(text);
   }else{
-    Tip(text,TITLE,title,TITLEPADDING,5,FOLLOWMOUSE,false,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,150,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false,FONTFACE,'Tahoma, Arial, Helvetica, sans-serif',FONTSIZE,'8pt');
+    Tip(text,TITLE,title,TITLEPADDING,5,FOLLOWMOUSE,true,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,150,TEXTALIGN,'center',FADEIN,500,FADEOUT,500,STICKY,false,FONTFACE,'Tahoma, Arial, Helvetica, sans-serif',FONTSIZE,'8pt');
   }
 }
 
@@ -1323,7 +1323,7 @@ function mrtooltip_large(text,title,width){
     mr_large_tooltip(text);
   }else{
     if (typeof width == "undefined") { width = -1; }
-    Tip(text,TITLE,title,TITLEPADDING,5,FOLLOWMOUSE,false,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,width,FADEIN,500,FADEOUT,500,STICKY,false);	  	
+    Tip(text,TITLE,title,TITLEPADDING,5,FOLLOWMOUSE,true,FONTCOLOR,'#FFFFFF',BGCOLOR,'#1B1D1F',BORDERCOLOR,'#313131',PADDING,5,WIDTH,width,FADEIN,500,FADEOUT,500,STICKY,false);	  	
   }	  	
 }
 
