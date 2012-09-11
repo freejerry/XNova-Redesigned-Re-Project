@@ -1,14 +1,10 @@
 <?php
-
 /**
  * edit.php
  *
  * @version 1.0
  * @copyright 2008 by MadnessRed for XNova
  */
-
-
-
 switch ($_GET['section']){
 	case "user":
 		if($_GET['val']){
@@ -32,7 +28,7 @@ switch ($_GET['section']){
 			$parse['up'] = 'refer';
 			$parse['identifier'] = 'username';
 			$parse['section'] = 'user';
-			
+
 			$template = '
 Enter {identifier}:
 <input name="val" type="text" id="val" style="width:150px;" onkeyup="getAXAH(\'./check.php?check={up}&{up}=\'+this.value,\'usercheck\');" value="" />
@@ -46,13 +42,13 @@ Enter {identifier}:
 		break;
 	case "planet":
 		if($_GET['g']+$_GET['s']+$_GET['p']+$_GET['t'] > 0){
-		
+
 			$g = idstring($_GET['g']);
 			$s = idstring($_GET['s']);
 			$p = idstring($_GET['p']);
 			$t = idstring($_GET['t']);
 			$data  = doquery("SELECT * FROM {{table}} WHERE `galaxy` = '".$g."' AND `system` = '".$s."' AND `planet` = '".$p."' AND `planet_type` = '".$t."' LIMIT 1;", 'planets', true);
-	
+
 			$page  = "Editing planet ".$data['name'].", (".$data['galaxy'].":".$data['system'].":".$data['planet'].")<br /><br />\n\n";
 
 			$page .= "<a href=\"./?page=admin&link=addmoon&galaxy=".$data['galaxy']."&system=".$data['system']."&planet=".$data['planet']."\">Add moon</a><br />\n";
@@ -85,7 +81,7 @@ Enter {identifier}:
 			$parse['up'] = 'planetopp';
 			$parse['identifier'] = 'planet co-ordinates';
 			$parse['section'] = 'planet';
-			
+
 			$template = '
 Enter {identifier}:
 
@@ -111,7 +107,8 @@ Enter {identifier}:
 
 <input type="button" class="button188" value="Go" onclick="getAXAH(\'./?page=admin&link=edit&section={section}&g=\'+document.getElementById(\'g\').value+\'&s=\'+document.getElementById(\'s\').value+\'&p=\'+document.getElementById(\'p\').value+\'&t=\'+document.getElementById(\'t\').options[document.getElementById(\'t\').options.selectedIndex].value,\'section\');" />';
 
-			makeAXAH(parsetemplate($template, $parse));
+			makeAXAH(parsetemplate($template, $parse));
+
 		}
 
 		break;
@@ -141,6 +138,4 @@ Enter {identifier}:
 
 		break;
 }
-
-
 ?>

@@ -1,12 +1,11 @@
 <?php
-
-/**
+/*
  * overview.php
  *
  * @version 1.0
  * @copyright 2008 by ??????? for XNova
- */
-
+ *
+*/
 
 includeLang('admin');
 
@@ -45,7 +44,7 @@ while ( $TheUser = mysql_fetch_array($LastMin) ) {
 			$Color = "lime";
 		}
 	}
-	
+
 	//$UserPoints = doquery("SELECT * FROM {{table}} WHERE `stat_type` = '1' AND `stat_code` = '1' AND `id_owner` = '" . $TheUser['id'] . "';", 'statpoints', true);
 	$Bloc['dpath']               = $dpath;
 	$Bloc['adm_ov_altpm']        = $lang['adm_ov_altpm'];
@@ -63,18 +62,18 @@ while ( $TheUser = mysql_fetch_array($LastMin) ) {
 	$Bloc['adm_ov_data_activ']   = pretty_time ( time() - $TheUser['onlinetime'] );
 	$Bloc['adm_ov_data_pict']    = "m.gif";
 	$PrevIP                      = $TheUser['user_lastip'];
-			
+
 	//Tweaks vue g�n�rale 
 	$Bloc['usr_email']    = $TheUser['email'];
 	$Bloc['usr_xp_raid']    = $TheUser['xpraid'];
 	$Bloc['usr_xp_min']    = $TheUser['xpminier'];
-									
+
 	if ($TheUser['urlaubs_modus'] == 1) {
 		$Bloc['state_vacancy']  = "<img src=\"".$darkevo_root_path."images/true.png\" >";
 	} else {
 		$Bloc['state_vacancy']  = "<img src=\"".$darkevo_root_path."images/false.png\">";
 	}
-				
+
 	if ($TheUser['bana'] == 1) {
 		$Bloc['is_banned']  = "<img src=\"".$darkevo_root_path."images/banned.png\" >";
 	} else {
@@ -83,14 +82,11 @@ while ( $TheUser = mysql_fetch_array($LastMin) ) {
 	$Bloc['usr_planet_gal']    = $TheUser['galaxy'];
 	$Bloc['usr_planet_sys']    = $TheUser['system'];
 	$Bloc['usr_planet_pos']    = $TheUser['planet'];
-	
+
 	$parse['adm_ov_data_table'] .= parsetemplate( $RowsTPL, $Bloc );
 	$Count++;
 }
-
 $parse['adm_ov_data_count']  = $Count;
-
 $bloc['content'] = parsetemplate($PageTPL, $parse);
 $bloc['title'] = $lang['sys_overview'];
-
 ?>

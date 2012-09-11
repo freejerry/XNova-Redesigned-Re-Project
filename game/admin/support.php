@@ -1,6 +1,5 @@
 <?php
-
- /*
+/*
 ===========================================================
  Created by Sk3y ICQ: 270270011
 ===========================================================
@@ -9,10 +8,9 @@
  Version: 1.0 (08.07.2008)
 ===========================================================
 */
-
 includeLang('supp');
 $parse     = $lang;
-	
+
 if($_GET['ticket'] == 0){
 /// Deteilsanzeige des eigenen tickets
 	$query = doquery("SELECT * FROM {{table}} WHERE status >= '0' ORDER BY time", "supp");
@@ -60,7 +58,7 @@ if($_GET['ticket'] == 0){
 	$subject = $_POST['senden_ticket_subject'];
 	$tickettext = $_POST['senden_ticket_text'];
 	$time = time();
-	
+
 	if(empty($tickettext) OR empty($subject)){
 		/// Pr�fen ob beide felder mit Text versehen sind
 		info($lang['sendit_error_msg'],$lang['sendit_error'],"./?page=ticket");
@@ -79,7 +77,7 @@ if($_GET['ticket'] == 0){
 	/// Eintragen der neuen Antwort
 	$antworttext = $_POST['senden_antwort_text'];
 	$antwortticketid = $_POST['senden_antwort_id'];
-	
+
 	if(empty($antworttext) OR empty($antwortticketid)){
 		/// Pr�fen ob beide felder mit Text versehen sind
 		$parse['actionpage'] = 'admin&link=supp';
@@ -125,7 +123,7 @@ if($_GET['ticket'] == 0){
 			<textarea name="senden_antwort_text" class="textBox" rows="30" cols="20" onFocus="this.value=\'\'; this.onfocus=null;"></textarea>
 			<center><input class="button188" type="submit" name="send" value="'.$lang['send'].'"></center>';
 		}
-		
+
 		$parse['tickets'] .= "<tr>"
 			."<td class='b'>".$ticket2['ID']."</td>"
 			."<td class='b'>".$ticket2['subject']."</td>"
