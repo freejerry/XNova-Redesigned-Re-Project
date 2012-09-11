@@ -52,20 +52,20 @@ while ( $TheUser = mysql_fetch_array($LastMin) ) {
 	$Bloc['adm_ov_data_id']      = $TheUser['id'];
 	$Bloc['adm_ov_data_name']    = $TheUser['username'];
 	$Bloc['adm_ov_data_agen']    = $TheUser['user_agent'];
-	$Bloc['current_page']    = $TheUser['current_page'];
-	$Bloc['usr_s_id']    = $TheUser['id'];
+	$Bloc['current_page']        = $TheUser['current_page'];
+	$Bloc['usr_s_id']            = $TheUser['id'];
 
 	$Bloc['adm_ov_data_clip']    = $Color;
 	$Bloc['adm_ov_data_adip']    = $TheUser['user_lastip'];
 	$Bloc['adm_ov_data_ally']    = $TheUser['ally_name'];
 	$Bloc['adm_ov_data_point']   = pretty_number ( $UserPoints['total_points'] );
 	$Bloc['adm_ov_data_activ']   = pretty_time ( time() - $TheUser['onlinetime'] );
-	$Bloc['adm_ov_data_pict']    = "m.gif";
+	$Bloc['adm_ov_data_pict']    = "icons/mail.gif";
 	$PrevIP                      = $TheUser['user_lastip'];
 
 	//Tweaks vue g�n�rale 
-	$Bloc['usr_email']    = $TheUser['email'];
-	$Bloc['usr_xp_raid']    = $TheUser['xpraid'];
+	$Bloc['usr_email']     = $TheUser['email'];
+	$Bloc['usr_xp_raid']   = $TheUser['xpraid'];
 	$Bloc['usr_xp_min']    = $TheUser['xpminier'];
 
 	if ($TheUser['urlaubs_modus'] == 1) {
