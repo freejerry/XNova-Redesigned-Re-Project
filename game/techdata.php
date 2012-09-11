@@ -116,6 +116,7 @@ case 'tree':
 	$n = 0;
 	function get_req($id,$from = '-1',$req = 1){
 		global $requeriments,$lang,$user,$planetrow,$resource,$n;
+    $dpath="../skins/xr";
 		//See if this item has requirements, if so give it space for the +/-
 		if(is_array($requeriments[$id])){ $h = 55; }else{ $h = 46; }
 		//See if we have met this requirement, get curent level
