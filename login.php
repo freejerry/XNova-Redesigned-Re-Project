@@ -5,30 +5,23 @@ define('INSTALL' , false);
 define('ROOT_PATH' , './game/');
 $skip_config = true;
 require_once(ROOT_PATH . 'modules/database.php');
-
 $unis = array(1);
 $sql = array();
-
 $online = 0;
 $users = 0;
 $last_user = '';
 $last_user_time = 0;
-
 foreach($unis as $u){
 	//Load the database settings
 	require(ROOT_PATH.'config'.$u.'.php');
-
 	//Load the database
 	$sql[$u] = new database($dbsettings);
-	
 	//How many online?
 	$result = $sql[$u]->doquery("SELECT COUNT('id') as `count` FROM {{table}} WHERE `onlinetime` > ".(time() - 20), 'users', true);
 	$online += $result['count'];
-	
 	//How many users?
 	$result = $sql[$u]->doquery("SELECT `config_value` FROM {{table}} WHERE `config_name` = 'users_amount'", 'config', true);
-	$users += $result['config_value'];
-	
+	$users += $result['config_value'];	
 	//Newest user
 	$result = $sql[$u]->doquery("SELECT `username`, `register_time` FROM {{table}} ORDER BY `register_time` DESC LIMIT 1", 'users', true);
 	if(@$result['register_time'] >= $last_user_time){
@@ -36,35 +29,26 @@ foreach($unis as $u){
 		$last_user = $result['username'];
 	}
 }
-
 if(strlen($last_user) > 10){
 	$last_user = substr($last_user,0,8).'...';
 }
-
-if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
-{
+if(!empty($_COOKIE[$game_config[COOKIE_NAME]]))
   header("Location: game/login.php");
-}
-
 ?>
 <html> 
 <head> 
 <title>Login</title> 
 <link rel="shortcut icon" href="favicon.ico"> 
 <link rel="stylesheet" type="text/css" href="login/styles.css"> 
-<link rel="stylesheet" type="text/css" href="login/about.css"> 
- 
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
- 
+<link rel="stylesheet" type="text/css" href="login/about.css">  
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />  
 <script type="text/javascript" src="scripts/overlib.js"></script> 
-
 <script type="text/javascript" src="ibox.2.2/ibox.js"></script> 
 <script type="text/javascript">
 iBox.setPath('ibox.2.2/');
 ibox.default_width = 800;
 </script> 
 <link rel="stylesheet" href="ibox.css" type="text/css" media="screen"/>
-
 </head> 
 <body> 
 <center> 

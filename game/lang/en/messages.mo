@@ -1,5 +1,4 @@
 <?php
-
 /**
  * messages.mo
  * Created by MadnessRed, for XNova Redesigned 
@@ -28,5 +27,4 @@ $lang['RecycleBin']		= 'Recycle Bin';
 
 //Title
 $lang['Title']			= 'Messages';
-
 ?>

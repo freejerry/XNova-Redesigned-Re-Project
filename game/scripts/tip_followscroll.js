@@ -85,4 +85,3 @@ fscrl.AddRemEvtFncs = function(PAddRem)
 	PAddRem(window, "resize", fscrl.MoveOnScrl);
 	PAddRem(window, "scroll", fscrl.MoveOnScrl);
 };
-

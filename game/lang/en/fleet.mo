@@ -1,11 +1,10 @@
 <?php
-// Edited by Anthony for release - 30/06/08 (c)MadnessRed 2008
-// Edits
-// * Translations
-// End of Edit information
-
-
 /*
+    Edited by Anthony for release - 30/06/08 (c)MadnessRed 2008
+    Edits
+    * Translations
+    End of Edit information
+
 #############################################################################
 #  Filename: fleet.mo
 #  Create date: Friday, March 28, 2008	 19:53:21
@@ -181,6 +180,4 @@ $lang['desc_mission'] = array(
 	9 => "Destroy another players moon.",
 	15 => "Explore space beyond the known galaxy."
 );
-
-
 ?>

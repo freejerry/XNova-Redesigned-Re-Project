@@ -1,4 +1,6 @@
-		<form method="GET" action="./?page={page}&id={id}" name="shipyard" id="shipyard">
+		<form method="GET" action="./" name="shipyard" id="shipyard">
+		<input type="hidden" name="page" value="{page}" />
+		<input type="hidden" name="id" value="{id}" />
 		<input type="hidden" name="fmenge" value="{id}" />
 		
 		<div id="detail{id}" class='detail_screen' style="display:none;">

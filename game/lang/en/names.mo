@@ -6,7 +6,6 @@
  * 07/02/2009
  */
 
-
 $lang['names'] = array(
 //Buildings
 	 0 => "Buildings",
@@ -175,7 +174,6 @@ $lang['sdesc'] = array(
 	604 => "+10% mine production",
 	605 => "+2 espionage level for probes, 25% less research time",
 );
-
 
 // Short names for combar report
 $lang['cr_names'] = array (

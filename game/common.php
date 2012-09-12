@@ -47,16 +47,15 @@ if(UNITTYPE == "domain"){
 //echo UNIVERSE;
 
 //And lets include the game files
-require_once(ROOT_PATH . 'modules/game.php');						//Main game class
-require_once(ROOT_PATH . 'modules/calculations.php');						//Some calculations
-
-require_once(ROOT_PATH . 'includes/error_handler.php');				//Errors handling
-require_once(ROOT_PATH . 'includes/constants.php');					//More Game constants
-require_once(ROOT_PATH . 'includes/functions.php');					//Functions
-require_once(ROOT_PATH . 'includes/display.php');					//Display functions
-require_once(ROOT_PATH . 'includes/unlocalised.php');				//Language function
-require_once(ROOT_PATH . 'includes/loadfunctions.php');				//All the game functions.
-require_once(ROOT_PATH . 'lang/config.mo');							//Language configs.*/
+require_once(ROOT_PATH . 'modules/game.php');            //Main game class
+require_once(ROOT_PATH . 'modules/calculations.php');    //Some calculations
+require_once(ROOT_PATH . 'includes/error_handler.php');  //Errors handling
+require_once(ROOT_PATH . 'includes/constants.php');      //More Game constants
+require_once(ROOT_PATH . 'includes/functions.php');      //Functions
+require_once(ROOT_PATH . 'includes/display.php');        //Display functions
+require_once(ROOT_PATH . 'includes/unlocalised.php');    //Language function
+require_once(ROOT_PATH . 'includes/loadfunctions.php');  //All the game functions
+require_once(ROOT_PATH . 'lang/config.mo');              //Language configs
 
 //Set language
 $HTTP_ACCEPT_LANGUAGE = DEFAULT_LANG;
@@ -69,9 +68,9 @@ if(!INSTALL){
 	require_once(ROOT_PATH . 'modules/user.php');
 	
 	
-    require_once(ROOT_PATH . 'includes/vars.php');					//Load the variables
-    require_once(ROOT_PATH . 'includes/db.php');					//Load the sql database
-    require_once(ROOT_PATH . 'includes/strings.php');				//Load some strings
+    require_once(ROOT_PATH . 'includes/vars.php');     //Load the variables
+    require_once(ROOT_PATH . 'includes/db.php');       //Load the sql database
+    require_once(ROOT_PATH . 'includes/strings.php');  //Load some strings
     
     //We need some pages to only have a small load on the server.
     $basic_pages = array('im','fleetajax');

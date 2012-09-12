@@ -1,11 +1,9 @@
 <?php
-
 /**
  * empire.mo
  * Created by MadnessRed, for XNova Redesigned
  * 17/03/2009
  */
-
 
 //<Titles>
 $lang['resources']		= 'Resources';
@@ -16,10 +14,8 @@ $lang['shipyard']		= 'Shipyard';
 $lang['defense']		= 'Defense';
 //</Titles>
 
-
 //<Planets>
 $lang['planets1']		= 'Planets';
 $lang['planets3']		= 'Moons';
 //</Planets>
-
 ?>

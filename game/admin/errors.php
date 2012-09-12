@@ -1,15 +1,13 @@
 <?php
-
-/**
+/*
  * errors.php
  *
  * @version 1.0
  * @copyright 2008 by e-Zobar for XNova
- */
-
+ *
+*/ 
 includeLang('admin');
 $parse = $lang;
-
 
 //Server root?
 $server_root = "/home/evo/public_html/new/";
@@ -39,7 +37,6 @@ if($group == 1){
 		</tr>
 		<tr><td colspan=\"5\" style=\"border-width:1px;border-color:#888888;border-style:solid;\">". nl2br($u['error_text']) ."</td></tr>";
 	}
-
 }else{
 	if (isset($delete)) {
 		doquery("DELETE FROM {{table}} WHERE `error_id`=$delete", 'errors');
@@ -97,7 +94,5 @@ if($group == 1){
 		<th colspan=5 style=\"border-width:1px;border-color:#888888;border-style:solid;\">". $i ." ". $lang['adm_er_nbs'] ."</th>
 		</tr>";
 }
-
 $bloc['content'] = parsetemplate(gettemplate('admin/errors_body'), $parse);
-
 ?>

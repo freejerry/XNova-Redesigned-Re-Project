@@ -125,13 +125,15 @@
 			</a>
 		</li>
 
-		<li class="menubutton_table">
+		<!--
+    <li class="menubutton_table">
 			<span class="menu_icon">
 		  	</span>
 			<a class="menubutton" href="#" onclick="mr_alert('Please wait...','Bonus'); getAXAH('./bonus.php','errorBoxNotifyContent')" title="Click here for free commander and a moon!" tabindex="1">
 				<span class="textlabel"><font color="Red">BONUS!</font></span>
 			</a>
 		</li>
+    -->
 
 	</ul>
 

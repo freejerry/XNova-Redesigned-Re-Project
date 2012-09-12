@@ -1,7 +1,6 @@
 <?php
 
-/* Uncommentthe next line to stop this file from beign used */
-//die('Game already installed');
+/* Uncommentthe next line to stop this file from beign used */    
 define("INSIDE",true);
 
 function ReadFromFile($filename) {

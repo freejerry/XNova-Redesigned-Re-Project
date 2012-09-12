@@ -173,7 +173,7 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$parse['click']        = '';
 			
 
-			$buildlink = "./?page=research&cmd=search&id=".$Element."&tech=".$Element;
+			$buildlink = "loadpage('./?page=research&cmd=search&id=".$Element."&tech=".$Element."',document.title,document.body.id);";
 			
 			if (IsTechnologieAccessible($CurrentUser, $CurrentPlanet, $Element)) {
 				if ($NextBuildLevel == 1) {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * resources.mo
  * Created by MadnessRed, for XNova Redesigned 

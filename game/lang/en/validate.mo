@@ -1,13 +1,12 @@
 <?php
 /**
- * alliance.mo
+ * validate.mo
  * Creted by MadnessRed, for XNova Redesigned 
  * 11/03/2009
  */
 
 //Title
 $lang['title']				= "Validate";
-
 
 //<Code responces>
 $lang['acc_validated']		= "Account validated";

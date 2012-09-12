@@ -1,5 +1,5 @@
 <tr>
-  <th><a href="./?page=networkm&mode=write&id={adm_ov_data_id}"><img src="{dpath}img/{adm_ov_data_pict}" alt="{adm_ov_altpm}" title="{adm_ov_wrtpm}" border="0"></a></th>
+  <th><a class="tips thickbox" href="javascript:void(0)" onclick="mrbox('./?page=write&to={adm_ov_data_id}&iframe=1&iheight=800',800)" style="position:relative;"><img src="{dpath}img/{adm_ov_data_pict}" alt="{adm_ov_altpm}" title="{adm_ov_wrtpm}" width="16" height="16" border="0"></a></th>
   <th><a href= # title="{adm_ov_data_agen}">{adm_ov_data_name} ({usr_s_id})</a></th>
   <!--<th><a style="color:{adm_ov_data_clip};" href="http://network-tools.com/default.asp?prog=trace&host={adm_ov_data_adip}">[{adm_ov_data_adip}]</a></th>-->
   <!--<th>{adm_ov_data_ally}</th>-->

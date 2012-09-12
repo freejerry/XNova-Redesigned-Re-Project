@@ -1,11 +1,9 @@
 <?php
-
 /**
  * general.mo
  * Created by MadnessRed, for XNova Redesigned
  * 07/02/2009
  */
-
 
 //<Resources>
 $lang['Metal']			= 'Metal';
@@ -87,5 +85,4 @@ $lang['Level']			= 'Level';
 $lang['Type']			= 'Type';
 $lang['Total']			= 'Total';
 //</General>
-
 ?>

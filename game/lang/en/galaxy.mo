@@ -30,5 +30,4 @@ $lang['ipm_result_d']		= "The defender has lost {metd} metal, {crysd} crystal, a
 
 //Phalanx
 $lang['Phalanx']			= "Phalanx";
-
 ?>

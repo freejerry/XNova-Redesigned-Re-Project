@@ -1,11 +1,9 @@
 <?php
-
 /**
  * menu.mo
  * Created by MadnessRed, for XNova Redesigned 
  * 07/02/2009
  */
-
 
 //<Main menu links>
 $lang['Overview']		= 'Overview';
@@ -45,6 +43,4 @@ $lang['Statistics']		= 'Statistics';
 $lang['Officers']		= 'Officers';
 $lang['Achievements']	= 'Achievements';
 //</Page titles>
-
-
 ?>

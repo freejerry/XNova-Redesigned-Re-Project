@@ -177,34 +177,6 @@ var CARPE = {
 
 Function.prototype.bind = CARPE.bind;
 
-/*function(obj) {
-		var method = this,
-		temp = function() {
-			return method.apply(obj, arguments);
-		};
-	return temp;
-	};
-
-
-function sliderSetUp() // Set up the sliders and the displays.
-{
-	sliders = carpeGetElementsByClass(carpeSliderClassName) // Find the horizontal sliders.
-	for (i = 0; i < sliders.length; i++) {
-		sliders[i].onmousedown = slide; // Attach event listener.
-	}
-	displays = carpeGetElementsByClass(carpeSliderDisplayClassName) // Find the displays.
-	for (i = 0; i < displays.length; i++) {
-		displays[i].onfocus = focusDisplay; // Attach event listener.
-	}
-}
-
-*/
-
-
-
-
-
-
 //---------------------------------+
 //  CARPE  S l i d e r      1.5.1  |
 //  2008 - 07 - 09                 |
@@ -224,7 +196,6 @@ var carpesliders                  = [];
 var carpedisplays                 = [];
 var carpeslider                   = {};
 var carpedisplay                  = {};
-
 // carpeAddLoadEvent
 function carpeAddLoadEvent(func)
 {
@@ -238,6 +209,7 @@ function carpeAddLoadEvent(func)
 				func();
 			};
 		}
+    return;
 }
 // carpeGetElementsByClass: Cross-browser function that returns
 // an array with all elements that have a class attribute that
@@ -313,7 +285,7 @@ function moveSlider(evnt)
 		carpedisplay.value = v; // put the new value in the slider display element
 		return false;
 	}
-	return
+	return;
 }
 // slide: Handles the start of a slider move.
 function slide(evnt)
@@ -383,6 +355,7 @@ function sliderMouseUp()
 		}
 	}
 	carpemouseover = false; // Stop the sliding.
+  return;
 }
 function focusDisplay(evnt)
 {
@@ -405,5 +378,6 @@ function carpeInit() // Set up the sliders and the displays.
 		carpedisplays[i].value = carpedisplays[i].defaultValue; // Resets display on page reload.
 		carpedisplays[i].onfocus = focusDisplay; // Attach event listener.
 	}
+  return;
 }
 carpeAddLoadEvent(carpeInit);

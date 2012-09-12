@@ -1,5 +1,4 @@
 var pp;
-
 function t() {
 	v  = new Date();
 	var btc = document.getElementById('btc');
@@ -29,4 +28,5 @@ function t() {
 	}
 	pp = pp - 1;
 	window.setTimeout("t();", 999);
+  return;
 }

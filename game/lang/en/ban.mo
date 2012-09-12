@@ -1,12 +1,10 @@
 <?php
-
 /**
  * ban.mo
  * Created by MadnessRed, for XNova Redesigned
  * 16/03/2009
  */
 
-//<Title>
 $lang['Title']				= 'Pillory';
 
 
@@ -41,6 +39,4 @@ $lang['BanReasons'] = array(
 	'Explicit content',
 	'Unautherised proxy use'
 );
-
-
 ?>

@@ -1,15 +1,14 @@
 <?php
-
 /**
  * premium.mo
  * Created by MadnessRed, for XNova Redesigned 
  * 07/02/2009
  */
 
-//<Buttonz Strings>
+//<Buttons Strings>
 $lang['Avlfor']				= 'Active for another ';
 $lang['moreinfo']			= 'More information about';
-//</Butonz Strings>
+//</Buttons Strings>
 
 //<About Matter>
 $lang['matterabout']		= 'Dark Matter is substance of unknown composition that does not emit or reflect enough electromagnetic radiation to be observed directly, 
@@ -38,3 +37,4 @@ $lang['presentation']		= 'With officers you can lead your empire to a size beyon
 $lang['Your_officers']		= 'Your Officers';
 $lang['Recruit_Officers']	= 'Recruit Officers';
 //</Page>
+?>

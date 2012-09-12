@@ -26,7 +26,9 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 
 			$InQueue = 0;
 			$QueueSize = 0;
-			foreach(explode(";",$CurrentPlanet['b_hangar_id']) as $temp){
+      if(count(explode(";",$CurrentPlanet['b_hangar_id'])>0))
+      {
+			 foreach(explode(";",$CurrentPlanet['b_hangar_id']) as $temp){
 				if(strlen($temp) > 0){
 					$q = explode(",",$temp);
 					$QueueSize += $q[1];
@@ -34,7 +36,8 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 						$InQueue += $q[1];
 					}
 				}
-			}
+			 }
+      }
 			
 			//If there is a maximum allowed
 			if($pricelist[$Element]['max'] > 0){
@@ -76,6 +79,7 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 		}
 		//now do those changes...
 		doquery("UPDATE {{table}} SET `metal` = '".$CurrentPlanet['metal']."', `crystal` = '".$CurrentPlanet['crystal']."', `deuterium` = '".$CurrentPlanet['deuterium']."', `b_hangar_id` = '".$CurrentPlanet['b_hangar_id']."', `b_hangar` = '".$CurrentPlanet['b_hangar']."', `b_hangar_lastupdate` = '".$CurrentPlanet['b_hangar_lastupdate']."' WHERE `id` = '".$CurrentPlanet['id']."' ;",'planets');
+		header('Location: ./?page='.$_GET['page']);
 	}
 
 
@@ -135,8 +139,8 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 
 	if(in_array($Element,$reslist[$area])){
 		if(IsTechnologieAccessible($CurrentUser, $CurrentPlanet, $Element) && IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, true, false)){
-			$infopg['build_link'] = './?page='.$_GET['page'].'&id='.$Element.'&fmenge='.$Element.'&'.$Element.'=';
-			//$infopg['build_link'] = '#" onclick="document.forms.shipyard.submit()';
+			//$infopg['build_link'] = './?page='.$_GET['page'].'&id='.$Element.'&fmenge='.$Element.'&'.$Element.'=';
+			$infopg['build_link'] = 'document.forms.shipyard.submit()';
 		}
 
 		//Building Info

@@ -1,12 +1,11 @@
 <?php
-
 /**
  * fleet_management.mo
  * Created by MadnessRed, for XNova Redesigned
  * 23/12/2009
  */
 
-//<Gerneral>
+//<General>
 $lang['fleet_control']	= 'Fleet Control';
 //</General>
 
@@ -98,5 +97,4 @@ $lang['fleet_9_messD'] = ", causing a tremor which tore up the moon. All buildin
 $lang['fleet_9_messK'] = ". The tremmors from the graviton cannons shaking the moon fail and backfire, disintergrating the fleet completely";
 $lang['fleet_9_messN'] = ", however, the fleet does not develop the necessary power to destroy the moon. The fleets returned to their planets";
 //</Destroy>
-
 ?>

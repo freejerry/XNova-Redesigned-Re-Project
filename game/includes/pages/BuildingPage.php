@@ -236,10 +236,18 @@ function BuildingPage($a=0,$b=0){
 	$de_planettype = $planetrow['image'];
 	$parse['type'] = $de_planettype['type'];
 	if($_GET['page'] == 'station'){
-		if($planetrow['planet_type'] == 3) $parse['bg'] = HEADER_CACHE."station/".$parse['type'].'_'.$type_array['subtype'].$imgnum1.".png";
-		else $parse['bg'] = HEADER_CACHE."station/".$parse['type'].$imgnum1.".png";
+		if($planetrow['planet_type'] == 3)
+			if(file_exists(HEADER_CACHE."station/".$parse['type'].'_'.$type_array['subtype'].$imgnum1.".png"))
+			$parse['bg'] = HEADER_CACHE."station/".$parse['type'].'_'.$type_array['subtype'].$imgnum1.".png";
+			else $parse['bg'] = HEADER_CACHE."station/".$parse['type'].".png";
+		else
+			if(file_exists(HEADER_CACHE."station/".$parse['type'].$imgnum1.".png"))
+			$parse['bg'] = HEADER_CACHE."station/".$parse['type'].$imgnum1.".png";
+			else $parse['bg'] = HEADER_CACHE."station/".$parse['type'].".png";
 	}elseif($_GET['page'] == 'resources'){
+			if(file_exists(HEADER_CACHE."resources/".$parse['type'].$imgnum.".png"))
 			$parse['bg'] = HEADER_CACHE."resources/".$parse['type'].$imgnum.".png";
+			else $parse['bg'] = HEADER_CACHE."resources/default.png";
 	}else{
 		die("Hacking attempt");
 	}

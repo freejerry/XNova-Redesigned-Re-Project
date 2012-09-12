@@ -1,13 +1,12 @@
 <?php
-// Edited by Anthony for release - 30/06/08
-// Edited by Anthony for release - 27/07/10
-// Edits
-// * Translations
-// * Better keys
-// End of Edit information
-
-
 /*
+    Edited by Anthony for release - 30/06/08
+    Edited by Anthony for release - 27/07/10
+    Edits
+    * Translations
+    * Better keys
+    End of Edit information
+
 #############################################################################
 #  Filename: cookies.mo
 #  Create date: Saturday, March 15, 2008	 10:14:24
