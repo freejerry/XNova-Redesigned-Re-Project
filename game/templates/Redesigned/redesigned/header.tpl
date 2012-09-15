@@ -33,43 +33,48 @@
 	<div id="OGameClock"><span id="datetime">{date_time}</span></div>
 	<ul id="resources">
 	   	<li class="metal tips">
-	   		<a onmouseover=´mrtooltip('<div align="center">Metal</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_metal">{metal}</span><br />Storage capacity:{metal_max}');´ onmouseout="UnTip();">
+	   		<a>
 				<img src="{skin}/img/navigation/ressourcen_metall.gif" />
 				<span class="value">
 					<font id="resources_metal">{kmetal}</font>
 				</span>
+				<span class="mrtooltip"><div align="center">Metal</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_metal">{metal}</span><br />Storage capacity:{metal_max}</span>
 			</a>
 		</li>
 		<li class="crystal tips">
-			<a onmouseover=´mrtooltip('<div align="center">Crystal</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_crystal">{crystal}</span><br />Storage capacity:{crystal_max}');´ onmouseout="UnTip();">
+			<a>
 				<img src="{skin}/img/navigation/ressourcen_kristal.gif" />
 				<span class="value">
 					<font id="resources_crystal">{kcrystal}</font>
 				</span>
+				<span class="mrtooltip"><div align="center">Crystal</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_crystal">{crystal}</span><br />Storage capacity:{crystal_max}</span>
 			</a>
 		</li>
 		<li class="deuterium tips">
-			<a onmouseover=´mrtooltip('<div align="center">Deuterium</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_deut">{deut}</span><br />Storage capacity:{deut_max}');´ onmouseout="UnTip();">
+			<a>
 				<img src="{skin}/img/navigation/ressourcen_deuterium.gif" />
 				<span class="value">
 					<font id="resources_deuterium">{kdeut}</font>
 			   	</span>
+				<span class="mrtooltip"><div align="center">Deuterium</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_deut">{deut}</span><br />Storage capacity:{deut_max}</span>
 			</a>
 		</li>
 		<li class="energy tips">
-			<a onmouseover=´mrtooltip('<div align="center">Energy</div><hr size="3" align="center" width="100%" color="#FFF">Available:<font id="resources_energy_detil" {energy_green}>{energy}</font><br />Production:<font id="pretty_energy" color="green">{energy_max}</font><br />Consumption:<font id="pretty_energy_used" color=\"red\">{energy_used}</font>');´ onmouseout="UnTip();">
+			<a>
 				<img src="{skin}/img/navigation/ressourcen_energie.gif" />
 				<span class="value">
 					<font id="resources_energy"{energy_red}>{energy}</font>
 				</span>
+				<span class="mrtooltip"><div align="center">Energy</div><hr size="3" align="center" width="100%" color="#FFF">Available:<font id="resources_energy_detil" {energy_green}>{energy}</font><br />Production:<font id="pretty_energy" color="green">{energy_max}</font><br />Consumption:<font id="pretty_energy_used" color="red">{energy_used}</font></span>
 			</a>
 		</li>
 		<li	class="darkmatter tips">
-			<a href="./?page=premium" onmouseover=´mrtooltip('<div align="center">Dark Matter (Click to buy)</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_matter">{matter}</span>');´ onmouseout="UnTip();">
+			<a href="./?page=premium">
 				<img src="{skin}/img/navigation/ressourcen_DM.gif" />
 				<span class="value">
 					<span id="resources_matter">{matter}</span>
 				</span>
+				<span class="mrtooltip"><div align="center">Dark Matter(Click to buy)</div><hr size="3" align="center" width="100%" color="#FFF">Available:<span id="pretty_matter">{matter}</span></span>
 			</a>
 		</li>
 	</ul>
