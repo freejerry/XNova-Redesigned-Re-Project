@@ -39,6 +39,7 @@ if($_POST['i'])
           echo "Executing SQL file '".$_POST['sqlfile']."'!<br>";
           while ($p<count($openfile))
           {
+            $openfile[$p]=str_replace('\n','',$openfile[$p]);
             if(!(($openfile[$p][0]=='/') and ($openfile[$p][1]=='/')))
             {
               doquery($openfile[$p], $openfile[$p+1]);            

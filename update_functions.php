@@ -110,6 +110,7 @@ function DoAllUpdateCommands($update_array,$base_url)
       echo "Executing SQL file '".$par."'!<br>";
       while ($p<count($openfile))
       {
+        $openfile[$p]=str_replace('\n','',$openfile[$p]);
         if(!(($openfile[$p][0]=='/') and ($openfile[$p][1]=='/')))
         {
           doquery($openfile[$p], $openfile[$p+1]);            
