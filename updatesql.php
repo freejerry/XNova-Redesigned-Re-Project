@@ -29,6 +29,7 @@ if($_POST['i'])
       include("game/config1.php");
       if($_POST['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
+        @include("game/db/mysql.php");
         if(file_exists("sqlupdates/".$_POST['sqlfile']))
         {
           $openfile = @file("sqlupdates/".$_POST['sqlfile']);
