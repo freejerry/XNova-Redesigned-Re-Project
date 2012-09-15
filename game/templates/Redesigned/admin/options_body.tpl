@@ -39,7 +39,7 @@
   <th><textarea name="close_reason" cols="40" rows="5" style="width:50%" >{close_reason}</textarea></th>
 </tr><tr>
   <th>{adm_opt_game_emailver}<br /></th>
-  <input name="email_verification" maxlength="8" size="20" value="{email_verification}" type="text"></th>
+  <th><input name="email_verification" maxlength="8" size="20" value="{email_verification}" type="text"></th>
 </tr>
 </table><br />
 
