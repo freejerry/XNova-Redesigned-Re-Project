@@ -58,7 +58,7 @@ class planet{
 
 		//And get the data
 		if($load)
-			$this->reload(true);
+			$this->reload(false);
 	}
 
 	public function get_level($id){
