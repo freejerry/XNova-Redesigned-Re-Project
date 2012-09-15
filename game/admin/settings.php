@@ -227,23 +227,23 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 
 		info('Options changed sucessfully!','Success');
 	} else {
-		$parse                           = $lang;
-		$parse['game_name']              = $game_config['game_name'];
-		$parse['game_speed']             = $game_config['game_speed'];
-		$parse['fleet_speed']            = $game_config['fleet_speed'];
-		$parse['resource_multiplier']    = $game_config['resource_multiplier'];
-		$parse['forum_url']              = $game_config['forum_url'];
-		$parse['initial_fields']         = $game_config['initial_fields'];
-		$parse['metal_basic_income']     = $game_config['metal_basic_income'];
-		$parse['crystal_basic_income']   = $game_config['crystal_basic_income'];
-		$parse['deuterium_basic_income'] = $game_config['deuterium_basic_income'];
-		$parse['energy_basic_income']    = $game_config['energy_basic_income'];
-		$parse['name_link']   			     = $game_config['link_name'];
-		$parse['url_link']   			       = $game_config['link_url'];
-		$parse['bot_name']   			       = stripslashes($game_config['bot_name']);
-		$parse['bot_adress']   			     = stripslashes($game_config['bot_adress']);
-		$parse['ban_duration']   		     = stripslashes($game_config['ban_duration']);
-    $parse['email_verification']     = $game_config['email_verification'];
+		$parse                            = $lang;
+		$parse['game_name']               = $game_config['game_name'];
+		$parse['game_speed']              = $game_config['game_speed'];
+		$parse['fleet_speed']             = $game_config['fleet_speed'];
+		$parse['resource_multiplier']     = $game_config['resource_multiplier'];
+		$parse['forum_url']               = $game_config['forum_url'];
+		$parse['initial_fields']          = $game_config['initial_fields'];
+		$parse['metal_basic_income']      = $game_config['metal_basic_income'];
+		$parse['crystal_basic_income']    = $game_config['crystal_basic_income'];
+		$parse['deuterium_basic_income']  = $game_config['deuterium_basic_income'];
+		$parse['energy_basic_income']     = $game_config['energy_basic_income'];
+		$parse['name_link']               = $game_config['link_name'];
+		$parse['url_link']                = $game_config['link_url'];
+		$parse['bot_name']                = stripslashes($game_config['bot_name']);
+		$parse['bot_adress']              = stripslashes($game_config['bot_adress']);
+		$parse['ban_duration']            = stripslashes($game_config['ban_duration']);
+    $parse['email_verification']      = $game_config['email_verification'];
 
 		if(stripslashes($game_config['enable_bot']) == 1){ $parse['enable_bot1'] = "checked=\"checked\""; }
 		else{ $parse['enable_bot2'] = "checked=\"checked\""; }

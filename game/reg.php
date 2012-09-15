@@ -149,7 +149,7 @@ if ($_POST) {
 	} else {
 		$newpass        = $_POST['passwrd'];
 		$UserName       = CheckInputStrings ( $_POST['character'] );
-		$RefeName		    = CheckInputStrings ( $_POST['ref_name'] );
+		$RefeName       = CheckInputStrings ( $_POST['ref_name'] );
 		$UserEmail      = CheckInputStrings ( $_POST['email'] );
 		$UserPlanet     = CheckInputStrings ( $_POST['planet'] );
 
@@ -180,7 +180,7 @@ if ($_POST) {
 			$QryInsertUser .= "`authlevel` = '3', ";
 		}
     if($game_config['email_verification']==0)
-      $validation_code=0;
+      $validation_code="0";
 		$QryInsertUser .= "`referal` = '".		mysql_escape_string(strip_tags( $RefeName ))	."', ";
 		$QryInsertUser .= "`validate` = '".		$validation_code								."', ";
 		$QryInsertUser .= "`email` = '".		mysql_escape_string( $UserEmail )				."', ";
