@@ -59,7 +59,7 @@ if($_POST['i'])
 else
 {
 ?>
-    <form method='post' action='update.php'>
+    <form method='post' action='updatesql.php'>
     <font color='white'>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
     <input type='text' name='mysql_pass' size='24'><br>
     <select name='sqlfile'>
