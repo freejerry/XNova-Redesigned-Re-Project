@@ -29,6 +29,8 @@ if($_POST['i'])
       include("game/config1.php");
       if($_POST['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
+        define("INSIDE",true);
+        include("game/config1.php");
         @include("game/db/mysql.php");
         if(file_exists("sqlupdates/".$_POST['sqlfile']))
         {
