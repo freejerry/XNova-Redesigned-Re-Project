@@ -1,5 +1,4 @@
 <?php
-
 /**
  * functions.php
  *
@@ -7,14 +6,10 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
-
 // ----------------------------------------------------------------------------------------------------------------
 //
 // Routine pour la gestion du mode vacance
 //
-
-
-
 
 function check_urlaubmodus ($user) {
 	if ($user['urlaubs_modus'] == 1) {
@@ -132,7 +127,6 @@ function intercom_add($message,$to,$from=0,$duration = 120){
 	doquery("INSERT INTO {{table}} (`to`,`from`,`time`,`expires`,`message`) VALUES ('".$to."', '".$from."', '".time()."', '".(time() + $duration)."', '".$message."');",'im');
 }
 
-
 // ----------------------------------------------------------------------------------------------------------------
 //
 // Routine Test de validit� d'une adresse email
@@ -181,8 +175,6 @@ function message ($mes, $title = 'Error', $dest = "", $time = "3") {
 function display ($page, $title = '', $topnav = true, $metatags = '', $AdminPage = false) {
 	//global $link, $game_config, $debug, $user, $planetrow;	//old
 	global $link, $xnova_root_path, $InLogin, $game_config, $debug, $user, $planetrow;
-
-
 
 	$DisplayPage = "<center>\n" . $page . $ads . "\n</center>\n";
 	//end of new
@@ -264,5 +256,4 @@ function CalculateMaxPlanetFields (&$planet) {
 
 	return $planet["field_max"] + ($planet[ $resource[33] ] * 5);
 }
-
 ?>

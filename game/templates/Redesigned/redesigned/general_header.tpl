@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<title>{title}</title>
+  <link rel="shortcut icon" href="favicon.ico">
 	<!-- Load new function - not skin specific -->
 	<link rel='stylesheet' type='text/css' href='./css/madnessred.css' media='screen' />
 	<link rel='stylesheet' type='text/css' href='./css/ibox.css' media='screen' />

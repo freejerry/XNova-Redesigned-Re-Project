@@ -165,6 +165,9 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 			$game_config['enable_bbcode'] = $_POST['bbcode_field'];
 		}
 
+    //Email Verification
+    $game_config['email_verification'] = $_POST['email_verification'];
+
 		// Activation du jeu
 		doquery("UPDATE {{table}} SET `config_value` = '". $game_config['game_disable']           ."' WHERE `config_name` = 'game_disable';", 'config');
 		doquery("UPDATE {{table}} SET `config_value` = '". $game_config['close_reason']           ."' WHERE `config_name` = 'close_reason';", 'config');
@@ -218,6 +221,10 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 
 		// Mode Debug
 		doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['debug']                  ."' WHERE `config_name` ='debug'", 'config');
+
+    //Email Verification
+    doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['email_verification']."' WHERE `config_name` ='EmailVerification'", 'config');
+
 		info('Options changed sucessfully!','Success');
 	} else {
 		$parse                           = $lang;
@@ -231,11 +238,12 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 		$parse['crystal_basic_income']   = $game_config['crystal_basic_income'];
 		$parse['deuterium_basic_income'] = $game_config['deuterium_basic_income'];
 		$parse['energy_basic_income']    = $game_config['energy_basic_income'];
-		$parse['name_link']   			 = $game_config['link_name'];
-		$parse['url_link']   			 = $game_config['link_url'];
-		$parse['bot_name']   			 = stripslashes($game_config['bot_name']);
-		$parse['bot_adress']   			 = stripslashes($game_config['bot_adress']);
-		$parse['ban_duration']   		 = stripslashes($game_config['ban_duration']);
+		$parse['name_link']   			     = $game_config['link_name'];
+		$parse['url_link']   			       = $game_config['link_url'];
+		$parse['bot_name']   			       = stripslashes($game_config['bot_name']);
+		$parse['bot_adress']   			     = stripslashes($game_config['bot_adress']);
+		$parse['ban_duration']   		     = stripslashes($game_config['ban_duration']);
+    $parse['email_verification']     = $game_config['email_verification'];
 
 		if(stripslashes($game_config['enable_bot']) == 1){ $parse['enable_bot1'] = "checked=\"checked\""; }
 		else{ $parse['enable_bot2'] = "checked=\"checked\""; }
