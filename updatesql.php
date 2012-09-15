@@ -26,11 +26,11 @@ if($_POST['i'])
     if($status_file[0]=='INSTALLED')
     {
       define("INSIDE",true);
+      define("ROOT_PATH","game/");
+      define("UNIVERSE","1");
       include("game/config1.php");
       if($_POST['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
-        define("INSIDE",true);
-        include("game/config1.php");
         @include("game/db/mysql.php");
         if(file_exists("sqlupdates/".$_POST['sqlfile']))
         {
