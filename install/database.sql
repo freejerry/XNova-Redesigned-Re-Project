@@ -200,7 +200,7 @@ INSERT INTO `{{prefix}}config` (`config_name`, `config_value`) VALUES
 ('enable_bot', '0'),
 ('enable_bbcode', '1'),
 ('debug', '0'),
-('email_verification', '0'),
+('email_verification', '1'),
 ('copyright', '&copy; MadnessRed 2008');
 
 
