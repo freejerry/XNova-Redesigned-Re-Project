@@ -46,7 +46,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 <script type="text/javascript" src="ibox.2.2/ibox.js"></script> 
 <script type="text/javascript">
 iBox.setPath('ibox.2.2/');
-ibox.default_width = 800;
+iBox.default_width = 800;
 </script> 
 <link rel="stylesheet" href="ibox.css" type="text/css" media="screen"/>
 </head> 
@@ -57,7 +57,7 @@ ibox.default_width = 800;
 var lastType = "";
 function changeAction(type) {
 	if (document.formular.Uni.value == '') {
-		alert('Merci de selectionner un Univers!');
+		alert('You need to select a universe!');
 	} else {
 		if(type == "login" && lastType == "") {
 			var url = "http://" + document.formular.Uni.value + "";
