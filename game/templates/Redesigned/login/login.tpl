@@ -3,13 +3,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>{shortname} (Universe {s})</title>
-	<link rel='stylesheet' type='text/css' href='{{skin}}/css/reset.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{{skin}}/css/toolbox.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{{skin}}/css/login.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{{skin}}css/reset.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{{skin}}css/toolbox.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{{skin}}css/login.css' media='screen' />
 </head>
-
 <body id="login">
-
     <form name="xnova" method="post" action="login.php">
 	<input type="hidden" name="s" value="{s}" class="input" />
         <h1><span>{shortname}</span></h1>
@@ -17,7 +15,6 @@
         	<p>{bad} incorrect!<br>Please try again...<p>
         </div>
 	        <div id="loginwrapper">
-	
 	        	<div class="textLeft wrap-inner">
 		            <h2>{Login} ({Universe} {s})</h2>
 	    	    	<label for="login">{Username}</label>
@@ -26,14 +23,11 @@
 		        	<input type="password" name="password" id="pass" tabindex="2" class="input">
 	    	    	<input type="submit" value="{Login}" tabindex="3" class="buttonSave">
 	        	</div>
-	
 	    	    <div id="advice">
 	        		<p>{NewReg} <a href='./reg.php?s={s}'>Register</a></p>
 		        </div>
 	            <br class="clear" />
 	        </div>
     </form>
-    
 </body>
-
 </html>

@@ -20,14 +20,11 @@ define('ROOT_PATH' , '');
 include_once(ROOT_PATH . 'common.php');
 
 getLang('login');
-
 //Redirect standard
 $redirect = './';
 if($_GET['go']){ $redirect = str_replace('--','&',$_GET['go']); }
-
 //Unencrypted by default
 $pw_encrypted = false;
-
 //If we are using get to login, not recomended as password will show up in history
 if($_GET['GET_LOGIN']){	$_POST = $_GET; $pw_encrypted = true; }
 
@@ -47,9 +44,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
     }
   }
 }
-
 if ($_POST) {
-
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }
@@ -64,7 +59,7 @@ if ($_POST) {
 
 			@include('config'.UNIVERSE.'.php');
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
-			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "../", "", 0);
+			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "./", "", 0);
 
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
@@ -110,7 +105,6 @@ if ($_POST) {
 	$parse['shortname'] = $game_config['game_name'];
 	echo AddUniToLinks(parsetemplate(gettemplate('login/login'), $parse));
 }
-
 // -----------------------------------------------------------------------------------------------------------
 // History version
 
