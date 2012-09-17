@@ -84,7 +84,7 @@
 			<span class="mrtooltip">{hire601}</span>
 		</a>
 
-		<a href="./?page=premium&offi=605" class="tips" style="position:relative;">
+		<a href="./?page=premium&offi=602" class="tips" style="position:relative;">
 			<img src="{skin}/img/layout/admiral_ikon{un602}.gif">
 			<span class="mrtooltip">{hire602}</span>
 		</a>
