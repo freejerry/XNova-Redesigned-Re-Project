@@ -1,13 +1,13 @@
 <?php
-
-/**
+/*
  * login.php
  *
  * @version 1.0
  * @copyright 2008 by ?????? for XNova
- */
+ *
+*/
 session_start(); 
- 
+
 if($_POST['verified'] != 1)
   header('Location: ../');
 define('INSIDE'		, true);
@@ -15,7 +15,6 @@ define('INSTALL'	, false);
 define('LOGIN'		, true);
 
 $InLogin = true;
-
 
 if($_POST && in_array('uni',array_keys($_POST))){ $_GET['s'] = preg_replace("/[^0-9]/", "", $_POST['uni']); }
 
@@ -101,7 +100,7 @@ if ($_POST) {
 	}
 }else{
 	define('GAME_SKIN',DEFAULT_SKIN);
-	
+
 	$parse = $lang;
 	$parse['s'] = UNIVERSE;
 	if($_GET['bad']){
@@ -109,7 +108,7 @@ if ($_POST) {
 	}else{
 		$parse['bad'] = $lang['Something'];
 	}
-	
+
 	$parse['shortname'] = $game_config['game_name'];
 	echo AddUniToLinks(parsetemplate(gettemplate('login/login'), $parse));
 }

@@ -3,9 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>{title}</title>
-	<link rel='stylesheet' type='text/css' href='{{skin}}/css/reset.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{{skin}}/css/toolbox.css' media='screen' />
-	<link rel='stylesheet' type='text/css' href='{{skin}}/css/login.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{{skin}}css/reset.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{{skin}}css/toolbox.css' media='screen' />
+	<link rel='stylesheet' type='text/css' href='{{skin}}css/login.css' media='screen' />
 </head>
 
 <body id="login">
@@ -24,6 +24,7 @@
         		<label for="pass">Password</label> 
 	        	<input type="password" name="pass" id="pass" tabindex="2" class="input">
     	    	<input type="submit" value="Login" tabindex="3" class="buttonSave">
+            <input type="hidden" name="validated" value="1">
         	</div>
 
     	    <div id="advice">
