@@ -73,7 +73,8 @@ iBox.default_width = 800;
 		<a href="lostpassword.php" rel="ibox&width=800" title="Lost Password">Forgotten your password?</a> 
 	</td> 
 </tr> 
-</tbody> 
+</tbody>
+<input type="hidden" name="validate" value="123"> 
 </table>
 </form> 
 </div> 

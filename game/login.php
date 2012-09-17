@@ -44,7 +44,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
     }
   }
 }
-if ($_POST) {
+if ($_POST['validate']=="123") {
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }

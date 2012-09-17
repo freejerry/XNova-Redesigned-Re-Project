@@ -22,6 +22,7 @@
 	        		<label for="pass">{Password}</label> 
 		        	<input type="password" name="password" id="pass" tabindex="2" class="input">
 	    	    	<input type="submit" value="{Login}" tabindex="3" class="buttonSave">
+              <input type="hidden" name="validate" value="123">
 	        	</div>
 	    	    <div id="advice">
 	        		<p>{NewReg} <a href='./reg.php?s={s}'>Register</a></p>
