@@ -8,7 +8,8 @@
  */
 session_start(); 
  
-header('Location: ../');
+if($_POST['verified'] != 1)
+  header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);

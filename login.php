@@ -17,7 +17,7 @@ foreach($unis as $u){
 	//Load the database
 	$sql[$u] = new database($dbsettings);
 	//How many online?
-	$result = $sql[$u]->doquery("SELECT COUNT('id') as `count` FROM {{table}} WHERE `onlinetime` > ".(time() - 20), 'users', true);
+	$result = $sql[$u]->doquery("SELECT COUNT('id') as `count` FROM {{table}} WHERE `onlinetime` > ".(time() - 900), 'users', true);
 	$online += $result['count'];
 	//How many users?
 	$result = $sql[$u]->doquery("SELECT `config_value` FROM {{table}} WHERE `config_name` = 'users_amount'", 'config', true);
@@ -91,7 +91,8 @@ function changeAction(type) {
 	</td> 
 </tr> 
 </tbody> 
-</table> 
+</table>
+<input type="hidden" name="verified" value="1"> 
 </form> 
 </div> 
 </div> 
