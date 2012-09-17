@@ -30,12 +30,8 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   {
     $UserValidate = doquery("SELECT id,username,password FROM {{table}} WHERE id='$cookie_tmp[0]' and username='$cookie_tmp[1]'", 'users', true);
     if($UserValidate)
-    {
       if(sha($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
-      {
-        header("Location: ".AddUniToString($redirect));
-      }  
-    }
+        header("Location: ".AddUniToString($redirect)); 
   }
 }
 if ($_POST) {
@@ -51,7 +47,7 @@ if ($_POST) {
 				$rememberme = 0;
 			}
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
-      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "../");
+      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "./");
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
 			exit;
