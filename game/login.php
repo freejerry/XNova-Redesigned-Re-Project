@@ -38,7 +38,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   if($cookie_tmp[3]=='1')
   {
     $UserValidate = doquery("SELECT id,username,password FROM {{table}} WHERE id='$cookie_tmp[0]' and username='$cookie_tmp[1]'", 'users', true);
-    if(is_resource($UserValidate))
+    if($UserValidate)
     {
       if(sha($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
       {

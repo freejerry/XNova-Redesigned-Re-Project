@@ -42,7 +42,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 <link rel="stylesheet" type="text/css" href="login/styles.css"> 
 <link rel="stylesheet" type="text/css" href="login/about.css">  
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />  
-<script type="text/javascript" src="scripts/overlib.js"></script> 
+<script type="text/javascript" src="game/scripts/overlib.js"></script> 
 <script type="text/javascript" src="ibox.2.2/ibox.js"></script> 
 <script type="text/javascript">
 iBox.setPath('ibox.2.2/');
@@ -53,23 +53,6 @@ iBox.default_width = 800;
 <body> 
 <center> 
 <div id="main"> 
-<script type="text/javascript">
-var lastType = "";
-function changeAction(type) {
-	if (document.formular.Uni.value == '') {
-		alert('You need to select a universe!');
-	} else {
-		if(type == "login" && lastType == "") {
-			var url = "http://" + document.formular.Uni.value + "";
-			document.formular.action = url;
-		} else {
-			var url = "http://" + document.formular.Uni.value + "/reg.php";
-			document.formular.action = url;
-			document.formular.submit();
-		}
-	}
-}
-</script> 
 <center><img src="images/xnovaproject.png" border="0" style="border-width:0px;" /></center>
 <div id="login"> 
 <div id="login_input"> 
@@ -83,7 +66,7 @@ function changeAction(type) {
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
-		Remember Me? <input name="rememberme" type="checkbox"><input name="submit" value="Login" type="submit"> 
+		Remember Me? <input name="rememberme" type="checkbox"> <input name="submit" value="Login" type="submit"> 
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
