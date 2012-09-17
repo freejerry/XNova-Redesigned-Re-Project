@@ -92,7 +92,6 @@ function changeAction(type) {
 </tr> 
 </tbody> 
 </table>
-<input type="hidden" name="verified" value="1"> 
 </form> 
 </div> 
 </div> 
