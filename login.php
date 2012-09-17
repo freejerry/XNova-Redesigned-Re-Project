@@ -74,7 +74,6 @@ iBox.default_width = 800;
 	</td> 
 </tr> 
 </tbody>
-<input type="hidden" name="validate" value="123"> 
 </table>
 </form> 
 </div> 

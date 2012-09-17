@@ -18,7 +18,6 @@ getLang('login');
 //Redirect standard
 $redirect = './';
 if($_GET['go']){ $redirect = str_replace('--','&',$_GET['go']); }
-echo $redirect."<br>";
 //Unencrypted by default
 $pw_encrypted = false;
 //If we are using get to login, not recomended as password will show up in history
@@ -39,14 +38,10 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
     }
   }
 }
-echo "Debug1<br>";
-if ($_POST['validate']=="123") {
-  echo "Debug2<br>";
+if ($_POST) {
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
-    echo "Debug2<br>";
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }
-    echo $_POST['password']."<br>";
 		if ($login['password'] == $_POST['password']) {
 			if (isset($_POST["rememberme"])) {
 				$expiretime = time() + 31536000;
@@ -56,10 +51,9 @@ if ($_POST['validate']=="123") {
 				$rememberme = 0;
 			}
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
-      echo $cookie."<br>";
+      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "../");
 			unset($dbsettings);
-      echo AddUniToString($redirect)."<br>";
-			//header("Location: ".AddUniToString($redirect));
+			header("Location: ".AddUniToString($redirect));
 			exit;
 		} else {
 			header("Location: ".AddUniToString('./login.php?bad=Password'));
