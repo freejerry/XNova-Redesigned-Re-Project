@@ -26,9 +26,12 @@ if($_POST['i'])
     if($status_file[0]=='INSTALLED')
     {
       define("INSIDE",true);
+      define("ROOT_PATH","game/");
+      define("UNIVERSE","1");
       include("game/config1.php");
       if($_POST['mysql_pass']==$dbsettings['pass']) //check for admin rights
       {
+        @include("game/db/mysql.php");
         if(file_exists("sqlupdates/".$_POST['sqlfile']))
         {
           $openfile = @file("sqlupdates/".$_POST['sqlfile']);
@@ -36,6 +39,7 @@ if($_POST['i'])
           echo "Executing SQL file '".$_POST['sqlfile']."'!<br>";
           while ($p<count($openfile))
           {
+            $openfile[$p]=str_replace('\n','',$openfile[$p]);
             if(!(($openfile[$p][0]=='/') and ($openfile[$p][1]=='/')))
             {
               doquery($openfile[$p], $openfile[$p+1]);            
@@ -59,7 +63,7 @@ if($_POST['i'])
 else
 {
 ?>
-    <form method='post' action='update.php'>
+    <form method='post' action='updatesql.php'>
     <font color='white'>Please enter your password for MySQL database to verify,<br>that you are owner of this XNova version</font><br>
     <input type='text' name='mysql_pass' size='24'><br>
     <select name='sqlfile'>

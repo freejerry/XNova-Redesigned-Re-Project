@@ -32,7 +32,7 @@ else
   $parse['xnovalink']     = "#";
 }
 
-$LastMin = doquery("SELECT * FROM {{table}} WHERE `onlinetime` >= '". (time() - 60) ."' ORDER BY `". $TypeSort ."` ASC;", 'users');
+$LastMin = doquery("SELECT * FROM {{table}} WHERE `onlinetime` >= '". (time() - 900) ."' ORDER BY `". $TypeSort ."` ASC;", 'users');
 
 $Count      = 0;
 $Color      = "lime";

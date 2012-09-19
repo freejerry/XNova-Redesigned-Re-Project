@@ -47,33 +47,33 @@ function BuildingPage($a=0,$b=0){
 		}
 	}
 	//buildings
-	if($planetrow['planet_type'] == 3){	//if the plane is a moon
-	$imgnum1 = '';
-	if($planetrow[$resource[41]] > 0){
-		$imgnum1 .= "_41";
-	}
-	if($planetrow[$resource[42]] > 0){
-		$imgnum1 .= "_42";
-	}
-	if($planetrow[$resource[43]] > 0){
-		$imgnum1 .= "_43";
-	}
+  if($planetrow['planet_type'] == 3){	//if the plane is a moon
+    $imgnum1 = '';
+    if($planetrow[$resource[41]] > 0){
+      $imgnum1 .= "_41";
+    }
+    if($planetrow[$resource[42]] > 0){
+      $imgnum1 .= "_42";
+    }
+    if($planetrow[$resource[43]] > 0){
+      $imgnum1 .= "_43";
+    }
 	}else{	//the planet is't a moon
-	$imgnum1 = '';
-	if($planetrow[$resource[14]] > 0){
-		$imgnum1 .= "_14";
-	}
-	if($planetrow[$resource[21]] > 0){
-		$imgnum1 .= "_21";
-	}
-	if($planetrow[$resource[31]] > 0){
-		$imgnum1 .= "_31";
-	}
-	if($planetrow[$resource[34]] > 0){
-		$imgnum1 .= "_34";
-	}
-	}
-	
+    $imgnum1 = '';
+    if($planetrow[$resource[14]] > 0){
+      $imgnum1 .= "_14";
+    }
+    if($planetrow[$resource[21]] > 0){
+      $imgnum1 .= "_21";
+    }
+    if($planetrow[$resource[31]] > 0){
+      $imgnum1 .= "_31";
+    }
+    if($planetrow[$resource[34]] > 0){
+      $imgnum1 .= "_34";
+    }
+  }
+
 	// Boucle d'interpretation des eventuelles commandes
 	if (isset($_GET['cmd'])) {
 		// On passe une commande
@@ -128,7 +128,7 @@ function BuildingPage($a=0,$b=0){
 		} elseif ($bThisIsCheated == true) {
 			//ResetThisFuckingCheater ( $user['id'] );
 		}
-		
+
 		//If they want axah_section
 		if($_GET['axah_box']){
 			$q = ShowQueue(false);
@@ -205,7 +205,7 @@ function BuildingPage($a=0,$b=0){
 			$parse['count_'.$Element] = $planetrow[$resource[$Element]];
 		}
 	}
-	
+
 	//Countdowns
 	if ($planetrow['b_building'] > 0) {
 		$BuildQueue = explode (";", $planetrow['b_building_id']);
@@ -218,7 +218,7 @@ function BuildingPage($a=0,$b=0){
 			\t\t\t\t\t\t\t</div>\n
 			\t\t\t\t\t\t</div>\n";
 	}
-	
+
 	$BuildingPage = parsetemplate($SubTemplate, $parse);
 
 	$parse					 = $lang;
@@ -251,7 +251,7 @@ function BuildingPage($a=0,$b=0){
 	}else{
 		die("Hacking attempt");
 	}
-	
+
 	$parse['hideres'] = "display:none;";
 	$parse['hidenorm'] = "";
 	$parse['planetname'] = $planetrow['name'];
@@ -413,7 +413,6 @@ function BuildingPage($a=0,$b=0){
 		}
 	}
 
-
 	$parse['planet_field_current']	= $planetrow["field_current"];
 	$parse['planet_field_max']		= $planetrow['field_max'] + ($planetrow[$resource[33]] * 5);
 	$parse['field_libre']			= $parse['planet_field_max'] - $planetrow['field_current'];
@@ -428,13 +427,12 @@ function BuildingPage($a=0,$b=0){
 	}elseif($_GET['page'] == 'resources'){
 		//Resources screen
 		$parse['resources_section'] = BuildRessourcePage ($user,$planetrow,$parse['hideres']);
-		
+
 		$page = parsetemplate(gettemplate('buildings/resources'), $parse);
 		$title = $lang['Resources'];
 	}else{
 		die("Hacking attempt");
 	}
-
 
 	if($_GET['axah']){
 		makeAXAH($page);
@@ -446,5 +444,4 @@ function BuildingPage($a=0,$b=0){
 // -----------------------------------------------------------------------------------------------------------
 // Changelog
 // 1.0 File was created to merge Station and Facilities Page.
-
 ?>

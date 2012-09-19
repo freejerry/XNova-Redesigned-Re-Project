@@ -17,7 +17,7 @@ foreach($unis as $u){
 	//Load the database
 	$sql[$u] = new database($dbsettings);
 	//How many online?
-	$result = $sql[$u]->doquery("SELECT COUNT('id') as `count` FROM {{table}} WHERE `onlinetime` > ".(time() - 20), 'users', true);
+	$result = $sql[$u]->doquery("SELECT COUNT('id') as `count` FROM {{table}} WHERE `onlinetime` > ".(time() - 900), 'users', true);
 	$online += $result['count'];
 	//How many users?
 	$result = $sql[$u]->doquery("SELECT `config_value` FROM {{table}} WHERE `config_name` = 'users_amount'", 'config', true);
@@ -32,7 +32,7 @@ foreach($unis as $u){
 if(strlen($last_user) > 10){
 	$last_user = substr($last_user,0,8).'...';
 }
-if(!empty($_COOKIE[$game_config[COOKIE_NAME]]))
+if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   header("Location: game/login.php");
 ?>
 <html> 
@@ -42,34 +42,17 @@ if(!empty($_COOKIE[$game_config[COOKIE_NAME]]))
 <link rel="stylesheet" type="text/css" href="login/styles.css"> 
 <link rel="stylesheet" type="text/css" href="login/about.css">  
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />  
-<script type="text/javascript" src="scripts/overlib.js"></script> 
+<script type="text/javascript" src="game/scripts/overlib.js"></script> 
 <script type="text/javascript" src="ibox.2.2/ibox.js"></script> 
 <script type="text/javascript">
 iBox.setPath('ibox.2.2/');
-ibox.default_width = 800;
+iBox.default_width = 800;
 </script> 
 <link rel="stylesheet" href="ibox.css" type="text/css" media="screen"/>
 </head> 
 <body> 
 <center> 
 <div id="main"> 
-<script type="text/javascript">
-var lastType = "";
-function changeAction(type) {
-	if (document.formular.Uni.value == '') {
-		alert('Merci de selectionner un Univers!');
-	} else {
-		if(type == "login" && lastType == "") {
-			var url = "http://" + document.formular.Uni.value + "";
-			document.formular.action = url;
-		} else {
-			var url = "http://" + document.formular.Uni.value + "/reg.php";
-			document.formular.action = url;
-			document.formular.submit();
-		}
-	}
-}
-</script> 
 <center><img src="images/xnovaproject.png" border="0" style="border-width:0px;" /></center>
 <div id="login"> 
 <div id="login_input"> 
@@ -83,15 +66,15 @@ function changeAction(type) {
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
-		Remember Me? <input name="rememberme" type="checkbox"><input name="submit" value="Login" type="submit"> 
+		Remember Me? <input name="rememberme" type="checkbox"> <input name="submit" value="Login" type="submit"> 
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
 		<a href="lostpassword.php" rel="ibox&width=800" title="Lost Password">Forgotten your password?</a> 
 	</td> 
 </tr> 
-</tbody> 
-</table> 
+</tbody>
+</table>
 </form> 
 </div> 
 </div> 

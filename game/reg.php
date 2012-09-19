@@ -30,9 +30,9 @@ function sendpassemail($emailaddress, $password, $username, $code) {
 	$parse['game']		= $game_config['game_name'];
 	$parse['GAMEURL']	= GAMEURL;
 	$parse['ADMIN_NAME']= ADMIN_NAME;
-	
+
 	$parse['validate_url'] = GAMEURL.'/login.php?GET_LOGIN=1&username='.$username.'&password='.sha($password).'&UNI='.UNIVERSE.'&go=./?page=validate--code='.$code;
-	
+
 	$status				= mymail($emailaddress, $lang['mail_title'].$parse['game'], parsetemplate(gettemplate('emails/reg'), $parse));
 	return $status;
 }
@@ -149,7 +149,7 @@ if ($_POST) {
 	} else {
 		$newpass        = $_POST['passwrd'];
 		$UserName       = CheckInputStrings ( $_POST['character'] );
-		$RefeName		= CheckInputStrings ( $_POST['ref_name'] );
+		$RefeName       = CheckInputStrings ( $_POST['ref_name'] );
 		$UserEmail      = CheckInputStrings ( $_POST['email'] );
 		$UserPlanet     = CheckInputStrings ( $_POST['planet'] );
 
@@ -179,6 +179,8 @@ if ($_POST) {
 			//Fist user, make admin
 			$QryInsertUser .= "`authlevel` = '3', ";
 		}
+    if($game_config['email_verification']==0)
+      $validation_code="0";
 		$QryInsertUser .= "`referal` = '".		mysql_escape_string(strip_tags( $RefeName ))	."', ";
 		$QryInsertUser .= "`validate` = '".		$validation_code								."', ";
 		$QryInsertUser .= "`email` = '".		mysql_escape_string( $UserEmail )				."', ";
@@ -192,7 +194,6 @@ if ($_POST) {
 		$QryInsertUser .= "`register_time` = '". time() ."', ";
 		$QryInsertUser .= "`password`='". $shanewpass ."';";
 		doquery( $QryInsertUser, 'users');
-
 
 		// On cherche le numero d'enregistrement de l'utilisateur fraichement créé
 		$NewUser        = doquery("SELECT `id` FROM {{table}} WHERE `username` = '". mysql_escape_string($_POST['character']) ."' LIMIT 1;", 'users', true);
@@ -270,7 +271,7 @@ if ($_POST) {
 
 		// Mise a jour du nombre de joueurs inscripts
 		doquery("UPDATE {{table}} SET `config_value` = `config_value` + '1' WHERE `config_name` = 'users_amount' LIMIT 1;", 'config');
-		
+
 		//PM users
 		$Message  = $lang['thanksforregistry'];
 		if (sendpassemail($_POST['email'], $newpass, $UserName, $validation_code)) {
