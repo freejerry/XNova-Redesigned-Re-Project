@@ -18,7 +18,7 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 		$Element = intval(idstring($_GET['fmenge']));
 		$Count = intval(idstring($_GET[$Element]));
 		if(in_array($Element,$reslist[$area])){
-			
+
 			//Check if it exaceeds the max amount we allow them to build in one go (XNova code)
 			if ($Count > MAX_FLEET_OR_DEFS_PER_ROW) {
 				$Count = MAX_FLEET_OR_DEFS_PER_ROW;
@@ -38,19 +38,19 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 				}
 			 }
       }
-			
+
 			//If there is a maximum allowed
 			if($pricelist[$Element]['max'] > 0){
 				if(($Count + $InQueue + $CurrentPlanet[$resource[$Element]]) > $pricelist[$Element]['max']){
 					$Count = $pricelist[$Element]['max'] - $CurrentPlanet[$resource[$Element]] - $InQueue;
 				}
 			}
-			
+
 			//And missiles...
 			if($Element == 502 || $Element == 503){
 				
 			}
-			
+
 			if ($Count > 0) {
 			
 				// On verifie si on a les technologies necessaires a la construction de l'element
@@ -81,7 +81,6 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 		doquery("UPDATE {{table}} SET `metal` = '".$CurrentPlanet['metal']."', `crystal` = '".$CurrentPlanet['crystal']."', `deuterium` = '".$CurrentPlanet['deuterium']."', `b_hangar_id` = '".$CurrentPlanet['b_hangar_id']."', `b_hangar` = '".$CurrentPlanet['b_hangar']."', `b_hangar_lastupdate` = '".$CurrentPlanet['b_hangar_lastupdate']."' WHERE `id` = '".$CurrentPlanet['id']."' ;",'planets');
 		header('Location: ./?page='.$_GET['page']);
 	}
-
 
 	// -------------------------------------------------------------------------------------------------------
 	// S'il n'y a pas de Chantier ...
@@ -120,16 +119,16 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 					$parse['state_'.$Element] = "on";
 					$parse['mes_'.$Element] = "";
 				}
-	
+
 				$parse['name_'.$Element] = $ElementName;
 				$parse['count_'.$Element] = $CurrentPlanet[$resource[$Element]];
-	
+
 			}else{
 				$parse['state_'.$Element] = "off";
 				$parse['mes_'.$Element] = "Not availble";
 			}
 		}
-		
+
 		$Buttonz = parsetemplate($SubTemplate, $parse);
 	}
 
@@ -185,7 +184,7 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 		$infopg['page'] = $_GET['page'];
 		$parse['info'] = parsetemplate(gettemplate('buildings/sy_info'), $infopg);
 		$parse['extra'] = "style=\"display:none\"";
-		
+
 		if($_GET['axah_section'] == '1'){
 			makeAXAH($parse['info']);
 			die();
@@ -196,7 +195,7 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 	$parse['planetname'] = $CurrentPlanet['name'];
 
 	$page = parsetemplate($Template, $parse);
-	
+
 	if($_GET['axah']){
 		makeAXAH($page);
 	}else{

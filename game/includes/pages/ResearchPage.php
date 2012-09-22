@@ -91,9 +91,9 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$bContinue = false;
 		}
 	}
-	
+
 	$TechScrTPL = gettemplate('buildings_research_script');
-	
+
 	$SubTemplate 		= gettemplate('buildings/research_buttonz');
 	$parse 				= array();
 	$infopg				= array();
@@ -117,32 +117,31 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 		$parse['name_'.$Tech] = $TechName;
 		$parse['count_'.$Tech] = $CurrentUser[$resource[$Tech]];
 	}
-	
+
 	//Anything currently building?
 	if($CurrentUser['b_tech_planet']){
 		$WorkingPlanet = doquery("SELECT `id`,`name`,`b_tech_id`,`b_tech` FROM {{table}} WHERE `id` = '". $CurrentUser['b_tech_planet'] ."';", 'planets', true);
-		
+
 		//Whats currently building
 		$curbuild = $WorkingPlanet['b_tech_id'];
 		$parse['countdown_'.$curbuild] = "
 			\t\t\t\t\t\t\t<div class=\"pusher\" id=\"b_research".$curbuild."\" style=\"height:80px;margin-bottom:-80px;\">\n
 			\t\t\t\t\t\t\t\t<a><span class=\"time\" id=\"test\" name=\"zeit\">".parsecountdown($WorkingPlanet['b_tech'])."</span></a>\n
 			\t\t\t\t\t\t\t</div>\n";
-		
+
 	}else{
 		$curbuild = 0;
 	}	
-	
+
 	$Buttonz = parsetemplate($SubTemplate, $parse);
 
 	$parse                 = $lang;
 	$Element			   = idstring($_GET['id']);
 	$ElementName		   = $lang['names'][$Element];
 
-	
 	$de_planettype = PlanetType($CurrentPlanet['image']);
 	$parse['type'] = $de_planettype['type'];	
-	
+
 	if($Element){
 		if (in_array($Element, $reslist['tech']) ) {
 			/*
@@ -158,8 +157,7 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$RowParse['tech_restp']  = $lang['Rest_ress'] ." ". GetRestPrice ($CurrentUser, $CurrentPlanet, $Tech, true);
 			$CanBeDone               = IsElementBuyable($CurrentUser, $CurrentPlanet, $Tech);
 			*/
-			
-			
+
 			$HaveRessources        = IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element);
 			$parse['i']            = $Element;
 			$BuildingLevel         = $CurrentPlanet[$resource[$Element]];
@@ -171,10 +169,9 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$parse['price']        = GetElementPrice($CurrentUser, $CurrentPlanet, $Element);
 			$parse['rest_price']   = GetRestPrice($CurrentUser, $CurrentPlanet, $Element);
 			$parse['click']        = '';
-			
 
 			$buildlink = "loadpage('./?page=research&cmd=search&id=".$Element."&tech=".$Element."',document.title,document.body.id);";
-			
+
 			if (IsTechnologieAccessible($CurrentUser, $CurrentPlanet, $Element)) {
 				if ($NextBuildLevel == 1) {
 					if ( $HaveRessources == true ) {
@@ -198,9 +195,7 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 				$parse['click'] = "<font color=#FF0000>". $lang['NotAccessible'] ."</font>";
 				$infopg['build_text'] = $lang['NotAccessible'];
 			}
-			
 
-				
 			//Building Info
 			if($infopg['build_link']){
 				$infopg['buildit_class'] = "build-it";
@@ -215,7 +210,7 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$infopg['id'] = $Element;
 			$infopg['name'] = $ElementName;
 			$infopg['level'] = $CurrentUser[$resource[$Element]];
-			
+
 			//Current research
 			if($curbuild == $Element){
 				$infopg['td_url'] = "./?page=".$_GET['page']."&cmd=cancel&id=".$Element."&tech=".$Element;
@@ -231,13 +226,13 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$infopg['level1'] = $infopg['level'] + 1;
 			$infopg['duration'] = pretty_time($ElementBuildTime);
 			$infopg['shortdesc'] = $lang['sdesc'][$Element];
-			
+
 			$infopg['skin'] = $CurrentUser['skin'];
-			
+
 			$infopg['cost_m'] = 1 * floor($pricelist[$Element]['metal'] * pow($pricelist[$Element]['factor'], $CurrentUser[$resource[$Element]]));
 			$infopg['cost_c'] = 1 * floor($pricelist[$Element]['crystal'] * pow($pricelist[$Element]['factor'], $CurrentUser[$resource[$Element]]));
 			$infopg['cost_d'] = 1 * floor($pricelist[$Element]['deuterium'] * pow($pricelist[$Element]['factor'], $CurrentUser[$resource[$Element]]));
-			
+
 			if($infopg['cost_m'] > $CurrentPlanet['metal'] && $infopg['cost_m'] > 0){
 				$infopg['missing_resource_m'] = "missing_resource";
 			}
@@ -247,32 +242,31 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			if($infopg['cost_d'] > $CurrentPlanet['deuterium'] && $infopg['cost_d'] > 0){
 				$infopg['missing_resource_d'] = "missing_resource";
 			}
-			
+
 			$infopg['sh_cost_m'] = KMnumber($infopg['cost_m'],0,'up');
 			$infopg['sh_cost_c'] = KMnumber($infopg['cost_c'],0,'up');
 			$infopg['sh_cost_d'] = KMnumber($infopg['cost_d'],0,'up');
-			
+
 			$infopg['cost_m'] = pretty_number($infopg['cost_m']);
 			$infopg['cost_c'] = pretty_number($infopg['cost_c']);
 			$infopg['cost_d'] = pretty_number($infopg['cost_d']);
-			
+
 			$infopg['page'] = $_GET['page'];
 			$parse['info'] = parsetemplate(gettemplate('buildings/info'), $infopg);
 			$parse['extra'] = "style=\"display:none\"";
-			
+
 			if($_GET['axah_section'] == '1'){
 				makeAXAH($parse['info']);
 				die();
 			}
 		}
 	}
-	
+
 	$parse['buttonz']        = $Buttonz;
 	$parse['planetname'] = $CurrentPlanet['name'];
-	
+
 	$page                         .= parsetemplate(gettemplate('buildings/research'), $parse);
 
-	
 	if($_GET['axah']){
 		makeAXAH($page);
 	}else{
