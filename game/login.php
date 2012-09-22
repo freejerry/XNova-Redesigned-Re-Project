@@ -6,7 +6,8 @@
  * @copyright 2008 by ?????? for XNova
  *
 */
-session_start(); 
+session_start();
+header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);
@@ -47,7 +48,7 @@ if ($_POST) {
 				$rememberme = 0;
 			}
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
-      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "./");
+      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "../");
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
 			exit;
