@@ -38,7 +38,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 if ($_POST) {
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
-    echo $login['username']."-".$login['password']."-".$login['id'];
+    echo "<script>alert(".$login['username']."-".$login['password']."-".$login['id'].");</script>";
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }
 		if ($login['password'] == $_POST['password']) {
 			if (isset($_POST["rememberme"])) {
