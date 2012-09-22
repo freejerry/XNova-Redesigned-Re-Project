@@ -8,7 +8,7 @@
 	<link rel='stylesheet' type='text/css' href='{{skin}}css/login.css' media='screen' />
 </head>
 <body id="login">
-    <form name="xnova" method="post" action="login.php?debug=1">
+    <form name="xnova" method="post" action="login.php">
 	<input type="hidden" name="s" value="{s}" class="input" />
         <h1><span>{shortname}</span></h1>
         <div id="error" style="display: block">

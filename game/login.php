@@ -7,7 +7,6 @@
  *
 */
 session_start();
-//header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);
@@ -31,11 +30,11 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   {
     $UserValidate = doquery("SELECT id,username,password FROM {{table}} WHERE id='$cookie_tmp[0]' and username='$cookie_tmp[1]'", 'users', true);
     if($UserValidate)
-      if(($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
+      if(sha($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
         header("Location: ".AddUniToString($redirect)); 
   }
 }
-if ($_GET['debug']==1) {
+if ($_POST) {
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }
@@ -47,8 +46,8 @@ if ($_GET['debug']==1) {
 				$expiretime = 0;
 				$rememberme = 0;
 			}
-			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . $login["password"] . "--" . $dbsettings["secretword"] . "/%/" . $rememberme;
-      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime);
+			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
+			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "/", "", 0);
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
 			exit;
