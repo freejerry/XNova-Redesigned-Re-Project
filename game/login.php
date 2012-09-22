@@ -7,7 +7,7 @@
  *
 */
 session_start();
-header('Location: ../');
+//header('Location: ../');
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);
