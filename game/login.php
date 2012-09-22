@@ -31,13 +31,14 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   {
     $UserValidate = doquery("SELECT id,username,password FROM {{table}} WHERE id='$cookie_tmp[0]' and username='$cookie_tmp[1]'", 'users', true);
     if($UserValidate)
-      if(sha($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
+      if(($UserValidate['password']."--".$dbsettings['secretword'])==$cookie_tmp[2])
         header("Location: ".AddUniToString($redirect)); 
   }
 }
 if ($_POST) {
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
+    echo $login['username']."-".$login['password']."-".$login['id'];
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }
 		if ($login['password'] == $_POST['password']) {
 			if (isset($_POST["rememberme"])) {
@@ -47,8 +48,7 @@ if ($_POST) {
 				$expiretime = 0;
 				$rememberme = 0;
 			}
-      @include('config'.UNIVERSE.'.php');
-			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
+			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . $login["password"] . "--" . $dbsettings["secretword"] . "/%/" . $rememberme;
       setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "../");
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
