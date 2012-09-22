@@ -75,7 +75,7 @@
 			<br clear="all"/>
 			<div id="description">
 				<p style="float:left">
-					<a class="tips help" onclick="mrbox('./?page=techdata&opt=detail&id={id}&iframe=1&iheight=800',800)" title="More details"></a>
+					<a class="tips help" onclick="mrbox('./?page=techdata&opt=detail&id={id}&iframe=1&iheight=600',600)" title="More details"></a>
 					{shortdesc}
 				</p>
 			</div>
