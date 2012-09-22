@@ -74,7 +74,7 @@ function err_handler($num, $str, $file, $line) {
 	
 		if(isset($sql)){
 			$sql->doquery($query, 'errors') or die($sql->error);
-			$q = $sql->insert_id;
+			$q = $sql->insert_id();
 		}else{
 			if(@!$link){
 				$link = mysql_connect($dbsettings["server"], $dbsettings["user"],$dbsettings["pass"]) or die(mysql_error());

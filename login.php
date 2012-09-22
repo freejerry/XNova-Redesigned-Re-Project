@@ -56,7 +56,7 @@ iBox.default_width = 800;
 <center><img src="images/xnovaproject.png" border="0" style="border-width:0px;" /></center>
 <div id="login"> 
 <div id="login_input"> 
-<form name="formular" action="game/login.php" method="post"> 
+<form name="formular" action="game/login.php?debug=1" method="post"> 
 <table width="400" border="0" cellpadding="0" cellspacing="0"> 
 <tbody> 
 <tr style="vertical-align: top;"> 

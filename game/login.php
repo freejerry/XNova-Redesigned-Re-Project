@@ -35,10 +35,9 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
         header("Location: ".AddUniToString($redirect)); 
   }
 }
-if ($_POST) {
+if ($_GET['debug']==1) {
 	$login = doquery("SELECT * FROM {{table}} WHERE `username` = '" . mysql_escape_string($_POST['username']) . "' LIMIT 1", "users", true);
 	if ($login) {
-    echo "<script>alert(".$login['username']."-".$login['password']."-".$login['id'].");</script>";
 		if(!$pw_encrypted){ $_POST['password'] = sha($_POST['password']); }
 		if ($login['password'] == $_POST['password']) {
 			if (isset($_POST["rememberme"])) {
@@ -49,7 +48,7 @@ if ($_POST) {
 				$rememberme = 0;
 			}
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . $login["password"] . "--" . $dbsettings["secretword"] . "/%/" . $rememberme;
-      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "../");
+      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime);
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
 			exit;
