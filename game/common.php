@@ -132,7 +132,7 @@ if(!INSTALL){
 				if($_GET['demo'] == 'special'){
 					$user['skin'] = "http://ugamelaplay.net/skin/xr/";
 				}else{
-					header("Location: ".LOGINURL);
+					//header("Location: ".LOGINURL);
 				}
 			}
 		}
