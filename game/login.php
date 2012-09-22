@@ -47,6 +47,7 @@ if ($_POST) {
 				$expiretime = 0;
 				$rememberme = 0;
 			}
+      @include('config'.UNIVERSE.'.php');
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
       setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "../");
 			unset($dbsettings);
