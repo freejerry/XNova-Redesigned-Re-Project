@@ -7,7 +7,6 @@
  *
 */
 session_start();
-header("Location: ../");
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);
@@ -53,10 +52,10 @@ if ($_POST) {
 			header("Location: ".AddUniToString($redirect));
 			exit;
 		} else {
-			header("Location: ".AddUniToString('./login.php?bad=Password'));
+			header("Location: ../");
 		}
 	} else {
-		header("Location: ".AddUniToString('./login.php?bad=Username'));
+		header("Location: ../");
 	}
 }else{
 	define('GAME_SKIN',DEFAULT_SKIN);
