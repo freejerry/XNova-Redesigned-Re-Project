@@ -1,11 +1,11 @@
-<?php //$loadstart = microtime(true);
-
-/**
+<?php
+/*
  * index.php
  *
  * @version 1.4
  * @copyright 2008 by Anthony for XNova Redesigned
- */
+ *
+*/
 
 define('INSIDE'  , true);
 define('INSTALL' , false);
@@ -42,7 +42,6 @@ if($_GET['iframe'] == '1'){
 			// --------------------------------------------------------------------------------------------------
 			$pageid = "preferences";
 			include(ROOT_PATH . 'admin.php');
-
 			break;
 
 		case 'test':
@@ -52,16 +51,14 @@ if($_GET['iframe'] == '1'){
 			$time = microtime(true)-$start;
 			echo '<hr />';
 			echo $time;
-
 			break;
 
 		case 'logout':
 			// --------------------------------------------------------------------------------------------------
-      setcookie($game_config['COOKIE_NAME'], NULL, 0);
+      include("logout.php");
 			ExpireCookie();
 			header("Location: ". LOGINURL);
 			die();
-
 			break;
 
 		case 'i':
