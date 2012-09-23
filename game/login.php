@@ -48,7 +48,6 @@ if ($_POST) {
 			}
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
 			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "/", "", 0);
-      setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "../", "", 0);
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
 			exit;

@@ -3,7 +3,6 @@ session_start();
 define('INSIDE' , true);
 define('INSTALL' , false);
 define('ROOT_PATH' , './game/');
-$skip_config = true;
 require_once(ROOT_PATH . 'modules/database.php');
 $unis = array(1);
 $sql = array();
