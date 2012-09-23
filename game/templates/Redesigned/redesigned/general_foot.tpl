@@ -6,7 +6,7 @@
 	<div class="content">
 		<div class="fleft textLeft">
 			<a href="#" onclick="mrbox('./?page=changelog',800)" class="tips" style="position:relative;">BETA<span class="mrtooltip" style="top:-20px;">Patch notes</span></a>
-			&copy; 2010 <a class="homeLink" href="http://www.xnovauk.com/" target="_blank">XNova UK</a>
+			&copy; 2010 <a class="homeLink" href="https://github.com/freejerry/XNova-Redesigned-Re-Project" target="_blank">XNova Re-Designed-Re-Project</a>
 		</div>
 		<div class="fright textRight">
 			<a href="./?page=help" target="_blank">{Help}</a>|
@@ -71,7 +71,6 @@
 
 <!-- JAVASCRIPT -->
 
-
 <script type="text/javascript">
 var DATEES = new Date();
 var update_time = DATEES.getTime();
@@ -81,13 +80,13 @@ document.getElementById('rechts').style.height = (window.innerHeight-175)+'px';
 function FormatTime(time){
 	seconds = time % 60;
 	time = (time-seconds) / 60;
-	
+
 	minutes = time % 60;
 	time = (time-minutes) / 60;
-	
+
 	hours = time % 24;
 	time = (time-hours) / 24;
-	
+
 	str = '';
 	if(time > 0){ str = str + time + '{d} '; }
 	if(time > 0 || hours > 0){ str = str + hours + '{h} '; }
@@ -101,7 +100,7 @@ function FormatTime(time){
 function countdown(){
 	var countdowns = document.getElementsByName('mrcountdown');
 	for (var n = 0; n < countdowns.length; n++){
-		
+
 		var cd = countdowns[n];
 		var time = cd.className - document.getElementById('current_timestamp').value;
 
@@ -112,8 +111,6 @@ function countdown(){
 		cd.innerHTML = formatted;
 	}
 }
-
-
 
 //Check for incoming fleets and messages
 function chatbox_update(){
@@ -126,52 +123,51 @@ function chatbox_update(){
 
 //manage ajax
 function manage_ajax(){
-	
+
 	//Do we need to update the menus or fleets?
 	if(document.getElementById('last_menu_update').value < document.getElementById('ajax_menus_update').value){
 		getAXAH('./?page=planetlist&axah=1','rechts');
 		document.getElementById('last_menu_update').value = document.getElementById('ajax_time').value;
 		getAXAH('./?page=fleetajax','message-wrapper');
 	}
-	
+
 }
 
 //resource counter.
 var load = new Date();
 var metal = 0; var crystal = 0; var deut= 0; var seconds = 0; var metared = 0; var crysred = 0; var deutred = 0;
 function update_resources(seconds){	//MadnessRed function
-	
+
 	//Resources
 	metal = parseFloat(document.getElementById('ajax_metal').value);
 	crystal = parseFloat(document.getElementById('ajax_crystal').value);
 	deut = parseFloat(document.getElementById('ajax_deuterium').value);
-	
+
 	//Energy
 	energy_max = document.getElementById('ajax_energy_max').value;
 	energy_used = document.getElementById('ajax_energy_used').value;
 	energy_left = (energy_max * 1.0) + (energy_used * 1.0);
-	
+
 	//Storage
 	metal_max = parseFloat(document.getElementById('ajax_metal_max').value);
 	crystal_max = parseFloat(document.getElementById('ajax_crystal_max').value);
 	deuterium_max = parseFloat(document.getElementById('ajax_deuterium_max').value);
-	
+
 	//Matter
 	matter = document.getElementById('ajax_matter').value;
-	
+
 	//By default we are not in the red
 	metared = 0;
 	crysred = 0;
 	deutred = 0;
 	engyred = 0;
 	engygreen = 0;
-	
+
 	//See if we are in the red though
 	if(metal >= metal_max){ metared = 1; }
 	if(crystal >= crystal_max){ crysred = 1; }
 	if(deut >= deuterium_max){ deutred = 1; }
 	if(energy_left <= 0){ engyred = 1; }else{ engygreen = 2; }
-
 
 	document.getElementById('pretty_metal').innerHTML = pretty_number(Math.round(metal));
 	document.getElementById('pretty_crystal').innerHTML = pretty_number(Math.round(crystal));
@@ -182,7 +178,7 @@ function update_resources(seconds){	//MadnessRed function
 	document.getElementById('resources_crystal').innerHTML = colour_number(KMnumber(Math.round(crystal)),crysred);
 	document.getElementById('resources_deuterium').innerHTML = colour_number(KMnumber(Math.round(deut)),deutred);
 	document.getElementById('resources_matter').innerHTML = KMnumber(Math.round(matter));
-	
+
 	document.getElementById('resources_energy').innerHTML = colour_number(KMnumber(Math.round(energy_left)),engyred);
 	document.getElementById('resources_energy_detil').innerHTML = colour_number(KMnumber(Math.round(energy_left)),engyred);
 	document.getElementById('pretty_energy').innerHTML = colour_number(KMnumber(Math.round(energy_max)));	
