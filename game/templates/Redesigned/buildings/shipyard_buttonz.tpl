@@ -1,14 +1,4 @@
-	<div id="buildingqueue">
-		<div class="header">
-			<h2>Combat ships</h2>
-		</div>
-		<div class="body">
-			{rows}
-		</div>
-		<div class="footer"></div>
-	</div>
-	
-	
+
 	<div id="buttonz">
 		<div id="battleships">
 			<h2>Combat ships</h2>   
@@ -232,3 +222,4 @@
 	 		</ul>
 		</div>
 	</div>
+{queueinfosy}

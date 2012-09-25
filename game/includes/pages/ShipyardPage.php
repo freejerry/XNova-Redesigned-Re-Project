@@ -128,7 +128,78 @@ function ShipyardPage ( &$CurrentPlanet, $CurrentUser, $area ) {
 				$parse['mes_'.$Element] = "Not availble";
 			}
 		}
+///////////////////////////////////////////////////////
+if ($CurrentPlanet['b_hangar_id'] != '') {
 
+	// Array del b_hangar_id
+	$ElementQueue = explode(';', $CurrentPlanet['b_hangar_id']);
+
+	$cont = true; $q = array();
+	foreach($ElementQueue as $ElementLine => $Element) {
+		if ($Element != '') {
+			if($cont){
+				$Element = explode(',', $Element);
+				$NamePerType = $lang['tech'][$Element[0]];
+				$NbrePerType = $Element[1];
+				$Typecode = $Element[0];
+				$ProductionTime = time() - $CurrentPlanet['b_hangar_lastupdate'] + $CurrentPlanet['b_hangar'];
+				$Time = (GetBuildingTime($user,$CurrentPlanet,$Typecode) * $NbrePerType) - $ProductionTime;
+				//echo GetBuildingTime($user,$planetrow,$Typecode)."*".$NbrePerType." - ".$ProductionTime." = ".$Time;
+				$cont = false;
+			}else{
+				$Element = explode(',', $Element);
+				$q[] = array('id' => $Element[0],'count' => $Element[1]);				
+			}
+		}
+	}
+	$parse['queueinfosy']  = '<div class="content-box-s">
+		<div class="header"><h3>'.$lang['Shipyard'].'</h3></div><div class="content">
+		<table cellpadding="0" cellspacing="0" class="construction" width="100%">
+			<tr>
+				<th colspan="2">'.$NamePerType.'</th>
+			</tr>
+			<tr class="data">
+				<td class="building" rowspan="2">
+					<img src="'.GAME_SKIN.'/img/small/small_'.$Typecode.'.jpg" alt="'.$NamePerType.'">
+				</td>
+				<td class="desc">Number: 
+					<span class="level">'.$NbrePerType.'</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="desc">'.parsecountdown(time() + $Time,true).'</td>
+			</tr>
+			<tr class="queue">
+			<tr class="queue">
+				<td colspan="2">
+					<table>
+						<tr>';
+	$no = 0;
+	foreach ($q as $arr){
+		$no++;
+		$parse['queueinfosy']  .= '
+							<td class="tips" titl="|2 Colony Ship Build">
+								<a href="#">
+									<img src="'.GAME_SKIN.'/img/tiny/tiny_'.$arr['id'].'.jpg" height="28" width="28" alt="'.$lang['names'][$arr['id']].'">
+								</a><br />
+								'.$arr['count'].'
+							</td>';
+		if($no == 4){
+			$parse['queueinfosy']  .= '</tr><tr>';
+			$no = 0;
+		}
+	}
+	$parse['queueinfosy'] .= '
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div class="footer"></div>
+	</div>';
+}
+///////////////////////////////////////////////////////
 		$Buttonz = parsetemplate($SubTemplate, $parse);
 	}
 

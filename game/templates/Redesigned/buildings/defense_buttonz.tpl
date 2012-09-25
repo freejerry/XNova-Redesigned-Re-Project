@@ -150,3 +150,4 @@
 			</li>
 	   </ul>
 	</div>
+	{queueinfosy}
