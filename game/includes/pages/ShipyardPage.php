@@ -170,7 +170,6 @@ if ($CurrentPlanet['b_hangar_id'] != '') {
 				<td class="desc">'.parsecountdown(time() + $Time,true).'</td>
 			</tr>
 			<tr class="queue">
-			<tr class="queue">
 				<td colspan="2">
 					<table>
 						<tr>';
@@ -178,8 +177,8 @@ if ($CurrentPlanet['b_hangar_id'] != '') {
 	foreach ($q as $arr){
 		$no++;
 		$parse['queueinfosy']  .= '
-							<td class="tips" title="|2 '.$lang['names'][$arr['id']].' Build">
-								<a href="#" onclick="return false;">
+							<td class="tips">
+								<a href="#" onmouseover="mrtooltip(\''.$arr['count'].'x '.$lang['names'][$arr['id']].'\');" onmouseout="UnTip();" onclick="return false;">
 									<img src="'.GAME_SKIN.'/img/tiny/tiny_'.$arr['id'].'.jpg" height="28" width="28" alt="'.$lang['names'][$arr['id']].'">
 								</a><br />
 								'.$arr['count'].'
