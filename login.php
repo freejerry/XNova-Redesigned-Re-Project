@@ -79,20 +79,20 @@ iBox.default_width = 800;
 </div> 
 </div> 
 <div id="mainmenu" style="margin-top: 20px;"> 
-<a href="reg.html" rel="ibox&width=800" title="Join Now">Register</a> 
+<a href="reg.php" rel="ibox&width=800" title="Join Now">Register</a> 
 <a href="http://xnovauk.com/forum.php" title="Join Now">Forum</a> 
 <a href="contact.html" rel="ibox&width=800" title="Contact">Contact</a> 
 <a href="credits.html" rel="ibox&width=800" title="Credits">Credits</a> 
 </div> 
 <div id="rightmenu" class="rightmenu"> 
-<div id="title">Welcome to XNova Redesigned</div> 
+<div id="title">Welcome to XNova Redesigned-Re-Project</div> 
 <div id="content"> 
 <center> 
 <div id="text1"> 
-<div style="text-align: left;"><strong>XNova Redesigned</strong> is a free open source multiplayer online game created by the <strong>XNovaUK</strong> team. It is based upon the XNova script, all you need to play is a HTML compient browser.
+<div style="text-align: left;"><strong>XNova Redesigned</strong> is a free open source multiplayer online game created by the <strong>XNovaUK</strong> team. XNova Redesigned-Re-Project is a modification of XNova Redesigned, which is outdated. It is based upon the XNova script, all you need to play is a HTML compliant browser.
 </div> 
 </div> 
-<div id="register" class="bigbutton" onclick="iBox.showURL('reg.html','Join Now',{'width':800});"><font color="#cc0000">Register Now!</font></div> 
+<div id="register" class="bigbutton" onclick="iBox.showURL('reg.php','Join Now',{'width':800});"><font color="#cc0000">Register Now!</font></div> 
 <div id="text2"> 
 <div id="text3"> 
 <center><b>
