@@ -32,7 +32,7 @@
 	        </span><!-- Starstreak -->
 	        <span class="destinationData">
               <span class="destinationCoords"><a href="./?page=galaxy&galaxy={targetplanet_galaxy}&system={targetplanet_system}&planet={targetplanet_planet}">[{targetplanet_galaxy}:{targetplanet_system}:{targetplanet_planet}]</a></span>
-              <span class="destinationPlanet">{startplanet_name}</span>
+              <span class="destinationPlanet">{targetplanet_name}</span>
 	        </span>
 
 	        <span class="nextTimer" id="timerNext_{fleet_id}"></span>
@@ -41,7 +41,7 @@
 	        <span class="sendMail">
 	            <a class="thickbox tips"
 	                href="index.php?page=writemessage&session=b0e9ef2290a7&to=109245&ajax=1&height=500&width=750&TB_iframe=1"
-	                title="|Send a message to ZDragS.">
+	                title="Send a message to {targetplayer_name}.">
 	                <img src="{{skin}}/img/icons/mail.gif" height="16" width="16" />
 	            </a>
 	        </span>
