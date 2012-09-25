@@ -218,7 +218,8 @@ $lang['adm_opt_plan_settings'] = "Planet settings";
 $lang['adm_opt_plan_initial']  = "Initial fields";
 $lang['adm_opt_plan_base_inc'] = "Basic income ";
 $lang['adm_opt_game_debugmod'] = "Debug mode<br />(Remove in phpMyAdmin only)";
-$lang['adm_opt_game_emailver'] = "EMail Verification (Turn on/off)";
+$lang['adm_opt_game_emailver'] = "EMail Verification (1 on/0 off)";
+$lang['adm_opt_game_disreg']   = "Disable Registration (1 on/0 off)";
 
 $lang['adm_opt_game_oth_info'] = "Other info";
 $lang['adm_opt_game_oth_news'] = "Show framework News";

@@ -18,6 +18,9 @@ if(!$_GET['s']){ $_GET['s'] = $_POST['s']; }
 define('ROOT_PATH' , '');
 include_once(ROOT_PATH . 'common.php');
 
+if($game_config['disable_registration']==1)
+  header("Location: ../login.php");
+
 getLang('reg',cleanstring($_POST['lang']));
 
 function sendpassemail($emailaddress, $password, $username, $code) {
