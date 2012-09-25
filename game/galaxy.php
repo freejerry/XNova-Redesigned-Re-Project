@@ -1,19 +1,19 @@
 <?php
-
-/**
+/*
  * galaxy.php
  *
  * @version 1.3
  * @copyright 2008 by Chlorel for XNova
- */
+ *
+*/
 
 includeLang('galaxy');
 getLang('galaxy');
 
-// Get the mdoe
-$mode          = idstring($_GET['mode']);
+// Get the mode
+$mode = idstring($_GET['mode']);
 
-if ($mode == 1) {
+if($mode == 1) {
 	//We are browsing galaxy, so what gal / sys
 	$galaxy =  idstring($_GET["galaxy"]);
 	$system =  idstring($_GET["system"]);
@@ -24,10 +24,8 @@ if ($mode == 1) {
 	$system        = $planetrow['system'];
 }
 
-
 $bloc['galaxy_head'] = ShowGalaxySelector($galaxy,$system);
 $bloc['galaxy_rows'] = ShowGalaxyRows($galaxy,$system);
-
 
 //Footer
 $bloc['res209'] = $planetrow[$resource[209]];
@@ -41,7 +39,6 @@ $bloc['cgal'] = $galaxy;
 $bloc['csys'] = $system;
 
 $page = parsetemplate(gettemplate('galaxy/galaxy_div'), $bloc);
-
 
 /*
 $userally = doquery("SELECT `relations` FROM {{table}} WHERE `id` = '".$user['ally_id']."' LIMIT 1 ;",'alliance',true);

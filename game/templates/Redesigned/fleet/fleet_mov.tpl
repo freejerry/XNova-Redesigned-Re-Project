@@ -4,7 +4,7 @@
 	        <span class="mission hostile textBeefy">{mission_t}</span>
 	        <span class="allianceName"></span>
 	        <span class="originData">
-	        <span class="originCoords"><a href="./?page=galaxy&galaxy={startplanet_galaxy}&system={startplanet_system}&planet={startplanet_planet}">[{startplanet_galaxy}:{startplanet_system}:{startplanet_planet}]</a></span>
+	        <span class="originCoords"><a href="./?page=galaxy&mode=1&galaxy={startplanet_galaxy}&system={startplanet_system}&planet={startplanet_planet}">[{startplanet_galaxy}:{startplanet_system}:{startplanet_planet}]</a></span>
 	        <span class="originPlanet">{startplanet_name}</span>
 	        </span>
 	        <span class="quantity basic2" rel="#details{fleet_id}" title="Fleet details">{fleet_amount}</span>
@@ -31,7 +31,7 @@
 	            </div>
 	        </span><!-- Starstreak -->
 	        <span class="destinationData">
-              <span class="destinationCoords"><a href="./?page=galaxy&galaxy={targetplanet_galaxy}&system={targetplanet_system}&planet={targetplanet_planet}">[{targetplanet_galaxy}:{targetplanet_system}:{targetplanet_planet}]</a></span>
+              <span class="destinationCoords"><a href="./?page=galaxy&mode=1&galaxy={targetplanet_galaxy}&system={targetplanet_system}&planet={targetplanet_planet}">[{targetplanet_galaxy}:{targetplanet_system}:{targetplanet_planet}]</a></span>
               <span class="destinationPlanet">{targetplanet_name}</span>
 	        </span>
 
