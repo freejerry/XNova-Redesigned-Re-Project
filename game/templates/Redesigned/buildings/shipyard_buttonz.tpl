@@ -1,4 +1,3 @@
-
 	<div id="buttonz">
 		<div id="battleships">
 			<h2>Combat ships</h2>   
@@ -222,4 +221,4 @@
 	 		</ul>
 		</div>
 	</div>
-{queueinfosy}
+  {queueinfosy}

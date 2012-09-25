@@ -178,8 +178,8 @@ if ($CurrentPlanet['b_hangar_id'] != '') {
 	foreach ($q as $arr){
 		$no++;
 		$parse['queueinfosy']  .= '
-							<td class="tips" titl="|2 Colony Ship Build">
-								<a href="#">
+							<td class="tips" title="|2 '.$lang['names'][$arr['id']].' Build">
+								<a href="#" onclick="return false;">
 									<img src="'.GAME_SKIN.'/img/tiny/tiny_'.$arr['id'].'.jpg" height="28" width="28" alt="'.$lang['names'][$arr['id']].'">
 								</a><br />
 								'.$arr['count'].'
