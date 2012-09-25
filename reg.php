@@ -3,8 +3,9 @@
 <?php
 define("ROOT_PATH","./game/");
 define("UNIVERSE",1);
+define("INSIDE",true);
 include("game/modules/database.php");
-if($game_config["disable_registration"]==0)
+if($game_config['disable_registration'] == 0)
 {
 ?>
 <div style="width:699px;margin-left:auto;margin-right:auto;">
@@ -27,7 +28,7 @@ if($game_config["disable_registration"]==0)
 else
 {
 ?>
-<font size="3" color="red"><strong>We are sorry, but Registration to this server is disabled.</strong></font>
+<font size="3" color="red"><strong>We are sorry, but registration to this server is disabled.</strong></font>
 <?php
 }
 ?>

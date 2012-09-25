@@ -85,7 +85,7 @@ iBox.default_width = 800;
 <a href="credits.html" rel="ibox&width=800" title="Credits">Credits</a> 
 </div> 
 <div id="rightmenu" class="rightmenu"> 
-<div id="title">Welcome to XNova Redesigned-Re-Project</div> 
+<div id="title">Welcome to XNova Redesigned</div> 
 <div id="content"> 
 <center> 
 <div id="text1"> 
