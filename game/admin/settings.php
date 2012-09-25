@@ -250,6 +250,7 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 		$parse['bot_adress']              = stripslashes($game_config['bot_adress']);
 		$parse['ban_duration']            = stripslashes($game_config['ban_duration']);
     $parse['email_verification']      = $game_config['email_verification'];
+    $parse['disable_registration']    = $game_config['disable_registration'];
 
 		if(stripslashes($game_config['enable_bot']) == 1){ $parse['enable_bot1'] = "checked=\"checked\""; }
 		else{ $parse['enable_bot2'] = "checked=\"checked\""; }
