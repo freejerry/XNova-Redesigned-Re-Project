@@ -28,7 +28,7 @@ define('BASEURL'			, "http://".$_SERVER['HTTP_HOST']."/".PATH_TO_FILES);
 define('GAMEURL'			, BASEURL."game/");
 
 //LoginURL, where do you want users to go when they are logged out.
-define('LOGINURL'			, "login.php");
+define('LOGINURL'			, "../");
 
 //Payment setup
 //This is where we setup the payment process.

@@ -1,11 +1,11 @@
 <?php
-
-/**
+/*
  * BuildingPage.php
  *
  * @version 1.0
  * @copyright 2009 by MadnessRed for XNova Redesigned
- */
+ *
+*/
 
 function BuildingPage($a=0,$b=0){
 	global $lang, $resource, $reslist, $pricelist, $dpath, $game_config, $_GET, $user, $planetrow;
@@ -440,7 +440,6 @@ function BuildingPage($a=0,$b=0){
 		displaypage($page, $title);
 	}
 }
-
 // -----------------------------------------------------------------------------------------------------------
 // Changelog
 // 1.0 File was created to merge Station and Facilities Page.

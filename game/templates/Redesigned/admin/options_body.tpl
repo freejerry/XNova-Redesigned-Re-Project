@@ -40,6 +40,9 @@
 </tr><tr>
   <th>{adm_opt_game_emailver}<br /></th>
   <th><input name="email_verification" maxlength="8" size="20" value="{email_verification}" type="text"></th>
+</tr><tr>
+  <th>{adm_opt_game_disreg}<br /></th>
+  <th><input name="disable_registration" maxlength="8" size="20" value="{disable_registration}" type="text"></th>
 </tr>
 </table><br />
 

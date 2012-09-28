@@ -6,7 +6,7 @@
  * @copyright 2008 by ?????? for XNova
  *
 */
-session_start(); 
+session_start();
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);
@@ -47,15 +47,15 @@ if ($_POST) {
 				$rememberme = 0;
 			}
 			$cookie = $login["id"] . "/%/" . $login["username"] . "/%/" . sha($login["password"] . "--" . $dbsettings["secretword"]) . "/%/" . $rememberme;
-      setcookie($_COOKIE[$game_config['COOKIE_NAME']], $cookie, $expiretime, "./");
+			setcookie($game_config['COOKIE_NAME'], $cookie, $expiretime, "/", "", 0);
 			unset($dbsettings);
 			header("Location: ".AddUniToString($redirect));
 			exit;
 		} else {
-			header("Location: ".AddUniToString('./login.php?bad=Password'));
+			header("Location: ../");
 		}
 	} else {
-		header("Location: ".AddUniToString('./login.php?bad=Username'));
+		header("Location: ../");
 	}
 }else{
 	define('GAME_SKIN',DEFAULT_SKIN);

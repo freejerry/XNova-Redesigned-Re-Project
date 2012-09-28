@@ -1,11 +1,11 @@
-<?php //$loadstart = microtime(true);
-
-/**
+<?php
+/*
  * index.php
  *
  * @version 1.4
  * @copyright 2008 by Anthony for XNova Redesigned
- */
+ *
+*/
 
 define('INSIDE'  , true);
 define('INSTALL' , false);
@@ -42,9 +42,7 @@ if($_GET['iframe'] == '1'){
 			// --------------------------------------------------------------------------------------------------
 			$pageid = "preferences";
 			include(ROOT_PATH . 'admin.php');
-
 			break;
-
 		case 'test':
 			// --------------------------------------------------------------------------------------------------
 			$start = microtime(true);
@@ -52,54 +50,38 @@ if($_GET['iframe'] == '1'){
 			$time = microtime(true)-$start;
 			echo '<hr />';
 			echo $time;
-
 			break;
-
 		case 'logout':
 			// --------------------------------------------------------------------------------------------------
-      setcookie($game_config['COOKIE_NAME'], NULL, 0);
+      setcookie($game_config['COOKIE_NAME'], "", time()-100000, "/", "", 0);
 			ExpireCookie();
 			header("Location: ". LOGINURL);
 			die();
-
 			break;
-
 		case 'i':
 			// --------------------------------------------------------------------------------------------------
 			include_once('iframe.php');
-
 			break;
-
 		case 'battlesim':
 			// --------------------------------------------------------------------------------------------------
 			include_once('battlesim.php');
-
 			break;
-
 		case 'im':
 			// --------------------------------------------------------------------------------------------------
 			@include_once('im.php');
-
 			break;
-
 		case 'ajax':
 			// --------------------------------------------------------------------------------------------------
 			include_once('ajax.php');
-
 			break;
-
 		case 'planetlist':
 			// --------------------------------------------------------------------------------------------------
 			include_once('planetlist.php');
-
 			break;
-
 		case 'achievements':
 			// --------------------------------------------------------------------------------------------------
 			include_once('achievements.php');
-
 			break;
-
 		case 'resources':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "resources";
@@ -111,7 +93,6 @@ if($_GET['iframe'] == '1'){
 			UpdateQueue();
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			BuildingPage ();
-			
 			break;
 		case 'station':
 			// --------------------------------------------------------------------------------------------------
@@ -123,18 +104,14 @@ if($_GET['iframe'] == '1'){
 			include(ROOT_PATH . 'includes/pages/BuildingPage.php');
 			UpdateQueue();
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
-			BuildingPage ();
-
+			BuildingPage();
 			break;
-
 		case 'trader':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "trader";
 			$pageid = "trader";
 			include('trader.php');
-
 			break;
-
 		case 'research':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "research";
@@ -145,9 +122,7 @@ if($_GET['iframe'] == '1'){
 			UpdatePlanetBatimentQueueList ( $planetrow, $userclass->uarray );
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			ResearchPage ( $planetrow, $userclass->uarray, $IsWorking['OnWork'], $IsWorking['WorkOn'] );
-
 			break;
-
 		case 'shipyard':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "shipyard";
@@ -157,10 +132,7 @@ if($_GET['iframe'] == '1'){
 			UpdatePlanetBatimentQueueList ( $planetrow, $userclass->uarray );
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			ShipyardPage($planetrow,$userclass->uarray,'fleet');
-			//echo "[".$CurrentPlanet['b_hangar_id']."]";
-
 			break;
-
 		case 'defense':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "defense";
@@ -170,170 +142,124 @@ if($_GET['iframe'] == '1'){
 			UpdatePlanetBatimentQueueList ( $planetrow, $userclass->uarray );
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			ShipyardPage($planetrow,$userclass->uarray,'defense');
-
 			break;
-
 		case 'fleet1':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			$pageid = "fleet1";
 			include('fleet1.php');
-
 			break;
-
 		case 'fleet2':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			$pageid = "fleet2";
 			include('fleet2.php');
-
 			break;
-
 		case 'fleetjump':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			$pageid = "fleet2";
 			include('fleetjump.php');
-
 			break;
-
 		case 'fleet3':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			$pageid = "fleet3";
 			include('fleet3.php');
-
 			break;
-
 		case 'fleet4':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			include('fleet4.php');
-
 			break;
-
 		case 'fleetrecall':
 			// --------------------------------------------------------------------------------------------------
 			include('fleetrecall.php');
-
 			break;
-
 		case 'jumpgate':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			include('jumpgate.php');
-
 			break;
-
 		case 'fleetajax':
 			// --------------------------------------------------------------------------------------------------
 			@include('fleetajax.php');
-
 			break;
-
 		case 'movement':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "fleet";
 			$pageid = "movement";
 			include('fleetm.php');
-
 			break;
-
 		case 'galaxy':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "galaxy";
 			$pageid = "galaxy";
 			include('galaxy.php');
-
 			break; case 'ipm': include('ipm.php');
-
 			break;
-
 		case 'empire':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "empire";
 			$pageid = "empire";
 			include('empire.php');
-
 			break;
-
 		case 'ainfo':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "network";
 			$pageid = "network";
 			include_once("alliance.php");
-
 			break;
-
 		case 'network':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "network";
 			$pageid = "network";
 			include_once("alliance.php");
-
 			break;
-
 		case 'messages':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "network";
 			$pageid = "messages";
 			include_once("messages.php");
-
 			break; case 'showmessage': include_once("showmessage.php");
 			break; case 'write': include_once("write.php");
-
 			break;
-
 		case 'notes':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "network";
 			$pageid = "networkm";
 			include_once("notes.php");
-
 			break;
-
 		case 'phalanx':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "phalanx";
 			include_once("phalanx.php");
-
 			break;
-			
 		case 'amici_pop_up':
 			// --------------------------------------------------------------------------------------------------
 			include_once("amici_pop_up.php");
-
 			break;
-		
 		case 'cerca':
 			// --------------------------------------------------------------------------------------------------
 			include_once("search.php");
-
 			break;
-
 		case 'premium':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "premium";
 			$pageid = "premium";
 			include_once("officers.php");
-
 			break;
-
 		case 'ticket':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "ticket";
 			$pageid = "ticket";
 			include_once("support.php");
-
 			break;
-
 		case 'paypal':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "premium";
 			include_once("paypal.php");
-
 			break;
-
 		case 'payment':
 			// --------------------------------------------------------------------------------------------------
 			include_once('includes/payapi.php');
@@ -354,76 +280,57 @@ if($_GET['iframe'] == '1'){
 			$page = parsetemplate(gettemplate('redesigned/payment'), $lang);
 			//displaypage($page, $lang['Overview']);
 			makeAXAH($page);
-
 			break;
-
 		case 'techdata':
 			// --------------------------------------------------------------------------------------------------
 			include('techdata.php');
 			break;
-
 		case 'changelog':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "changelog";
 			include('changelog.php');
-
 			break;
-
 		case 'preferences':
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "options";
 			$pageid = "preferences";
 			include('preferences.php');
-
 			break;
-
 		case 'statistics':
 			// --------------------------------------------------------------------------------------------------
 			$pageid = 'statistics';
 			include_once('stats.php');
-
 			break;
-
 		case 'pillory':
 			// --------------------------------------------------------------------------------------------------
 			$pageid = "preferences";
 			include_once('banned.php');
-
 			break;
-
 		case 'board':
 			// --------------------------------------------------------------------------------------------------
 			$pageid = "preferences";
 			include_once('forum.php');
-
 			break;
-
 		case 'validate':
 			// --------------------------------------------------------------------------------------------------
 			$pageid = "validate";
 			include_once('validate.php');
-
 			break;
-
 		default: //Overview.
 			// --------------------------------------------------------------------------------------------------
 			$cpage = "overview";
-
 			//includeLang('overview');
 			getLang('overview');
 			includeLang('tech');
 			include("includes/overviewfunctions.php");
 			$parse = array_merge($lang, $currentplanet->parray);
-
 			$type_array = $currentplanet->type();
 			$parse['type'] = $type_array['type'];
 			$parse['subtype'] = $type_array['subtype'];
-			
 			$moon = $currentplanet->get_moon();
 			if($moon){
 				$alt = $moon->parray;
 				$alt_type_array = $moon->type();
-				
 				if($alt['planet_type'] == 1){
 					$parse['moonlink'] = '
 			<div id="planet_as_moon"> 
@@ -446,36 +353,28 @@ if($_GET['iframe'] == '1'){
 			</div>';	    	
 		    	}
 			}
-			
 			if($planetrow['planet_type'] == 3){
 				$parse['headerimg'] = $parse['type'].'_'.$parse['subtype'].'.jpg';
 			}else{
 				$parse['headerimg'] = 'header_'.$parse['type'].'.jpg';
 			}
-
 			$parse['total_points'] = pretty_number(floor($userclass->total_points/$game_config['stat_settings']));
 			$parse['user_rank'] = USER_RANK;
 			//print_r($StatRecord);
 			$parse['players'] = $game_config['users_amount'];
-
 			$parse['planet_id'] = $userclass->current_planet;
-
 			$parse['qbuilding'] = $queueinfo;
 			$parse['qresearch'] = $queueinforl;
 			$parse['qshipyard'] = $queueinfosy;
-
 			$parse['date_time'] = date("D M n H:i:s");
-
 			//Show planet remove/rename
 			if($_GET['mode'] == 'removepl'){ $parse['plrem_disp'] = 'display:block;'; }
-
 			$page = parsetemplate(gettemplate('redesigned/overview'), $parse);
 			if($_GET['axah']){
 				makeAXAH($page);
 			}else{
 				displaypage($page, $lang['Overview']);
 			}
-
 			break;
 	}
 }

@@ -5,14 +5,12 @@
 	<link href="{{skin}}/css/thickbox-message.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="{{skin}}/css/thickbox-iframe.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="{{skin}}/css/jquery.cluetip.css" rel="stylesheet" type="text/css" media="screen">
-	
 	<script type='text/javascript' src='scripts/axah.js'></script>
 </head>
 <body id="showmessage">
 <script type="text/javascript" src="./scripts/wz_tooltip.js"></script>
 <div id="messagebox" class="read">
 	<div id="wrapper">
-
 	<div id="contentPageNavi"  class="textCenter">
 		<a class="closeTB" onclick="window.parent.mrbox_close();">
 			<img src="{{skin}}/img/layout/pixel.gif" width="16" height="16" />
@@ -37,7 +35,6 @@
 						<td>{username}</td>
 					</tr>
 					<tr>
-
 						<th scope="row">Subject:</th>
 						<td>{subject}</td>
 					</tr>
@@ -45,21 +42,19 @@
 						<th scope="row">Date:</th>
 						<td>{date}</td>
 					</tr>
-
 			  </table>
 		</div>
 		<div class="showMsgNavi">
 			<ul class="toolbar">
 				<li class="delete">
-					<a href="#" id="2" class="tips2 action" onmouseover="mrtooltip('Delete this message')">Delete</a>
+					<a href="#" id="2" class="tips2 action" onmouseover="mrtooltip('Delete this message');" onmouseout="UnTip();">Delete</a>
 				</li>
 				<li class="reply">
-					<a {l_reply} class="tips2" onmouseover="mrtooltip('Answer this message')">Reply</a>
+					<a {l_reply} class="tips2" onmouseover="mrtooltip('Answer this message');" onmouseout="UnTip();">Reply</a>
 				</li>
 				<li class="notify">
-					<a href="./?page=ticket&t=Issue with message: {id}" target="_parent" id="melden" class="tips2" onmouseover="mrtooltip('Report this message to a game operator')">Report</a>
+					<a href="./?page=ticket&t=Issue with message: {id}" target="_parent" id="melden" class="tips2" onmouseover="mrtooltip('Report this message to a game operator');" onmouseout="UnTip();">Report</a>
 				</li>
-	
 			</ul>
 			<div class="clearfloat"></div>
 		</div>
@@ -69,7 +64,6 @@
 			<p>{message}</p>
 			<br />
 		</div>
- 
 		</div>
 	</div>
 </div>

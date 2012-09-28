@@ -7,7 +7,7 @@
  *
 */
 
-//Create a new user class
+//Create a new planet class
 class planet{
 
 	//ID

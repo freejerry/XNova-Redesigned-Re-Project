@@ -18,7 +18,7 @@
 									<tr class="head">
 										<th colspan="3">{namer}</th>
 									</tr>
-									
+
 									<tr>
 										<td width="50%">
 											<input class="text" type="text" maxlength="20" size="25" name="newPlanetName" value="{new_pl_name}" onFocus="if(this.value=='{new_pl_name}'){ this.value = ''; }" onBlur="if(this.value==''){ this.value = '{new_pl_name}'; }" />
@@ -29,18 +29,18 @@
 									</tr>
 								</table>
 							</form>
-								
+
 							<form name="planetMaintenanceDelete" method="post" action="./?page=overview&mode=delplanet" id="delete_form">
 								<table cellpadding="0" cellspacing="0">
-									
+
 									<tr class="head">
 										<th colspan="3" class="second">{colony_abandon}</th>
 									</tr>
-									
+
 									<tr>
 										<th>{Position}</th><th>{namep}</th><th>{functions}</th>
 									</tr>
-									
+
 									<tr>
 										<td>[{galaxy}:{system}:{planet}]</td>
 										<td>{name}</td>
@@ -48,7 +48,7 @@
 											<a id="block" class="start button188" onclick="ReverseDisplay('validate')"><span>{colony_abandon}</span></a>
 										</td>
 									</tr>
-									
+
 									<tr>
 										<td colspan="3">
 											<div id="validate" style="display:none;">
@@ -138,7 +138,7 @@
 		<div class="c-right"></div>
 
 	{qbuilding}
-	
+
 	<div class="content-box-s">
 		<div class="header"><h3>{Research}</h3></div>
 		<div class="content">
@@ -146,7 +146,7 @@
 		</div>
 		<div class="footer"></div>
 	</div>
-	
+
 	<div class="content-box-s">
 		<div class="header"><h3>{Shipyard}</h3></div>
 		<div class="content">
@@ -154,9 +154,8 @@
 		</div>
 		<div class="footer"></div>
 	</div>
-	
+
 	<div class="clearfloat"></div>
 </div>
 
 <!-- END CONTENT AREA -->
-

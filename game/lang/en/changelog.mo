@@ -2,8 +2,15 @@
 $lang['Changelog']   = 'Changelog';
 $lang['Version']     = 'Version';
 $lang['Description'] = 'Description';
-$lang['version_no']  = '0.06';
+$lang['version_no']  = 'beta16.5';
 $lang['changelog']   = array(
+
+'beta16.5' => '- New Version signing in Changelog (Geodar)
+- Fix Login (Geodar)
+- TechData Detail now works properly (Geodar)
+- Fixed issue, when player click on Admiral in header, and Technokrat was loaded (Geodar)
+- Fixed some JavaScript warning/errors (Geodar)
+- CodeStyle Cleanup (Geodar)',
 
 '0.06' => '- Renew source file. (freejerry)
 - Basic implementation of Cookie and Auto-Update systems (Geodar)

@@ -168,6 +168,9 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
     //Email Verification
     $game_config['email_verification'] = $_POST['email_verification'];
 
+    //Disable Registration
+    $game_config['disable_registration'] = $_POST['disable_registration'];
+
 		// Activation du jeu
 		doquery("UPDATE {{table}} SET `config_value` = '". $game_config['game_disable']           ."' WHERE `config_name` = 'game_disable';", 'config');
 		doquery("UPDATE {{table}} SET `config_value` = '". $game_config['close_reason']           ."' WHERE `config_name` = 'close_reason';", 'config');
@@ -219,11 +222,14 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 		doquery("UPDATE {{table}} SET `config_value` = '". $game_config['enable_marchand']    ."' WHERE `config_name` = 'enable_marchand';", 'config');
 		doquery("UPDATE {{table}} SET `config_value` = '". $game_config['enable_notes']    ."' WHERE `config_name` = 'enable_notes';", 'config');
 
-		// Mode Debug
-		doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['debug']                  ."' WHERE `config_name` ='debug'", 'config');
+		//Mode Debug
+		doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['debug']                  ."' WHERE `config_name` = 'debug'", 'config');
 
     //Email Verification
-    doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['email_verification']."' WHERE `config_name` ='EmailVerification'", 'config');
+    doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['email_verification']."' WHERE `config_name` = 'email_verification'", 'config');
+
+    //Disable Registration
+    doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['disable_registration']."' WHERE `config_name` = 'disable_registration'", 'config');
 
 		info('Options changed sucessfully!','Success');
 	} else {
@@ -244,6 +250,7 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 		$parse['bot_adress']              = stripslashes($game_config['bot_adress']);
 		$parse['ban_duration']            = stripslashes($game_config['ban_duration']);
     $parse['email_verification']      = $game_config['email_verification'];
+    $parse['disable_registration']    = $game_config['disable_registration'];
 
 		if(stripslashes($game_config['enable_bot']) == 1){ $parse['enable_bot1'] = "checked=\"checked\""; }
 		else{ $parse['enable_bot2'] = "checked=\"checked\""; }
