@@ -231,7 +231,7 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
     //Disable Registration
     doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['disable_registration']."' WHERE `config_name` = 'disable_registration'", 'config');
 
-		info('Options changed sucessfully!','Success','page=admin\&link=config');
+		info('Options changed sucessfully!','Success','?page=admin&link=config');
 	} else {
 		$parse                            = $lang;
 		$parse['game_name']               = $game_config['game_name'];
