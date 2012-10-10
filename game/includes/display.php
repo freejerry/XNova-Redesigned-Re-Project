@@ -1,12 +1,12 @@
 <?php
-
-/**
- * ShowTopNavigationBar.php
+/*
+ * display.php
  *
- * @version 1
+ * @version 2
  * @copyright 2008 By MadnessRed for XNova_Redisigned
- */
-
+ * @copyright 2012 By Geodar for XNova-Redisigned-Re-Project
+ *
+*/
 
 function parsetemplate ($template, $array) {
 	$template = str_ireplace("{{skin}}",GAME_SKIN,$template);
@@ -33,7 +33,7 @@ function AddUniToLinks($page,$uni = 'X') {
 
 	if(UNITTYPE == "get"){
 		if($uni == 'X'){ $uni = UNIVERSE; }
-		
+
 		$patterns = "?page=";
 		$replacements = "?".GETVAL."=".$uni."&page=";
 		$page = str_ireplace($patterns, $replacements, $page);
@@ -52,7 +52,7 @@ function AddUniToString($string,$uni = 'X') {
 		$patterns = "?page=";
 		$replacements = "?".GETVAL."=".$uni."&page=";
 		$string = str_ireplace($patterns, $replacements, $string, $count);
-		
+
 		if($count == 0){
 			if($string == './'){
 				$string = "./?".GETVAL."=".$uni;
@@ -68,7 +68,6 @@ function AddUniToString($string,$uni = 'X') {
 			}
 		}
 	}
-
 	return $string;
 }
 
@@ -96,13 +95,13 @@ function GeneralFoot() {
 	$parse['metal_ps'] = ($Caps['metal_perhour'] / 3600);
 	$parse['crys_ps']  = ($Caps['crystal_perhour'] / 3600);
 	$parse['deut_ps']  = ($Caps['deuterium_perhour'] / 3600);
-	
+
 	$parse['Admin']  = ($user['authlevel'] >= 1);	
 	$parse['forum_url']	= $game_config['forum_url'];
-	
+
 	$parse['server_offset'] = date('Z');
 	$parse['ajax_time'] = time();
-	
+
 	$parse['matter'] = ($user['matter'] * DARK_MATTER_FACTOR);
 
 	$part				 = parsetemplate(gettemplate('redesigned/general_foot'),$parse);
@@ -114,7 +113,7 @@ function NewHeader($bodyid) {
 	global $planetrow,$user,$onload,$dpath,$game_config,$resource,$_GET,$lang,$cid;
 
 	getLang('menu');
-	
+
 	$parse				= $lang;
 	$parse['bodyid']	= $bodyid;
 
@@ -132,7 +131,7 @@ function NewHeader($bodyid) {
 	$parse['skin'] = $user['skin'];
 	$parse['dpath'] = $user['dpath'];
 	$parse['dpath'] = $dpath;
-	
+
 	//Moon extention
 	if($planetrow['planet_type'] == 3)
 		$parse['planet_ext'] = '-moon';
@@ -215,7 +214,6 @@ function NewHeader($bodyid) {
 	}
 
 	$parse['onload'] = $onload;
-	
 
 	$parse['note_show'] = "none";
 	$parse['desc_show'] = "none";
@@ -223,14 +221,13 @@ function NewHeader($bodyid) {
 		$parse['ncont'] = $_GET['message'];
 		$parse['nhead'] = $_GET['title'];
 		$parse[$_GET['etype'].'_show'] = "float";
-		
+
 		$parse['go_ok'] = $_GET['to'];
 		$parse['go_yes'] = $_GET['ifyes'];
 		$parse['go_no'] = $_GET['ifno'];
 
 		//$parse['errorbox'] = parsetemplate(gettemplate('redesigned/errorbox'),$parse);
 	}
-
 	$part				 = parsetemplate(gettemplate('redesigned/header'),$parse);
 	//echo $part;
 	return $part;
@@ -240,7 +237,6 @@ function displaypage ($page, $title = '', $body = '', $scripts = '') {
 	//global $link, $game_config, $debug, $user, $planetrow;	//old
 	global $link, $InLogin, $game_config, $debug, $user, $planetrow, $cpage, $pageid, $loadstart;
 
-	
 	if($_GET['page'] != 'admin'){ include(ROOT_PATH . "menu.php"); }
 	else{ include(ROOT_PATH . "adminmenu.php"); }
 	include(ROOT_PATH . "planetlist.php");
