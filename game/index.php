@@ -90,7 +90,12 @@ if($_GET['iframe'] == '1'){
 			getLang('resources');
 			include(ROOT_PATH . 'includes/pages/BuildRessourcePage.php');
 			include(ROOT_PATH . 'includes/pages/BuildingPage.php');
-			UpdateQueue();
+			if(isset($_GET['finish'])&&$_GET['finish']=="finish"){
+				UpdateQueue();
+				header("location:./?page=resources");
+			}else{
+				UpdateQueue();
+			}
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			BuildingPage ();
 			break;
@@ -102,7 +107,12 @@ if($_GET['iframe'] == '1'){
 				$pageid .= "-moon";
 			includeLang('buildings');
 			include(ROOT_PATH . 'includes/pages/BuildingPage.php');
-			UpdateQueue();
+			if(isset($_GET['finish'])&&$_GET['finish']=="finish"){
+				UpdateQueue();
+				header("location:./?page=station");
+			}else{
+				UpdateQueue();
+			}
 			$IsWorking = HandleTechnologieBuild ( $planetrow, $userclass->uarray );
 			BuildingPage();
 			break;

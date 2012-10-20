@@ -104,6 +104,8 @@ function GeneralFoot() {
 
 	$parse['matter'] = ($user['matter'] * DARK_MATTER_FACTOR);
 
+	$parse['finish_page'] = $_GET[page];
+	
 	$part				 = parsetemplate(gettemplate('redesigned/general_foot'),$parse);
 	//echo $part;
 	return $part;

@@ -192,7 +192,7 @@ function BuildingPage($a=0,$b=0){
 					$parse['state_'.$Element] = "on";
 					$parse['mes_'.$Element] = "";
 					$parse['canbuild_'.$Element] = "
-						<a class=\"fastBuild tips\" href=\"#\" onclick=\"loadpage('./?page=".$_GET['page']."&cmd=insert&building=$Element&id=$Element',document.title,document.body.id);\">
+						<a class=\"fastBuild tips\" href=\"#\" onclick=\"loadpage('./?page=".$_GET['page']."&cmd=insert&building=$Element',document.title,document.body.id);\">
 							<img src=\"".GAME_SKIN."/img/layout/sofort_bauen.gif\" height=\"14\" width=\"22\">
 						</a>";
 				}
@@ -305,8 +305,8 @@ function BuildingPage($a=0,$b=0){
 					if ($Queue['lenght'] == 0) {
 						if ($NextBuildLevel == 1) {
 							if ( $HaveRessources == true ) {
-								$parse['click'] = "<a href=\"./?page=".$_GET['page']."&cmd=insert&building=".$Element."&id=".$Element."\"><font color=#00FF00>". $lang['BuildFirstLevel'] ."</font></a>";
-								$infopg['build_link'] = "loadpage('./?page=".$_GET['page']."&cmd=insert&building=".$Element."&id=".$Element."',document.title,document.body.id);";
+								$parse['click'] = "<a href=\"./?page=".$_GET['page']."&cmd=insert&building=".$Element."\"><font color=#00FF00>". $lang['BuildFirstLevel'] ."</font></a>";
+								$infopg['build_link'] = "loadpage('./?page=".$_GET['page']."&cmd=insert&building=".$Element."',document.title,document.body.id);";
 								$infopg['build_text'] = $lang['BuildFirstLevel'];
 							} else {
 								$parse['click'] = "<font color=#FF0000>4". $lang['BuildFirstLevel'] ."</font>";
@@ -315,8 +315,8 @@ function BuildingPage($a=0,$b=0){
 							}
 						} else {
 							if ( $HaveRessources == true ) {
-								$parse['click'] = "<a href=\"./?page=".$_GET['page']."&cmd=insert&building=". $Element ."&id=".$Element."\"><font color=#00FF00>". $lang['BuildNextLevel'] ." ". $NextBuildLevel ."</font></a>";
-								$infopg['build_link'] = "loadpage('./?page=".$_GET['page']."&cmd=insert&building=".$Element."&id=".$Element."',document.title,document.body.id);";
+								$parse['click'] = "<a href=\"./?page=".$_GET['page']."&cmd=insert&building=". $Element ."\"><font color=#00FF00>". $lang['BuildNextLevel'] ." ". $NextBuildLevel ."</font></a>";
+								$infopg['build_link'] = "loadpage('./?page=".$_GET['page']."&cmd=insert&building=".$Element."',document.title,document.body.id);";
 								$infopg['build_text'] = $lang['BuildNextLevel'] ." ". $NextBuildLevel;
 							} else {
 								$parse['click'] = "<font color=#FF0000>". $lang['BuildNextLevel'] ." ". $NextBuildLevel ."</font>";
@@ -325,8 +325,8 @@ function BuildingPage($a=0,$b=0){
 							}
 						}
 					} else {
-						$parse['click'] = "<a href=\"./?page=".$_GET['page']."&cmd=insert&building=". $Element ."&id=".$Element."\"><font color=#00FF00>". $lang['InBuildQueue'] ."</font></a>";
-						$infopg['build_link'] = "loadpage('./?page=".$_GET['page']."&cmd=insert&building=".$Element."&id=".$Element."',document.title,document.body.id);";
+						$parse['click'] = "<a href=\"./?page=".$_GET['page']."&cmd=insert&building=". $Element ."\"><font color=#00FF00>". $lang['InBuildQueue'] ."</font></a>";
+						$infopg['build_link'] = "loadpage('./?page=".$_GET['page']."&cmd=insert&building=".$Element."',document.title,document.body.id);";
 						$infopg['build_text'] = $lang['InBuildQueue'];
 					}
 				} elseif ($RoomIsOk && !$CanBuildElement) {
