@@ -90,6 +90,7 @@ if($_GET['iframe'] == '1'){
 			getLang('resources');
 			include(ROOT_PATH . 'includes/pages/BuildRessourcePage.php');
 			include(ROOT_PATH . 'includes/pages/BuildingPage.php');
+			if(isset($_GET['submit_resource'])&&$_GET['submit_resource']=="1"){ header("location:./?page=resources&mode=resources"); }
 			if(isset($_GET['finish'])&&$_GET['finish']=="finish"){
 				UpdateQueue();
 				header("location:./?page=resources");
