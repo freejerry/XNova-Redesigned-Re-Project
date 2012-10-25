@@ -170,7 +170,7 @@ function ResearchPage (&$CurrentPlanet, $CurrentUser, $InResearch, $ThePlanet) {
 			$parse['rest_price']   = GetRestPrice($CurrentUser, $CurrentPlanet, $Element);
 			$parse['click']        = '';
 
-			$buildlink = "loadpage('./?page=research&cmd=search&tech=".$Element."',document.title,document.body.id);";
+			$buildlink = "loadpage('./?page=research&cmd=search&id=".$Element."&tech=".$Element."',document.title,document.body.id);";
 
 			if (IsTechnologieAccessible($CurrentUser, $CurrentPlanet, $Element)) {
 				if ($NextBuildLevel == 1) {

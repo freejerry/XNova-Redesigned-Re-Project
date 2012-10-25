@@ -109,8 +109,6 @@ function countdown(){
 		if(formatted == ''){ formatted = '{fin}'; }
 
 		cd.innerHTML = formatted;
-		
-		if(formatted == '{fin}'){ location.href= ('./?page={finish_page}&finish=finish'); }
 	}
 }
 
