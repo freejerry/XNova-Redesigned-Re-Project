@@ -27,7 +27,7 @@ PlanetResourceUpdate($userclass->uarray,$planetrow,time());
 
 $skin_config = file(GAME_SKIN."/config.txt");
 if(substr($skin_config[0], 0, 26) == '!!--Skin Configuration--!!'){
-	define('HEADER_CACHE',str_replace("{{skin}}",GAME_SKIN,$skin_config[2]));
+	define('HEADER_CACHE',str_replace("{{skin}}",GAME_SKIN,preg_replace("/\n/","",$skin_config[2])));
 }
 else{
 	define('HEADER_CACHE',GAME_SKIN.'/headerCache/'); //not working skin config -> missing file
