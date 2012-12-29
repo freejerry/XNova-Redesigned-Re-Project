@@ -234,7 +234,7 @@ function BuildingPage($a=0,$b=0){
 
 	$type_array = PlanetType($planetrow['image']);
 	$de_planettype = $planetrow['image'];
-	$parse['type'] = $de_planettype['type'];
+	$parse['type'] = @$de_planettype['type'];
 	if($_GET['page'] == 'station'){
 		if($planetrow['planet_type'] == 3)
 			if(file_exists(HEADER_CACHE."station/".$parse['type'].'_'.$type_array['subtype'].$imgnum1.".png"))
