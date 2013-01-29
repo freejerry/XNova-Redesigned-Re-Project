@@ -65,9 +65,9 @@ function err_handler($num, $str, $file, $line) {
 		$query = "INSERT INTO {{table}} SET
 			`error_sender` = '".intval($user['id'])."' ,
 			`error_time` = '".time()."' ,
-			`error_type` = '".mysql_escape_string($error['type'])."' ,
-			`error_text` = '".mysql_escape_string($str)."' ,
-			`error_page` = '".mysql_escape_string($file).": Line ".intval($line)."';";
+			`error_type` = '".mysql_real_escape_string($error['type'])."' ,
+			`error_text` = '".mysql_real_escape_string($str)."' ,
+			`error_page` = '".mysql_real_escape_string($file).": Line ".intval($line)."';";
 			//`error_text` = '".mysql_escape_string($error['message'])."' ,
 		
 		
