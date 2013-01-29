@@ -1,19 +1,13 @@
 <?php
-
 /**
  * databaseinfos.php
  *
  * @version 1.0
  * @copyright 2008 By Chlorel for XNova
- */
-
+ *
+*/
 // Definition des tables d'XNova
 //
-
-
-	
-	
-	
 	
 	// Table aks
 	$QryTableAks         = "CREATE TABLE `{{table}}` ( ";
@@ -155,7 +149,6 @@
 	$QryInsertConfig    .= "('debug'                 , '0') ";
 	$QryInsertConfig    .= ";";
 
-	
 	// Table declared (multicomptes)
 	$QryTabledeclared         = "CREATE TABLE `{{table}}` ( ";
 	$QryTabledeclared        .= "`declarator`TEXT NOT NULL, ";

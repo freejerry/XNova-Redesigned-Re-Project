@@ -1,11 +1,11 @@
 <?php
-
 /**
  * overviewfunctions.php
  *
  * @version 1
  * @copyright 2008 By MadnessRed for XNova_Redisigned
- */
+ *
+*/
 
 //This file is to clear out all that complicated mess from overview.php.
 
@@ -46,19 +46,19 @@ if ($_GET['mode'] == "renplanet") {
 if (strlen($planetrow['build_queue']) > 0) {
 	UpdateQueue();
 	if (strlen($planetrow['build_queue']) > 0) {
-		
+
 		$Queue = ShowQueue (false);
 		$queueinfo  = '<div id="resources_queue_box">';
 		$queueinfo .= $Queue['buildlist'];
 		$queueinfo .= '</div>';
-		
+
 	} else {
 		$queueinfo  = '<div id="resources_queue_box">';
-		
+
 		$queueinfo .= '<div class="content-box-s">';
 		$queueinfo .= '<div class="header"><h3>Buildings</h3></div>';
 		$queueinfo .= '<div class="content">';
-		
+
 		$queueinfo .= '<table cellpadding="0" cellspacing="0" class="construction">';
 		$queueinfo .= '<tr>';
 		$queueinfo .= '<td colspan="2" class="idle">';
@@ -66,19 +66,19 @@ if (strlen($planetrow['build_queue']) > 0) {
 		$queueinfo .= '</td>';
 		$queueinfo .= '</tr>';
 		$queueinfo .= '</table>';
-		
+
 		$queueinfo .= '</div>';
 		$queueinfo .= '<div class="footer"></div>';
-		
+
 		$queueinfo .= '</div>';
 	}
 } else {
 	$queueinfo  = '<div id="resources_queue_box">';
-	
+
 	$queueinfo .= '<div class="content-box-s">';
 	$queueinfo .= '<div class="header"><h3>Buildings</h3></div>';
 	$queueinfo .= '<div class="content">';
-		
+
 	$queueinfo .= '<table cellpadding="0" cellspacing="0" class="construction">';
 	$queueinfo .= '<tr>';
 	$queueinfo .= '<td colspan="2" class="idle">';
@@ -86,11 +86,11 @@ if (strlen($planetrow['build_queue']) > 0) {
 	$queueinfo .= '</td>';
 	$queueinfo .= '</tr>';
 	$queueinfo .= '</table>';
-	
+
 	$queueinfo .= '</div>';
 	$queueinfo .= '<div class="footer"></div>';
 	$queueinfo .= '</div>';
-	
+
 	$queueinfo .= '</div>';
 }
 
@@ -118,7 +118,7 @@ if ($planetrow['b_hangar_id'] != '') {
 			}
 		}
 	}
-	
+
 	$queueinfosy  = '
 		<table cellpadding="0" cellspacing="0" class="construction" width="100%">
 			<tr>

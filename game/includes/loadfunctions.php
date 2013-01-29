@@ -4,7 +4,8 @@
  *
  * @version 1
  * @copyright 2008 By Chlorel for XNova
- */
+ *
+*/
 
 // Fonctions deja 'au propre'
 require_once(ROOT_PATH . 'includes/functions/SendSimpleMessage.php');

@@ -43,21 +43,21 @@ $def_ships[2]= array(
 	'weaps' => 200000,
 	'shields' => 50000,
 	'hull' => 200000);
-	
+
 $fleets['a'][1] = array(
 	'owner' => 'Anthony',
 	'leader' => 1,
 	'origin' => '1:1:1',
 	'techs' => array(12,12,12)
 );
-	
+
 $fleets['v'][1] = array(
 	'owner' => 'Tom',
 	'leader' => 1,
 	'origin' => '1:1:2',
 	'techs' => array(10,10,10)
 );
-	
+
 $result = mr_attack($att_ships,$def_ships,true);
 $report = mr_report($result,$fleets,true);
 
@@ -98,6 +98,5 @@ echo "<br /><br />";
 echo "Round All";
 print_r($result['rounds']);
 echo "<br /><br />";
-
 
 ?>

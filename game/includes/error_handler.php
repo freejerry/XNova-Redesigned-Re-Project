@@ -29,17 +29,16 @@ $error_types = array(
 
 function err_handler($num, $str, $file, $line) {
 	global $user,$error,$error_types,$sql;
-	
+
 	//errors not to record
 	$silent = array(8,2048,8192);
-	
+
 	if(in_array($num,$silent))
 		return true;
-	
-	
+
 	include(ROOT_PATH . 'config'.UNIVERSE.'.php');
 	$error = array();
-	
+
 	//errors to die from
 	$fatal = array(256);
 
@@ -69,9 +68,7 @@ function err_handler($num, $str, $file, $line) {
 			`error_text` = '".mysql_real_escape_string($str)."' ,
 			`error_page` = '".mysql_real_escape_string($file).": Line ".intval($line)."';";
 			//`error_text` = '".mysql_escape_string($error['message'])."' ,
-		
-		
-	
+
 		if(isset($sql)){
 			$sql->doquery($query, 'errors') or die($sql->error);
 			$q = $sql->insert_id();

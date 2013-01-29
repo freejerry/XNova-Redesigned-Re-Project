@@ -1,14 +1,14 @@
 <?php
-
- /**
-   * mr_attack.php
-   * This file is created from scratch by MadnessRed for Darkness of Evolution.
-   * The formulas from this file game from teh OGame wikia.
-   * Anthony [madnessred@gmail.com] is the sole owner of this file. You may use this file but Credit for the Combat Engine, including RapidFire, ACS and Bounce Effect must be given to MadnessRed or Anthony in teh Changelog or Credit page. Where this is not possible an email should be sent to madnessred@gmail.com for more information on what to do.
-   * This file is under the GPL lisence, which must be included with this file.
-   * This file must not be made available on other locations without first consulting MadnessRed.
-   * Do NOT edit this comment block.
-   */
+/**
+  * mr_attack.php
+  * This file is created from scratch by MadnessRed for Darkness of Evolution.
+  * The formulas from this file game from teh OGame wikia.
+  * Anthony [madnessred@gmail.com] is the sole owner of this file. You may use this file but Credit for the Combat Engine, including RapidFire, ACS and Bounce Effect must be given to MadnessRed or Anthony in teh Changelog or Credit page. Where this is not possible an email should be sent to madnessred@gmail.com for more information on what to do.
+  * This file is under the GPL lisence, which must be included with this file.
+  * This file must not be made available on other locations without first consulting MadnessRed.
+  * Do NOT edit this comment block.
+  *
+*/
 
 function chance ($percent) {  //MadnessRed function
 	$chance = mt_rand(0,100);
@@ -18,7 +18,7 @@ function chance ($percent) {  //MadnessRed function
 		return false;		
 	}
 }
-   
+
 /*
 get all the ships and techs.
 $fleets
@@ -68,21 +68,21 @@ function mr_attack($att_ships,$def_ships,$debug){
 	$deflost = 0;
 	$debrmet = 0;
 	$debrcry = 0;
-	
+
 	//Start the results array
 	$results = array();
 
 	//Start the rounds
 	$rounddata = array();
-	
+
 	//Whilst neither side has won it is still a draw.
 	$results['won'] = 'd';
-	
+
 	//For each round...
 	for($round = 1; $round <= $maxrounds; $round++){
 		//Start round info.
 		$roundinfo = array();
-		
+
 		//Check that one side hasn't won yet.
 		if (count($def_ships) == 0){
 			$results['won'] = 'a';
@@ -181,7 +181,7 @@ function mr_attack($att_ships,$def_ships,$debug){
 					}
 				}
 			}
-				
+
 			//Payback time
 			foreach($def_ships as $id => $info){
 				//Don't stop firing yet, haven't even done one shot.
@@ -253,19 +253,19 @@ function mr_attack($att_ships,$def_ships,$debug){
 				}
 			}
 		}
-		
+
 		//Now return the round info.
 		$rounddata[$round]['atts'] = $att_ships;
 		$rounddata[$round]['defs'] = $def_ships;
 		$rounddata[$round]['info'] = $roundinfo;
 	}
-	
+
 	//Make array from the the running totals.
 	$losses['att'] = $attlost;
 	$losses['def'] = $deflost;
 	$losses['debm'] = $debrmet;
 	$losses['debc'] = $debrcry;
-	
+
 	//Add losses to results.
 	$results['losses'] = $losses;
 

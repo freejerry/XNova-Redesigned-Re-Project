@@ -35,11 +35,7 @@ function doquery($query, $table, $fetch = false){
 	}else{ //devuelve el $sqlquery ("sin fetch")
 		return $sqlquery;
 	}
-	
 }
-
-
-
 // Created by Perberos. All rights reversed (C) 2006
 
 ?>

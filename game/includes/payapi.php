@@ -16,7 +16,6 @@ class UgamelaplayPay{
 	function RedirToPaySystem(){
 		header("Location: http://pay.ugamelaplay.net/index.php?apikey=". $this->PublicKey );
 		die("Redireccionando...");
-	
 	}
 	function Comprobate($Code){
 		$Result = eval($this->CallBack($Code));
@@ -39,7 +38,7 @@ class UgamelaplayPay{
 		}else{
 			return('Unknown Error');
 		}
-	
+
 	}
 	private function CallBack($Code){
 		$url = "pay.ugamelaplay.net/callback.php?code=".$Code."&privatekey=".$this->PrivateKey ;
@@ -49,7 +48,7 @@ class UgamelaplayPay{
 			return 'return "error";';
 		}		
 	}
-	
+
 	private function get_web_page( $url ){
 		$options = array(
 			CURLOPT_RETURNTRANSFER => true,     // return web page
@@ -75,7 +74,6 @@ class UgamelaplayPay{
 		$header['content'] = $content;
 		return $header;
 	}
-
 }
 
 ?>

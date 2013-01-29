@@ -1,8 +1,7 @@
 <?php
 
-//Do not this link, it is important
+//Do not change this link, it is important
 define(XNOVAUKLINK,"http://xnovauk.darkevo.org/");
-
 
 function parsecountdown($time){
 	global $lang;
