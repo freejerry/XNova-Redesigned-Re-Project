@@ -21,7 +21,7 @@ function RecallFleet($id, $key = 'x', $user = 'x'){
 		$and .= " AND `owner_userid` = '".idstring($user)."'";
 	
 	//First get said fleet:
-	$fleetrow = doquery("SELECT *, COUNT('fleet_id') AS `count` FROM {{table}} WHERE `fleet_id` = '".idstring($id)."'".$and." AND `fleet_mess` = '0' AND `mission` <> '0' ;",'fleets',true);
+	$fleetrow = doquery("SELECT *, COUNT('fleet_id') AS `count` FROM {{table}} WHERE `fleet_id` = '".idstring($id)."'".$and." AND `fleet_mess` = '0' AND `mission` <> '0' GROUP BY 'fleet_id';",'fleets',true);
 
 	//Check we found the fleet:
 	if($fleetrow['count'] == 1){
