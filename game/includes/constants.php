@@ -18,7 +18,7 @@ if ( defined('INSIDE') ) {
 	define('TEMPLATE_NAME'      , 'Redesigned');
 	define('DEFAULT_LANG'       , 'en');
 
-  //Try to revive old battle engine
+  //Just in case...
   define('BATTLE_ENGINE'      , 'php');
 
 	define('XNOVAUKLINK'				, 'https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/stable/');
