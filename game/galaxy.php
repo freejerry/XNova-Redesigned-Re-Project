@@ -18,7 +18,7 @@ if($mode == 1) {
 	$galaxy =  idstring($_GET["galaxy"]);
 	$system =  idstring($_GET["system"]);
 	
-} else if(isset(idstring($_GET["galaxy"])) and isset(idstring($_GET["system"]))) {
+} else if(isset($_GET["galaxy"]) and isset($_GET["system"])) {
   //Pointer from statistics or other pages (mode is not set)
 	$galaxy =  idstring($_GET["galaxy"]);
 	$system =  idstring($_GET["system"]);
