@@ -87,6 +87,8 @@ require_once(ROOT_PATH . 'includes/functions/DestroyPlanet.php');
 require_once(ROOT_PATH . 'includes/functions/RecallFleet.php');
 //New fleet engine files
 require_once(ROOT_PATH . 'includes/functions/MissileAttack.php');
+//Ported from old Legacies
+require_once(ROOT_PATH . 'includes/functions/SpyTarget.php');
 //New Redesigned Pages (Included when they are needed to save resources)
 /*
 require_once(ROOT_PATH . 'includes/pages/BuildRessourcePage.php');
