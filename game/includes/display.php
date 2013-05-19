@@ -82,14 +82,14 @@ function GeneralHead($title) {
     if($getofficers['off_command']==0)
     {
       if(time()>=$getofficers['off_command_exp'])
-        doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
       else
-        doquery("UPDATE {{table}} set off_command=1 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_command=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
     else
     {
       if(time()>=$getofficers['off_command_exp'])
-        doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
   }
   //Admiral
@@ -98,14 +98,14 @@ function GeneralHead($title) {
     if($getofficers['off_admiral']==0)
     {
       if(time()>=$getofficers['off_admiral_exp'])
-        doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
       else
-        doquery("UPDATE {{table}} set off_admiral=1 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_admiral=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
     else
     {
       if(time()>=$getofficers['off_admiral_exp'])
-        doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
   }
   //Engineer
@@ -114,14 +114,14 @@ function GeneralHead($title) {
     if($getofficers['off_engineer']==0)
     {
       if(time()>=$getofficers['off_engineer_exp'])
-        doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
       else
-        doquery("UPDATE {{table}} set off_engineer=1 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_engineer=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
     else
     {
       if(time()>=$getofficers['off_engineer_exp'])
-        doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
   }
   //Geologist
@@ -130,14 +130,14 @@ function GeneralHead($title) {
     if($getofficers['off_geologist']==0)
     {
       if(time()>=$getofficers['off_geologist_exp'])
-        doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
       else
-        doquery("UPDATE {{table}} set off_geologist=1 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_geologist=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
     else
     {
       if(time()>=$getofficers['off_geologist_exp'])
-        doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
   }
   //Technocrat
@@ -146,20 +146,20 @@ function GeneralHead($title) {
     if($getofficers['off_technocrat']==0)
     {
       if(time()>=$getofficers['off_technocrat_exp'])
-        doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
       else
-        doquery("UPDATE {{table}} set off_technocrat=1 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_technocrat=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
     else
     {
       if(time()>=$getofficers['off_technocrat_exp'])
-        doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',true);
+        doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
     }
   }
   //-- End of Resetting Officers
 
   //-- Statistics System
-  doquery("UPDATE {{table}} set research_points = ".($user[$resource[106]]+$user[$resource[108]]+$user[$resource[109]]+$user[$resource[110]]+$user[$resource[111]]+$user[$resource[113]]+$user[$resource[114]]+$user[$resource[115]]+$user[$resource[117]]+$user[$resource[118]]+$user[$resource[120]]+$user[$resource[121]]+$user[$resource[122]]+$user[$resource[123]]+$user[$resource[124]]+$user[$resource[199]])." WHERE `id` = '". $user['id'] ."';", 'users',true);
+  doquery("UPDATE {{table}} set research_points = spy_tech + computer_tech + military_tech + defence_tech + shield_tech + energy_tech + hyperspace_tech + combustion_tech + impulse_motor_tech + hyperspace_motor_tech + hyperspace_mapping_tech + laser_tech+ionic_tech + buster_tech + intergalactic_tech + interalliance_tech + astrophysics + colonisation_tech + graviton_tech WHERE `id` = '". $user['id'] ."';", 'users',false);
   //-- End of Statistics System
 
 	$parse				 = $user;
