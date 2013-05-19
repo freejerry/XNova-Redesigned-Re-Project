@@ -98,8 +98,8 @@ document.onkeydown=function(e){
 				<span id="missileValue">{res503}</span> Interplanetary missiles
 			</span>
 
-			<span id="slots" class="tips" title="Fleet slots in use: 0 of 1">
-				<span id="slotValue">{curfleets}</span>/1 used slots
+			<span id="slots" class="tips" title="Fleet slots in use: {curfleets} of {maxfleets}">
+				<span id="slotValue">{curfleets}</span>/{maxfleets} used slots
 			</span>
 		</td>
 	</tr>

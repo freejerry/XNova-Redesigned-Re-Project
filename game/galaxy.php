@@ -37,6 +37,10 @@ $bloc['res210'] = $planetrow[$resource[210]];
 $bloc['res503'] = $planetrow[$resource[503]];
 $bloc['curfleets'] = doquery("SELECT COUNT(fleet_id) as count FROM {{table}} WHERE `owner_userid` = '". $user['id'] ."';", 'fleets',true);
 $bloc['curfleets'] = $bloc['curfleets']['count'];
+$bloc['maxfleets'] = doquery("SELECT computer_tech, off_admiral FROM {{table}} WHERE `id` = '". $user['id'] ."';", 'users',true);
+$computer_tech = $bloc['maxfleets']['computer_tech'];
+$off_admiral = $bloc['maxfleets']['off_admiral'];
+$bloc['maxfleets'] = 1 + $computer_tech + $off_admiral * 2;
 
 //Current gal/sys
 $bloc['cgal'] = $galaxy;
