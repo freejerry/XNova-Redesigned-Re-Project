@@ -159,7 +159,7 @@ function GeneralHead($title) {
   //-- End of Resetting Officers
 
   //-- Statistics System
-  doquery("UPDATE {{table}} set research_points = spy_tech + computer_tech + military_tech + defence_tech + shield_tech + energy_tech + hyperspace_tech + combustion_tech + impulse_motor_tech + hyperspace_motor_tech + hyperspace_mapping_tech + laser_tech+ionic_tech + buster_tech + intergalactic_tech + interalliance_tech + astrophysics + colonisation_tech + graviton_tech WHERE `id` = '". $user['id'] ."';", 'users',false);
+  doquery("UPDATE {{table}} set research_points = (spy_tech + computer_tech + military_tech + defence_tech + shield_tech + energy_tech + hyperspace_tech + combustion_tech + impulse_motor_tech + hyperspace_motor_tech + hyperspace_mapping_tech + laser_tech+ionic_tech + buster_tech + intergalactic_tech + interalliance_tech + astrophysics + colonisation_tech + graviton_tech)*".$game_config['stat_settings']." WHERE `id` = '". $user['id'] ."';", 'users',false);
   //-- End of Statistics System
 
 	$parse				 = $user;
