@@ -24,7 +24,7 @@ $Template = '
 					<img height="16" width="16" src="{{skin}}/img/ajax-loader.gif" /> Loading...
 				</div>
 
-				<div id="eventboxBlank" class="textCenter" style="display: block;">No fleet movement</div>
+				<div id="eventboxBlank" class="textCenter" style="display: {{eventboxdisplay}};">No fleet movement</div>
 			</div>
 			<div id="attack_alert" style="visibility:{attack_alert};">
 				<a href="./?page=movement" lass="tips thickbox" title="Attack!">
@@ -37,9 +37,9 @@ $Template = '
 $fl_tbl = GetFleetInfo($user,$planet);
 if($fl_tbl){
 	$parse['fleet_table'] = $fl_tbl[0];
-	$parse['eventboxdisplay'] = 'block';
-}else{
 	$parse['eventboxdisplay'] = 'none';
+}else{
+	$parse['eventboxdisplay'] = 'block';
 }
 if($fl_tbl[1] > 0){
 	$parse['attack_alert'] = 'visible';
