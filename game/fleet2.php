@@ -87,12 +87,13 @@ $info .= '<input type="hidden" name="fleet_array" value=\''.serialize($fleet).'\
 $parse['fleetinfo'] = $info;
 
 //Generate shortcuts
-$sh='';
-foreach ( explode(";",$user['fleet_shortcut']) as $shortcut){
-if(strlen($shortcut) > 0){
-$shortcut = explode("-",$shortcut);
-$sh .= '<option value="'.$shortcut[0].'">'.$shortcut[1].'</option>'."\n";
-}}
+$sh="<option value='-'>-</option>";
+$getuserplanetsandmoons = doquery("SELECT * FROM {{table}} WHERE `id_owner` = `". $user['id'] ."` and `id` != `". $userclass->current_planet ."` ;",'planets',true);
+if(mysql_num_rows($getuserplanetsandmoons) > 0){
+  while($row = mysql_fetch_array($getuserplanetsandmoons)){
+    $sh .= '<option onclick="setTarget('. $row['galaxy'] .', '. $row['system'] .', '. $row['planet'] .');">'. $row['name'] .'</option>';
+  }
+}
 $parse['shsh'] = $sh;
 
 //Axah

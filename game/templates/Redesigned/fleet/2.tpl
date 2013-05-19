@@ -101,7 +101,14 @@
 					<input name="planet" id="fl_planet" type="text" class="planet" size="2" maxlength="2" value="{p}" />
 				</div>
 			</td>
-
+      <script>
+      function setTarget(galaxy, system, planet)
+      {
+        document.getElementById('fl_galaxy').value=galaxy;
+        document.getElementById('fl_system').value=system;
+        document.getElementById('fl_planet').value=planet;
+      }
+      </script>
 			<td id="shortcuts" style="width:189px;">
 				<div>
 					<span id="shortlinks tips">Shortcuts:</span>
