@@ -158,6 +158,10 @@ function GeneralHead($title) {
   }
   //-- End of Resetting Officers
 
+  //-- Statistics System
+  doquery("UPDATE {{table}} set research_points = ".strval($user[$resource[106]]+$user[$resource[108]]+$user[$resource[109]]+$user[$resource[110]]+$user[$resource[111]]+$user[$resource[113]]+$user[$resource[114]]+$user[$resource[115]]+$user[$resource[117]]+$user[$resource[118]]+$user[$resource[120]]+$user[$resource[121]]+$user[$resource[122]]+$user[$resource[123]]+$user[$resource[124]]+$user[$resource[199]])." WHERE `id` = '". $user['id'] ."';", 'users',true);
+  //-- End of Statistics System
+
 	$parse				 = $user;
 	$parse['title']		 = $title;
 	$part                = parsetemplate(gettemplate('redesigned/general_header'),$parse);
