@@ -11,7 +11,7 @@
 $Template = '
 		<div id="message_alert_box" style="visibility: {showmail};">
 			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();">
-				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25">
+				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25"><br>{messages_count}
 			</a>
 		</div>
 		<div id="fleetajax"> 
@@ -24,7 +24,7 @@ $Template = '
 					<img height="16" width="16" src="{{skin}}/img/ajax-loader.gif" /> Loading...
 				</div>
 
-				<div id="eventboxBlank" class="textCenter" style="display: {{eventboxdisplay}};">No fleet movement</div>
+				<div id="eventboxBlank" class="textCenter" style="display: {eventboxdisplay};">No fleet movement</div>
 			</div>
 			<div id="attack_alert" style="visibility:{attack_alert};">
 				<a href="./?page=movement" lass="tips thickbox" title="Attack!">
