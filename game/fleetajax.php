@@ -11,7 +11,7 @@
 $Template = '
 		<div id="message_alert_box" style="visibility: {showmail};">
 			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();">
-				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25"><br>{messages_count}
+				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25"><br><span style="align: center;">{messages_count}</span>
 			</a>
 		</div>
 		<div id="fleetajax"> 
@@ -37,9 +37,9 @@ $Template = '
 $fl_tbl = GetFleetInfo($user,$planet);
 if($fl_tbl){
 	$parse['fleet_table'] = $fl_tbl[0];
-	$parse['eventboxdisplay'] = 'none';
-}else{
 	$parse['eventboxdisplay'] = 'block';
+}else{
+	$parse['eventboxdisplay'] = 'none';
 }
 if($fl_tbl[1] > 0){
 	$parse['attack_alert'] = 'visible';
