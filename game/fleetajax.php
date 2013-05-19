@@ -10,7 +10,7 @@
 
 $Template = '
 		<div id="message_alert_box" style="visibility: {showmail};">
-			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();">
+			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();" style="text-decoration: none;">
 				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25"><center>{messages_count}</center>
 			</a>
 		</div>

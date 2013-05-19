@@ -106,7 +106,7 @@
 				<div>
 					<span id="shortlinks tips">Shortcuts:</span>
 					   <select size="1" class="planets" id="slbox" onChange="" style="margin-top:16px;">
-						   <option value="-">-</option>
+						   {shsh}
 					   </select>
 
 				 </div>

@@ -87,6 +87,7 @@ $info .= '<input type="hidden" name="fleet_array" value=\''.serialize($fleet).'\
 $parse['fleetinfo'] = $info;
 
 //Generate shortcuts
+$sh='';
 foreach ( explode(";",$user['fleet_shortcut']) as $shortcut){
 if(strlen($shortcut) > 0){
 $shortcut = explode("-",$shortcut);
