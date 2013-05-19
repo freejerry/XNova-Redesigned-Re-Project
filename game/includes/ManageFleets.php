@@ -2,7 +2,7 @@
 
 //New fleet management
 
-function ManageFleets($limit = 5){
+function ManageFleets(){
 	global $lang;
 
 	getLang('fleet_management');
@@ -13,7 +13,7 @@ function ManageFleets($limit = 5){
 	doquery("LOCK TABLE ".implode(", ",$tables), "");
 
 	//Get the fleets - ordered by their returning time
-	$fleets = doquery("SELECT * FROM {{table}} WHERE (`arrival` + `hold_time`) < ".time()." ORDER BY (`arrival` + `hold_time`) ASC LIMIT ".idstring($limit)." ;",'fleets');
+	$fleets = doquery("SELECT * FROM {{table}} WHERE (`arrival` + `hold_time`) < ".time()." ORDER BY (`arrival` + `hold_time`) ASC ;",'fleets');
 
 	//If there are any fleets.
 	if(mysql_num_rows($fleets) > 0){
