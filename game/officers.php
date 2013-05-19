@@ -55,7 +55,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
 
 					if(!$stop){
 						$QryUpdateUser  = "UPDATE {{table}} SET `matter` = '". $CurrentUser['matter'] ."', ";
-						//$QryUpdateUser .= "`".$resource[$Selected]."` = '". $CurrentUser[$resource[$Selected]] ."', ";
+						$QryUpdateUser .= "`".$resource[$Selected]."` = '1', ";
 						$QryUpdateUser .= "`".$resource[$Selected]."_exp` = '". $CurrentUser[$resource[$Selected]."_exp"] ."' ";
 						$QryUpdateUser .= "WHERE `id` = '". $CurrentUser['id'] ."';";
 						doquery( $QryUpdateUser, 'users' ) or die(mysql_error());
@@ -78,7 +78,7 @@ function ShowOfficierPage ( &$CurrentUser ) {
 
 					if(!$stop){
 						$QryUpdateUser  = "UPDATE {{table}} SET `matter` = '". $CurrentUser['matter'] ."', ";
-						//$QryUpdateUser .= "`".$resource[$Selected]."` = '". $CurrentUser[$resource[$Selected]] ."', ";
+						$QryUpdateUser .= "`".$resource[$Selected]."` = '1', ";
 						$QryUpdateUser .= "`".$resource[$Selected]."_exp` = '". $CurrentUser[$resource[$Selected]."_exp"] ."' ";
 						$QryUpdateUser .= "WHERE `id` = '". $CurrentUser['id'] ."';";
 						doquery( $QryUpdateUser, 'users' ) or die(mysql_error());
