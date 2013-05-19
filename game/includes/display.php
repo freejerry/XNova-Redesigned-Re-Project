@@ -72,7 +72,7 @@ function AddUniToString($string,$uni = 'X') {
 }
 
 function GeneralHead($title) {
-	global $user;
+	global $user,$game_config;
 
   //-- Reset Officers
   $getofficers = doquery("SELECT off_command, off_admiral, off_engineer, off_geologist, off_technocrat, off_command_exp, off_admiral_exp, off_engineer_exp, off_geologist_exp, off_technocrat_exp FROM {{table}} WHERE `id` = '". $user['id'] ."';", 'users',true);
