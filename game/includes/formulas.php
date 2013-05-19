@@ -22,7 +22,7 @@ $formulas = array(
 	'max_pos_c'		=> 'return MAX_PLANET_IN_SYSTEM - 5 + floor($CurrentUser[$resource[124]] / 2);',
 
 	//Fleets
-	'max_fleets'	=> 'return $user[$resource[108]] + 1;',
+	'max_fleets'	=> 'return 1 + $user[$resource[108]] + $user[$resource[602]] * 2;',
 );
 
 ?>
