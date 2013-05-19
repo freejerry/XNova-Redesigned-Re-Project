@@ -369,22 +369,21 @@ if($_GET['iframe'] == '1'){
 			$parse['date_time'] = date("D M n H:i:s");
 
       //-- Reset Officers
-      require_once(ROOT_PATH . "modules/user.php");
-      $getofficers = doquery("SELECT off_command, off_admiral, off_engineer, off_geologist, off_technocrat, off_command_exp, off_admiral_exp, off_engineer_exp, off_geologist_exp, off_technocrat_exp FROM {{table}} WHERE `id` = '". $user->id ."';", 'users',true);
+      $getofficers = doquery("SELECT off_command, off_admiral, off_engineer, off_geologist, off_technocrat, off_command_exp, off_admiral_exp, off_engineer_exp, off_geologist_exp, off_technocrat_exp FROM {{table}} WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
       //Commander
       if(($getofficers['off_command']==1) or ($getofficers['off_command_exp']>0))
       {
         if($getofficers['off_command']==0)
         {
           if(time()>=$getofficers['off_command_exp'])
-            doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
           else
-            doquery("UPDATE {{table}} set off_command=1 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_command=1 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
         else
         {
           if(time()>=$getofficers['off_command_exp'])
-            doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
       }
       //Admiral
@@ -393,14 +392,14 @@ if($_GET['iframe'] == '1'){
         if($getofficers['off_admiral']==0)
         {
           if(time()>=$getofficers['off_admiral_exp'])
-            doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
           else
-            doquery("UPDATE {{table}} set off_admiral=1 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_admiral=1 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
         else
         {
           if(time()>=$getofficers['off_admiral_exp'])
-            doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
       }
       //Engineer
@@ -409,14 +408,14 @@ if($_GET['iframe'] == '1'){
         if($getofficers['off_engineer']==0)
         {
           if(time()>=$getofficers['off_engineer_exp'])
-            doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
           else
-            doquery("UPDATE {{table}} set off_engineer=1 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_engineer=1 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
         else
         {
           if(time()>=$getofficers['off_engineer_exp'])
-            doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
       }
       //Geologist
@@ -425,14 +424,14 @@ if($_GET['iframe'] == '1'){
         if($getofficers['off_geologist']==0)
         {
           if(time()>=$getofficers['off_geologist_exp'])
-            doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
           else
-            doquery("UPDATE {{table}} set off_geologist=1 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_geologist=1 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
         else
         {
           if(time()>=$getofficers['off_geologist_exp'])
-            doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
       }
       //Technocrat
@@ -441,14 +440,14 @@ if($_GET['iframe'] == '1'){
         if($getofficers['off_technocrat']==0)
         {
           if(time()>=$getofficers['off_technocrat_exp'])
-            doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
           else
-            doquery("UPDATE {{table}} set off_technocrat=1 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_technocrat=1 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
         else
         {
           if(time()>=$getofficers['off_technocrat_exp'])
-            doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user->id ."';", 'users',true);
+            doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $CurrentUser['id'] ."';", 'users',true);
         }
       }
       //-- End of Resetting Officers
