@@ -367,23 +367,9 @@ if($_GET['iframe'] == '1'){
 			$parse['qresearch'] = $queueinforl;
 			$parse['qshipyard'] = $queueinfosy;
 			$parse['date_time'] = date("D M n H:i:s");
-			//Show planet remove/rename
-			if($_GET['mode'] == 'removepl'){ $parse['plrem_disp'] = 'display:block;'; }
-			$page = parsetemplate(gettemplate('redesigned/overview'), $parse);
-			if($_GET['axah']){
-				makeAXAH($page);
-			}else{
-				displaypage($page, $lang['Overview']);
-			}
+
       //-- Reset Officers
       require_once(ROOT_PATH . "modules/user.php");
-      //debug
-      echo "
-      <script>
-      alert(".$user->id.");
-      </script>
-      ";
-      //end
       $getofficers = doquery("SELECT off_command, off_admiral, off_engineer, off_geologist, off_technocrat, off_command_exp, off_admiral_exp, off_engineer_exp, off_geologist_exp, off_technocrat_exp FROM {{table}} WHERE `id` = '". $user->id ."';", 'users',true);
       //Commander
       if(($getofficers['off_command']==1) or ($getofficers['off_command_exp']>0))
@@ -466,6 +452,15 @@ if($_GET['iframe'] == '1'){
         }
       }
       //-- End of Resetting Officers
+
+			//Show planet remove/rename
+			if($_GET['mode'] == 'removepl'){ $parse['plrem_disp'] = 'display:block;'; }
+			$page = parsetemplate(gettemplate('redesigned/overview'), $parse);
+			if($_GET['axah']){
+				makeAXAH($page);
+			}else{
+				displaypage($page, $lang['Overview']);
+			}
 			break;
 	}
 }
