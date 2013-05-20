@@ -6,6 +6,29 @@
 	<input type="hidden" name="duration" id="duration_raw" value="0" />
 	<input type="hidden" name="consumption" id="consumption_raw" value="0" />
 
+<script language="JavaScript" type="text/javascript">
+  function setTarget(galaxy, system, planet, planet_type)
+  {
+    document.getElementById('fl_galaxy').value=galaxy;
+    document.getElementById('fl_system').value=system;
+    document.getElementById('fl_planet').value=planet;
+    if(planet_type == 1)
+    {
+        document.getElementById('planettype').value=1;
+				document.getElementById('pbutton').className='tips planet_selected';
+				document.getElementById('mbutton').className='tips moon';
+				document.getElementById('dbutton').className='tips debris';
+    }
+    else if(planet_type == 3)
+    {
+        document.getElementById('planettype').value=3;
+				document.getElementById('pbutton').className='tips planet';
+				document.getElementById('mbutton').className='tips moon_selected';
+				document.getElementById('dbutton').className='tips debris';
+    }
+  }
+</script>
+
 <div id="inhalt">
 	<div id="planet" style="background-image:url({{skin}}img/header/fleet/fleet2.jpg)" >
 		<h2>Fleet dispatch II - {{planet}}</h2> 
@@ -101,28 +124,6 @@
 					<input name="planet" id="fl_planet" type="text" class="planet" size="2" maxlength="2" value="{p}" />
 				</div>
 			</td>
-      <script type="text/javascript">
-      function setTarget(galaxy, system, planet, planet_type)
-      {
-        document.getElementById('fl_galaxy').value=galaxy;
-        document.getElementById('fl_system').value=system;
-        document.getElementById('fl_planet').value=planet;
-        if(planet_type == 1)
-        {
-            document.getElementById('planettype').value=1;
-						document.getElementById('pbutton').className='tips planet_selected';
-						document.getElementById('mbutton').className='tips moon';
-						document.getElementById('dbutton').className='tips debris';
-        }
-        else if(planet_type == 3)
-        {
-            document.getElementById('planettype').value=3;
-						document.getElementById('pbutton').className='tips planet';
-						document.getElementById('mbutton').className='tips moon_selected';
-						document.getElementById('dbutton').className='tips debris';
-        }
-      }
-      </script>
 			<td id="shortcuts" style="width:189px;">
 				<div>
 					<span id="shortlinks tips">Shortcuts:</span>
