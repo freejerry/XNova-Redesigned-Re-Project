@@ -2,7 +2,7 @@
 $lang['Changelog']   = 'Changelog';
 $lang['Version']     = 'Version';
 $lang['Description'] = 'Description';
-$lang['version_no']  = 'beta16.5';
+$lang['version_no']  = 'beta16.6';
 $lang['changelog']   = array(
 
 'beta16.6' => '- More JavaScript issues fixed (Geodar)
@@ -14,7 +14,7 @@ $lang['changelog']   = array(
 - Fixed Espionage missions (Geodar)
 - Codestyle (Geodar)
 - For git users: Ignore skins directory (deth4uall)
-- Fixed showing right galaxy and you can now view player´s homeplanet´s galaxy (Geodar)
+- Fixed showing right galaxy (Geodar)
 - Fixed OK button in admin center (Geodar)
 - Several MySQL errors fixed (Geodar)',
 
