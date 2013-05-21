@@ -7,6 +7,9 @@
  *
 */
 
+//formulas redesigned file
+require_once(ROOT_PATH . 'includes/formulas.php');
+
 // Fonctions deja 'au propre'
 require_once(ROOT_PATH . 'includes/functions/SendSimpleMessage.php');
 require_once(ROOT_PATH . 'includes/functions/RestoreFleetToPlanet.php');
@@ -69,8 +72,7 @@ require_once(ROOT_PATH . 'includes/formatCR.php');
 //MadnessRed / DarkEvo includes
 require_once(ROOT_PATH . 'includes/relations.php');
 require_once(ROOT_PATH . 'includes/madnessred.php');
-//New redeisgned files.
-require_once(ROOT_PATH . 'includes/formulas.php');
+//New redesigned files.
 require_once(ROOT_PATH . 'includes/functions/PlanetType.php');
 require_once(ROOT_PATH . 'includes/functions/GetFleetInfo.php');
 require_once(ROOT_PATH . 'includes/functions/AllowedMissions.php');
