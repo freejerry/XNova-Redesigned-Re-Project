@@ -16,6 +16,7 @@ function getNewHttpObject() {
 var last_axah='';
 //Function used to update page content with new xhtml fragments by using a javascript object, the dom, and http.
 function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
+  update_resources();
 	if (typeof extra == "undefined") {
 		extra = false;
 	}
