@@ -6,7 +6,7 @@
 	<div class="content">
 		<div class="fleft textLeft">
 			<a href="#" onclick="mrbox('./?page=changelog',800)" class="tips" style="position:relative;">BETA<span class="mrtooltip" style="top:-20px;">Patch notes</span></a>
-			&copy; 2012 <a class="homeLink" href="https://github.com/freejerry/XNova-Redesigned-Re-Project" target="_blank">XNova Re-Designed-Re-Project</a>
+			&copy; 2013 <a class="homeLink" href="https://github.com/freejerry/XNova-Redesigned-Re-Project" target="_blank">XNova Redesigned Re-Project</a>
 		</div>
 		<div class="fright textRight">
 			<a href="./?page=help" target="_blank">{Help}</a>|
@@ -204,6 +204,9 @@ updatetime();
 //ajax
 ajax('./?page=ajax','ajax_data',5000,'manage_ajax()');
 ajax('./?page=im','chatbox',3000,'chatbox_update()');
+
+//load fleetajax
+getAXAH('./?page=fleetajax','message-wrapper');
 
 //resources and time
 update_resources();

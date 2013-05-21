@@ -30,7 +30,7 @@ class debug
 		echo  "<br><table><tr><td class=k colspan=4><a href=".$xnova_root_path."admin/settings.php>Debug Log</a>:</td></tr>".$this->log."</table>";
 		die();
 	}
-	
+
 	function error($message,$title,$debuginf='')
 	{
 		global $link,$game_config;
@@ -56,18 +56,16 @@ class debug
 			$query = "explain select * from {{table}}";
 			$q = mysql_fetch_array(mysql_query(str_replace("{{table}}", $dbsettings["prefix"].
 				'errors', $query))) or die('error fatal: ');
-				
 
 			if (!function_exists('message'))
 				echo "Sorry, there has been an error, please give the following error code to an admin and tell him what you were doing: <b>".$q['rows']."</b>";
 			else
 				message("Sorry, there has been an error, please give the following error code to an admin and tell him what you were doing: <b>".$q['rows']."</b>", "Error");
 		//}
-		
+
 		die();
 	}
-	
-	
+
 }
 
 // Created by Perberos. All rights reversed (C) 2006

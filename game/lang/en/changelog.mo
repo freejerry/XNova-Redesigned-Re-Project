@@ -5,6 +5,19 @@ $lang['Description'] = 'Description';
 $lang['version_no']  = 'beta16.5';
 $lang['changelog']   = array(
 
+'beta16.6' => '- More JavaScript issues fixed (Geodar)
+- Fixed arriving of fleets to locations! (Geodar)
+- Shortcuts, always show messages icon (Geodar)
+- Added research statistics (Geodar)
+- Working Admiral officer (Geodar)
+- Max fleets limit properly shown (Geodar)
+- Fixed Espionage missions (Geodar)
+- Codestyle (Geodar)
+- For git users: Ignore skins directory (deth4uall)
+- Fixed showing right galaxy and you can now view player´s homeplanet´s galaxy (Geodar)
+- Fixed OK button in admin center (Geodar)
+- Several MySQL errors fixed (Geodar)',
+
 'beta16.5' => '- New Version signing in Changelog (Geodar)
 - Fix Login (Geodar)
 - TechData Detail now works properly (Geodar)

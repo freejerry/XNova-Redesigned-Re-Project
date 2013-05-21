@@ -3,7 +3,7 @@
 class UgaSecurity{
 	function ClearPost(){
 		global $userclass, $_POST;
-		
+
 		foreach($_POST as $Key => $Value){
 			if(is_string($Value)){
 				$Value = str_replace('"', '&quot;', $Value);
@@ -57,7 +57,7 @@ class UgaSecurity{
 			}
 		}
 	}
-		
+
 	function AlertMessage($Title, $Message){
 		$MESS = <<<MESS
 		<html>

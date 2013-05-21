@@ -2,9 +2,9 @@
 
 //New fleet management
 
-function ManageFleets($limit = 5){
+function ManageFleets(){
 	global $lang;
-	
+
 	getLang('fleet_management');
 
 	//Lock the tables
@@ -13,7 +13,7 @@ function ManageFleets($limit = 5){
 	doquery("LOCK TABLE ".implode(", ",$tables), "");
 
 	//Get the fleets - ordered by their returning time
-	$fleets = doquery("SELECT * FROM {{table}} WHERE (`arrival` + `hold_time`) < ".time()." ORDER BY (`arrival` + `hold_time`) ASC LIMIT ".idstring($limit)." ;",'fleets');
+	$fleets = doquery("SELECT * FROM {{table}} WHERE (`arrival` + `hold_time`) < ".time()." ORDER BY (`arrival` + `hold_time`) ASC ;",'fleets');
 
 	//If there are any fleets.
 	if(mysql_num_rows($fleets) > 0){
@@ -27,7 +27,7 @@ function ManageFleets($limit = 5){
 
 		//Now loop through the fleets.
 		while($row = mysql_fetch_array($fleets)){
-			
+
 			//Update the users menus if he is online:
 			doquery("UPDATE {{table}} SET `menus_update` = '".time()."' WHERE `id` = '". $row['owner_userid'] ."' LIMIT 1 ;",'users',false);
 			doquery("UPDATE {{table}} SET `menus_update` = '".time()."' WHERE `id` = '". $row['target_userid'] ."' LIMIT 1 ;",'users',false);
@@ -37,7 +37,7 @@ function ManageFleets($limit = 5){
 				//Fleet is returning home, just restore the fleet to the planet and delete it.
 				DeleteFleet($row['fleet_id']);
 				RestoreFleet($row);
-				
+
 				$StartPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $row['owner_id'] ."' LIMIT 1 ;",'planets',true);
 				$TargetPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '". $row['target_id'] ."' LIMIT 1 ;",'planets',true);
 
@@ -54,7 +54,7 @@ function ManageFleets($limit = 5){
 						if($row["fleet_mess"] == 0){
 							// Attack
 							doquery("UPDATE {{table}} SET `fleet_mess` = '3' WHERE `fleet_id` = '".$row["fleet_id"]."' LIMIT 1 ;",'fleets',false);
-							require_once(ROOT_PATH . 'includes/battle_engines/MissionCaseAttack_'.BATTLE_ENGINE.'.php');
+							require_once(ROOT_PATH . 'includes/battle_engines/MissionCaseAttack_php.php');
 							include_once(ROOT_PATH . 'includes/battle_engines/ManageCR.php');
 							$results = MissionCaseAttack($row);
 							$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '".$row['target_id']."' LIMIT 1 ;",'planets',true);
@@ -136,7 +136,7 @@ function ManageFleets($limit = 5){
 							include_once(ROOT_PATH . 'includes/battle_engines/ManageCR.php');
 							$results = MissionCaseAttack($row);
 							ManageCR($results,$CurrentPlanet);
-							
+
 							//And then destroy, if the fleet survived
 							if($results['won'] == 'a'){
 								$nowfleet = doquery("SELECT * FROM {{table}} WHERE `partner_fleet` = '".$row['fleet_id']."' LIMIT 1 ;",'fleets',true);
@@ -165,7 +165,7 @@ function ManageFleets($limit = 5){
 			}
 		}
 	}
-	
+
 	//Unlock tables
 	doquery("UNLOCK TABLES", "");
 }
@@ -211,7 +211,7 @@ function RestoreRes($FleetRow){
 
 	//Now do the query
 	doquery($qry,'planets');
-	
+
 	//now remove res from the fleet
 	doquery("UPDATE {{table}} SET `metal` = '0', `crystal` = '0', `deuterium` = '0' WHERE `fleet_id` = '".$FleetRow['fleet_id']."' OR `partner_fleet` = '".$FleetRow['fleet_id']."' LIMIT 2 ;",'fleets');
 }

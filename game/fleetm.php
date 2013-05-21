@@ -90,9 +90,9 @@ while($FleetRow = mysql_fetch_array($fleets)){
     $FleetRow['targetplanet_planet'] = $targetplanet['planet'];
   }
 
-  $targetplayer = doquery("SELECT `name` FROM {{table}} WHERE `id` = '".$FleetRow['target_id']."' LIMIT 1;",'users',true);
-  if(strlen($targetplayer['name']) > 0)
-		$FleetRow['targetplayer_name']   = $targetplayer['name'];
+  $targetplayer = doquery("SELECT `username` FROM {{table}} WHERE `id` = '".$FleetRow['target']."' LIMIT 1;",'users',true);
+  if(strlen($targetplayer['username']) > 0)
+		$FleetRow['targetplayer_name']   = $targetplayer['username'];
 
 	//And finally output the template
 	$parse['fleets'] .= parsetemplate(gettemplate('fleet/fleet_mov'), $FleetRow);

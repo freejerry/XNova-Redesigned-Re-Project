@@ -170,7 +170,6 @@ function aks($angreifer_daten, $verteidiger_daten, $angreifer_schiffe, $verteidi
 		array(202 => 3,
 			210 => 5,
 			212 => 5
-
 			),
 		206 =>
 		array(204 => 6,

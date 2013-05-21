@@ -104,7 +104,7 @@ if(!INSTALL){
 		if(!SMALL_LOAD){
 			//Right, lets completely recode all the missions and fleet management.
 			include(ROOT_PATH . 'includes/ManageFleets.php');
-			ManageFleets($user['id']);
+			ManageFleets();
 			//Lets get current rank
 			$rank = doquery("SELECT COUNT('id') +1 AS 'rank' FROM {{table}} WHERE `total_points` > '".$user['total_points']."' ;",'users',true);
 			define("USER_RANK",$rank['rank']);

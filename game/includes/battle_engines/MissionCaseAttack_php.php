@@ -607,7 +607,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	include($resultnova_root_path . 'common.' . $phpEx);
 */
 //die();
-	}elseif($FleetRow['fleet_end_time'] <= time()){
+	if($FleetRow['fleet_end_time'] <= time()){
 	
 			$Message			 = sprintf ($lang['atac_return'], GetTargetAdressLink($FleetRow, ''), $FleetRow['fleet_resource_metal'], $FleetRow['fleet_resource_crystal'], $FleetRow['fleet_resource_deuterium'] );
 			$result = RestoreFleetToPlanet ( $FleetRow, true );

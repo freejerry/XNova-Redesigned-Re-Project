@@ -36,23 +36,23 @@
 
 function ManageCR($results, $CurrentPlanet){
 	global $resource,$lang,$CombatCaps,$pricelist,$reslist;
-	
+
 	//The usual...
 	$parse = $lang;
-	
+
 	//This will be poulated with planet and user data later.
 	$fleets = array();
 	$permafleets = array();
-	
+
 	//Loop through the rounds:
 	$parse['rounds'] = '';
 	foreach($results['data'] as $roundno => $round){
 		$rparse = array();
-		
+
 		//List attackers and defenders fleets.
 		$rparse['attackers'] = '';
 		foreach($round['attack_fleets'] as $id => $attacker){
-			
+
 			//Lets get some info about this guy
 			if($roundno == 0){
 				$fleets[$id] = array();
@@ -63,7 +63,7 @@ function ManageCR($results, $CurrentPlanet){
 					$fleets[$id]['user'] = doquery("SELECT * FROM {{table}} WHERE `{{table}}`.`id` = '".idstring($CurrentPlanet['id_owner'])."' LIMIT 1 ;",'users',true);
 				}
 			}
-			
+
 			$aparse = $lang;
 			$aparse['td_types'] = '';
 			$aparse['td_count'] = '';
@@ -75,7 +75,7 @@ function ManageCR($results, $CurrentPlanet){
 			$aparse['hull_pc'] = $fleets[$id]['user'][$resource[110]] * 10;
 			$aparse['mode'] = 'attacker';
 			$aparse['name'] = $lang['Attacker']." ".$fleets[$id]['user']['username']." <a>[".$fleets[$id]['user']['galaxy'].":".$fleets[$id]['user']['system'].":".$fleets[$id]['user']['planet']."]</a>";
-		
+
 			foreach($attacker as $id => $count){
 				if(is_array($count)){ $count = $count['count']; }
 				$aparse['td_types'] .= "\t\t\t\t\t\t\t\t\t\t<th class=\"textGrow\">".$lang['cr_names'][$id]."</th>\n";
@@ -86,10 +86,10 @@ function ManageCR($results, $CurrentPlanet){
 			}
 			$rparse['attackers'] .= parsetemplate(gettemplate('fleet/combatattacker'),$aparse);
 		}
-		
+
 		$rparse['defenders'] = '';
 		foreach($round['defend_fleets'] as $id => $defender){
-			
+
 			//Lets get some info about this guy
 			if($roundno == 0){
 				$fleets[$id] = array();
@@ -100,7 +100,7 @@ function ManageCR($results, $CurrentPlanet){
 					$fleets[$id]['user'] = doquery("SELECT * FROM {{table}} WHERE `{{table}}`.`id` = '".idstring($CurrentPlanet['id_owner'])."' LIMIT 1 ;",'users',true);
 				}
 			}
-			
+
 			$aparse = $lang;
 			$aparse['td_types'] = '';
 			$aparse['td_count'] = '';
@@ -112,7 +112,7 @@ function ManageCR($results, $CurrentPlanet){
 			$aparse['hull_pc'] = $fleets[$id]['user'][$resource[110]] * 10;
 			$aparse['mode'] = 'defender';
 			$aparse['name'] = $lang['Defender']." ".$fleets[$id]['user']['username']." <a>[".$fleets[$id]['user']['galaxy'].":".$fleets[$id]['user']['system'].":".$fleets[$id]['user']['planet']."]</a>";
-			
+
 			foreach($defender as $id => $count){
 				if(is_array($count)){ $count = $count['count']; }
 				$aparse['td_types'] .= "\t\t\t\t\t\t\t\t\t\t<th class=\"textGrow\">".$lang['cr_names'][$id]."</th>\n";
@@ -123,7 +123,7 @@ function ManageCR($results, $CurrentPlanet){
 			}
 			$rparse['defenders'] .= parsetemplate(gettemplate('fleet/combatattacker'),$aparse);
 		}
-		
+
 		//We need to keep a note on who is in the battle, as well as showing any destroyed fleets.
 		$peeps = array(array(),array());
 		foreach($fleets as $id => $array){
@@ -164,25 +164,23 @@ function ManageCR($results, $CurrentPlanet){
 				</tr> 
 			</table> 
 		</td>';
-				
+
 				}
 				//If its been destroyed, we only want to show the destroyed message once, so remove the destroyed fleets.
 				unset($fleets[$id]);
 			}
 		}
-		
+
 		//The round info, if its rounf one then we introduce the battle, otherwise its shots fired.
 		if($roundno == 0){
 			$rparse['roundinfo'] = "\t\t<p class=\"start\">".sprintf($lang['report_start'],date("j.n.Y H:i:s"))."</p>\n\t\t<p class=\"start opponents\">".implode(', ',$peeps[0]).' '.$lang['report_vs'].' '.implode(', ',$peeps[1])."</p>\n";
 		}else{
 			$rparse['roundinfo'] = sprintf($lang['report_rinfo'],pretty_number($round['attfires']),pretty_number($round['attpower']),pretty_number($round['defblock']),pretty_number($round['deffires']),pretty_number($round['defpower']),pretty_number($round['attblock']));
 		}
-		
-		
+
 		$parse['rounds'] .= parsetemplate(gettemplate('fleet/combatround'),$rparse);
 	}
-	
-		
+
 	//Phew, lets deal with all the fleets:
 	$end = $results['data'][sizeof($results['data'])-1];
 	$owners = array();
@@ -199,9 +197,9 @@ function ManageCR($results, $CurrentPlanet){
 					$set[] = '`'.$resource[$e].'` = 0';
 				}
 			}
-			
+
 			doquery("UPDATE {{table}} SET ".implode(', ',$set)." WHERE `id` = '".$CurrentPlanet['id']."' LIMIT 1 ;",'planets',true);
-			
+
 			//Note the user
 			$owners[] = idstring($CurrentPlanet['id_owner']);
 		}else{
@@ -219,19 +217,17 @@ function ManageCR($results, $CurrentPlanet){
 			$permafleets[$id]['row'] = $fleetrow;
 			doquery("UPDATE {{table}} SET `array` = '".$fleetarray."', `shipcount` = '".$fleetcount."' WHERE `partner_fleet` = '".idstring($id)."' LIMIT 1 ;",'fleets',false);
 			DeleteFleet($id);
-			
-			
+
 			$owners[] = idstring($fleetrow['owner_userid']);
 		}
-		
+
 	}
-	
-	
+
 	//Who won?
 	if($results['won'] == 'a'){
 		//Need to deal with raiding.
 		$stealmax = array($CurrentPlanet['metal'] * MAX_ATTACK_RAID, $CurrentPlanet['crystal'] * MAX_ATTACK_RAID, $CurrentPlanet['deuterium'] * MAX_ATTACK_RAID);
-		
+
 		//How much cargo space do we have?
 		$cargo = array('total' => 0);
 		foreach($end['attack_fleets'] as $id => $attacker){
@@ -248,10 +244,10 @@ function ManageCR($results, $CurrentPlanet){
 				}
 			}
 		}
-		
+
 		//So how much can we take?
 		$totaltake = $stealmax[0] + $stealmax[1] + $stealmax[2];
-		
+
 		//Is there enough res to go around?
 		if($totaltake > $cargo['total']){
 			//We can fill all the cargo holds in the ratios:
@@ -264,7 +260,7 @@ function ManageCR($results, $CurrentPlanet){
 			$ratio_c = $stealmax[1] / $cargo;
 			$ratio_d = $stealmax[2] / $cargo;			
 		}
-		
+
 		//Right lets start filling up the fleets:
 		$stolen = array(0,0,0);
 		foreach($cargo as $id => $space){
@@ -272,15 +268,15 @@ function ManageCR($results, $CurrentPlanet){
 				$take_m = floor($ratio_m * $space);
 				$take_c = floor($ratio_c * $space);
 				$take_d = floor($ratio_d * $space);
-				
+
 				$stolen[0] += $take_m;
 				$stolen[1] += $take_c;
 				$stolen[2] += $take_d;
-				
+
 				doquery("UPDATE {{table}} SET `metal` = `metal` + '".$take_m."', `crystal` = `crystal` + '".$take_c."', `deuterium` = `deuterium` + '".$take_d."' WHERE `partner_fleet` = '".idstring($id)."' LIMIT 1 ;",'fleets',false);
 			}
 		}
-		
+
 		$parse['result'] = sprintf($lang['A_won'],pretty_number($stolen[0]),$lang['Metal'],pretty_number($stolen[1]),$lang['Crystal'],pretty_number($stolen[2]),$lang['Deuterium']);
 	}elseif($results['won'] == 'v'){
 		$parse['result'] = $lang['D_won'];
@@ -288,7 +284,7 @@ function ManageCR($results, $CurrentPlanet){
 		$results['won'] = 'd';
 		$parse['result'] = $lang['Draw'];
 	}	
-	
+
 	//Results, attlost, defost debris ect.
 	$parse['alost'] = sprintf($lang['AttLost'],pretty_number($results['attlost']));
 	$parse['dlost'] = sprintf($lang['DefLost'],pretty_number($results['deflost']));
@@ -301,7 +297,7 @@ function ManageCR($results, $CurrentPlanet){
 			$debris_pc = MAX_MOON_PERCENT;
 		}
 		$parse['moon'] = sprintf($lang['MoonChance'],$debris_pc.'%');
-		
+
 		//So does he get a moon?
 		$need = rand(0,100);
 		if($debris_pc > $nees){
@@ -311,13 +307,13 @@ function ManageCR($results, $CurrentPlanet){
 			AddMoon($CurrentPlanet['galaxy'],$CurrentPlanet['system'],$CurrentPlanet['planet']);
 		}
 	}
-	
+
 	//Now we need to generate the report:
 	$report = parsetemplate(gettemplate('fleet/combatreport'),$parse);
-	
+
 	//Add the report to the database
 	doquery("INSERT INTO {{table}} (`report`, `owners`, `wonby`, `damage`, `time`) VALUES ('".mysql_real_escape_string($report)."', '".implode(",",$owners)."', '".$results['won']."', '".($results['attlost'] + $results['deflost'])."', '".time()."');",'cr',false);
-	
+
 	//Now we need to message the user...
 	$message   = "<a href=\"./?page=report&raport=".$rid."\" target=\"_new\"><center>";
 	$message2  = "<a href=\"./?page=report&raport=".$rid."\" target=\"_new\"><center>";
@@ -333,7 +329,7 @@ function ManageCR($results, $CurrentPlanet){
 	}
 	$message  .= $lang['fleet_1_tit']." [".$CurrentPlanet['galaxy'].":".$CurrentPlanet['system'].":".$CurrentPlanet['planet']."] </font></a>";
 	$message2 .= $lang['fleet_1_tit']." [".$CurrentPlanet['galaxy'].":".$CurrentPlanet['system'].":".$CurrentPlanet['planet']."] </font></a>";
-	
+
 	PM($FleetRow['owner_userid'],0,$message,$lang['fleet_1_tit'],$lang['fleet_control'],2);
 	PM($FleetRow['target_userid'],0,$message2,$lang['fleet_1_tit'],$lang['fleet_control'],2);
 }
