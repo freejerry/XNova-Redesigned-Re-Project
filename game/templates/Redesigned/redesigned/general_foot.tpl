@@ -205,6 +205,9 @@ updatetime();
 ajax('./?page=ajax','ajax_data',5000,'manage_ajax()');
 ajax('./?page=im','chatbox',3000,'chatbox_update()');
 
+//load fleetajax
+getAXAH('./?page=fleetajax','message-wrapper');
+
 //resources and time
 update_resources();
 </script>

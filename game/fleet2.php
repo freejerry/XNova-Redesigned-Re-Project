@@ -91,7 +91,7 @@ $sh="<option value='-'>-</option>";
 $getuserplanetsandmoons = doquery("SELECT * FROM {{table}} WHERE `id_owner` = '".$user['id']."' and `id` != '".$user['current_planet']."' ;",'planets');
 if(mysql_num_rows($getuserplanetsandmoons) > 0){
   while($row = mysql_fetch_array($getuserplanetsandmoons)){
-    $sh .= '<option onclick="setTarget('.$row['galaxy'].', '.$row['system'].', '.$row['planet'] .', '.$row['planet_type'].');">'.$row['name'].' ('.$row['galaxy'].':'.$row['system'].':'. $row['planet'].')</option>';
+    $sh .= '<option onclick="setTargetShortcut('.$row['galaxy'].', '.$row['system'].', '.$row['planet'] .', '.$row['planet_type'].');">'.$row['name'].' ('.$row['galaxy'].':'.$row['system'].':'. $row['planet'].')</option>';
   }
 }
 $parse['shsh'] = $sh;
