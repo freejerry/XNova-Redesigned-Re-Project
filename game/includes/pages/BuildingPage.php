@@ -8,7 +8,7 @@
 */
 
 function BuildingPage($a=0,$b=0){
-	global $lang, $resource, $reslist, $pricelist, $dpath, $game_config, $_GET, $user, $planetrow;
+	global $lang, $resource, $reslist, $pricelist, $dpath, $game_config, $_GET, $user, $planetrow, $formulas;
 
 	CheckPlanetUsedFields ( $planetrow );
 

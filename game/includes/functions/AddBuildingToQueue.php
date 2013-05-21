@@ -17,7 +17,7 @@
 //                   ou false s'il ne peut pas l'inserer (queue pleine)
 //
 function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode = true) {
-	global $lang, $resource;
+	global $lang, $resource, $formulas;
 
 		$CurrentQueue  = $CurrentPlanet['b_building_id'];
 		if ($CurrentQueue != 0) {
@@ -33,7 +33,8 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 		} else {
 			$BuildMode = 'destroy';
 		}
-	
+
+    $user=$CurrentUser;
 		if ( $ActualCount < $formulas['max_building_queue_size'] ) {
 			$QueueID      = $ActualCount + 1;
 		} else {

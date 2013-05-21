@@ -19,7 +19,7 @@ ShowQueue()
 
 //Add to queue function
 function AddToQueue($element,$mode){
-	global $planetrow,$resources,$resource;
+	global $planetrow,$resources,$resource,$formulas,$user;
 	
 	//We need to get queue into an array
 	$q = explode(";",$planetrow['build_queue']);
@@ -38,7 +38,7 @@ function AddToQueue($element,$mode){
 				$canafford = false;
 			}
 		}
-			
+
 		//So can we?
 		if($canafford){
 			//OK, we can afford it, remove the resources
