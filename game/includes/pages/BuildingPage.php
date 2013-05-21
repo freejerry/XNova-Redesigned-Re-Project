@@ -144,7 +144,7 @@ function BuildingPage($a=0,$b=0){
 	// On enregistre ce que l'on a eventuellement modifi� dans users
 	BuildingSaveUserRecord ( $user );
 
-	$max_qs = $formulas['max_building_queue_size'];
+	$max_qs = eval($formulas['max_building_queue_size']);
 	if($max_qs > 0){
 		//fine :)
 	}else{

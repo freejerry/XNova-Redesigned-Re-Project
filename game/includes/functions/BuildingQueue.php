@@ -52,7 +52,7 @@ function AddToQueue($element,$mode){
 			//We can't afford it, end now
 			return false;
 		}
-	}elseif(sizeof($q) >= $formulas['max_building_queue_size']){
+	}elseif(sizeof($q) >= eval($formulas['max_building_queue_size'])){
 		//Queue is full
 		return false;
 	}

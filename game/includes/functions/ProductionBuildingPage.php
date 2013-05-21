@@ -99,7 +99,7 @@ function ProductionBuildingPage (&$CurrentPlanet, $CurrentUser) {
 	// On enregistre ce que l'on a eventuellement modifi� dans users
 	BuildingSaveUserRecord ( $CurrentUser );
 
-	$max_qs = $formulas['max_building_queue_size'];
+	$max_qs = eval($formulas['max_building_queue_size']);
 	if($max_qs > 0){
 		//fine :)
 	}else{
