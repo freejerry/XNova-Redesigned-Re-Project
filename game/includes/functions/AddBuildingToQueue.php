@@ -16,8 +16,9 @@
 // Retour         -> Valeur de l'element inseré
 //                   ou false s'il ne peut pas l'inserer (queue pleine)
 //
+
 function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode = true) {
-	global $lang, $resource, $formulas;
+	global $lang, $resource, $formulas, $user;
 
 		$CurrentQueue  = $CurrentPlanet['b_building_id'];
 		if ($CurrentQueue != 0) {
@@ -27,20 +28,19 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 			$QueueArray    = "";
 			$ActualCount   = 0;
 		}
-	
+
 		if ($AddMode == true) {
 			$BuildMode = 'build';
 		} else {
 			$BuildMode = 'destroy';
 		}
 
-    $user=$CurrentUser;
 		if ( $ActualCount < $formulas['max_building_queue_size'] ) {
 			$QueueID      = $ActualCount + 1;
 		} else {
 			$QueueID      = false;
 		}
-	
+
 		if ( $QueueID != false ) {
 			// Faut verifier si l'Element que l'on veut integrer est deja dans le tableau !
 			if ($QueueID > 1) {
@@ -54,7 +54,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 			} else {
 				$InArray = 0;
 			}
-	
+
 			if ($InArray != 0) {
 				$ActualLevel  = $CurrentPlanet[$resource[$Element]];
 				if ($AddMode == true) {
@@ -78,7 +78,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 					$BuildTime    = GetBuildingTime($CurrentUser, $CurrentPlanet, $Element) / 2;
 				}
 			}
-	
+
 			if ($QueueID == 1) {
 				$BuildEndTime = time() + $BuildTime;
 			} else {
@@ -89,7 +89,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 			$NewQueue                       = implode ( ";", $QueueArray );
 			$CurrentPlanet['b_building_id'] = $NewQueue;
 		}
-	return $QueueID;
+  return $QueueID;
 }
 
 ?>

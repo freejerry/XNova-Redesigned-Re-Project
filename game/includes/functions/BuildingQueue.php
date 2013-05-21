@@ -19,7 +19,7 @@ ShowQueue()
 
 //Add to queue function
 function AddToQueue($element,$mode){
-	global $planetrow,$resources,$resource,$formulas,$user;
+	global $planetrow, $resources, $resource, $formulas, $user;
 	
 	//We need to get queue into an array
 	$q = explode(";",$planetrow['build_queue']);

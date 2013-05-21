@@ -8,7 +8,7 @@
  */
 
 function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
-	global $lang, $resource, $reslist, $pricelist, $phpEx, $dpath, $game_config, $_GET, $formulas;
+	global $lang, $resource, $reslist, $pricelist, $phpEx, $dpath, $game_config, $_GET, $formulas, $user;
 	
 	
 	CheckPlanetUsedFields ( $CurrentPlanet );
@@ -85,7 +85,6 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 	// On enregistre ce que l'on a eventuellement modifi� dans users
 	BuildingSaveUserRecord ( $CurrentUser );
 
-  $user=$CurrentUser;
 	$max_qs = $formulas['max_building_queue_size'];
 	if($max_qs > 0){
 		//fine :)
