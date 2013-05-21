@@ -34,7 +34,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 			$BuildMode = 'destroy';
 		}
 	
-		if ( $ActualCount < MAX_BUILDING_QUEUE_SIZE ) {
+		if ( $ActualCount < $formulas['max_building_queue_size'] ) {
 			$QueueID      = $ActualCount + 1;
 		} else {
 			$QueueID      = false;

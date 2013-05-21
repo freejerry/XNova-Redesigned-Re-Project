@@ -29,7 +29,7 @@ function fadeOut(obj,opacity,hide) {
       opacity -= 5;
       window.setTimeout("fadeOut('"+obj+"',"+opacity+","+hide+")", 50);
     }else if(hide){
-    	document.getElementById(obj).style.display = 'none';
+      document.getElementById(obj).style.display = 'none';
     }
   }
   return;

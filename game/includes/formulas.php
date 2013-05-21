@@ -23,6 +23,9 @@ $formulas = array(
 
 	//Fleets
 	'max_fleets'	=> 'return 1 + $user[$resource[108]] + $user[$resource[602]] * 2;',
+
+  //Building Queue
+  'max_building_queue_size' => 'return 3 + $user[$resource[601]] * 2',
 );
 
 ?>
