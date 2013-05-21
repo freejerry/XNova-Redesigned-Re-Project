@@ -16,40 +16,40 @@ function getNewHttpObject() {
 var last_axah='';
 //Function used to update page content with new xhtml fragments by using a javascript object, the dom, and http.
 function getAXAH(url,elementContainer,title,pageid,extra,dofunction){
-  update_resources();
-	if (typeof extra == "undefined") {
-		extra = false;
-	}
-	if (typeof dofunction == "undefined") {
-		dofunction = false;
-	}
+  if (typeof extra == "undefined") {
+    extra = false;
+  }
+  if (typeof dofunction == "undefined") {
+    dofunction = false;
+  }
   if(last_axah == url)
     url = url.replace(/&axah_section=1/g,'');
   else
     last_axah = url;
-	var theHttpRequest = getNewHttpObject();
-	theHttpRequest.onreadystatechange = function() {processAXAH(elementContainer,title,pageid,extra,dofunction);};
-	theHttpRequest.open("GET", url);
-	theHttpRequest.send(false);
+  var theHttpRequest = getNewHttpObject();
+  theHttpRequest.onreadystatechange = function() {processAXAH(elementContainer,title,pageid,extra,dofunction);};
+  theHttpRequest.open("GET", url);
+  theHttpRequest.send(false);
 
-		function processAXAH(elementContainer,title,pageid,extra,dofunction){
-			if (theHttpRequest.readyState == 4) {
-				if (theHttpRequest.status == 200) {
-					document.getElementById(elementContainer).innerHTML = theHttpRequest.responseText;
-					if(extra){
-						update(title,pageid);
-						run(pageid);
-					}
-					if(dofunction){
-						setTimeout(dofunction,0);
-					}
-					//document.getElementById('rechts').style.height = (window.innerHeight-175)+'px';
-				} else {
-					document.getElementById(elementContainer).innerHTML="<p><span class='redtxt'>Error!<\/span> HTTP request return the following status message:&nbsp;" + theHttpRequest.statusText +"<\/p>";
-				}
-			}
+    function processAXAH(elementContainer,title,pageid,extra,dofunction){
+      if (theHttpRequest.readyState == 4) {
+        if (theHttpRequest.status == 200) {
+          document.getElementById(elementContainer).innerHTML = theHttpRequest.responseText;
+          if(extra){
+            update(title,pageid);
+            run(pageid);
+          }
+          if(dofunction){
+            setTimeout(dofunction,0);
+          }
+          update_resources();
+          //document.getElementById('rechts').style.height = (window.innerHeight-175)+'px';
+        } else {
+          document.getElementById(elementContainer).innerHTML="<p><span class='redtxt'>Error!<\/span> HTTP request return the following status message:&nbsp;" + theHttpRequest.statusText +"<\/p>";
+        }
+      }
       return;
-		}
+    }
   return;
 }
 
