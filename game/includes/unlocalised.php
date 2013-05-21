@@ -4,7 +4,8 @@
  *
  * @version 1
  * @copyright 2008 By Chlorel for XNova
- */
+ *
+*/
 
 // ----------------------------------------------------------------------------------------------------------------
 //
@@ -52,7 +53,7 @@ function GetGameSpeedFactor () {
 //Get ship speed
 function GetShipSpeed($id){
 	global $user,$resource,$pricelist;
-	
+
 	if($pricelist[$id]['upgrade'] > 0 && $user[$resource[$pricelist[$id]['drive2']]] > $pricelist[$id]['upgrade']){
 		//We are using the upgraded engine
 		$basespeed = $pricelist[$id]['speed2'];
@@ -80,7 +81,7 @@ function GetFleetMaxSpeed ($FleetArray, $Fleet, $Player) {
 		ReportError("\$FleetArray is not an array, line 60, unlocalised.php",'Invalid argument supplied for foreach()',1);
 	}
 	foreach ($FleetArray as $Ship => $Count) {
-		
+
 		//Has the ship been upgraded?
 		if($pricelist[$Ship]['upgrade'] > 0 && $Player[$resource[$pricelist[$Ship]['drive2']]] > $pricelist[$Ship]['upgrade']){
 			//We are using the upgraded engine
@@ -89,7 +90,7 @@ function GetFleetMaxSpeed ($FleetArray, $Fleet, $Player) {
 			//We are using the standard engine
 			$speedalls[$Ship] = $pricelist[$Ship]['speed'] + (($pricelist[$Ship]['speed'] * $Player[$resource[$pricelist[$Ship]['drive1']]]) * $pricelist[$pricelist[$Ship]['drive1']]['speedfactor']);
 		}
-		
+
 	}
 	if ($Fleet != 0) {
 		$ShipSpeed = $speedalls[$Ship];
@@ -114,8 +115,8 @@ function GetShipConsumption ( $Ship, $Player ) {
 
 // ----------------------------------------------------------------------------------------------------------------
 // Calcul de la consommation de la flotte pour cette mission
-function GetFleetConsumption ($FleetArray, $SpeedFactor, $MissionDuration, $MissionDistance, $FleetMaxSpeed, $Player) {
-
+function GetFleetConsumption ($FleetArray, $SpeedFactor, $MissionDuration, $MissionDistance, $FleetMaxSpeed, $Player)
+{
 	$consumption = 0;
 	$basicConsumption = 0;
 	if(!is_array($FleetArray)){
@@ -234,34 +235,34 @@ function includeLang ($filename, $en = 'false', $ext = '.mo') {
 
 function getLang ($filename, $uselang = 'user', $default = false, $ext = '.mo') {
 	global $lang, $user, $basedlang;
-	
+
 	if($uselang != 'user'){
 		$user['lang'] = cleanstring($uselang);
 	}
-	
+
 	if($default){$SelLanguage = DEFAULT_LANG;}
 	else{
 		if ($user['lang'] != '') {$SelLanguage = $user['lang'];}
 		else {$SelLanguage = DEFAULT_LANG;}
 	}
-	
+
 	//Include the default language, now we at least have all the strings
 	include (ROOT_PATH."lang/".DEFAULT_LANG."/".$filename.$ext);
-	
+
 	//Include the based off language, eg for lang us, we want the english files.
 	if($basedlang[$SelLanguage] != DEFAULT_LANG){
 		if(file_exists(ROOT_PATH."lang/".$basedlang[$SelLanguage]."/".$filename.$ext)){
 			include (ROOT_PATH."lang/".$basedlang[$SelLanguage]."/".$filename.$ext);
 		}
 	}
-	
+
 	//Now include the main language.
 	if($SelLanguage != DEFAULT_LANG){
 		if(file_exists(ROOT_PATH."lang/".$SelLanguage."/".$filename.$ext)){
 			include (ROOT_PATH."lang/".$SelLanguage."/".$filename.$ext);
 		}
 	}
-	
+
 	//Now debug
 //	$lang = array();
 }
@@ -344,7 +345,6 @@ function CreateFleetPopupedFleetLink ( $FleetRow, $Texte, $FleetType ) {
 	$FleetPopup  .= "');\" onmouseout=\"return nd();\" class=\"". $FleetType ."\">". $Texte ."</a>";
 
 	return $FleetPopup;
-
 }
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -377,7 +377,6 @@ function CreateFleetPopupedMissionLink ( $FleetRow, $Texte, $FleetType ) {
 // ----------------------------------------------------------------------------------------------------------------
 //
 // Roman numerals in FAQ
-
     function romanNumber($Num) {
 
        $N = intval($Num);
@@ -399,9 +398,6 @@ function CreateFleetPopupedMissionLink ( $FleetRow, $Texte, $FleetType ) {
        return $Result;
 
     }
-
 // ----------------------------------------------------------------------------------------------------------------
-
-
 
 ?>

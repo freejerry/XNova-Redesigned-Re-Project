@@ -6,6 +6,7 @@
  * @copyright 2009 by MadnessRed for XNova Redesigned
  *
 */
+
 //Hacking check - primative but no point removing it really.
 if(defined('INSIDE')){
 	include(ROOT_PATH.'config'.UNIVERSE.'.php');

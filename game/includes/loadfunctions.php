@@ -4,7 +4,8 @@
  *
  * @version 1
  * @copyright 2008 By Chlorel for XNova
- */
+ *
+*/
 
 // Fonctions deja 'au propre'
 require_once(ROOT_PATH . 'includes/functions/SendSimpleMessage.php');
@@ -86,6 +87,8 @@ require_once(ROOT_PATH . 'includes/functions/DestroyPlanet.php');
 require_once(ROOT_PATH . 'includes/functions/RecallFleet.php');
 //New fleet engine files
 require_once(ROOT_PATH . 'includes/functions/MissileAttack.php');
+//Ported from old Legacies
+require_once(ROOT_PATH . 'includes/functions/SpyTarget.php');
 //New Redesigned Pages (Included when they are needed to save resources)
 /*
 require_once(ROOT_PATH . 'includes/pages/BuildRessourcePage.php');

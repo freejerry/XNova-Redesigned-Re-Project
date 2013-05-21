@@ -15,13 +15,13 @@
 // End of Edit information
 
 
-
 /**
  * vars.php
  *
  * @version 1.0
  * @copyright 2008 by Chlorel for XNova
- */
+ *
+*/
 
 if ( defined('INSIDE')) {
 
@@ -30,7 +30,7 @@ if ( defined('INSIDE')) {
 	'c' => 'crystal',
 	'd' => 'deuterium'
 	);
-	
+
 	$chargeresources = array('metal', 'crystal', 'deuterium', 'energy_max');
 
 	// Liste de champs pour l'indication des messages en attante
@@ -215,7 +215,6 @@ if ( defined('INSIDE')) {
 		604 => array(),
 		605 => array(),
 	);
-
 
 	$pricelist = array(
 		  1 => array ( 'metal' =>      60, 'crystal' =>      15, 'deuterium' =>       0, 'energy' =>    0, 'factor' => 1.5),
@@ -470,6 +469,5 @@ if ( defined('INSIDE')) {
 	$reslist['dbattle']  = array ( 401, 402, 403, 404, 405, 406, 407, 408 );
 	$reslist['officier'] = array ( 601, 602, 603, 604, 605);
 }
-
 
 ?>

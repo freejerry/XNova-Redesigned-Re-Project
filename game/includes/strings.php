@@ -1,11 +1,11 @@
 <?php
-
 /**
  * strings.php
  *
  * @version 1.0
  * @copyright 2008 by ??????? for XNova
- */
+ *
+*/
 
 function colourNumber($n, $s = '') {
 	if ($n > 0) {

@@ -1,12 +1,12 @@
 <?php
-
-/**
- * ShowTopNavigationBar.php
+/*
+ * display.php
  *
- * @version 1
+ * @version 2
  * @copyright 2008 By MadnessRed for XNova_Redisigned
- */
-
+ * @copyright 2012 By Geodar for XNova-Redisigned-Re-Project
+ *
+*/
 
 function parsetemplate ($template, $array) {
 	$template = str_ireplace("{{skin}}",GAME_SKIN,$template);
@@ -33,7 +33,7 @@ function AddUniToLinks($page,$uni = 'X') {
 
 	if(UNITTYPE == "get"){
 		if($uni == 'X'){ $uni = UNIVERSE; }
-		
+
 		$patterns = "?page=";
 		$replacements = "?".GETVAL."=".$uni."&page=";
 		$page = str_ireplace($patterns, $replacements, $page);
@@ -52,7 +52,7 @@ function AddUniToString($string,$uni = 'X') {
 		$patterns = "?page=";
 		$replacements = "?".GETVAL."=".$uni."&page=";
 		$string = str_ireplace($patterns, $replacements, $string, $count);
-		
+
 		if($count == 0){
 			if($string == './'){
 				$string = "./?".GETVAL."=".$uni;
@@ -68,12 +68,99 @@ function AddUniToString($string,$uni = 'X') {
 			}
 		}
 	}
-
 	return $string;
 }
 
 function GeneralHead($title) {
-	global $user;
+	global $user,$game_config;
+
+  //-- Reset Officers
+  $getofficers = doquery("SELECT off_command, off_admiral, off_engineer, off_geologist, off_technocrat, off_command_exp, off_admiral_exp, off_engineer_exp, off_geologist_exp, off_technocrat_exp FROM {{table}} WHERE `id` = '". $user['id'] ."';", 'users',true);
+  //Commander
+  if(($getofficers['off_command']==1) or ($getofficers['off_command_exp']>0))
+  {
+    if($getofficers['off_command']==0)
+    {
+      if(time()>=$getofficers['off_command_exp'])
+        doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+      else
+        doquery("UPDATE {{table}} set off_command=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+    else
+    {
+      if(time()>=$getofficers['off_command_exp'])
+        doquery("UPDATE {{table}} set off_command=0, off_command_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+  }
+  //Admiral
+  if(($getofficers['off_admiral']==1) or ($getofficers['off_admiral_exp']>0))
+  {
+    if($getofficers['off_admiral']==0)
+    {
+      if(time()>=$getofficers['off_admiral_exp'])
+        doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+      else
+        doquery("UPDATE {{table}} set off_admiral=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+    else
+    {
+      if(time()>=$getofficers['off_admiral_exp'])
+        doquery("UPDATE {{table}} set off_admiral=0, off_admiral_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+  }
+  //Engineer
+  if(($getofficers['off_engineer']==1) or ($getofficers['off_engineer_exp']>0))
+  {
+    if($getofficers['off_engineer']==0)
+    {
+      if(time()>=$getofficers['off_engineer_exp'])
+        doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+      else
+        doquery("UPDATE {{table}} set off_engineer=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+    else
+    {
+      if(time()>=$getofficers['off_engineer_exp'])
+        doquery("UPDATE {{table}} set off_engineer=0, off_engineer_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+  }
+  //Geologist
+  if(($getofficers['off_geologist']==1) or ($getofficers['off_geologist_exp']>0))
+  {
+    if($getofficers['off_geologist']==0)
+    {
+      if(time()>=$getofficers['off_geologist_exp'])
+        doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+      else
+        doquery("UPDATE {{table}} set off_geologist=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+    else
+    {
+      if(time()>=$getofficers['off_geologist_exp'])
+        doquery("UPDATE {{table}} set off_geologist=0, off_geologist_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+  }
+  //Technocrat
+  if(($getofficers['off_technocrat']==1) or ($getofficers['off_technocrat_exp']>0))
+  {
+    if($getofficers['off_technocrat']==0)
+    {
+      if(time()>=$getofficers['off_technocrat_exp'])
+        doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+      else
+        doquery("UPDATE {{table}} set off_technocrat=1 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+    else
+    {
+      if(time()>=$getofficers['off_technocrat_exp'])
+        doquery("UPDATE {{table}} set off_technocrat=0, off_technocrat_exp=0 WHERE `id` = '". $user['id'] ."';", 'users',false);
+    }
+  }
+  //-- End of Resetting Officers
+
+  //-- Statistics System
+  doquery("UPDATE {{table}} set research_points = (spy_tech + computer_tech + military_tech + defence_tech + shield_tech + energy_tech + hyperspace_tech + combustion_tech + impulse_motor_tech + hyperspace_motor_tech + hyperspace_mapping_tech + laser_tech+ionic_tech + buster_tech + intergalactic_tech + interalliance_tech + astrophysics + colonisation_tech + graviton_tech)*".$game_config['stat_settings']." WHERE `id` = '". $user['id'] ."';", 'users',false);
+  //-- End of Statistics System
 
 	$parse				 = $user;
 	$parse['title']		 = $title;
@@ -96,13 +183,13 @@ function GeneralFoot() {
 	$parse['metal_ps'] = ($Caps['metal_perhour'] / 3600);
 	$parse['crys_ps']  = ($Caps['crystal_perhour'] / 3600);
 	$parse['deut_ps']  = ($Caps['deuterium_perhour'] / 3600);
-	
+
 	$parse['Admin']  = ($user['authlevel'] >= 1);	
 	$parse['forum_url']	= $game_config['forum_url'];
-	
+
 	$parse['server_offset'] = date('Z');
 	$parse['ajax_time'] = time();
-	
+
 	$parse['matter'] = ($user['matter'] * DARK_MATTER_FACTOR);
 
 	$part				 = parsetemplate(gettemplate('redesigned/general_foot'),$parse);
@@ -114,7 +201,7 @@ function NewHeader($bodyid) {
 	global $planetrow,$user,$onload,$dpath,$game_config,$resource,$_GET,$lang,$cid;
 
 	getLang('menu');
-	
+
 	$parse				= $lang;
 	$parse['bodyid']	= $bodyid;
 
@@ -132,7 +219,7 @@ function NewHeader($bodyid) {
 	$parse['skin'] = $user['skin'];
 	$parse['dpath'] = $user['dpath'];
 	$parse['dpath'] = $dpath;
-	
+
 	//Moon extention
 	if($planetrow['planet_type'] == 3)
 		$parse['planet_ext'] = '-moon';
@@ -215,7 +302,6 @@ function NewHeader($bodyid) {
 	}
 
 	$parse['onload'] = $onload;
-	
 
 	$parse['note_show'] = "none";
 	$parse['desc_show'] = "none";
@@ -223,14 +309,13 @@ function NewHeader($bodyid) {
 		$parse['ncont'] = $_GET['message'];
 		$parse['nhead'] = $_GET['title'];
 		$parse[$_GET['etype'].'_show'] = "float";
-		
+
 		$parse['go_ok'] = $_GET['to'];
 		$parse['go_yes'] = $_GET['ifyes'];
 		$parse['go_no'] = $_GET['ifno'];
 
 		//$parse['errorbox'] = parsetemplate(gettemplate('redesigned/errorbox'),$parse);
 	}
-
 	$part				 = parsetemplate(gettemplate('redesigned/header'),$parse);
 	//echo $part;
 	return $part;
@@ -240,7 +325,6 @@ function displaypage ($page, $title = '', $body = '', $scripts = '') {
 	//global $link, $game_config, $debug, $user, $planetrow;	//old
 	global $link, $InLogin, $game_config, $debug, $user, $planetrow, $cpage, $pageid, $loadstart;
 
-	
 	if($_GET['page'] != 'admin'){ include(ROOT_PATH . "menu.php"); }
 	else{ include(ROOT_PATH . "adminmenu.php"); }
 	include(ROOT_PATH . "planetlist.php");

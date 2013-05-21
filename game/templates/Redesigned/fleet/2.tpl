@@ -101,12 +101,11 @@
 					<input name="planet" id="fl_planet" type="text" class="planet" size="2" maxlength="2" value="{p}" />
 				</div>
 			</td>
-
 			<td id="shortcuts" style="width:189px;">
 				<div>
 					<span id="shortlinks tips">Shortcuts:</span>
 					   <select size="1" class="planets" id="slbox" onChange="" style="margin-top:16px;">
-						   <option value="-">-</option>
+						   {shsh}
 					   </select>
 
 				 </div>

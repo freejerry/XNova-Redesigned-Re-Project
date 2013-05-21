@@ -1,33 +1,35 @@
 <?php
-
-/**
+/*
  * galaxy.php
  *
  * @version 1.3
  * @copyright 2008 by Chlorel for XNova
- */
+ *
+*/
 
 includeLang('galaxy');
 getLang('galaxy');
 
-// Get the mdoe
-$mode          = idstring($_GET['mode']);
+// Get the mode
+$mode = idstring($_GET['mode']);
 
-if ($mode == 1) {
+if($mode == 1) {
 	//We are browsing galaxy, so what gal / sys
 	$galaxy =  idstring($_GET["galaxy"]);
 	$system =  idstring($_GET["system"]);
 	
+} else if(isset($_GET["galaxy"]) and isset($_GET["system"])) {
+  //Pointer from statistics or other pages (mode is not set)
+	$galaxy =  idstring($_GET["galaxy"]);
+	$system =  idstring($_GET["system"]);
 } else {
 	// Well we have just got to galaxy, so show the homeworld
 	$galaxy        = $planetrow['galaxy'];
 	$system        = $planetrow['system'];
 }
 
-
 $bloc['galaxy_head'] = ShowGalaxySelector($galaxy,$system);
 $bloc['galaxy_rows'] = ShowGalaxyRows($galaxy,$system);
-
 
 //Footer
 $bloc['res209'] = $planetrow[$resource[209]];
@@ -35,13 +37,16 @@ $bloc['res210'] = $planetrow[$resource[210]];
 $bloc['res503'] = $planetrow[$resource[503]];
 $bloc['curfleets'] = doquery("SELECT COUNT(fleet_id) as count FROM {{table}} WHERE `owner_userid` = '". $user['id'] ."';", 'fleets',true);
 $bloc['curfleets'] = $bloc['curfleets']['count'];
+$bloc['maxfleets'] = doquery("SELECT computer_tech, off_admiral FROM {{table}} WHERE `id` = '". $user['id'] ."';", 'users',true);
+$computer_tech = $bloc['maxfleets']['computer_tech'];
+$off_admiral = $bloc['maxfleets']['off_admiral'];
+$bloc['maxfleets'] = 1 + $computer_tech + $off_admiral * 2;
 
 //Current gal/sys
 $bloc['cgal'] = $galaxy;
 $bloc['csys'] = $system;
 
 $page = parsetemplate(gettemplate('galaxy/galaxy_div'), $bloc);
-
 
 /*
 $userally = doquery("SELECT `relations` FROM {{table}} WHERE `id` = '".$user['ally_id']."' LIMIT 1 ;",'alliance',true);

@@ -13,11 +13,11 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 
 	$info =debug_backtrace();
 	$callingfile = $info[0]['file']; $callingline = $info[0]['line'];
-	
+
 	$table = sqlite_escape_string($tbl);
-	
+
 	$allow_delete = true;
-	
+
 	/* bad words */
 	/*
 	"TRUNCATE TABLE"
@@ -28,7 +28,7 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 	"SET PASSWORD"
 	"LOAD DATA"
 	*/
-	
+
 	$badword = false;
 	if ((stripos($query, 'RUNCATE TABL') != FALSE) && ($table != 'errors')) {
 		$badword = true;
@@ -47,9 +47,10 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 	}elseif (stripos($query, 'EOAD DAT') != FALSE) {	
 		$badword = true;
 	}
+
 	if ($badword) {
 		$message = 'Hi, I don\'t know what you were trying to do, but the command you just sent to the database didn\'t look very friendly so we have blocked it.<br /><br />Your IP, useragent, and any other info we find will be logged along with the query you attempted to make. Good Day.';
-		
+
 		$report  = "Hacking attempt (".date("H:i:s d/m/Y")." - [".time()."]):\n";
 		$report .= ">Database Info\n";
 		$report .= "\tID - ".$user['id']."\n";
@@ -70,7 +71,7 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 		$report .= "\tQuery - ".$query."\n";
 
 		$report .= "\n";
-	
+
 		$report .= ">\$_SERVER Info\n";		
 		$report .= "\tIP - ".$_SERVER['REMOTE_ADDR']."\n";
 		$report .= "\tHost Name - ".$_SERVER['HTTP_HOST']."\n";
@@ -79,41 +80,38 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 		$report .= "\tCame From - ".$_SERVER['HTTP_REFERER']."\n";
 		$report .= "\tUses Port - ".$_SERVER['REMOTE_PORT']."\n";
 		$report .= "\tServer Protocol - ".$_SERVER['SERVER_PROTOCOL']."\n";
-		
+
 		$report .= "\n--------------------------------------------------------------------------------------------------\n";
 
 		$fp = fopen(ROOT_PATH.'../hackers.txt', 'a');
 		fwrite($fp, $report);
 		fclose($fp);
-		
+
 		die($message);
 	}	
 
-	
 		if(!$link){
 			if ($link = sqlite_open("boards.db", 0666, $sqliteerror)){
-	   
+
 			} else {
 			    trigger_error($sqliteerror."<br />".$query."^|^SQL Connection Error");
 			}
 			echo $sqliteerror;
 		}
-	
-	
+
 		//$sql = str_replace("{{table}}", $dbsettings["prefix"].$table, $query);
 		if($prefix) $sql = str_replace("{{table}}", "'".$dbsettings["prefix"].$table."'", $query);
 		else $sql = str_replace("{{table}}", "'".$table."'", $query);
 		$sql = str_replace("{{prefix}}", $dbsettings["prefix"], $sql);
-		
+
 		//Convert ``s
 		$sql = str_replace("``", "'", $sql);
-		
+
 		//Translate into SQLite
 		$sql = str_replace("`", "", $sql);
-		
-	
+
 		//echo $sql."<br />\n";
-	
+
 		$sqlquery = sqlite_query($link, $sql, $query_error);
 		if ($query_error){
 			trigger_error($query_error."<br />".$sql."^|^SQL Error^|^".$callingfile."^|^".$callingline);
@@ -121,21 +119,20 @@ function doquery($query, $tbl, $fetch = false, $allow_delete = false, $prefix = 
 			$query_error = "The db owner is different from the web server's one, but we did not commit any syntax mistake.";
 			trigger_error($query_error."<br />".$sql."^|^SQL Error^|^".$callingfile."^|^".$callingline);
 		}
-	
+
 		unset($dbsettings);//se borra la array para liberar algo de memoria
-	
+
 		global $numqueries,$debug;//,$depurerwrote003;
 		$numqueries++;
 		//$depurerwrote003 .= ;
 		//$debug->add("<tr><th>Query $numqueries: </th><th>$query</th><th>$table</th><th>$fetch</th></tr>");
-	
+
 		if($fetch == true){ //hace el fetch y regresa $sqlrow
 			return FetchArray($sqlquery);
 		}else{ //devuelve el $sqlquery ("sin fetch")
 			return $sqlquery;
 		}
 	}
-
 
 // Return results as an array
 function FetchArray($results) {
@@ -159,8 +156,6 @@ function FetchAll($results, $rowsarray = true) {
 function EscapeString($string){
 	return sqlite_escape_string($string);
 }
-
-
 
 // Created by Perberos. All rights reversed (C) 2006
 // Modified by Sonyedorly, FetchArray, Sanitize, and Unsanitize by Sonyedorly

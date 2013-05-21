@@ -31,7 +31,6 @@ foreach($reslist['dbattle'] as $id){
 }
 $file .= "}\n\n";
 
-
 //Now combat caps
 $file .= "CombatCaps = {";
 
@@ -79,5 +78,6 @@ fwrite($fh, $file);
 //Close the file.
 fclose($fh);
 	
-echo "The file vars.py has been written autmatically. You do not need to do any more.";
+echo "The file vars.py has been written automatically. You do not need to do anything anymore.";
 
+?>
