@@ -7,10 +7,11 @@
  * @copyright 2009 By MadnessRed for XNova_Redisigned
  */
 
+getLang("messages");
 
 $Template = '
 		<div id="message_alert_box">
-			<a href="./?page=messages" onclick="loadpage(this.href,\'{Messages}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();" style="text-decoration: none;">
+			<a href="./?page=messages" onclick="loadpage(this.href,\'{messagestitle}\',\'messages\'); return false;" class="tips" onmouseover="mrtooltip(\'{messages_count} new message(s)\');" onmouseout="UnTip();" style="text-decoration: none;">
 				<img src="{{skin}}/img/layout/pixel.gif" height="13" width="25"><center>{messages_count}</center>
 			</a>
 		</div>
@@ -51,6 +52,7 @@ if($fl_tbl[1] > 0){
 
 
 //Messages
+$parse['messagestitle']=$lang['Title'];
 $messages = explode(",",$user['messages']);
 $mess = 0; foreach ($messages as $c){ $mess += $c; }
 if($mess > 0)
