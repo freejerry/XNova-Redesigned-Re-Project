@@ -28,26 +28,26 @@ switch ($_GET['mode']) {
 case 'write':
 	//Target should be an integer (or id)
 	$targetid = idstring($_GET['id']);
-	
+
 	//Get the recipient.
 	$targetuser = doquery("SELECT `id`,`username`,`galaxy`,`system`,`planet` FROM {{table}} WHERE `id` = '".$targetid."' LIMIT 1;", 'users', true);
-	
+
 	//Check he exists
 	if(!is_array($targetuser)){ message($lang['mess_no_owner'],$lang['mess_error']); }
-	
+
 	//Did they forget something?
 	if($_GET["subject"] && $_GET["text"]){
 		//Remove anything suspect.
 		$message = trim(nl2br(strip_tags(addslashes($_GET['text']),'<br><a><i><p><u><table><td><tr><em><h1><h2><h3><h4><li>ul><ol><blockquote><img><span><font><tbody><sub><sup><flash><windowsmedia><object>')));
-		
+
 		$subject = trim(nl2br(strip_tags(addslashes($_GET['subject']),'<br><a><i><p><u><table><td><tr><em><h1><h2><h3><h4><li>ul><ol><blockquote><img><span><font><tbody><sub><sup><flash><windowsmedia><object>')));
-			
+
 		//Who should it says its from?
 		$from = $user['username'] ." [".$user['galaxy'].":".$user['system'].":".$user['planet']."]";
-			
+
 		//Now send the message
 		PM( $targetid, $user['id'], $message, $subject, $from);
-		
+
 		//Let them know it sent
 		die("Message Sent");
 	}else{
@@ -55,16 +55,16 @@ case 'write':
 		//info($lang['mess_no_text_or_subject'],$lang['mess_error'],"./?page=write&to=".$targetid,"<<");
 		die($lang['mess_error'].":<br />".$lang['mess_no_text_or_subject']);
 	}
-	
+
 	break;
-	
+
 case 'delete':
 	//messcat
 	$messcat = intval(idstring($_GET['messcat']));
-	
-	if($messcat == 666)	{ $status = '0'; }
-	else				{ $status = '1'; }
-	
+
+	if($messcat == 666) { $status = '0'; }
+	else { $status = '1'; }
+
 	//Slightly modified xnova code here:
 	if($_GET['delete'] == 'all'){
 		//Delete all messages well don't actually delete, just say they are deleted.
@@ -77,6 +77,7 @@ case 'delete':
 		foreach($_GET as $Message => $MessValue) {
 			if (preg_match("/delmes/i", $Message)) {
 				$MessId = str_replace("delmes", "", $Message);
+        echo $MessId.' '.$Message.' '.$MessValue.'<br>';
         if($MessValue == '1')
 				  doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_id` = '".idstring($MessId)."' AND `message_owner` = '".$user['id']."' AND `message_type` = '".$messcat."' ;", 'messages');
 			}
@@ -93,9 +94,9 @@ case 'delete':
 	}
 	//info($lang['MessDeleted'],$lang['Deleted'],"./?page=messages&mode=show&messcat=".$messcat,"<<");
 	die($lang['MessDeleted']);
-	
+
 	break;
-	
+
 default:
 	//Now read messages... here is the fun part :)
 	//What catagory?
@@ -104,7 +105,7 @@ default:
 	foreach ($usermessages as $type => $count){
 		$parse['mess'.$type] = $count;
 	}
-	
+
 	//Commander, do they have it?
 	if(COMMANDER){		
 		//Default mess cat is 5
@@ -136,12 +137,12 @@ default:
 	if($messcat == 101){ $parse["activeout"] = ' aktiv'; $parse['catag'] = ''; }
 	elseif($messcat == 666){ $parse["activebin"] = ' aktiv'; $parse['catag'] = ''; }
 	else{ $parse["activein"] = ' aktiv'; }
-	
+
 	//Now the messcat dependant things
 	if($messcat == 100){
 		//Get the messages
 		$messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
-		
+
 		//Set each mess type to 0 unread.
 		doquery("UPDATE {{table}} SET `messages` = '0,0,0,0,0,0' WHERE `id` = '".$user['id']."' LIMIT 1 ;",'users');
 	}elseif($messcat == 101){
@@ -163,7 +164,7 @@ default:
 		else
       $messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
 		//echo "SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' ORDER BY `message_time` DESC;";
-		
+
 		//Set messages of this type to 0
 		$usermessages[$messcat] = 0;
 		foreach ($usermessages as $type => $count){
@@ -173,7 +174,7 @@ default:
 		}
 		doquery("UPDATE {{table}} SET `messages` = '".implode(",",$usermessages)."', `menus_update` = '".time()."' WHERE `id` = '".$user['id']."' LIMIT 1 ;",'users');
 	}
-	
+
 	if(mysql_num_rows($messages) > 0){
 		$parse['content']  = "
 			\t\t<form action=\"./?page=messages&mode=delete&messcat=".$_GET['messcat']."\" method=\"GET\" id=\"messagesform\" name=\"messagesform\">\n
@@ -191,7 +192,7 @@ default:
 			\t\t\t\t<th class=\"date\">Date</th>\n
 			\t\t\t\t<th class=\"action\"></th>\n
 			\t\t\t</tr>\n";
-		
+
 		$n = 0;
 		while($row = mysql_fetch_array($messages)){
 			$n++;
@@ -209,7 +210,7 @@ default:
 				\t\t\t\t</td>\n
 				\t\t\t\t<td class=\"date\">".date("jS F H:i",$row['message_time'])."</td>\n
 				\t\t\t\t<td class=\"actions\" id=\"test\">\n
-				\t\t\t\t\t<a href=\"#\" rel=\"".$row['message_id']."\" class=\"del tips deleteIt\" onmouseover=\"mr_tooltip('Delete this message');\" onclick=\"document.getElementById('delmes".$row['message_id']."').checked=true;document.getElementById('delmethod').value='marked';document.getElementById('okbutton').style.display='inline';mr_alert('<img height=16 width=16 src=\'{{skin}}/img/ajax-loader.gif\' /> {Loading}...'); getAXAH(form2get('messagesform'),'errorBoxNotifyContent');\" id=\"2\">\n
+				\t\t\t\t\t<a href=\"#\" rel=\"".$row['message_id']."\" class=\"del tips deleteIt\" onmouseover=\"mr_tooltip('Delete this message');\" onclick=\"document.getElementById('delmes".$row['message_id']."').checked=true;document.getElementById('delmethod').value='marked';document.getElementById('okbutton').style.display='inline';getElementById('delmes".$row['message_id']."').value=1;mr_alert('<img height=16 width=16 src=\'{{skin}}/img/ajax-loader.gif\' /> {Loading}...'); getAXAH(form2get('messagesform'),'errorBoxNotifyContent');\" id=\"2\">\n
 				\t\t\t\t\t\t<img src=\"".GAME_SKIN."/img/icons/".$trash.".gif\">\n
 				\t\t\t\t\t</a>\n
 				\t\t\t\t</td>\n
