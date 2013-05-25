@@ -77,9 +77,8 @@ case 'delete':
 		foreach($_GET as $Message => $MessValue) {
 			if (preg_match("/delmes/i", $Message)) {
 				$MessId = str_replace("delmes", "", $Message);
-        echo $MessId.' '.$Message.' '.$MessValue.'<br>';
         if($MessValue == '1')
-				  doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_id` = '".idstring($MessId)."' AND `message_owner` = '".$user['id']."' AND `message_type` = '".$messcat."' ;", 'messages');
+				  doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_id` = '".idstring($MessId)."' AND `message_owner` = '".$user['id']."' ;", 'messages');
 			}
 		}
 	}elseif($_GET['delete'] == 'unmarked'){

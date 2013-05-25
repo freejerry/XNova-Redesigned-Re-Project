@@ -48,7 +48,7 @@ function f(target_url, win_name) {
 					<span>{Inbox}</span>
 				</a>
 			</li>
-			<li class="msgNavi{activeout}" id="2" value="3" {hidenc}>
+			<li class="msgNavi{activeout}" id="2" value="3">
 				<a href="#" onclick="
 					document.getElementById('mailWrapper').innerHTML = '<div id=\'messageContent\' class=\'msg_content textBeefy textCenter\'><img src=\'{{skin}}/img/ajax-loader.gif\' /> Loading</div>';
 					getAXAH('./?page=messages&messcat=101&axah_section=1','mailWrapper');
@@ -59,7 +59,7 @@ function f(target_url, win_name) {
 					<span>{Outbox}</span>
 				</a>
 			</li>
-			<li class="msgNavi{activebin}" id="3" value="3" {hidenc}>
+			<li class="msgNavi{activebin}" id="3" value="3">
 				<a href="#" onclick="
 					document.getElementById('mailWrapper').innerHTML = '<div id=\'messageContent\' class=\'msg_content textBeefy textCenter\'><img src=\'{{skin}}/img/ajax-loader.gif\' /> Loading</div>';
 					getAXAH('./?page=messages&messcat=666&axah_section=1','mailWrapper');
