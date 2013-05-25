@@ -74,10 +74,10 @@ case 'delete':
 		doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".$messcat."' ;", 'messages');
 	}elseif($_GET['delete'] == 'marked'){
 		//Delete all marked messages well don't actually delete, just say they are deleted
-		foreach($_GET as $Message) {
+		foreach($_GET as $Message => $MessValue) {
 			if (preg_match("/delmes/i", $Message)) {
-				$MessId   = str_replace("delmes", "", $Message);
-        if($Message['delmes'.$MessId]['value'] == '1')
+				$MessId = str_replace("delmes", "", $Message);
+        if($MessValue == '1')
 				  doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_id` = '".idstring($MessId)."' AND `message_owner` = '".$user['id']."' AND `message_type` = '".$messcat."' ;", 'messages');
 			}
 		}
