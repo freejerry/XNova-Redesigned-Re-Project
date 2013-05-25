@@ -25,7 +25,7 @@
 		</a>
 	</li>
 	<li>
-		<a id="4" class="{active50} reiter" href="#" onclick="document.getElementById('mailWrapper').innerHTML = '<div id=\'messageContent\' class=\'msg_content textBeefy textCenter\'><img src=\'{{skin}}/img/ajax-loader.gif\' /> Loading</div>'; getAXAH('./?page=messages&mode=show&messcat=5&axah_section=1','mailWrapper');">
+		<a id="4" class="{active50} reiter" href="#" onclick="document.getElementById('mailWrapper').innerHTML = '<div id=\'messageContent\' class=\'msg_content textBeefy textCenter\'><img src=\'{{skin}}/img/ajax-loader.gif\' /> Loading</div>'; getAXAH('./?page=messages&mode=show&messcat=100&axah_section=1','mailWrapper');">
 			<span>{MsgTypeAll} <span id="sum4" class="msgSum">{mess5}</span></span>
 		</a>
 	</li>

@@ -109,7 +109,7 @@ default:
 	//Commander, do they have it?
 	if(COMMANDER){		
 		//Default mess cat is 5
-		if(!isset($messcat)){ $messcat = 5; }
+		if(!isset($messcat)){ $messcat = 100; }
 
     $messtypeplayerscount   = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 0;", 'messages');
     $messtypealliancecount  = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 1;", 'messages');
@@ -159,10 +159,7 @@ default:
 		 $trash = 'recall'; $Del = 'Res';
 	}else{
 		//Get the messages for this type.
-    if($messcat==5)
-      $messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
-		else
-      $messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
+    $messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
 		//echo "SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' ORDER BY `message_time` DESC;";
 
 		//Set messages of this type to 0
