@@ -173,7 +173,7 @@ default:
 		doquery("UPDATE {{table}} SET `messages` = '".implode(",",$usermessages)."', `menus_update` = '".time()."' WHERE `id` = '".$user['id']."' LIMIT 1 ;",'users');
 	}
 	
-	if( > 0){
+	if(mysql_num_rows($messages) > 0){
 		$parse['content']  = "
 			\t\t<form action=\"./?page=messages&mode=delete&messcat=".$_GET['messcat']."\" method=\"GET\" id=\"messagesform\" name=\"messagesform\">\n
 			\t\t\t<input type=\"hidden\" name=\"page\" value=\"messages\" />\n
