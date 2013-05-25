@@ -12,7 +12,7 @@ function f(target_url, win_name) {
 <div id="message">
 <div id="inhalt">
 	<div id="planet" class="">
-		<h2>Messages</h2>
+		<h2>{Title}</h2>
 	</div>
 	<div class="c-left"></div>
 	<div class="c-right"></div>

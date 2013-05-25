@@ -130,12 +130,12 @@ default:
 		//Set each mess type to 0 unread.
 		doquery("UPDATE {{table}} SET `messages` = '0,0,0,0,0,0' WHERE `id` = '".$user['id']."' LIMIT 1 ;",'users');
 	}elseif($messcat == 101){
-		//Get the messages (no need to mark as read as they are not ours, and of course thwe user has read them as he wrote them)
+		//Get the messages (no need to mark as read as they are not ours, and of course the user has read them as he wrote them)
 		//How far back? 2 weeks sounds good
 		$from = time() - (3600 * 24 * 7 * 2);
 		$messages = doquery("SELECT * FROM {{table}} WHERE `message_sender` = '".$user['id']."' AND `message_time` > '".$from."' ORDER BY `message_time` DESC;", 'messages');
 	}elseif($messcat == 666){
-		//We need to get deleted mesages.
+		//We need to get deleted messages.
 		//How far back? 2 weeks sounds good
 		$from = time() - (3600 * 24 * 7 * 2);
 		$messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_time` > '".$from."' AND `message_deleted` = '1' ORDER BY `message_time` DESC;", 'messages');
@@ -143,7 +143,10 @@ default:
 		 $trash = 'recall'; $Del = 'Res';
 	}else{
 		//Get the messages for this type.
-		$messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
+    if($messcat==5)
+      $messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
+		else
+      $messages = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' AND `message_deleted` = 0 ORDER BY `message_time` DESC;", 'messages');
 		//echo "SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".idstring($messcat)."' ORDER BY `message_time` DESC;";
 		
 		//Set messages of this type to 0
@@ -191,7 +194,7 @@ default:
 				\t\t\t\t</td>\n
 				\t\t\t\t<td class=\"date\">".date("jS F H:i",$row['message_time'])."</td>\n
 				\t\t\t\t<td class=\"actions\" id=\"test\">\n
-				\t\t\t\t\t<a href=\"#\" rel=\"".$row['message_id']."\" class=\"del tips deleteIt\" onmouseover=\"mr_tooltip('Delete this message');\" onclick=\"document.getElementById('delmes".$row['message_id']."').checked=true;document.getElementById('delmethod').value='marked';document.getElementById('okbutton').style.display='inline';\" id=\"2\">\n
+				\t\t\t\t\t<a href=\"#\" rel=\"".$row['message_id']."\" class=\"del tips deleteIt\" onmouseover=\"mr_tooltip('Delete this message');\" onclick=\"document.getElementById('delmes".$row['message_id']."').checked=true;document.getElementById('delmethod').value='marked';document.getElementById('okbutton').style.display='inline';document.getElementById('messagesform').submit();\" id=\"2\">\n
 				\t\t\t\t\t\t<img src=\"".GAME_SKIN."/img/icons/".$trash.".gif\">\n
 				\t\t\t\t\t</a>\n
 				\t\t\t\t</td>\n
