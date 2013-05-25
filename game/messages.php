@@ -121,7 +121,7 @@ default:
     $parse['mess2'] = mysql_num_rows($messtypefleetscount);
     $parse['mess3'] = mysql_num_rows($messtypebattlescount);
     $parse['mess4'] = mysql_num_rows($messtypeespionagecount);
-    $parse['mess5'] = mysql_num_rows($messtypeallcount);
+    $parse['mess5'] = $messtypeallcount;
 
 		//Now we should load the message type selection.
 		$parse['catag'] = parsetemplate(gettemplate('network/messtypes'), $parse);
