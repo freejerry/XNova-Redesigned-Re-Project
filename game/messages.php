@@ -74,15 +74,15 @@ case 'delete':
 		doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_owner` = '".$user['id']."' AND `message_type` = '".$messcat."' ;", 'messages');
 	}elseif($_GET['delete'] == 'marked'){
 		//Delete all marked messages well don't actually delete, just say they are deleted
-		foreach($_GET as $Message => $Answer) {
-			if (preg_match("/delmes/i", $Message) && $Answer == 'on') {
+		foreach($_GET as $Message) {
+			if (preg_match("/delmes/i", $Message) && $Message['value'] == '1') {
 				$MessId   = str_replace("delmes", "", $Message);
 				doquery("UPDATE {{table}} SET `message_deleted` = ".$status." WHERE `message_id` = '".idstring($MessId)."' AND `message_owner` = '".$user['id']."' AND `message_type` = '".$messcat."' ;", 'messages');
 			}
 		}
 	}elseif($_GET['delete'] == 'unmarked'){
 		//Delete all unmarked messages well don't actually delete, just say they are deleted.
-		foreach($_GET as $Message => $Answer) {
+		foreach($_GET as $Message) {
 			$CurMess    = preg_match("/showmes/i", $Message);
 			$MessId     = str_replace("showmes", "", $Message);
 			if (preg_match("/showmes/i", $Message) && !isset($_GET["delmes".$MessId])) {
@@ -107,14 +107,14 @@ default:
 	//Commander, do they have it?
 	if(COMMANDER){		
 		//Default mess cat is 5
-		if(!$messcat){ $messcat = 5; }
+		if(!isset($messcat)){ $messcat = 5; }
 
     $messtypeplayerscount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 0;", 'messages');
     $messtypealliancecount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 1;", 'messages');
     $messtypefleetscount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 2;", 'messages');
     $messtypebattlescount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 3;", 'messages');
     $messtypeespionagecount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 4;", 'messages');
-    $messtypeallcount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0;", 'messages');
+    $messtypeallcount = $messtypeplayerscount+$messtypealliancecount+$messtypefleetscount+$messtypebattlescount+$messtypeespionagecount;
 
     $parse['mess0'] = mysql_num_rows($messtypeplayerscount);
     $parse['mess1'] = mysql_num_rows($messtypealliancecount);
@@ -198,7 +198,7 @@ default:
 				\t\t\t<input name=\"showmes".$row['message_id']."\" type=\"hidden\" value=\"1\" />
 				\t\t\t<tr class=\"trigger alt new\" id=\"".$row['message_id']."TR\">\n
 				\t\t\t\t<td class=\"check\">\n
-				\t\t\t\t\t<input class=\"checker\" name=\"delmes".$row['message_id']."\" id=\"delmes".$row['message_id']."\" type=\"checkbox\">\n
+				\t\t\t\t\t<input class=\"checker\" name=\"delmes".$row['message_id']."\" id=\"delmes".$row['message_id']."\" type=\"checkbox\" value='0' onClick=\"if(document.getElementById('delmes".$row['message_id']."').checked) document.getElementById('delmes".$row['message_id']."').value = 0; else document.getElementById('delmes".$row['message_id']."').value = 1;\">\n
 				\t\t\t\t</td>\n
 				\t\t\t\t<td class=\"from\">".$row['message_from']."</td>\n
 				\t\t\t\t<td class=\"subject\">\n
