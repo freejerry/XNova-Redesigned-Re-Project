@@ -90,8 +90,8 @@
 			document.getElementById(id).className = a;
 		}
 	}
-	function tickAll(f){ for (n = 0; n < f.length; n++){ f[n].checked = false; f[n].value=1; } }
-	function tickNone(f){ for (n = 0; n < f.length; n++){ f[n].checked = true; f[n].value=0; } }
+	function tickAll(f){ for (n = 0; n < f.length; n++){ f[n].checked = false; f[n].value=0; } }
+	function tickNone(f){ for (n = 0; n < f.length; n++){ f[n].checked = true; f[n].value=1; } }
 	function likenAll(f,id){
 		if(document.getElementById(id).checked == true){ tickNone(f); }
 		else{ tickAll(f); }

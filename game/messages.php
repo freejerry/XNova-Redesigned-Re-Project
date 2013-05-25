@@ -109,19 +109,19 @@ default:
 		//Default mess cat is 5
 		if(!isset($messcat)){ $messcat = 5; }
 
-    $messtypeplayerscount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 0;", 'messages');
-    $messtypealliancecount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 1;", 'messages');
-    $messtypefleetscount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 2;", 'messages');
-    $messtypebattlescount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 3;", 'messages');
+    $messtypeplayerscount   = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 0;", 'messages');
+    $messtypealliancecount  = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 1;", 'messages');
+    $messtypefleetscount    = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 2;", 'messages');
+    $messtypebattlescount   = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 3;", 'messages');
     $messtypeespionagecount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 4;", 'messages');
-    $messtypeallcount = $messtypeplayerscount+$messtypealliancecount+$messtypefleetscount+$messtypebattlescount+$messtypeespionagecount;
+    $messtypeallcount       = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0;", 'messages');
 
     $parse['mess0'] = mysql_num_rows($messtypeplayerscount);
     $parse['mess1'] = mysql_num_rows($messtypealliancecount);
     $parse['mess2'] = mysql_num_rows($messtypefleetscount);
     $parse['mess3'] = mysql_num_rows($messtypebattlescount);
     $parse['mess4'] = mysql_num_rows($messtypeespionagecount);
-    $parse['mess5'] = $messtypeallcount;
+    $parse['mess5'] = mysql_num_rows($messtypeallcount);;
 
 		//Now we should load the message type selection.
 		$parse['catag'] = parsetemplate(gettemplate('network/messtypes'), $parse);
@@ -198,7 +198,7 @@ default:
 				\t\t\t<input name=\"showmes".$row['message_id']."\" type=\"hidden\" value=\"1\" />
 				\t\t\t<tr class=\"trigger alt new\" id=\"".$row['message_id']."TR\">\n
 				\t\t\t\t<td class=\"check\">\n
-				\t\t\t\t\t<input class=\"checker\" name=\"delmes".$row['message_id']."\" id=\"delmes".$row['message_id']."\" type=\"checkbox\" value='0' onClick=\"if(document.getElementById('delmes".$row['message_id']."').checked) document.getElementById('delmes".$row['message_id']."').value = 0; else document.getElementById('delmes".$row['message_id']."').value = 1;\">\n
+				\t\t\t\t\t<input class=\"checker\" name=\"delmes".$row['message_id']."\" id=\"delmes".$row['message_id']."\" type=\"checkbox\" value='0' onClick=\"if(document.getElementById('delmes".$row['message_id']."').checked) document.getElementById('delmes".$row['message_id']."').value = 1; else document.getElementById('delmes".$row['message_id']."').value = 0;\">\n
 				\t\t\t\t</td>\n
 				\t\t\t\t<td class=\"from\">".$row['message_from']."</td>\n
 				\t\t\t\t<td class=\"subject\">\n
