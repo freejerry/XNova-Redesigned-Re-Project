@@ -106,15 +106,29 @@ default:
 	
 	//Commander, do they have it?
 	if(COMMANDER){		
-		//Default mess cat is 0
-		if(!$messcat){ $messcat = 0; }
-		
+		//Default mess cat is 5
+		if(!$messcat){ $messcat = 5; }
+
+    $messtypeplayerscount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 0;", 'messages');
+    $messtypealliancecount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 1;", 'messages');
+    $messtypefleetscount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 2;", 'messages');
+    $messtypebattlescount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 3;", 'messages');
+    $messtypeespionagecount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0 AND `message_type` = 4;", 'messages');
+    $messtypeallcount = doquery("SELECT * FROM {{table}} WHERE `message_owner` = '".$user['id']."' AND `message_deleted` = 0;", 'messages');
+
+    $parse['mess0'] = mysql_num_rows($messtypeplayerscount);
+    $parse['mess1'] = mysql_num_rows($messtypealliancecount);
+    $parse['mess2'] = mysql_num_rows($messtypefleetscount);
+    $parse['mess3'] = mysql_num_rows($messtypebattlescount);
+    $parse['mess4'] = mysql_num_rows($messtypeespionagecount);
+    $parse['mess5'] = mysql_num_rows($messtypeallcount);
+
 		//Now we should load the message type selection.
 		$parse['catag'] = parsetemplate(gettemplate('network/messtypes'), $parse);
 	}else{		
 		//There is not message catagories
 		$messcat = 100;
-		$parse['hidenc'] = 'style="display:none;"'; //(And no outbox or bin, simple remove the link)
+		$parse['hidenc'] = 'style = "display: none;"'; //(And no outbox or bin, simple remove the link)
 	}
 	//Some checks on messtype
 	$parse["active".$messcat] = "active "; $trash = 'trash'; $Del = 'Del';
@@ -159,7 +173,7 @@ default:
 		doquery("UPDATE {{table}} SET `messages` = '".implode(",",$usermessages)."', `menus_update` = '".time()."' WHERE `id` = '".$user['id']."' LIMIT 1 ;",'users');
 	}
 	
-	if(mysql_num_rows($messages) > 0){
+	if( > 0){
 		$parse['content']  = "
 			\t\t<form action=\"./?page=messages&mode=delete&messcat=".$_GET['messcat']."\" method=\"GET\" id=\"messagesform\" name=\"messagesform\">\n
 			\t\t\t<input type=\"hidden\" name=\"page\" value=\"messages\" />\n
@@ -194,7 +208,7 @@ default:
 				\t\t\t\t</td>\n
 				\t\t\t\t<td class=\"date\">".date("jS F H:i",$row['message_time'])."</td>\n
 				\t\t\t\t<td class=\"actions\" id=\"test\">\n
-				\t\t\t\t\t<a href=\"#\" rel=\"".$row['message_id']."\" class=\"del tips deleteIt\" onmouseover=\"mr_tooltip('Delete this message');\" onclick=\"document.getElementById('delmes".$row['message_id']."').checked=true;document.getElementById('delmethod').value='marked';document.getElementById('okbutton').style.display='inline';document.getElementById('messagesform').submit();\" id=\"2\">\n
+				\t\t\t\t\t<a href=\"#\" rel=\"".$row['message_id']."\" class=\"del tips deleteIt\" onmouseover=\"mr_tooltip('Delete this message');\" onclick=\"document.getElementById('delmes".$row['message_id']."').checked=true;document.getElementById('delmethod').value='marked';document.getElementById('okbutton').style.display='inline';mr_alert('<img height=16 width=16 src=\'{{skin}}/img/ajax-loader.gif\' /> {Loading}...'); getAXAH(form2get('messagesform'),'errorBoxNotifyContent');\" id=\"2\">\n
 				\t\t\t\t\t\t<img src=\"".GAME_SKIN."/img/icons/".$trash.".gif\">\n
 				\t\t\t\t\t</a>\n
 				\t\t\t\t</td>\n
