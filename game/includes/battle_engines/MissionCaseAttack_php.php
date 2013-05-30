@@ -62,7 +62,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 
 	//ACS?
 		//We have some acs fleets, maybe
-		$acs = doquery("SELECT * FROM {{table}} WHERE `targetid` = '".$fleetrow['targetid']."' AND `mission` = 5 AND `fleet_mess` = 0 AND `arrival` < '".$fleetrow['arrival']."' AND `arrival`+`hold_time` > '".$fleetrow['arrival']."'",'fleets');
+		$acs = doquery("SELECT * FROM {{table}} WHERE `target_id` = '".$fleetrow['target_id']."' AND `mission` = 5 AND `fleet_mess` = 0 AND `arrival` < '".$fleetrow['arrival']."' AND `arrival`+`hold_time` > '".$fleetrow['arrival']."'",'fleets');
 		while($acsrow = mysql_fetch_assoc($acs)){
 			$TargetTechno[$acsrow['id']] = mysql_fetch_array(doquery("SELECT `".$resource[109]."`,`".$resource[110]."`,`".$resource[111]."` FROM {{table}} WHERE `id` = ".$acsrow['owner_userid'],'users'),MYSQL_NUM);
 			$TargetSet[$acsrow['id']] = array();
