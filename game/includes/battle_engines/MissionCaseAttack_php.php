@@ -9,7 +9,7 @@ function battle_log($stringData){
 
 
 function MissionCaseAttack($fleetrow,$log=true){
-	global $resource,$reslist;
+	global $resource,$reslist,$user;
 
 	//Well here goes the main part of XNova, fingers crossed that it will work.
 
@@ -58,7 +58,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	$TargetTechno = array();
 	foreach($reslist['dbattle'] as $e){ $TargetSet[0][$e] = $CurrentPlanet[$resource[$e]]; }
 	foreach($reslist['fleet']   as $e){ $TargetSet[0][$e] = $CurrentPlanet[$resource[$e]]; }
-	$TargetTechno[0] = mysql_fetch_array(doquery("SELECT `".$resource[109]."`,`".$resource[110]."`,`".$resource[111]."`' FROM {{table}} WHERE `id` = ".$CurrentPlanet['id_owner'],'users'),MYSQL_NUM);
+	$TargetTechno[0] = mysql_num_rows(doquery("SELECT `".$resource[109]."`,`".$resource[110]."`,`".$resource[111]."`' FROM {{table}} WHERE `id` = ".$CurrentPlanet['id_owner'],'users'));
 
 	//ACS?
 		//We have some acs fleets, maybe
