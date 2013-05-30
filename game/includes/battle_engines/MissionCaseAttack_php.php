@@ -679,8 +679,8 @@ function MissionCaseAttack($fleetrow,$log=true){
 				break;
 			}
 
-			$attacker_attack_power_left = CalculateAttack ($attacker_structure);
-			$defender_attack_power_left = CalculateAttack ($defender_structure);
+			$attacker_attack_power_left = CalculateAttackStat ($attacker_structure);
+			$defender_attack_power_left = CalculateAttackStat ($defender_structure);
 
 			//En cada ronda empieza atacando el atacante!!
 			$Simul = PadaAttack($attacker_structure, $defender_structure, $attacker_attack_power_left);
@@ -903,7 +903,7 @@ function getShipStats($ShipId, $TargetTechno){
 	return array('defense' => $defense, 'shield' => $shield);
 }
 
-function CalculateAttack ($structure){
+function CalculateAttackStat ($structure){
 	global $CombatCaps;
 
 	foreach ($structure as $UID => $array) {
