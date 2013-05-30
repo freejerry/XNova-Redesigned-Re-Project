@@ -374,7 +374,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	($result['rounds'] <= 2 AND $result['battle_result'] == 3) ? $ver_o_no = 1 : $ver_o_no = 0;
 	$rid   = md5($Message);
 
-   doquery("LOCK TABLE {{table}};","rw");
+   doquery("LOCK TABLE {{table}} WRITE;","rw");
 	 $QryInsertRapport  = "INSERT INTO {{table}} SET ";
 	 $QryInsertRapport .= "`time` = UNIX_TIMESTAMP(), ";
 	 $QryInsertRapport .= "`id_owner1` = '". $id_owner1txt ."', ";
@@ -383,7 +383,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	 $QryInsertRapport .= "`a_zestrzelona` = '".$ver_o_no."', ";
 	 $QryInsertRapport .= "`raport` = '". addslashes ( $Message ) ."';";
 	 doquery( $QryInsertRapport , 'rw');
-   doquery("UNLOCK TABLE {{table}};","rw");
+   doquery("UNLOCK TABLES", "");
 
 	 // Creamos el mensajito coloreado que se manda a los ATACANTES
 	$raport_ini  = "<a href # OnClick=\"f( 'rw.php?raport=". $rid ."', '');\" >";
