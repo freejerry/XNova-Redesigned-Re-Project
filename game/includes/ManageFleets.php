@@ -56,7 +56,7 @@ function ManageFleets(){
 							doquery("UPDATE {{table}} SET `fleet_mess` = '3' WHERE `fleet_id` = '".$row["fleet_id"]."' LIMIT 1 ;",'fleets',false);
 							require_once(ROOT_PATH . 'includes/battle_engines/MissionCaseAttack_php.php');
 							include_once(ROOT_PATH . 'includes/battle_engines/ManageCR.php');
-							$results = MissionCaseAttack($row);
+							$results = MissionCaseAttack($row, true);
 							$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = '".$row['target_id']."' LIMIT 1 ;",'planets',true);
 							ManageCR($results,$CurrentPlanet);
 						}
@@ -132,9 +132,9 @@ function ManageFleets(){
 						if($row["fleet_mess"] == 0 && $CurrentPlanet['planet_type'] == 3){
 							// Attack
 							doquery("UPDATE {{table}} SET `fleet_mess` = '3' WHERE `fleet_id` = '".$row["fleet_id"]."' LIMIT 1 ;",'fleets',false);
-							require_once(ROOT_PATH . 'includes/battle_engines/MissionCaseAttack_'.BATTLE_ENGINE.'.php');
+							require_once(ROOT_PATH . 'includes/battle_engines/MissionCaseAttack_php.php');
 							include_once(ROOT_PATH . 'includes/battle_engines/ManageCR.php');
-							$results = MissionCaseAttack($row);
+							$results = MissionCaseAttack($row, true);
 							ManageCR($results,$CurrentPlanet);
 
 							//And then destroy, if the fleet survived

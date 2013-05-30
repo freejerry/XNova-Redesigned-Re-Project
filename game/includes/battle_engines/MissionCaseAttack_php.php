@@ -10,9 +10,9 @@ function battle_log($stringData){
 
 function MissionCaseAttack($fleetrow,$log=true){
 	global $resource,$reslist;
-	
+
 	//Well here goes the main part of XNova, fingers crossed that it will work.
-	
+
 	//Get this planet
 	$CurrentPlanet = doquery("SELECT * FROM {{table}} WHERE `id` = ".$fleetrow['target_id'],'planets',true);
 
@@ -24,7 +24,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	//Get all fleets
 	$CurrentSet = array();
 	$CurrentTechno = array();
-	
+
 	//This fleet
 	$CurrentTechno[$fleetrow['id']] = mysql_fetch_array(doquery("SELECT `".$resource[109]."`,`".$resource[110]."`,`".$resource[111]."` FROM {{table}} WHERE `id` = ".$fleetrow['owner_userid'],'users'),MYSQL_NUM);
 	$CurrentSet[$fleetrow['id']] = array();
@@ -35,7 +35,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 			$CurrentSet[$fleetrow['id']][$ships[0]] = $ships[1];
 		}
 	}
-	
+
 	//ACS?
 	if($fleetrow['fleet_group'] > 0){
 		//We have some acs fleets, maybe
@@ -52,14 +52,14 @@ function MissionCaseAttack($fleetrow,$log=true){
 			}
 		}
 	}
-	
+
 	//Get defenders stuff
 	$TargetSet = array();
 	$TargetTechno = array();
 	foreach($reslist['dbattle'] as $e){ $TargetSet[0][$e] = $CurrentPlanet[$resource[$e]]; }
 	foreach($reslist['fleet']   as $e){ $TargetSet[0][$e] = $CurrentPlanet[$resource[$e]]; }
 	$TargetTechno[0] = mysql_fetch_array(doquery("SELECT `".$resource[109]."`,`".$resource[110]."`,`".$resource[111]."`' FROM {{table}} WHERE `id` = ".$CurrentPlanet['id_owner'],'users'),MYSQL_NUM);
-	
+
 	//ACS?
 		//We have some acs fleets, maybe
 		$acs = doquery("SELECT * FROM {{table}} WHERE `targetid` = '".$fleetrow['targetid']."' AND `mission` = 5 AND `fleet_mess` = 0 AND `arrival` < '".$fleetrow['arrival']."' AND `arrival`+`hold_time` > '".$fleetrow['arrival']."'",'fleets');
@@ -75,8 +75,6 @@ function MissionCaseAttack($fleetrow,$log=true){
 			}
 		}
 
-	
-
 	//Log
 	if($log){
 		battle_log("Data given to the battle engine:");
@@ -86,7 +84,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	//Do the battle
 	include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
 	$result = PadaCombatSac($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno, $planeta_atacante, $planeta_defensores, $FleetRow['fleet_start_time']);
-	  
+
 	//Calculo de la probabilidad de luna...
 	$MoonChance = floor(($result['debris']['metal'] + $result['debris']['crystal']) / 100000);
 	if($MoonChance > 20){ $MoonChance = 20;	}
@@ -103,42 +101,39 @@ function MissionCaseAttack($fleetrow,$log=true){
 	}
 
 	$Mes_prob = sprintf($lang['sys_moonproba'], $MoonChance);
-	
-	
+
 	//die("I'm tired so this file is not finished yet"); // I'm not tired, so I will finish it. And, I'm spanish, so I can understand the comments
-	
-	
-		 
+
 	  //Ahora viene un tochaco de 140 lineas, que se dive en dos partes principales: la primera intenta añadir los mismos recursos a todas las flotas; la segunda, rellena con los recursos sobrantes las flotas que puede....
 	  if(!empty($result['attacker']) AND $result['battle_result'] == 2){
-	  
+
 		foreach ($result['attacker'] as $id => $flota){
 			foreach ($flota as $Ship => $Count) {
-			
+
 				$Capacidad_flota	+= $pricelist[$Ship]['capacity'] * $Count;
-			
+
 			}
 			//$Capacidad_total += $Capacidad_flota;
 			$Capacidad[$id]= $Capacidad_flota;
-			
+
 			unset ($Capacidad_flota);
 		}
 		//Lo maximo por flota
 		$f_totales = count($result[attacker]);
 		$total = ($planet_def['metal']+ $planet_def['crystal']+ $planet_def['deuterium'])/2;
-		
+
 		//Losrecursos maximos a mangar...
 		$maximo_total = $total/$f_totales;
 		$m_metal = $planet_def['metal']/2;
 		$m_cristal = $planet_def['crystal']/2;
 		$m_deuterio = $planet_def['deuterium']/2;
-		
+
 		//Los recursos a robar por usuario...
 		$metal = ($planet_def['metal']/2) / $f_totales;
 		$cristal = ($planet_def['crystal']/2) / $f_totales;
 		$deuterio = ($planet_def['deuterium']/2) / $f_totales;
 		//echo "m_metal = $m_metal , m_cristal= $m_cristal , m_deuterio = $m_deuterio , metal = $metal , cristal = $cristal , deuterio= $deuterio , f_totales = $f_totales , total = $total , capacidad = print_r($Capacidad)";
-		
+
 		if($maximo_total > 0){
 		//Creamos una copia del array
 		$resultatac = $result[attacker];
@@ -159,7 +154,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 						$Capacidad[$id]	-= $resultado[$id]['metal'];
 						$m_metal -= $metal;
 					}
-						
+
 					//El silicio (no sicilio... XD)
 					if (($cristal) > $Capacidad[$id] / 2) {
 						$resultado[$id]['cristal'] = $Capacidad[$id] / 2;
@@ -170,7 +165,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 						$Capacidad[$id]	 -= $resultado[$id]['cristal'];
 						$m_cristal -= $cristal;
 					}
-					
+
 					//El tritio
 					if (($deuterio) > $Capacidad[$id]) {
 						$resultado[$id]['deuterio']  = $Capacidad[$id];
@@ -187,24 +182,24 @@ function MissionCaseAttack($fleetrow,$log=true){
 					}else{
 						unset ($resultatac[$id]);
 					}
-										
+
 				}
 			}
 			//Ahora se hace otra pasada para rellenar las naves restantes con capacidad con lo que queda...
 			if(!empty($resultatac)){
-			
+
 				shuffle($resultatac);  //Mezclamos para que sea mas justo para los jugadores....
 				foreach ($resultatac as $id => $flota) {
 					if($cap_restante == 0){
 						break;
 					}
-					
+
 					if($Capacidad[$id] >= ($m_metal+ $m_cristal+ $m_deuterio)){
 						$resultado[$id]['metal'] += $m_metal;
 						$resultado[$id]['cristal'] += $m_cristal;
 						$resultado[$id]['deuterio'] += $m_deuterio;
 						$cap_restante = 0;
-					
+
 					}else{
 						if($m_metal > 0){
 							if($m_metal >= $Capacidad[$id]){
@@ -214,7 +209,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 							$resultado[$id]['metal'] += $m_metal;
 							$cap_restante -= $Capacidad[$id];
 						}
-						
+
 						if($m_metal >= 0 AND $cap_restante > 0){
 							if (($m_metal ) > $Capacidad[$id] / 3) {
 								$resultado[$id]['metal']   += $Capacidad[$id] / 3;
@@ -254,15 +249,15 @@ function MissionCaseAttack($fleetrow,$log=true){
 								$m_deuterio = 0;
 							}
 						}
-						
+
 					}
 				}
 			}
 		}
-		
+
 	  unset($Capacidad, $cap_restante, $resultatac, $m_deuterio, $m_cristal, $m_metal);
 	}
-	
+
 	  //Si se han destruido las flotas atacantes
 	  if (empty($result[attacker])){
 		  doquery ("DELETE FROM {{table}} WHERE sac_id = '{$FleetRow['sac_id']}' OR  fleet_id = '{$FleetRow['fleet_id']}'", 'fleets');
@@ -280,7 +275,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 						$FleetAmount  += $Count;
 					}
 				}
-				
+
 				//Actualizamos la flota para que vuelva a casa con las naves debidas	
 				$QryUpdateGalaxy  = "UPDATE {{table}} SET ";
 				$QryUpdateGalaxy .= " fleet_array = '{$FleetArray}' , ";
@@ -294,15 +289,15 @@ function MissionCaseAttack($fleetrow,$log=true){
 				$QryUpdateGalaxy .= " fleet_id = '{$id}' ";
 				$QryUpdateGalaxy .= "LIMIT 1 ";
 				doquery( $QryUpdateGalaxy , 'fleets');
-			
+
 			}
-					
+
 		}
 	  }
 	  //Guardamos el valor del array del usuario defensor
 	  $defender_pl = $result[defender][0];
 	  unset ($result[defender][0]);
-	
+
 	  //Si se han destruido las flotas defensoras
 	  if (empty($result[defender])){
 		$Qry   = "DELETE FROM {{table}} ";
@@ -330,7 +325,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 						$FleetAmount  += $Count;
 					}
 				}
-				
+
 			//Actualizamos la flota para que vuelva a casa con las naves debidas	
 			$QryUpdateGalaxy  = "UPDATE {{table}} SET ";
 			$QryUpdateGalaxy .= " fleet_array = '{$FleetArray}' , ";
@@ -340,9 +335,9 @@ function MissionCaseAttack($fleetrow,$log=true){
 			$QryUpdateGalaxy .= " fleet_id = '{$id}' ";
 			$QryUpdateGalaxy .= "LIMIT 1 ";
 			doquery( $QryUpdateGalaxy , 'fleets');
-			
+
 			}
-		
+
 		}
 	 }
 	}
@@ -350,9 +345,9 @@ function MissionCaseAttack($fleetrow,$log=true){
 	//print_r($defender_pl);
 	//print_r($result);
 	//echo $result['report'];
-	
+
 	$Message.= $result['report'];
-	
+
 	$Message.= '<br><br>La batalla ha durado '.$result['rounds'].' rondas.';
 	if($result['battle_result'] == 2){
 		$Message .= "<br><br><table width=100% ><tr><td><DIV ALIGN=left>".$lang['sys_attacker_won']."<br>";
@@ -364,7 +359,6 @@ function MissionCaseAttack($fleetrow,$log=true){
 	}else{
 		$Message .= $lang['sys_defender_won']."<br>";
 	}
-	
 
 	//El atacante ha perdido x unidades
 	$Message .= "<br>".sprintf($lang['sys_attacker_lostunits'], $result['debris']['attacker'])."<br>";
@@ -374,13 +368,12 @@ function MissionCaseAttack($fleetrow,$log=true){
 	$Message .= sprintf($lang['sys_gcdrunits'], pretty_number($result['debris']['metal']), pretty_number($result['debris']['crystal']))."<br>";
 	//Mensajes de la probabilidad de luna
 	$Message.= "<br>".$Mes_prob.$Mensaje_luna.sprintf($lang['sys_rapport_build_time'], microtime(true)- $time)."</DIV></td></tr></table>";
-	
+
 	//AÑADIMOS EL REPORTE A LA TABLA DE RW
 	//Si se ha producido solo una ronda, se pone ese valor como 1 (para lo de que se ha perdido el contacto...)
 	($result['rounds'] <= 2 AND $result['battle_result'] == 3) ? $ver_o_no = 1 : $ver_o_no = 0;
 	$rid   = md5($Message);
-	 
-	 
+
 	 $QryInsertRapport  = "INSERT INTO {{table}} SET ";
 	 $QryInsertRapport .= "`time` = UNIX_TIMESTAMP(), ";
 	 $QryInsertRapport .= "`id_owner1` = '". $id_owner1txt ."', ";
@@ -405,7 +398,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	$raport .= "<font color=\"green\">   ". $lang['sys_perte_defenseur'] .":". pretty_number($result['debris']['defender']) ."</font><br />" ; //Perdidas defensor
 	//Ganancias
 	$raport .= $lang['sys_debris'] ." ". $lang['Metal'] .":<font color=\"red\">". pretty_number($result['debris']['metal']) ."</font>   ". $lang['Crystal'] .":<font color=\"#ef51ef\">". pretty_number($result['debris']['crystal']) ."</font><br />";
-	
+
 	//Creamos un array en elq ue se asocie el nombre del atacante con el id de las flotas que le pertenecen...
 	$check = array();
 	foreach ($attacker_fleet as $id => $flota){
@@ -427,10 +420,10 @@ function MissionCaseAttack($fleetrow,$log=true){
 		}
 		//Se crea el mensajillo con lo que ha ganado en total
 		$raport_fin = $lang['sys_gain'] ." ". $lang['Metal'] .":<font color=\"red\">". pretty_number($metal_fin[$user_atac[$id]['id']]) ."</font>   ". $lang['Crystal'] .":<font color=\"#ef51ef\">". pretty_number($cristal_fin[$user_atac[$id]['id']]) ."</font>   ". $lang['Deuterium'] .":<font color=\"#f77542\">". pretty_number($deuterio_fin[$user_atac[$id]['id']]) ."</font></center><br />";
-		
+
 		SendSimpleMessage ( $id, '', $FleetRow['fleet_start_time'], 5, $lang['sys_mess_tower'], $lang['sys_mess_fleetback'], $raport_ini.$raport.$raport_fin);
 	}
-	
+
 	// Creamos el mensajito coloreado que se manda a los DEFENSORES
 	$raport2  = "<a href # OnClick=\"f( 'rw.php?raport=". $rid ."', '');\" >";
 	$raport2 .= "<center>";
@@ -446,8 +439,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	foreach ($user_def as $def_fleet => $info){
 		SendSimpleMessage ( $info['id'], '', $FleetRow['fleet_start_time'], 3, $lang['sys_mess_tower'], $lang['sys_mess_attack_report'], $raport2 );
 	}
-	
-	
+
 	//Actualizamos el planeta defensor
 	$QryUpdatePlanet = "UPDATE {{table}} SET ";
 	$QryUpdatePlanet .= "metal = metal - '{$a_restar_m}', ";
@@ -456,21 +448,20 @@ function MissionCaseAttack($fleetrow,$log=true){
 	if ($defender_fleet[0]){
 		foreach ($defender_fleet[0] as $tipo => $cantidad){
 			$QryUpdatePlanet .= ', ';
-			
+
 			if($tipo > 400 AND $tipo < 500){  //Coprobamos si es flota o defensa, para la reconstruccion de defensas
 				$total = floor(($defender_fleet[0][$tipo] - $defender_pl[$tipo]) * (rand(60, 75)/100) + $defender_pl[$tipo]);
 				$QryUpdatePlanet .= $resource[$tipo]. " = '".$total."'  ";
 			}else{
 				$QryUpdatePlanet .= $resource[$tipo]. " = '".$defender_pl[$tipo]."'  ";
 			}
-			
+
 		}
 	}	
-	
+
 	$QryUpdatePlanet .= " WHERE id = '{$planet_def['id']}' LIMIT 1 ";
 	doquery( $QryUpdatePlanet , 'planets');
-		
-	
+
 	//Añadimos los puntos de flotero y las cuentas de ataques...
 	if  ($result['battle_result'] == 2) {
 		//GANA EL ATACANTE
@@ -537,7 +528,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 			doquery($QryUpdateOfficier, 'users');
 		}
 	}
-	
+
 	//Actualizamos la galaxia para añadir escombros
 	if(($result['debris']['metal'] + $result['debris']['crystal']) > 0){
 		$QryUpdateGalaxy = "UPDATE {{table}} SET ";
@@ -548,7 +539,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 		$QryUpdateGalaxy .= "planet = '{$planet_def['planet']}' LIMIT 1 ";
 		doquery( $QryUpdateGalaxy , 'galaxy');
 	}
-	
+
 /*	$attacker_fleet =
 	array(
 		61 =>
@@ -608,7 +599,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 */
 //die();
 	if($FleetRow['fleet_end_time'] <= time()){
-	
+
 			$Message			 = sprintf ($lang['atac_return'], GetTargetAdressLink($FleetRow, ''), $FleetRow['fleet_resource_metal'], $FleetRow['fleet_resource_crystal'], $FleetRow['fleet_resource_deuterium'] );
 			$result = RestoreFleetToPlanet ( $FleetRow, true );
 			if($result){
@@ -616,37 +607,37 @@ function MissionCaseAttack($fleetrow,$log=true){
 				doquery("DELETE FROM {{table}} WHERE fleet_id=" . $FleetRow['fleet_id'], 'fleets');
 			}
 	}
-	
+
  }
 
 	function PadaCombatSac($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno, $planeta_atacante, $planeta_defensores, $time) {
 		global $pricelist, $CombatCaps, $game_config, $lang;
-		
+
 		$mtime = microtime();
 		$mtime = explode(' ', $mtime);
 		$mtime = $mtime[1] + $mtime[0];
 		$starttime = $mtime;
-		
+
 		foreach ($CurrentSet as $UID => $arrayx) {
 			foreach ($arrayx as $ShipId => $quantity) {			
 				//$attacker_attack_power_left += $quantity * ($CombatCaps[$ShipId]['attack'] + $CombatCaps[$ShipId]['attack'] * (1 + (0.1 * $CurrentTechno[$UID]['military_tech']) + (0.05 * $CurrentTechno[$UID]['rpg_amiral'])));
-				
+
 				$attacker_structure[$UID][$ShipId] = $quantity;
 				$attacker_start_debris['metal'] += $quantity * $pricelist[$ShipId]['metal'];
 				$attacker_start_debris['crystal'] += $quantity * $pricelist[$ShipId]['crystal'];
 			}
 		}
-		
+
 		if(!$TargetSet){
 			$TargetSet = array();
 		}
-		
+
 		foreach ($TargetSet as $UID => $arrayx) {
 			foreach ($arrayx as $ShipId => $quantity) {			
 				//$defender_attack_power_left += $quantity * ($CombatCaps[$ShipId]['attack'] + $CombatCaps[$ShipId]['attack'] * (1 + (0.1 * $CurrentTechno[$UID]['military_tech']) + (0.05 * $CurrentTechno[$UID]['rpg_amiral'])));
-				
+
 				$defender_structure[$UID][$ShipId] = $quantity;
-				
+
 				if($ShipId < 300) {
 					$defender_start_debris['metal'] += $quantity * $pricelist[$ShipId]['metal'];
 					$defender_start_debris['crystal'] += $quantity * $pricelist[$ShipId]['crystal'];
@@ -661,15 +652,15 @@ function MissionCaseAttack($fleetrow,$log=true){
 			$totalrounds++;
 			if($i == 1){
 				$mes_report .= "<br>".$lang['enfrentaron'].date('r', $time)."<br>";
-				
+
 				//Tabla con las flotas del atacante...
 				$mes_report .= bodyreport($attacker_structure, $planeta_atacante, $planeta_defensores, $CurrentTechno, $TargetTechno, false);
-				
+
 				//Tabla con las flotas del defensor
 				$mes_report .= bodyreport($defender_structure, $planeta_atacante, $planeta_defensores, $CurrentTechno, $TargetTechno, true);
-				
+
 			}	
-			
+
 			if (count($defender_structure) == 0){
 				if (count($defender_structure) == 0 AND count($attacker_structure) == 0) {
 					$battle_result = 1;
@@ -678,7 +669,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 				} elseif (count($attacker_structure) == 0) {
 					$battle_result = 3;
 				}
-				
+
 				break;
 			}else if(count($attacker_structure) == 0){
 				$battle_result = 3;
@@ -690,44 +681,44 @@ function MissionCaseAttack($fleetrow,$log=true){
 
 			$attacker_attack_power_left = CalculateAttack ($attacker_structure);
 			$defender_attack_power_left = CalculateAttack ($defender_structure);
-			
+
 			//En cada ronda empieza atacando el atacante!!
 			$Simul = PadaAttack($attacker_structure, $defender_structure, $attacker_attack_power_left);
 			$defender_structure = $Simul[0];
 			$attacker_attack_power_used = $attacker_attack_power_left - $Simul[1];
-			
+
 			//Luego va el defensor
 			$Simul = PadaAttack($defender_structure, $attacker_structure, $defender_attack_power_left);
 			$attacker_structure = $Simul[0];
 			$defender_attack_power_used = $defender_attack_power_left - $Simul[1];
-			
+
 			//El atacante dispara. Gracias a los escudos...
 			$mes_report .= "<br><h5>".sprintf($lang['sys_atac_disp'], $attacker_attack_power_used) ;
 			$mes_report .= "<br>".sprintf($lang['sys_def_disp'], $defender_attack_power_used)."</h5><br><br>";
-			
+
 			unset($Simul, $defender_attack_power_left, $attacker_attack_power_left, $defender_attack_power_used, $attacker_attack_power_used);
-			
+
 			$mes_report .= $lang['sys_tras_ronda'];
-			
+
 			//Tabla con las flotas del atacante...
 			$mes_report .= bodyreport($attacker_structure, $planeta_atacante, $planeta_defensores, $CurrentTechno, $TargetTechno, false);
-			
+
 			//Tabla con las flotas del defensor
 			$mes_report .= bodyreport($defender_structure, $planeta_atacante, $planeta_defensores, $CurrentTechno, $TargetTechno, true);
-			
+
 		  }	
-		
+
 		//echo $mes_report;
 		$mtime = microtime();
 		$mtime = explode(' ', $mtime);
 		$mtime = $mtime[1] + $mtime[0];
 		$endtime = $mtime;
-		
+
 		$totaltime = round($endtime - $starttime, 5);
-		
+
 		$CurrentSet = $attacker_structure;
 		$TargetSet = $defender_structure;
-		
+
 		if (!is_null($CurrentSet)) {
 			foreach ($CurrentSet as $UID => $arrayx) {
 				foreach ($arrayx as $ShipId => $quantity) {
@@ -736,7 +727,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 				}
 			}
 		}
-		
+
 		if (!is_null($TargetSet)) {
 			foreach ($TargetSet as $UID => $arrayx) {
 				foreach ($arrayx as $ShipId => $quantity) {
@@ -750,39 +741,39 @@ function MissionCaseAttack($fleetrow,$log=true){
 				}
 			}
 		}
-		
+
 		$debris['metal'] += (($attacker_start_debris['metal'] - $attacker_end_debris['metal']) * ($game_config['Fleet_Cdr'] / 100));
 		$debris['crystal'] += (($attacker_start_debris['crystal'] - $attacker_end_debris['crystal']) * ($game_config['Fleet_Cdr'] / 100));
 
 		$debris['metal'] += (($defender_start_debris['metal'] - $defender_end_debris['metal']) * ($game_config['Fleet_Cdr'] / 100));
 		$debris['crystal'] += (($defender_start_debris['crystal'] - $defender_end_debris['crystal']) * ($game_config['Fleet_Cdr'] / 100));
-		
+
 		$debris['metal'] += (($defender_start_debris_defense['metal'] - $defender_end_debris_defense['metal'])   * ($game_config['Defs_Cdr'] / 100));
 		$debris['crystal'] += (($defender_start_debris_defense['crystal'] - $defender_end_debris_defense['crystal']) * ($game_config['Defs_Cdr'] / 100));
-		
+
 		$defenseMetal = ($defender_start_debris_defense['metal'] - $defender_end_debris_defense['metal']);
 		$defenseCrystal = ($defender_start_debris_defense['crystal'] - $defender_end_debris_defense['crystal']);
-		
+
 		$debris['attacker'] = (($attacker_start_debris['metal'] - $attacker_end_debris['metal']) + ($attacker_start_debris['crystal'] - $attacker_end_debris['crystal']));
 		$debris['defender'] = (($defender_start_debris['metal'] - $defender_end_debris['metal']) + ($defender_start_debris['crystal'] - $defender_end_debris['crystal']) + ($defenseMetal + $defenseCrystal));
-		
+
 		return array('attacker' => $CurrentSet, 'defender' => $TargetSet, 'battle_result' => $battle_result, 'debris' => $debris, 'rounds' => ($totalrounds -1), 'totaltime' => $totaltime, 'report' => $mes_report);
-		
+
 	}
 	//Lo que tengo que hacer es: modificar el bucle de las 8 rondas para que recalcule el ataque por cada ronda; modificar lo de los mensajes de los kilopondios (el calculo es malo...); modificar algunas cosas del simulador para
 	//que ya no utilice el atackpowerleft...
 	function PadaAttack($attacker_structure, $defender_structure, $attack_power_left){
 		global $CombatCaps;
-		
+
 		if(count($attacker_structure) <= 0){
 			return array($defender_structure, 0);
 		}
-		
+
 		foreach ($attacker_structure as $UID => $arrayx) {
 			foreach ($arrayx as $ShipId => $Quantity) {
-				
+
 				$JustShoot = 5;
-				
+
 				if($Quantity >= $JustShoot){
 					$OnlyFire = round($Quantity / $JustShoot);
 				}else{
@@ -791,88 +782,86 @@ function MissionCaseAttack($fleetrow,$log=true){
 				// ONLY FIRE $JustShoot
 				for ($j = 1; $j < $JustShoot; $j++) {
 					$fire = true;
-					
+
 					// DONT CHECK RAPIDFIRE
 					unset($AlreadyRF, $attack_power);
-					
+
 					while ($fire == true) {
 						$fire = false;
-						
+
 						if (count($defender_structure) == 0) {
 							$killed = 1;
 						}
-						
+
 						if ($killed != 1) {
 							srand((float) microtime() * 10000000);
 
 							$randUser = @array_rand($defender_structure);
 							$randShip = @array_rand($defender_structure[$randUser]);
-							
+
 							$selected_user = $randUser;
 							$selected_shipid = $randShip;
 						}
-						
+
 						// CALCULATE THE SHIP ATTACK POWER
 						if(!isset($attack_power))
 							$attack_power = $OnlyFire * ($CombatCaps[$ShipId]['attack'] + $CombatCaps[$ShipId]['attack'] * (1 + (0.1 * $CurrentTechno[$UID]['military_tech']) + (0.05 * $CurrentTechno[$UID]['rpg_amiral'])));
-						
+
 						//if($attack_power > $attack_power_left){
 							//$attack_power = $attack_power_left;
 						//}
-						
+
 						if ($killed != 1) {
-							
+
 							$DefenderShipStats = getShipStats($selected_shipid, $TargetTechno);
-							
+
 							// SHIP SHIELD POWER
 							if(!isset($shield_power_per_unit))
 								$shield_power_per_unit = $DefenderShipStats['shield'];  //Shiel es blindaje
-							
+
 							if(!isset($defense_power_per_unit))
 								$defense_power_per_unit = $DefenderShipStats['defense'];   //Defense es escudos
-							
-							
+
 							// ATTACK POWER DOSNT DESTROY THE SHIP SHIELD
 							if ($attack_power <= $shield_power_per_unit) {  //Modificacion para mayor precision, al añadir = por si acaso...
-								
+
 								// DECREASE SHIP SHIELD
 								$shield_power_per_unit -= $attack_power;
-								
+
 								// DECREASE TOTAL POWER ATTACK
 								$attack_power_left -= $attack_power;
-								
+
 								$attack_power = 0;
-								
+
 							// SHIELD MUST BE DESTROYED
 							}if ($attack_power > $shield_power_per_unit) {
-								
+
 								$ShipsToDelete = round($attack_power / ($DefenderShipStats['shield'] + $DefenderShipStats['defense'] + 1));
-								
+
 								// AVAILABLE DEFENDER SHIPS
 								$AvailableShips = $defender_structure[$selected_user][$selected_shipid];
 								if($ShipsToDelete > $AvailableShips){
 									$ShipsToDelete = $AvailableShips;
 								}
-								
+
 								// DECREASE ATTACK POWER
 								$attack_power -= (($DefenderShipStats['shield'] +  $DefenderShipStats['defense']) * $ShipsToDelete);
-															
+
 								// DECREASE TOTAL POWER ATTACK
 								$attack_power_left -= (($DefenderShipStats['shield'] +  $DefenderShipStats['defense']) * $ShipsToDelete);
-								
+
 								// UPDATE ARRAYS
 								$defender_structure = PadaDeleteShip($defender_structure, $selected_user, $selected_shipid, $ShipsToDelete);
-								
+
 								// UNSET THE ACTUAL SHIELD AND DEFENSE
 								unset($shield_power_per_unit, $defense_power_per_unit);
 							}
-							
-							
+
 							// IF ATTACK POWER LEFT AND HASNT RAPIDFIRE YET
 							if($attack_power AND !isset($AlreadyRF)){
-								
+
 								$AlreadyRF = true;
-								
+
 								$RF = $CombatCaps[$ShipId]['sd'][$selected_shipid];
 								if($RF > 1){
 									$RF_ = 100 * ($RF - 1) / $RF;
@@ -891,36 +880,35 @@ function MissionCaseAttack($fleetrow,$log=true){
 				}
 			}
 		}
-		
+
 		return array($defender_structure, $attack_power_left);
-		
+
 	}
 
-	
 function PadaDeleteShip($Arr, $UID, $ShipId, $Quantity){
 
 	$Arr[$UID][$ShipId] -= $Quantity;
 	if($Arr[$UID][$ShipId] <= 0) unset($Arr[$UID][$ShipId]);
 	if(count($Arr[$UID]) <= 0) unset($Arr[$UID]);
-	
+
 	return $Arr;	
 }
 
 function getShipStats($ShipId, $TargetTechno){
 	global $CombatCaps, $pricelist;
-	
+
 	$defense = ((($pricelist[$ShipId]['metal'] + $pricelist[$ShipId]['crystal']) / 10) * (1 + (0.1 * ($TargetTechno['defence_tech']) + (0.05 * $TargetTechno[$UID]['rpg_amiral']))));
 	$shield = $CombatCaps[$ShipId]['shield'] * (1 + (0.1 * $TargetTechno[$UID]['shield_tech'])+ (0.05 * $TargetTechno[$UID]['rpg_amiral']));
-	
+
 	return array('defense' => $defense, 'shield' => $shield);
 }
 
 function CalculateAttack ($structure){
 	global $CombatCaps;
-	
+
 	foreach ($structure as $UID => $array) {
 		foreach ($array as $ShipId => $Quantity) {
-		
+
 		$attack_power += $Quantity * ($CombatCaps[$ShipId]['attack'] + $CombatCaps[$ShipId]['attack'] * (1 + (0.1 * $CurrentTechno[$UID]['military_tech']) + (0.05 * $CurrentTechno[$UID]['rpg_amiral'])));
 		}
 	}
@@ -931,7 +919,7 @@ function bodyreport($structure, $planeta_atacante, $planeta_defensores, $Current
 //Otra superfuncion mia XD
 //Structure es la estructura del defensor o del atacante (todas sus naves). $tipo true, se refiere a que la estructura es del defensor; si es false, al atacante. 
 //No incluye donde se dice: el atacante dispara he hizo tanto daño...
-	
+
 	global $lang;
 
 	$body_report .= "<table border=1 width=100%><tr><th>";
@@ -941,7 +929,7 @@ function bodyreport($structure, $planeta_atacante, $planeta_defensores, $Current
 		}else{
 			$body_report .= $lang['sys_atac_destroyed'];
 		}
-		
+
 	}else{
 		foreach ($structure as $UID => $arrayx) { 
 			if($tipo){
@@ -952,7 +940,7 @@ function bodyreport($structure, $planeta_atacante, $planeta_defensores, $Current
 				$body_report .= "<br>".sprintf($lang['sys_attack_techologies'], $CurrentTechno[$UID]['military_tech']*10, $CurrentTechno[$UID]['defence_tech']*10, $CurrentTechno[$UID]['shield_tech']*10 );
 			}
 			$body_report .= "<center><table border=1>";
-			
+
 			$body_report .= "<tr><th>{$lang['sys_ship_type']}</th>";
 			foreach ($arrayx as $ShipId => $Quantity) {
 				$body_report .= "<th>{$lang['tech_rc'][$ShipId]}</th>";
@@ -966,7 +954,7 @@ function bodyreport($structure, $planeta_atacante, $planeta_defensores, $Current
 	}	
 	$body_report .= "</th></tr></table>";
    unset ($lang);
-	
+
 	return $body_report;
 }
 
