@@ -82,7 +82,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	}
 
 	//Do the battle
-	include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
+	//include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
 	$result = PadaCombatSac($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno, $planeta_atacante, $planeta_defensores, $FleetRow['fleet_start_time']);
 
 	//Calculo de la probabilidad de luna...
