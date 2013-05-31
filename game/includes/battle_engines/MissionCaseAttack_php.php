@@ -78,12 +78,12 @@ function MissionCaseAttack($fleetrow,$log=true){
 	//Log
 	if($log){
 		battle_log("Data given to the battle engine:");
-		battle_log("PadaCombat(".$attacker_fleet.", ".$defender_fleet.", ".$CurrentTechno.", ".$TargetTechno.", ".$planeta_atacante.", ".$planeta_defensores.",  ".$FleetRow['fleet_start_time'].");");
+		battle_log("PadaCombat(".$CurrentSet.", ".$TargetSet.", ".$CurrentTechno.", ".$TargetTechno.", ".$planeta_atacante.", ".$planeta_defensores.",  ".$FleetRow['fleet_start_time'].");");
 	}
 
 	//Do the battle
 	include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
-	$result = PadaCombat($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno);
+	$result = PadaCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno);
 
 	//Calculo de la probabilidad de luna...
 	$MoonChance = floor(($result['debris']['metal'] + $result['debris']['crystal']) / 100000);
@@ -403,7 +403,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 
 	//Creamos un array en elq ue se asocie el nombre del atacante con el id de las flotas que le pertenecen...
 	$check = array();
-	foreach ($attacker_fleet as $id => $flota){
+	foreach ($CurrentSet as $id => $flota){
 		$name = $user_atac[$id]['id'];
 		if(!$check[$name]){
 			$check[$name] = array();
@@ -465,7 +465,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 	doquery( $QryUpdatePlanet , 'planets');
 
 	//Añadimos los puntos de flotero y las cuentas de ataques...
-	if  ($result['battle_result'] == 2) {
+	/*if  ($result['battle_result'] == 2) {
 		//GANA EL ATACANTE
 		foreach ($user_atac as $fleet_id => $info){
 			$QryUpdateOfficier = "UPDATE {{table}} SET ";
@@ -529,7 +529,7 @@ function MissionCaseAttack($fleetrow,$log=true){
 			$QryUpdateOfficier .= "LIMIT 1 ;";
 			doquery($QryUpdateOfficier, 'users');
 		}
-	}
+	}*/
 
 	//Actualizamos la galaxia para añadir escombros
 	if(($result['debris']['metal'] + $result['debris']['crystal']) > 0){
