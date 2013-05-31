@@ -82,8 +82,8 @@ function MissionCaseAttack($fleetrow,$log=true){
 	}
 
 	//Do the battle
-	//include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
-	$result = PadaCombat($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno, $planeta_atacante, $planeta_defensores, $FleetRow['fleet_start_time']);
+	include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
+	$result = PadaCombat($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno);
 
 	//Calculo de la probabilidad de luna...
 	$MoonChance = floor(($result['debris']['metal'] + $result['debris']['crystal']) / 100000);
@@ -762,139 +762,6 @@ function MissionCaseAttack($fleetrow,$log=true){
 		return array('attacker' => $CurrentSet, 'defender' => $TargetSet, 'battle_result' => $battle_result, 'debris' => $debris, 'rounds' => ($totalrounds -1), 'totaltime' => $totaltime, 'report' => $mes_report);
 
 	}
-	//Lo que tengo que hacer es: modificar el bucle de las 8 rondas para que recalcule el ataque por cada ronda; modificar lo de los mensajes de los kilopondios (el calculo es malo...); modificar algunas cosas del simulador para
-	//que ya no utilice el atackpowerleft...
-	function PadaAttack($attacker_structure, $defender_structure, $attack_power_left){
-		global $CombatCaps;
-
-		if(count($attacker_structure) <= 0){
-			return array($defender_structure, 0);
-		}
-
-		foreach ($attacker_structure as $UID => $arrayx) {
-			foreach ($arrayx as $ShipId => $Quantity) {
-
-				$JustShoot = 5;
-
-				if($Quantity >= $JustShoot){
-					$OnlyFire = round($Quantity / $JustShoot);
-				}else{
-					$OnlyFire = $Quantity;
-				}
-				// ONLY FIRE $JustShoot
-				for ($j = 1; $j < $JustShoot; $j++) {
-					$fire = true;
-
-					// DONT CHECK RAPIDFIRE
-					unset($AlreadyRF, $attack_power);
-
-					while ($fire == true) {
-						$fire = false;
-
-						if (count($defender_structure) == 0) {
-							$killed = 1;
-						}
-
-						if ($killed != 1) {
-							srand((float) microtime() * 10000000);
-
-							$randUser = @array_rand($defender_structure);
-							$randShip = @array_rand($defender_structure[$randUser]);
-
-							$selected_user = $randUser;
-							$selected_shipid = $randShip;
-						}
-
-						// CALCULATE THE SHIP ATTACK POWER
-						if(!isset($attack_power))
-							$attack_power = $OnlyFire * ($CombatCaps[$ShipId]['attack'] + $CombatCaps[$ShipId]['attack'] * (1 + (0.1 * $CurrentTechno[$UID]['military_tech']) + (0.05 * $CurrentTechno[$UID]['rpg_amiral'])));
-
-						//if($attack_power > $attack_power_left){
-							//$attack_power = $attack_power_left;
-						//}
-
-						if ($killed != 1) {
-
-							$DefenderShipStats = getShipStats($selected_shipid, $TargetTechno);
-
-							// SHIP SHIELD POWER
-							if(!isset($shield_power_per_unit))
-								$shield_power_per_unit = $DefenderShipStats['shield'];  //Shiel es blindaje
-
-							if(!isset($defense_power_per_unit))
-								$defense_power_per_unit = $DefenderShipStats['defense'];   //Defense es escudos
-
-							// ATTACK POWER DOSNT DESTROY THE SHIP SHIELD
-							if ($attack_power <= $shield_power_per_unit) {  //Modificacion para mayor precision, al añadir = por si acaso...
-
-								// DECREASE SHIP SHIELD
-								$shield_power_per_unit -= $attack_power;
-
-								// DECREASE TOTAL POWER ATTACK
-								$attack_power_left -= $attack_power;
-
-								$attack_power = 0;
-
-							// SHIELD MUST BE DESTROYED
-							}if ($attack_power > $shield_power_per_unit) {
-
-								$ShipsToDelete = round($attack_power / ($DefenderShipStats['shield'] + $DefenderShipStats['defense'] + 1));
-
-								// AVAILABLE DEFENDER SHIPS
-								$AvailableShips = $defender_structure[$selected_user][$selected_shipid];
-								if($ShipsToDelete > $AvailableShips){
-									$ShipsToDelete = $AvailableShips;
-								}
-
-								// DECREASE ATTACK POWER
-								$attack_power -= (($DefenderShipStats['shield'] +  $DefenderShipStats['defense']) * $ShipsToDelete);
-
-								// DECREASE TOTAL POWER ATTACK
-								$attack_power_left -= (($DefenderShipStats['shield'] +  $DefenderShipStats['defense']) * $ShipsToDelete);
-
-								// UPDATE ARRAYS
-								$defender_structure = PadaDeleteShip($defender_structure, $selected_user, $selected_shipid, $ShipsToDelete);
-
-								// UNSET THE ACTUAL SHIELD AND DEFENSE
-								unset($shield_power_per_unit, $defense_power_per_unit);
-							}
-
-							// IF ATTACK POWER LEFT AND HASNT RAPIDFIRE YET
-							if($attack_power AND !isset($AlreadyRF)){
-
-								$AlreadyRF = true;
-
-								$RF = $CombatCaps[$ShipId]['sd'][$selected_shipid];
-								if($RF > 1){
-									$RF_ = 100 * ($RF - 1) / $RF;
-
-									$percent = mt_rand(1, 100);
-
-									if($percent <= $RF_){
-										$fire = true;
-									}
-								}else{
-									$fire = false;
-								}
-							}					
-						}
-					}
-				}
-			}
-		}
-
-		return array($defender_structure, $attack_power_left);
-
-	}
-
-function PadaDeleteShip($Arr, $UID, $ShipId, $Quantity){
-
-	$Arr[$UID][$ShipId] -= $Quantity;
-	if($Arr[$UID][$ShipId] <= 0) unset($Arr[$UID][$ShipId]);
-	if(count($Arr[$UID]) <= 0) unset($Arr[$UID]);
-
-	return $Arr;	
-}
 
 function getShipStats($ShipId, $TargetTechno){
 	global $CombatCaps, $pricelist;
