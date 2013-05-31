@@ -8,7 +8,7 @@
 */
 // Definition des tables d'XNova
 //
-	
+
 	// Table aks
 	$QryTableAks         = "CREATE TABLE `{{table}}` ( ";
 	$QryTableAks        .= "`id` bigint(20) unsigned NOT NULL auto_increment, ";

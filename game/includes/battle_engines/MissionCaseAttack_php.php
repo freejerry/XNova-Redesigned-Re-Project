@@ -78,12 +78,12 @@ function MissionCaseAttack($fleetrow,$log=true){
 	//Log
 	if($log){
 		battle_log("Data given to the battle engine:");
-		battle_log("PadaCombatSac(".$attacker_fleet.", ".$defender_fleet.", ".$CurrentTechno.", ".$TargetTechno.", ".$planeta_atacante.", ".$planeta_defensores.",  ".$FleetRow['fleet_start_time'].");");
+		battle_log("PadaCombat(".$attacker_fleet.", ".$defender_fleet.", ".$CurrentTechno.", ".$TargetTechno.", ".$planeta_atacante.", ".$planeta_defensores.",  ".$FleetRow['fleet_start_time'].");");
 	}
 
 	//Do the battle
 	//include_once(ROOT_PATH."includes/battle_engines/padacombat.php");
-	$result = PadaCombatSac($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno, $planeta_atacante, $planeta_defensores, $FleetRow['fleet_start_time']);
+	$result = PadaCombat($attacker_fleet, $defender_fleet, $CurrentTechno, $TargetTechno, $planeta_atacante, $planeta_defensores, $FleetRow['fleet_start_time']);
 
 	//Calculo de la probabilidad de luna...
 	$MoonChance = floor(($result['debris']['metal'] + $result['debris']['crystal']) / 100000);
