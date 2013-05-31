@@ -763,15 +763,6 @@ function MissionCaseAttack($fleetrow,$log=true){
 
 	}
 
-function getShipStats($ShipId, $TargetTechno){
-	global $CombatCaps, $pricelist;
-
-	$defense = ((($pricelist[$ShipId]['metal'] + $pricelist[$ShipId]['crystal']) / 10) * (1 + (0.1 * ($TargetTechno['defence_tech']) + (0.05 * $TargetTechno[$UID]['rpg_amiral']))));
-	$shield = $CombatCaps[$ShipId]['shield'] * (1 + (0.1 * $TargetTechno[$UID]['shield_tech'])+ (0.05 * $TargetTechno[$UID]['rpg_amiral']));
-
-	return array('defense' => $defense, 'shield' => $shield);
-}
-
 function CalculateAttackStat ($structure){
 	global $CombatCaps;
 
