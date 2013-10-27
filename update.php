@@ -20,7 +20,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 <?php
 include("version.php");
 include("update_functions.php");
-$base_stable_url="https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/stable/"";
+$base_stable_url="https://raw.github.com/freejerry/XNova-Redesigned-Re-Project/stable/";
 if($_POST['i'])
 {
   if($_POST['i']==1)
