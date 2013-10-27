@@ -14,7 +14,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="login/styles.css" type="text/css" />
   </head>
-  <body link="white" alink="white" vlink="white" bgcolor="black">
+  <body>
    <div style="align: center;">
     <font color="red" size="5"><b>XNova Updater</b></font><br /><br />
 <?php
