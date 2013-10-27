@@ -34,9 +34,11 @@ if(strlen($last_user) > 10){
 }
 if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   header("Location: game/login.php");
+  
+echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 <head> 
 <title>Login</title> 
 <link rel="shortcut icon" href="favicon.ico" /> 
@@ -62,12 +64,12 @@ iBox.default_width = 800;
 <tbody> 
 <tr style="vertical-align: top;"> 
 	<td style="padding-right: 4px;"> 
-		Username: <input name="username" value="" type="text"> 
-		Password: <input name="password" value="" type="password"> 
+		Username: <input name="username" type="text" /> 
+		Password: <input name="password" type="password" /> 
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
-		Remember Me? <input name="rememberme" type="checkbox"> <input name="submit" value="Login" type="submit"> 
+		Remember Me? <input name="rememberme" type="checkbox" /> <input name="submit" value="Login" type="submit" /> 
 	</td> 
 </tr><tr> 
 	<td style="padding-right: 4px;"> 
@@ -90,7 +92,7 @@ iBox.default_width = 800;
 <div id="content"> 
 <center> 
 <div id="text1"> 
-<div style="text-align: left;"><strong>XNova Redesigned</strong> is a free open source multiplayer online game created by the <strong>XNovaUK</strong> team. XNova Redesigned-Re-Project is a modification of XNova Redesigned, which is outdated. It is based upon the XNova script, all you need to play is a HTML compliant browser.<br>
+<div style="text-align: left;"><strong>XNova Redesigned</strong> is a free open source multiplayer online game created by the <strong>XNovaUK</strong> team. XNova Redesigned-Re-Project is a modification of XNova Redesigned, which is outdated. It is based upon the XNova script, all you need to play is a HTML compliant browser.<br />
 </div> 
 </div> 
 <div id="register" class="bigbutton" onclick="iBox.showURL('reg.php','Join Now',{'width':800});"><font color="#cc0000">Register Now!</font></div> 
