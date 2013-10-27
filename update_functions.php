@@ -38,27 +38,27 @@ function DoAllUpdateCommands($update_array,$base_url)
     if(strtolower($command)=="updatefile")
     {
       $openfile = @file($base_url.$par, FILE_SKIP_EMPTY_LINES);
-      echo "Updating file ".$par."<br>";
+      echo "Updating file ".$par."<br />";
       if(is_writable($par))
       {
         file_put_contents($par,$openfile);
-        echo "<font color='lime'>Updated!</font><br>";
+        echo "<font color=\"lime\">Updated!</font><br />";
       }
       else
       {
-        echo "<font color='red'>Cannot update file '".$par."'! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
+        echo "<font color=\"red\">Cannot update file \"".$par."\"! File is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br />";
       } 
     }
     else if(strtolower($command)=="deletefile")
     {
-      echo "Deleting file ".$par."<br>";
+      echo "Deleting file ".$par."<br />";
       if(unlink($par))
       {
-        echo "<font color='lime'>Deleted!</font><br>";
+        echo "<font color=\"lime\">Deleted!</font><br />";
       }
       else
       {
-        echo "<font color='red'>Cannot delete file '".$par."'!</font><br>";
+        echo "<font color=\"red\">Cannot delete file \"".$par."\"!</font><br />";
       } 
     }
     else if(strtolower($command)=="backupfile")
@@ -69,16 +69,16 @@ function DoAllUpdateCommands($update_array,$base_url)
         {
           if(copy($par,$par.".backup"))
           {
-            echo "<font color='lime'>Backup file for ".$par." created!</font><br>";
+            echo "<font color=\"lime\">Backup file for \"".$par."\" created!</font><br />";
           }
           else
           {
-            echo "<font color='red'>Cannot backup file '".$par."'! Copy failed!</font><br>";
+            echo "<font color=\"red\">Cannot backup file \"".$par."\"! Copy failed!</font><br />";
           }          
         }
         else
         {
-          echo "<font color='red'>Cannot backup file '".$par."'! File '".$par.".backup' is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
+          echo "<font color=\"red\">Cannot backup file \"".$par."\"! File \"".$par.".backup\" is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br />";
         }
       }
     }
@@ -90,16 +90,16 @@ function DoAllUpdateCommands($update_array,$base_url)
         {
           if(copy($par.".backup",$par))
           {
-            echo "<font color='lime'>File ".$par." was renewed!</font><br>";
+            echo "<font color=\"lime\">File \"".$par."\" was renewed!</font><br />";
           }
           else
           {
-            echo "<font color='red'>Cannot renew file '".$par."'! Copy failed!</font><br>";
+            echo "<font color=\"red\">Cannot renew file \"".$par."\"! Copy failed!</font><br />";
           }          
         }
         else
         {
-          echo "<font color='red'>Cannot renew file '".$par."'! File '".$par."' is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br>";
+          echo "<font color=\"red\">Cannot renew file \"".$par."'! File \"".$par."\" is not writeable! Check if CHMOD of all XNova files are set to 777!</font><br />";
         }
       }
     }
@@ -107,7 +107,7 @@ function DoAllUpdateCommands($update_array,$base_url)
     {
       $openfile = @file($base_url."sqlupdates/".$par);
       $p=0;
-      echo "Executing SQL file '".$par."'!<br>";
+      echo "Executing SQL file \"".$par."\"!<br />";
       while ($p<count($openfile))
       {
         $openfile[$p]=str_replace('\n','',$openfile[$p]);
@@ -118,7 +118,7 @@ function DoAllUpdateCommands($update_array,$base_url)
         }
         $p+=1;
       }
-      echo "<font color='lime'>SQL file '".$par."' executed!</font><br>"; 
+      echo "<font color=\"lime\">SQL file \"".$par."\" executed!</font><br />"; 
     }
     $i+=1;  
   }      
