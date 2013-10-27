@@ -35,12 +35,13 @@ if(strlen($last_user) > 10){
 if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
   header("Location: game/login.php");
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html> 
 <head> 
 <title>Login</title> 
-<link rel="shortcut icon" href="favicon.ico"> 
-<link rel="stylesheet" type="text/css" href="login/styles.css"> 
-<link rel="stylesheet" type="text/css" href="login/about.css">  
+<link rel="shortcut icon" href="favicon.ico" /> 
+<link rel="stylesheet" type="text/css" href="login/styles.css" /> 
+<link rel="stylesheet" type="text/css" href="login/about.css" />  
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />  
 <script type="text/javascript" src="game/scripts/overlib.js"></script> 
 <script type="text/javascript" src="ibox.2.2/ibox.js"></script> 
@@ -48,7 +49,7 @@ if(!empty($_COOKIE[$game_config['COOKIE_NAME']]))
 iBox.setPath('ibox.2.2/');
 iBox.default_width = 800;
 </script> 
-<link rel="stylesheet" href="ibox.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="ibox.css" type="text/css" media="screen" />
 </head> 
 <body> 
 <center> 
