@@ -56,7 +56,7 @@ iBox.default_width = 800;
 <body> 
 <center> 
 <div id="main"> 
-<center><img src="images/xnovaproject.png" border="0" style="border-width:0px;" /></center>
+<center><img src="images/xnovaproject.png" border="0" style="border-width:0px;" alt="XNova Project Logo" /></center>
 <div id="login"> 
 <div id="login_input"> 
 <form name="formular" action="game/login.php" method="post"> 
