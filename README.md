@@ -19,7 +19,7 @@ Installation steps:
 1. Download https://nodeload.github.com/freejerry/XNova-Redesigned-Re-Project/zipball/stable to your server.
 2. Unzip it.
 3. Create a MySQL database on your server.
-4. Download and unzip Xnova-Skins.zip into main folder (you can download it here: https://github.com/downloads/freejerry/XNova-Redesigned-Re-Project/XNova-Skins.zip)
+4. Download and unzip Xnova-Skins.zip into main folder ([https://github.com/downloads/freejerry/XNova-Redesigned-Re-Project/XNova-Skins.zip](download))
 5. Open "http://your_host.domain/source_folder" with browser.
 6. Follow installation guide to install XNova.
 7. Sign up one account in game after installation. The first account will be an administrator account.
