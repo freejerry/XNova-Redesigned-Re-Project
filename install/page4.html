@@ -1,10 +1,10 @@
-<html> 
-<head> 
-	<title>XNova Redeisgned Install</title> 
-	<link rel="shortcut icon" href="favicon.ico">
+<html>
+<head>
+	<title>XNova Redeisgned Install</title>
+	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 	<meta http-equiv="content-type" content="text/html" />
-	
+
 	<script type="text/javascript">
 		//object detection to return the correct object depending upon browser type. Used by the getAXHA(); function.
 		function getNewHttpObject() {
@@ -41,16 +41,16 @@
 					}
 				}
 		}
-		
+
 		//Test connection
 		function test_import(){
 			document.getElementById('testbutton').value = 'Setting values...';
-			
+
 			url = './install.php?page=paysys_setup&public='+document.details.publickey.value+'&private='+document.details.privatekey.value;
-			
+
 			getAXAH(url,'ajaxdata','test_result()');
 		}
-		
+
 		//Test result of last function
 		function test_result(){
 			l = document.getElementById('ajaxdata').innerHTML
@@ -71,15 +71,15 @@
 			}
 		}
 	</script>
-	
-</head> 
- 
-<body> 
+
+</head>
+
+<body>
 <center>
 
 	<img src="./images/xnovaproject.png" /><br />
 	<img src="./install/stage4.png" /><br /><br />
-	
+
 	<div class="box">
 		<div class="header">Installation</div>
 		<div class="main">
@@ -95,21 +95,21 @@
 							<td>Public API key:</td>
 							<td><input type="text" name="publickey" value="" /></td>
 						</tr>
-				
+
 						<tr>
 							<td>Private API key:</td>
 							<td><input type="text" name="privatekey" value="" /></td>
 						</tr>
 					</table>
 				</form>
-				Press next to set the API key.<br /><br />
-				
+				Press next to set up the API key.<br /><br />
+
 				<input type="button" id="testbutton" onClick="test_import()" value=">> Next" />
 			</span>
 		</div>
 		<div class="footer" />
 	</div>
-	
+
 </center>	 
 </body> 
 </html> 
