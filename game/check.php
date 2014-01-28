@@ -6,13 +6,13 @@
  * @version 1.0
  * @copyright 2009 by MadnessRed for XNova Redesigned
  */
- 
+
 define('INSIDE'		, true);
 define('INSTALL'	, false);
 define('LOGIN'		, true);
 define('ROOT_PATH'	, './');
 
-if(!$_GET['s']){
+if(!isset($_GET['s'])){
 	$_GET['s'] = 1;
 }
 
