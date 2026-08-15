@@ -1,0 +1,9 @@
+{
+  "name": "@xnova/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@xnova/shared": "workspace:*"
+  }
+}
